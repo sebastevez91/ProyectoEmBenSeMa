@@ -1,0 +1,24 @@
+﻿@page
+@model SchoolMusic.Web.Pages.Aula.IndexRegistroModel
+@{
+    ViewData["Title"] = "Aula virtual";
+}
+<div class="text-center">
+    <h1>Aula virtual School Music</h1>
+</div>
+<div class="contentRegistro">
+    <div class="ctner">
+        <a asp-page="/Login/LoginTeacher">
+            <img src="~/img/regisTeacher.jpg" alt="registro teacher" class="imgBtnReg" />
+        </a>
+        <div class="textRegistro">Profesores</div>
+    </div>
+    <div class="ctner">
+        <a asp-page="/Login/LoginStudent">
+            <img src="~/img/regisStudent.jpg" alt="registro student" class="imgBtnReg" />
+        </a>
+        <div class="textRegistro">Alumnos</div>
+    </div>
+</div>
+
+

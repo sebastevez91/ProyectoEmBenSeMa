@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>SchoolMusic.Proyecto</id>
+    <version>1.0.0</version>
+    <authors>SchoolMusic.Proyecto</authors>
+    <description>Package Description</description>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="net7.0-windows7.0">
+        <dependency id="SchoolMusic.BD" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="SchoolMusic.Entidades" version="1.0.0" exclude="Build,Analyzers" />
+        <dependency id="SchoolMusic.Serv" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net7.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\bin\Debug\net7.0-windows\SchoolMusic.Proyecto.runtimeconfig.json" target="lib\net7.0-windows7.0\SchoolMusic.Proyecto.runtimeconfig.json" />
+    <file src="C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\bin\Debug\net7.0-windows\SchoolMusic.Proyecto.dll" target="lib\net7.0-windows7.0\SchoolMusic.Proyecto.dll" />
+  </files>
+</package>

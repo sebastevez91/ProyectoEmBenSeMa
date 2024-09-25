@@ -1,0 +1,43 @@
+﻿@page
+@model SchoolMusic.Web.Pages.Cursadas.IndexModel
+
+@{
+    ViewData["Title"] = "Lista de cursadas";
+    string nombreImagen = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdeSfY6nyQq3k9gJPyhFq1hendlATeg9ohPQ&s";
+}
+<div class="text-center">
+    <h1>Lista de cursadas</h1>
+</div>
+
+<p>
+    <a asp-page="Create">Nueva Cursada</a>
+</p>
+
+<div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        @foreach (var cur in Model.Cursada)
+        {
+
+            <div class="col">
+                <div class="card shadow-sm" style="width: 18rem;">
+                    <img src="@nombreImagen" class="card-img top" alt="imgCursada">
+                    <div class="card-body">
+                        <h5 class="card-title">@cur.Course.Instrument</h5>
+                        <p class="card-text description">
+                            @cur.Description.ToString()
+                        </p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Dias de cursada @cur.Days</li>
+                        <li class="list-group-item">Horario @cur.StarTime.ToString("HH:mm") a @cur.EndTime.ToString("HH:mm") hs</li>
+                        <li class="list-group-item">Inicia @cur.Initiation.ToString("yyyy/MM/dd")</li>
+                    </ul>
+                    <div class="card-body">
+                        <a asp-page="/Cursadas/Details" asp-route-id="@cur.IdCursada" class="card-link">Ver cursada</a>
+                        <a href="#" class="card-link">Inscripción</a> >>>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

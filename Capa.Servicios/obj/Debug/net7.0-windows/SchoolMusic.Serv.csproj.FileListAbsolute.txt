@@ -1,0 +1,50 @@
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.Serv.deps.json
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.Serv.dll
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.Serv.pdb
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.Entidades.dll
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.Entidades.pdb
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.csproj.AssemblyReference.cache
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.AssemblyInfoInputs.cache
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.AssemblyInfo.cs
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.csproj.CoreCompileInputs.cache
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMu.88023F12.Up2Date
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.dll
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\refint\SchoolMusic.Serv.dll
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.pdb
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\ref\SchoolMusic.Serv.dll
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.Serv.deps.json
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.Serv.dll
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.Serv.pdb
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.BD.dll
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.Entidades.dll
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.BD.pdb
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.Entidades.pdb
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.csproj.AssemblyReference.cache
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.AssemblyInfoInputs.cache
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.AssemblyInfo.cs
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.csproj.CoreCompileInputs.cache
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.sourcelink.json
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMu.88023F12.Up2Date
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.dll
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\refint\SchoolMusic.Serv.dll
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.pdb
+C:\Users\user\OneDrive\Documentos\Proyecto C#\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\ref\SchoolMusic.Serv.dll
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.Serv.deps.json
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.Serv.dll
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.Serv.pdb
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.BD.dll
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.Entidades.dll
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.BD.pdb
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Capa.Servicios\bin\Debug\net7.0-windows\SchoolMusic.Entidades.pdb
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.csproj.AssemblyReference.cache
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.AssemblyInfoInputs.cache
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.AssemblyInfo.cs
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.csproj.CoreCompileInputs.cache
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMu.88023F12.Up2Date
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.dll
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\refint\SchoolMusic.Serv.dll
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\SchoolMusic.Serv.pdb
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\Proyecto.EmBenSeMa\Capa.Servicios\obj\Debug\net7.0-windows\ref\SchoolMusic.Serv.dll

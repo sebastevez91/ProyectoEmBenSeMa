@@ -1,0 +1,32 @@
+﻿@page
+@model SchoolMusic.Web.Pages.Courses.ListaCourse
+
+@{
+    ViewData["Title"] = "Lista de cursos";
+}
+<div class="text-center">
+    <h1>Cursos de EmBenSeMa</h1>
+</div>
+
+<p>
+    <a asp-page="Create">Nuevo curso</a>
+</p>
+
+<div> 
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> 
+    @foreach (var cou in Model.Course) 
+    {
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="@cou.ImagenURL" class="card-img top" alt="Imagencurso">
+                    <div class="card-body"> 
+                        <h5 class="card-title">Curso de @cou.Instrument</h5> 
+                    </div>
+                    <div class="card-body">
+                        <a class="card-link" asp-page="/Courses/InfoCourse" asp-route-idCourse="@cou.IdCourse">Mas información</a> >>>
+                    </div> 
+                </div> 
+            </div> 
+    } 
+    </div> 
+</div> 

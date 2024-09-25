@@ -1,0 +1,17 @@
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Base.De.Datos\bin\Debug\net7.0-windows\Capa.Base.De.Datos.deps.json
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Base.De.Datos\bin\Debug\net7.0-windows\Capa.Base.De.Datos.dll
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Base.De.Datos\bin\Debug\net7.0-windows\Capa.Base.De.Datos.pdb
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Base.De.Datos\bin\Debug\net7.0-windows\Capa.Entidades.dll
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Base.De.Datos\bin\Debug\net7.0-windows\Capa.Servicios.dll
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Base.De.Datos\bin\Debug\net7.0-windows\Capa.Servicios.pdb
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Base.De.Datos\bin\Debug\net7.0-windows\Capa.Entidades.pdb
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Base.De.Datos\obj\Debug\net7.0-windows\Capa.Base.De.Datos.csproj.AssemblyReference.cache
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Base.De.Datos\obj\Debug\net7.0-windows\Capa.Base.De.Datos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Base.De.Datos\obj\Debug\net7.0-windows\Capa.Base.De.Datos.AssemblyInfoInputs.cache
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Base.De.Datos\obj\Debug\net7.0-windows\Capa.Base.De.Datos.AssemblyInfo.cs
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Base.De.Datos\obj\Debug\net7.0-windows\Capa.Base.De.Datos.csproj.CoreCompileInputs.cache
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Base.De.Datos\obj\Debug\net7.0-windows\Capa.Bas.55A4515A.Up2Date
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Base.De.Datos\obj\Debug\net7.0-windows\Capa.Base.De.Datos.dll
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Base.De.Datos\obj\Debug\net7.0-windows\refint\Capa.Base.De.Datos.dll
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Base.De.Datos\obj\Debug\net7.0-windows\Capa.Base.De.Datos.pdb
+C:\Users\user\OneDrive\Escritorio\Proyecto.EmBenSeMa\Proyecto.EmBenSeMa\Capa.Base.De.Datos\obj\Debug\net7.0-windows\ref\Capa.Base.De.Datos.dll

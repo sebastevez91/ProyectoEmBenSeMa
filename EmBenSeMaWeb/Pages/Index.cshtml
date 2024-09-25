@@ -1,0 +1,63 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "EmBenSeMa School";
+}
+<div class="container containerSchool">
+    <img src="~/img/Logo.png" alt="LogoSchool" class="imgSchool"/>
+    <h1 class="display-4">Bienvenido a la School Music EmBenSeMa</h1>
+</div>
+<div class="text-center">
+    <span class="itemReflexivo" >♫ &nbsp; Estudia en la mejor Academia Musical , no lo pienses mucho !!!  ♫ &nbsp;</span><br />
+    <span class="itemReflexivo" >♫ &nbsp; Somos exigentes porque queremos sacar buenos profesionales a la calle !!!  ♫ &nbsp;</span>
+    <img src="~/charly.jpg" alt="frase Charly" />
+    <p>
+        Buenos Aires es una de las capitales más importantes de Latinoamérica, reconocida mundialmente por su vibrante y diversa escena musical.
+        La ciudad no solo es cuna de talentosos artistas y docentes, sino también un epicentro cultural que atrae a músicos de todas partes del mundo.
+        Nuestra escuela de música es justo lo que estas buscando para dar tus primeros pasos pichon, una experiencia única. 
+        Esta plataforma no solo es conocido por su accesibilidad desde cualquier punto de la pais, sino también por su rica oferta cultural y educativa.
+        Además, cuenta con numerosos eventos para demostrar lo que aprendiste, creando un ambiente ideal para ver tu aprendizaje y la inspiración artística.
+
+        Ofrecemos a nuestros estudiantes, tanto nacionales como extranjeros, un entorno propicio para el desarrollo musical, con cursadas de primer nivel 
+        y un equipo docente altamente calificado. Nuestra escuela se enorgullece de ser un punto de encuentro para la comunidad musical,
+        fomentando el intercambio cultural y la creatividad.
+    </p>
+</div>
+<div>
+    <div class="text-center">
+        <h2>Preguntas que seguro queres hacer</h2>
+        <br />
+    </div>
+
+    <h4 class="et_pb_toggle_title"><em> ¿QUÉ TIPO DE CURSADA OFRECE LA ACADEMIA?</em></h4>
+    <p><em>La academia ofrece franjas de cursado de mañana, tarde y noche: desde las 8:30 hasta las 21:30 h de lunes a viernes. Se puede optar por cualquiera o combinarlas según la disponibilidad y así cursar algunas cursadas por la mañana y otras por la tarde/noche.</em></p>
+    <h4 class="et_pb_toggle_title"><em>¿TIENEN PRÁCTICAS EN VIVO?</em></h4>
+    <p><em>No, esta es una plataforma que ofrece cursos en modalidad online unicamente, sin embargo la academia ofrece eventos donde los alumnos realizan exámenes en vivo de canto y ensamble en lugares seleccionados con público presente y en escenarios reales de la ciudad de Buenos Aires (Domus Artis, Boris Club, Biblioteca Nacional, entre otros). Todos los eventos son publicados en nuestra página web, Facebook y Twitter.</em></p>
+    <h4 class="et_pb_toggle_title"><em> ¿OFRECEN ALGUNA CERTIFICACIÓN AL FINALIZAR EL CURSO?</em></h4>
+    <div class="et_pb_toggle_content clearfix"><p><em>Sí, la academia te otorga un certificado que demuestre tus cursos hechos con nosotros; algunos son exclusivos para alumnos.</em></p></div>
+    <h4 class="et_pb_toggle_title"><em> ME INTERESA ESTUDIAR MÚSICA CON USTEDES, PERO YA TENGO ESTUDIOS PREVIOS ¿QUÉ DEBO HACER?</em></h4>
+    <p><em>La academia ofrece la posibilidad de realizar un Test de Nivel para determinar en cual nivel te encuentras respecto de nuestro programa. Podes enviarnos un video tuyo tocando el instrumento. No es necesario tener conocimientos previos.</em></p></div>
+</div>
+<div class="caja-contacto">
+    <h2 class="display-4">Contactanos</h2>
+    <div class="fila">
+        <div class="col">
+            <form action="https://formsubmit.co/08ce1158899feed18872850db8087192" method="POST">
+                <label>Nombre </label>
+                <input type="text" name="nombre" placeholder="Ingrese su Nombre" required><br>
+                <label>Apellido </label>
+                <input type="text" name="apellido" placeholder="Ingrese su Apellido" required><br>
+                <label>E-mail </label>
+                <input type="email" name="Email" placeholder="Ingrese su E-mail"><br>
+                <label>Comentario </label>
+                <textarea name="comentario" id="comentario" cols="30" rows="10" placeholder="Deje su mensaje"></textarea><br>
+                <button>
+                    Enviar<i class="fa-solid fa-file-import"></i>
+                    <span class="overlay"></span>
+                </button>
+@*                 <input type="hidden" name="_next" value="https://sebastevez91.github.io/miportafolio/" />
+                <input type="hidden" name="_captcha" value="false" /> *@
+            </form>
+        </div>
+    </div>
+</div>

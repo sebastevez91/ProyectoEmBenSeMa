@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Capa.Servicios/1.0.0": {
+        "dependencies": {
+          "Capa.Entidades": "1.0.0"
+        },
+        "runtime": {
+          "Capa.Servicios.dll": {}
+        }
+      },
+      "Capa.Entidades/1.0.0": {
+        "runtime": {
+          "Capa.Entidades.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Capa.Servicios/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Capa.Entidades/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

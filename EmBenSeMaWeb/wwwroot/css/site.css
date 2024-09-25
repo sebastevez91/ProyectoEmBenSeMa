@@ -1,0 +1,278 @@
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    background-image: url("../pizzarra.jpg");
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 60px;
+    background-color: black;
+}
+
+h1, h2, p, td, label, .text-item {
+    color: white;
+}
+/* Principal */
+
+.containerSchool {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.itemReflexivo {
+    color: #ffffff;
+    font-size: 150%;
+}
+
+.imgSchool {
+    width: 30%;
+}
+.btnCrear {
+    background-position: center;
+}
+
+.iconoLogo {
+    width: 5%;
+    height: 10%;
+}
+
+.btn {
+    margin:1%;
+    color: black;
+    background-color: cornflowerblue;
+}
+
+.description {
+    color: black;
+}
+
+/* Información de profesores */
+
+.profesores-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.profesor-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 35px;
+    padding: 16px;
+    width: 800px;
+}
+
+.profesor-foto {
+    width: 200px;
+    height: 180px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profesor-info {
+    flex: 1;
+}
+
+a {
+    color: dodgerblue;
+}
+
+.barraHeader {
+    background-color: black;
+}
+
+/*Parte contacto*/
+
+.caja-contacto .fila {
+    display: flex;
+}
+
+.caja-contacto .col {
+    width: 50%;
+    padding: 10px;
+    position: relative;
+}
+.caja-contacto .col input, .contacto .col, textarea {
+        display: block;
+        width: 100%;
+        padding: 18px;
+        border: none;
+        margin-bottom: 20px;
+        background-color: #333333;
+        color: #f1f1f1;
+        font-size: 18px;
+    }
+
+.caja-contacto button {
+    cursor: pointer;
+    background-color: #333333;
+    color: #f1f1f1;
+    border: 2px solid #2196F3;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    position: relative;
+    z-index: 10;
+}
+
+.caja-contacto .col button .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #2196F3;
+    z-index: -1;
+    transition: 1s;
+}
+
+.caja-contacto button:hover .overlay {
+    width: 100%;
+}
+
+/*Registro*/
+
+.ctner {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.imgBtnReg {
+    width: 50%; /* Ocupa todo el ancho del contenedor padre */
+    height: auto;
+    padding: 2%;
+}
+
+.contentRegistro {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.textRegistro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: beige;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para mayor visibilidad sobre la imagen */
+    pointer-events: none; /* Evita que el texto interfiera con la interacción de la imagen */
+}
+
+/* Login */
+
+.label-black {
+    color: black;
+    font-weight: bold;
+}
+.linkRes {
+    color: white;
+}
+
+.cardCourse {
+    align-items: stretch;
+}
+
+/* Cursada */
+
+.content {
+    background-color: #6495ed;
+    color: #000;
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra */
+    max-width: 400px;
+    margin: 30px auto; /* Centrar el div */
+    animation: fadeIn 1.5s ease-in-out; /* Animación */
+}
+
+.content h1, h4 {
+        text-align: center; /* Centrar los títulos */
+    }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Aparece desde abajo */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aula Teacher */
+
+/* Estilo de la tabla */
+.styled-table {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin: 25px 0; 
+    font-size: 18px; 
+    min-width: 400px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+    .styled-table thead tr {
+        background-color: #001f3f; 
+        color: #ffffff; 
+        text-align: left;
+    }
+
+    .styled-table th, .styled-table td {
+        padding: 12px 15px; 
+        border: 1px solid #dddddd; 
+    }
+
+    .styled-table tbody tr {
+        background-color: #000;
+        transition: background-color 0.3s;
+    }
+
+        .styled-table tbody tr:nth-child(even) {
+            background-color: #e9e9e9; 
+        }
+
+        .styled-table tbody tr:hover {
+            background-color: #d1e7fd;
+            cursor: pointer;
+        }
+
+/* Animación de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

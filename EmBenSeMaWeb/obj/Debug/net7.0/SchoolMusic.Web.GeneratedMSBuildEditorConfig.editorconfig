@@ -1,0 +1,127 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = SchoolMusic.Web
+build_property.RootNamespace = SchoolMusic.Web
+build_property.ProjectDir = C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\EmBenSeMaWeb\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\EmBenSeMaWeb
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Aula/AulaTeacher.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXVsYVxBdWxhVGVhY2hlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Aula/AulaVirtual.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXVsYVxBdWxhVmlydHVhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Courses/InfoCourse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlc1xJbmZvQ291cnNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Courses/ListaCourses.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlc1xMaXN0YUNvdXJzZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Cursadas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3Vyc2FkYXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Cursadas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3Vyc2FkYXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Cursadas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3Vyc2FkYXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Cursadas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3Vyc2FkYXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Cursadas/IndexCursada.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3Vyc2FkYXNcSW5kZXhDdXJzYWRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/LaEscuela.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGFFc2N1ZWxhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Login/LoginStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cTG9naW5TdHVkZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Login/LoginTeacher.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cTG9naW5UZWFjaGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Students/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Students/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Students/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Students/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Students/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Teachers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhY2hlcnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Teachers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhY2hlcnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Teachers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhY2hlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Teachers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhY2hlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-yfrpaszh5f

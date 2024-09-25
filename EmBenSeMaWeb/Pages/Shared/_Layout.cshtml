@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - EmBenSeMaWeb</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="barraHeader navbar navbar-expand-sm">
+            <div class="container">
+                <img src="~/img/Logo.png" class="iconoLogo" alt="IconoLogo" />
+                <a class="navbar-brand" asp-area="" asp-page="/Index"> EmBenSeMaWeb </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-item" asp-area="" asp-page="/Index">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-item" asp-area="" asp-page="/Courses/ListaCourses">Cursos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-item" asp-area="" asp-page="/Teachers/Index">Profesores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-item" asp-area="" asp-page="/Cursadas/IndexCursada">Cursadas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-item" asp-area="" asp-page="/LaEscuela">La Escuela</a>
+                        </li>
+                    </ul>
+                    <a class="btn btn-primary" asp-area="" asp-page="/Aula/AulaVirtual"> Aula Virtual </a>
+                    <br />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - EmBenSeMaWeb - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

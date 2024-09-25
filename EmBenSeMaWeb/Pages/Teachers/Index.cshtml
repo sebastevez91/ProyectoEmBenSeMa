@@ -1,0 +1,23 @@
+﻿@page
+@model SchoolMusic.Web.Pages.Teachers.IndexModel
+
+@{
+    ViewData["Title"] = "Profesores";
+}
+<div class="text-center">
+    <h1>Información de Profesores</h1>
+</div>
+
+<div class="profesores-container">
+    @foreach (var profesor in Model.Teacher)
+    {
+        <div class="profesor-card">
+            <img src="@profesor.FotoTeacher" alt="Foto de @profesor.NameTeacher" class="profesor-foto" />
+            <div class="profesor-info">
+                <h2>@profesor.NameTeacher @profesor.Surname</h2>
+                <h4>Email: @profesor.Mail</h4>
+                <p>@profesor.Description</p>
+            </div>
+        </div>
+    }
+</div>
