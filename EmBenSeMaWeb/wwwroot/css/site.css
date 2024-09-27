@@ -228,6 +228,20 @@ a {
 
 /* Aula Teacher */
 
+.infoTeacher {
+    display: flex;
+    width: max-content;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+}
+
+.fotoTeacher {
+    width: 250px;
+    height: 210px;
+    border-radius: 34%;
+    margin-right: 20px;
+}
+
 /* Estilo de la tabla */
 .styled-table {
     width: 100%; 
