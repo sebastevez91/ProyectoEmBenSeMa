@@ -528,3 +528,4 @@ C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\EmBenSeMaWeb\obj\Debug\net7.0\SchoolMusic.Web.pdb
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\EmBenSeMaWeb\obj\Debug\net7.0\SchoolMusic.Web.genruntimeconfig.cache
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\EmBenSeMaWeb\obj\Debug\net7.0\ref\SchoolMusic.Web.dll
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\EmBenSeMaWeb\obj\Debug\net7.0\SchoolMusic.Web.sourcelink.json

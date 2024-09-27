@@ -22,3 +22,4 @@ C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Capa.Entidades\obj\Debug\net7.0\refint\SchoolMusic.Entidades.dll
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Capa.Entidades\obj\Debug\net7.0\SchoolMusic.Entidades.pdb
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Capa.Entidades\obj\Debug\net7.0\ref\SchoolMusic.Entidades.dll
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Capa.Entidades\obj\Debug\net7.0\SchoolMusic.Entidades.sourcelink.json

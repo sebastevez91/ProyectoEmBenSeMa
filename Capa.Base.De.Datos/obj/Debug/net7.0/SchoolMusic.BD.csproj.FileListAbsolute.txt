@@ -28,3 +28,4 @@ C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Capa.Base.De.Datos\obj\Debug\net7.0\refint\SchoolMusic.BD.dll
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Capa.Base.De.Datos\obj\Debug\net7.0\SchoolMusic.BD.pdb
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Capa.Base.De.Datos\obj\Debug\net7.0\ref\SchoolMusic.BD.dll
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Capa.Base.De.Datos\obj\Debug\net7.0\SchoolMusic.BD.sourcelink.json
