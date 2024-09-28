@@ -22,7 +22,7 @@ namespace SchoolMusic.Entidades
         public string? Description {  get; set; }
 
         // FK
-        public IList<Cursada> Cursada { get; set; } 
+        public IList<Cursada>? Cursada { get; set; } 
 
         public Teacher(int idTeacher, string name, string surname, string mail, int dni, int age, int idUser, string genero)
         {

@@ -5,9 +5,7 @@
 }
 <div class="text-center infoTeacher">
     <h1 style="padding: 5%;">Bienvenido profesor @Model.Teacher.NameTeacher @Model.Teacher.Surname</h1>
-    <div>
-        <img src="~/@Model.Teacher.FotoTeacher" alt="Alternate Text" class="fotoTeacher" />
-    </div>
+    <img src="~/@Model.Teacher.FotoTeacher" alt="Alternate Text" class="fotoTeacher" />
 </div>
 
 <div>
@@ -30,11 +28,11 @@
             </tbody>
         </table>
     </div>
+    <a asp-page="/Teachers/Edit" asp-route-id="@Model.Teacher?.IdTeacher" class="btn btn-primary">Modificar datos</a>
     <div>
-        <a asp-page="/Cursadas/Details" asp-route-id="@Model.Teacher.IdTeacher" class="btn btn-primary">Modificar datos</a>
+        <a asp-page="/Cursadas/Details" asp-route-id="@Model.Teacher.IdTeacher" class="btn btn-primary">Ver cursadas</a>
         <a asp-page="./Edit" asp-route-id="" class="btn btn-primary">Ver cursadas</a>
         <a asp-page="./Edit" asp-route-id="" class="btn btn-primary">Ver </a>
-        <a asp-page="./Edit" asp-route-id="" class="btn btn-primary">Modificar datos</a>
     </div>
 </div>
 
