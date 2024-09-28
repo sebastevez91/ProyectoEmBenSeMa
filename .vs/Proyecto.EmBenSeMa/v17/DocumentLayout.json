@@ -3,6 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\embensemaweb\\pages\\teachers\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|solutionrelative:embensemaweb\\pages\\teachers\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -13,6 +14,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{61D0B8BF-FBFD-4A28-A145-80ACEE360072}|UI{61D0B8BF-FBFD-4A28-A145-80ACEE360072}|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{61D0B8BF-FBFD-4A28-A145-80ACEE360072}|UI{61D0B8BF-FBFD-4A28-A145-80ACEE360072}|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+=======
+      "AbsoluteMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\embensemaweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|solutionrelative:embensemaweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+>>>>>>> secondMain
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +27,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,10 +36,18 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+<<<<<<< HEAD
+=======
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+>>>>>>> secondMain
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+<<<<<<< HEAD
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Teachers\\Create.cshtml",
               "RelativeDocumentMoniker": "EmBenSeMaWeb\\Pages\\Teachers\\Create.cshtml",
@@ -69,6 +82,16 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2024-09-27T17:22:33.24Z",
+=======
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "EmBenSeMaWeb\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "EmBenSeMaWeb\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAAN0AAAAAAAAAAAAiwOoAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-27T17:50:06.297Z",
+>>>>>>> secondMain
               "EditorCaption": ""
             }
           ]

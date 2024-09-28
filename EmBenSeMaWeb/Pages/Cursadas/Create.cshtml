@@ -2,10 +2,11 @@
 @model SchoolMusic.Web.Pages.Cursadas.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Nueva cursada";
 }
-
-<h1>Create</h1>
+<div class="text-center">
+    <h1>Nueva cursada</h1>
+</div>
 
 <h4>Cursada</h4>
 <hr />
@@ -14,24 +15,14 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Cursada.IdCourse" class="control-label"></label>
-                <input asp-for="Cursada.IdCourse" class="form-control" />
-                <span asp-validation-for="Cursada.IdCourse" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Cursada.Initiation" class="control-label"></label>
-                <input asp-for="Cursada.Initiation" class="form-control" />
+                <input asp-for="Cursada.Initiation" class="form-control" type="date" />
                 <span asp-validation-for="Cursada.Initiation" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Cursada.Finish" class="control-label"></label>
-                <input asp-for="Cursada.Finish" class="form-control" />
+                <input asp-for="Cursada.Finish" class="form-control" type="date"/>
                 <span asp-validation-for="Cursada.Finish" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Cursada.IdTeacher" class="control-label"></label>
-                <input asp-for="Cursada.IdTeacher" class="form-control" />
-                <span asp-validation-for="Cursada.IdTeacher" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Cursada.StarTime" class="control-label"></label>
@@ -64,7 +55,7 @@
                 <span asp-validation-for="Cursada.PayFee" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value=" Crear " class="btn btn-primary" />
             </div>
         </form>
     </div>

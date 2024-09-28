@@ -19,8 +19,7 @@ namespace SchoolMusic.Web.Pages.Cursadas
             _context = context;
         }
 
-        public Cursada Cursada { get; set; } = default!; 
-        public Course Course { get; set; } = default!;
+        public IList<Cursada> Cursadas { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,25 +28,17 @@ namespace SchoolMusic.Web.Pages.Cursadas
                 return NotFound();
             }
 
-            var cursada = await _context.Cursada.Include(t => t.Teacher)
-                .FirstOrDefaultAsync(m => m.IdCursada == id);
-            if (cursada == null)
+            Cursadas = await _context.Cursada
+                .Include(t => t.Teacher )
+                .Include(c => c.Course)
+                .Where(c => c.IdTeacher == id)
+                .ToListAsync();
+
+            if (Cursadas == null || Cursadas.Count == 0)
             {
-                return NotFound();
+                return NotFound(); // Si no hay Cursadas asociadas, devolver NotFound
             }
-            else 
-            {
-                Cursada = cursada;
-                var curso = await _context.Course.FirstOrDefaultAsync(m => m.IdCourse == Cursada.IdCourse);
-                if (curso == null)
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    Course = curso;
-                }
-            }
+
             return Page();
         }
     }

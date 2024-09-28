@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SchoolMusic.Entidades;
-using SchoolMusic.Web.Data;
 
 namespace SchoolMusic.Web.Pages.Teachers
 {
@@ -22,7 +16,7 @@ namespace SchoolMusic.Web.Pages.Teachers
 
         [BindProperty]
         public Teacher Teacher { get; set; } = default!;
-
+        public string AlertMessage { get; set; }
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _context.Teacher == null)
@@ -30,7 +24,7 @@ namespace SchoolMusic.Web.Pages.Teachers
                 return NotFound();
             }
 
-            var teacher =  await _context.Teacher.FirstOrDefaultAsync(m => m.IdTeacher == id);
+            var teacher = await _context.Teacher.FirstOrDefaultAsync(m => m.IdTeacher == id);
             if (teacher == null)
             {
                 return NotFound();
@@ -66,12 +60,14 @@ namespace SchoolMusic.Web.Pages.Teachers
                 }
             }
 
-            return RedirectToPage("./Index");
+            AlertMessage = "Perfil actualizado";
+
+            return RedirectToPage("/Aula/AulaTeacher", new { id = Teacher?.IdUser });
         }
 
         private bool TeacherExists(int id)
         {
-          return (_context.Teacher?.Any(e => e.IdTeacher == id)).GetValueOrDefault();
+            return (_context.Teacher?.Any(e => e.IdTeacher == id)).GetValueOrDefault();
         }
     }
 }

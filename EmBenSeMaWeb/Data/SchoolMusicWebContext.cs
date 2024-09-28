@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using SchoolMusic.Entidades;
 
 
@@ -10,7 +6,7 @@ namespace SchoolMusic.Web.Data
 {
     public class SchoolMusicWebContext : DbContext
     {
-        public SchoolMusicWebContext (DbContextOptions<SchoolMusicWebContext> options)
+        public SchoolMusicWebContext(DbContextOptions<SchoolMusicWebContext> options)
             : base(options)
         {
         }
@@ -24,8 +20,8 @@ namespace SchoolMusic.Web.Data
                 .IsRequired();
             modelBuilder.Entity<Cursada>()
                 .HasOne(t => t.Teacher)
-                .WithOne(t => t.Cursada)
-                .HasForeignKey<Cursada>(t => t.IdTeacher)
+                .WithMany(t => t.Cursada)  // Un Teacher tiene muchas Cursadas
+                .HasForeignKey(t => t.IdTeacher)
                 .IsRequired();
         }
 
