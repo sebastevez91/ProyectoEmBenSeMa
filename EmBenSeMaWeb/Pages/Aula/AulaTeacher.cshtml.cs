@@ -23,7 +23,8 @@ namespace SchoolMusic.Web.Pages.Aula
                 return NotFound();
             }
 
-            var teacher = await _context.Teacher.FirstOrDefaultAsync(m => m.IdUser == id);
+            var teacher = await _context.Teacher.Include(c => c.Cursada)
+                                .FirstOrDefaultAsync(m => m.IdUser == id);
             if (teacher == null)
             {
                 return NotFound();

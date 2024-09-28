@@ -26,8 +26,8 @@ namespace SchoolMusic.Entidades
         public float PayFee {  get; set; }
 
         // FK
-        public Course Course { get; set; }
-        public Teacher Teacher { get; set; }
+        public Course? Course { get; set; }
+        public Teacher? Teacher { get; set; }
         public Cursada()
         {
         }
