@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\embensemaweb\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|solutionrelative:embensemaweb\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB75BD0A-73FC-4635-B02B-A04812641966}|Capa.Entidades\\SchoolMusic.Entidades.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\capa.entidades\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB75BD0A-73FC-4635-B02B-A04812641966}|Capa.Entidades\\SchoolMusic.Entidades.csproj|solutionrelative:capa.entidades\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB75BD0A-73FC-4635-B02B-A04812641966}|Capa.Entidades\\SchoolMusic.Entidades.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\capa.entidades\\teacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB75BD0A-73FC-4635-B02B-A04812641966}|Capa.Entidades\\SchoolMusic.Entidades.csproj|solutionrelative:capa.entidades\\teacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB75BD0A-73FC-4635-B02B-A04812641966}|Capa.Entidades\\SchoolMusic.Entidades.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\capa.entidades\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB75BD0A-73FC-4635-B02B-A04812641966}|Capa.Entidades\\SchoolMusic.Entidades.csproj|solutionrelative:capa.entidades\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\embensemaweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|solutionrelative:embensemaweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
@@ -14,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -25,12 +41,60 @@
               "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "EmBenSeMaWeb\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "EmBenSeMaWeb\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-28T14:46:13.615Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Entidades\\Student.cs",
+              "RelativeDocumentMoniker": "Capa.Entidades\\Student.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Entidades\\Student.cs",
+              "RelativeToolTip": "Capa.Entidades\\Student.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB4AAABmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T14:44:06.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Entidades\\Users.cs",
+              "RelativeDocumentMoniker": "Capa.Entidades\\Users.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Entidades\\Users.cs",
+              "RelativeToolTip": "Capa.Entidades\\Users.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAowA8AAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T14:36:31.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Teacher.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Entidades\\Teacher.cs",
+              "RelativeDocumentMoniker": "Capa.Entidades\\Teacher.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Entidades\\Teacher.cs",
+              "RelativeToolTip": "Capa.Entidades\\Teacher.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAxwCQAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T14:35:47.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "EmBenSeMaWeb\\wwwroot\\css\\site.css",
