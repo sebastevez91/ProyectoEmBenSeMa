@@ -1,0 +1,32 @@
+﻿@page
+@model SchoolMusic.Web.Pages.Aula.AulaStudentModel
+@{
+    ViewData["Title"] = "Aula del alumno";
+}
+<body onload="ocultarButto()">
+    <div class="text-center ">
+        <h1 style="padding: 5%;">Bienvenido @Model.Student.NameStudent @Model.Student.Surname</h1>
+    </div>
+
+    <div>
+        <h4>Tus datos</h4>
+        <div>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Nombre completo</th>
+                        <th>Correo</th>
+                        <th>DNI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Model.Student.NameStudent @Model.Student.Surname</td>
+                        <td>@Model.Student.Mail</td>
+                        <td>@Model.Student.Dni</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

@@ -30,7 +30,9 @@ namespace SchoolMusic.Web.Pages.Cursadas
                 return NotFound();
             }
 
-            var cursada =  await _context.Cursada.FirstOrDefaultAsync(m => m.IdCursada == id);
+            var cursada =  await _context.Cursada
+                .Include(c => c.Course)
+                .FirstOrDefaultAsync(m => m.IdCursada == id);
             if (cursada == null)
             {
                 return NotFound();
@@ -66,7 +68,7 @@ namespace SchoolMusic.Web.Pages.Cursadas
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Details", new { id = Cursada?.IdTeacher });
         }
 
         private bool CursadaExists(int id)

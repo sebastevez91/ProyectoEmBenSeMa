@@ -29,6 +29,7 @@ namespace SchoolMusic.Web.Pages.Teachers
         public string rePassword { get; set; } = default!;
 
         public int idUser { get; set; }
+        public string confirmacionRegistro = ""; 
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -50,11 +51,11 @@ namespace SchoolMusic.Web.Pages.Teachers
             await _context.SaveChangesAsync();
 
             // Obtener el Id del usuario recién creado
-            idUser = Users.IdUser;
-
-            Teacher.IdUser = idUser;
+            Teacher.IdUser = Users.IdUser;
             _context.Teacher.Add(Teacher);
             await _context.SaveChangesAsync();
+
+            confirmacionRegistro = "Registro exitoso";
 
             return RedirectToPage("./Index");
         }

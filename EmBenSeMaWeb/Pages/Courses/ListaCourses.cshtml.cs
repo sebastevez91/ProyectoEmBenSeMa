@@ -8,7 +8,6 @@ namespace SchoolMusic.Web.Pages.Courses
     public class ListaCourse : PageModel
     {
         private readonly SchoolMusic.Web.Data.SchoolMusicWebContext _context;
-        private readonly ILogger<ListaCourse> _logger;
         public ListaCourse(SchoolMusic.Web.Data.SchoolMusicWebContext context)
         {
             _context = context;
@@ -19,7 +18,7 @@ namespace SchoolMusic.Web.Pages.Courses
         {
             if (_context.Course != null)
             {
-                Course = await _context.Course.Include(cur => cur.Cursada).ToListAsync();
+                Course = await _context.Course.ToListAsync();
             }
         }
     }
