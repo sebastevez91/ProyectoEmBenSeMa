@@ -51,5 +51,7 @@ namespace SchoolMusic.Web.Data
         public DbSet<SchoolMusic.Entidades.Student> Student { get; set; } = default!;
 
         public DbSet<SchoolMusic.Entidades.Inscription> Inscription { get; set; } = default!;
+
+        public DbSet<SchoolMusic.Entidades.Tablon> Tablon { get; set; } = default!;
     }
 }

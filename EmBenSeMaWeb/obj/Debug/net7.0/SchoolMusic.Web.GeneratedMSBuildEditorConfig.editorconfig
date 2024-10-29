@@ -106,6 +106,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Tablons/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFibG9uc1xpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Teachers/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhY2hlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -133,3 +137,7 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-yfrpaszh5f
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Shared/_LayoutSesion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXRTZXNpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-pln5030x3v

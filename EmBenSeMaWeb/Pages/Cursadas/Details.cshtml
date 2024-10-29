@@ -3,6 +3,7 @@
 
 @{
     ViewData["Title"] = "Detalles de cursada";
+    Layout = "_LayoutSesion";
 }
 
 <body onload="ocultarButton()">
@@ -72,6 +73,7 @@
                             $ @cursada.PayFee
                         </dd>
                         <div>
+                            <a asp-page="/Tablons/index" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Tablón</a>
                             <a asp-page="./Edit" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Modificar</a>
                             <a asp-page="./Delete" asp-route-id="@cursada?.IdCursada" class="btn btn-danger">Eliminar</a>
                         </div>

@@ -2,6 +2,7 @@
 @model SchoolMusic.Web.Pages.Aula.AulaTeacherModel
 @{
     ViewData["Title"] = "Aula del profesor";
+    Layout = "_LayoutSesion";
 }
 <body onload = "ocultarButton()" >
     <div class="text-center infoTeacher">
@@ -29,15 +30,17 @@
                 </tbody>
             </table>
         </div>
-        <a asp-page="/Teachers/Edit" asp-route-id="@Model.Teacher?.IdTeacher" class="btn btn-primary"> Modificar datos </a>
-        <a asp-page="/Cursadas/Details" asp-route-id="@Model.Teacher.IdTeacher" class="btn btn-primary"> Tus cursadas </a>
+        
         <div>
-
+            <a asp-page="/Teachers/Edit" asp-route-id="@Model.Teacher?.IdTeacher" class="btn btn-primary"> Modificar datos </a>
+            <a asp-page="/Cursadas/Details" asp-route-id="@Model.Teacher.IdTeacher" class="btn btn-primary"> Tus cursadas </a>
+            <a asp-page="/Cursadas/Details" asp-route-id="@Model.Teacher.IdTeacher" class="btn btn-primary"> Notificaciones </a>
+            <a asp-page="/Cursadas/Details" asp-route-id="@Model.Teacher.IdTeacher" class="btn btn-primary"> Billetera </a>
         </div>
     </div>
 
     <div>
-        <a asp-page="/Index" class="btn btn-primary">Cerrar Sección</a>
+        <a asp-page="/Index" class="btn btn-primary"> Cerrar Sesión </a>
     </div>
 </body>
 
