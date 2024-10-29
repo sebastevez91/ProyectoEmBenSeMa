@@ -31,6 +31,9 @@ namespace SchoolMusic.Entidades
         [RegularExpression("Masculino|Femenino|Otro", ErrorMessage = "Seleccione una opción válida.")]
         public string Genero {  get; set; }
 
+        // Relación con Inscription (uno a muchos)
+        public ICollection<Inscription> Inscriptions { get; set; }
+
         public Student(int idStudent, string name, string surname, string mail, int dni, int age, int idUser, string genero)
         {
             IdStudent = idStudent;

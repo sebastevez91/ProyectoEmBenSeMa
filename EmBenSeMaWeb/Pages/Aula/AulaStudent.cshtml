@@ -28,5 +28,15 @@
                 </tbody>
             </table>
         </div>
+        <div>
+            <h2>Tus cursadas</h2>
+            @foreach(var ins in Model.Inscriptions)
+            {
+                <div>
+                    <a asp-page="/Cursadas/IndexCursada" asp-route-id="@ins.Cursada.IdCourse"> Iscribirse a una cursada </a>
+                </div>
+            }
+            
+        </div>
     </div>
 </body>

@@ -1,0 +1,65 @@
+﻿@page
+@model SchoolMusic.Web.Pages.Inscrptions.NewInscriptionModel
+
+@{
+    ViewData["Title"] = "Nueva inscripción";
+}
+
+<h1>Nueva inscripción a cursada de @Model.Cursada.Course.Instrument</h1>
+
+<h4>Información de la inscripción</h4>
+<hr />
+<div class="row">
+    <div class="info-container">
+        <div>
+            <span class="info-title">Fecha de inicio de cursada:</span> @Model.Cursada.Initiation.ToString("yyyy/MM/dd")
+        </div>
+        <div>
+            <span class="info-title">Fecha de finalización:</span> @Model.Cursada.Finish.ToString("yyyy/MM/dd")
+        </div>
+        <div>
+            <span class="info-title">Hora de cursada:</span> @Model.Cursada.StarTime.ToString("HH:mm") a @Model.Cursada.EndTime.ToString("HH:mm")
+        </div>
+        <div>
+            <span class="info-title">Profesor:</span> @Model.Cursada.Teacher.NameTeacher @Model.Cursada.Teacher.Surname
+        </div>
+        <div>
+            <span class="info-title">Precio de la cuota:</span> $ @Model.Cursada.PayFee
+        </div>
+        <div>
+            <span class="info-title">Contenido de la cursada:</span> @Model.Cursada.Description
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Inscription.idStudent" class="control-label"></label>
+                <input asp-for="Inscription.idStudent" class="form-control" />
+                <span asp-validation-for="Inscription.idStudent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inscription.idCursada" class="control-label"></label>
+                <input asp-for="Inscription.idCursada" class="form-control" />
+                <span asp-validation-for="Inscription.idCursada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inscription.dateInscription" class="control-label"></label>
+                <input asp-for="Inscription.dateInscription" class="form-control" />
+                <span asp-validation-for="Inscription.dateInscription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -14,6 +14,7 @@ namespace SchoolMusic.Web.Pages.Aula
             _context = context;
         }
         public Student Student { get; set; } = default!;
+        public IList<Inscription> Inscriptions { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,12 +31,13 @@ namespace SchoolMusic.Web.Pages.Aula
             else
             {
                 Student = student;
+                Inscriptions = await _context.Inscription
+                    .Include(c => c.Cursada)
+                    .Where(s => s.idStudent == Student.IdStudent)
+                    .ToListAsync();
             }
             return Page();
 
-        }
-        public void OnGet()
-        {
         }
 
     }

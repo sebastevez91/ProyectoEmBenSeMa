@@ -41,6 +41,8 @@ namespace SchoolMusic.Entidades
         // FK
         public Course? Course { get; set; }
         public Teacher? Teacher { get; set; }
+        // Relación con Inscription (uno a muchos)
+        public ICollection<Inscription>? Inscriptions { get; set; }
         public Cursada()
         {
         }

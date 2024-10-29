@@ -71,12 +71,16 @@
                         <dd class="col-12">
                             $ @cursada.PayFee
                         </dd>
-                        <a asp-page="./Edit" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Modificar</a>
+                        <div>
+                            <a asp-page="./Edit" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Modificar</a>
+                            <a asp-page="./Delete" asp-route-id="@cursada?.IdCursada" class="btn btn-danger">Eliminar</a>
+                        </div>
                     </dl>
                 </div>
             }
         </div>
     </div>
+    <a asp-page="./Create" asp-route-idCourse="@Model.Course?.IdCourse" asp-route-idTeacher="@Model.idTeacher" class="btn btn-primary"> Crear nueva cursada </a>
     <a asp-page="/Aula/AulaTeacher" asp-route-id="@Model.idUserSesion" class="btn btn-primary btn-block"> Volver a atras </a>
 </body>
 

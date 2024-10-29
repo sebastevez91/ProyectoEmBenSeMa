@@ -15,11 +15,18 @@ namespace SchoolMusic.Web.Pages.Cursadas
 
         public IList<Cursada> Cursada { get; set; } = default!;
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(int? id)
         {
-            if (_context.Cursada != null)
+            if (id != null &&  _context.Cursada != null)
             {
-                Cursada = await _context.Cursada.Include(cou => cou.Course).ToListAsync();
+                Cursada = await _context.Cursada
+                    .Where(c => c.IdCourse == id)
+                    .Include(cou => cou.Course).ToListAsync();
+            }
+            else
+            {
+                Cursada = await _context.Cursada
+                    .Include(c => c.Course).ToListAsync();
             }
         }
     }
