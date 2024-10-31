@@ -11,7 +11,6 @@ namespace SchoolMusic.Entidades
         public string Username { get; set; }
         [Required(ErrorMessage = "La contraseña es obligatoria")]
         [StringLength(100, MinimumLength = 8, ErrorMessage = "La contraseña debe tener al menos 8 caracteres.")]
-        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$", ErrorMessage = "La contraseña debe contener al menos una letra minúscula, una letra mayúscula y un número.")]
         public string UserPassword { get; set; }
         public byte? ChangePassword { get; set; } = default!;
 

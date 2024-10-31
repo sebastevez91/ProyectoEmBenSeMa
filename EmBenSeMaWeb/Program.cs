@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<SchoolMusicWebContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SchoolMusicWebContext") ?? throw new InvalidOperationException("Connection string 'SchoolMusicWebContext' not found.")));
+builder.Services.AddScoped<ImageService>();
 
 var app = builder.Build();
 

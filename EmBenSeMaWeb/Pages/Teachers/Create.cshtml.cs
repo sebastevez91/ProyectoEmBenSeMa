@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CloudinaryDotNet.Actions;
+using CloudinaryDotNet;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SchoolMusic.Entidades;
 using SchoolMusic.Serv;
@@ -8,16 +10,19 @@ namespace SchoolMusic.Web.Pages.Teachers
     public class CreateModel : PageModel
     {
         private readonly SchoolMusic.Web.Data.SchoolMusicWebContext _context;
+        private readonly ImageService _imageService; // Inyectar ImageService
 
-        public CreateModel(SchoolMusic.Web.Data.SchoolMusicWebContext context)
+        public CreateModel(SchoolMusic.Web.Data.SchoolMusicWebContext context, ImageService imageService)
         {
             _context = context;
+            _imageService = imageService;
         }
 
         public IActionResult OnGet()
         {
             return Page();
         }
+
 
         [BindProperty]
         public Teacher Teacher { get; set; } = default!;
@@ -32,7 +37,7 @@ namespace SchoolMusic.Web.Pages.Teachers
         public string confirmacionRegistro = ""; 
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(IFormFile ProfileImage)
         {
             if (!ModelState.IsValid || _context.Teacher == null || Teacher == null)
             {
@@ -44,6 +49,13 @@ namespace SchoolMusic.Web.Pages.Teachers
             {
                 ModelState.AddModelError(string.Empty, "Las contraseñas ingresadas no son idénticas");
                 return Page();
+            }
+
+            // Si hay una imagen seleccionada, súbela a Cloudinary
+            if (ProfileImage != null)
+            {
+                var imageUrl = await _imageService.UploadImageAsync(ProfileImage);
+                Teacher.FotoTeacher = imageUrl; // Guardar la URL en el modelo Teacher
             }
 
             // Agregar el usuario y guardar los cambios
