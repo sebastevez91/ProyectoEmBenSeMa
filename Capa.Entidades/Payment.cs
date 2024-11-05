@@ -13,10 +13,9 @@ namespace SchoolMusic.Entidades
         public int IdPayment { get; set; }
         public int IdInscription { get; set; }
         public string PaymentStatus { get; set; }
-        public string Month { get; set;}
-        public int Year { get; set;}
-        public string Metodo { get; set; }
-        public string Fecha { get; set; }
+        public string DateTime { get; set;}
+        public string TypePay { get; set; }
+        public string Amount { get; set; }
 
         public Payment()
         {

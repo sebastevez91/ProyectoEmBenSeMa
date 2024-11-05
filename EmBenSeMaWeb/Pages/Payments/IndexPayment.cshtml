@@ -2,65 +2,58 @@
 @model SchoolMusic.Web.Pages.Payments.IndexPaymentModel
 
 @{
-    ViewData["Title"] = "IndexPayment";
+    ViewData["Title"] = "Billetera";
 }
 
-<h1>IndexPayment</h1>
+<h1> Pagos de cuotas </h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Payment[0].IdInscription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Payment[0].PaymentStatus)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Payment[0].Month)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Payment[0].Year)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Payment[0].Metodo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Payment[0].Fecha)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Payment) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdInscription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PaymentStatus)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Month)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Year)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Metodo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fecha)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.IdPayment">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.IdPayment">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.IdPayment">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<div class="container mt-5">
+    <h2 class="text-center"> Información de pagos </h2>
+    <hr />
+
+    <!-- Alumnos que han pagado -->
+    <h5>Alumnos al día</h5>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Alumno</th>
+                <th>Mes</th>
+                <th>Año</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var alumno in Model.PaymentData.AlumnosPagos.Where(a => a.EstadoPago == "Pagado"))
+            {
+                <tr>
+                    <td>@alumno.NombreAlumno</td>
+                    <td>@alumno.Mes</td>
+                    <td>@alumno.Año</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Alumnos que adeudan -->
+    <h5>Alumnos que adeudan</h5>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Alumno</th>
+                <th>Mes</th>
+                <th>Año</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var alumno in Model.PaymentData.AlumnosPagos.Where(a => a.EstadoPago == "Adeuda"))
+            {
+                <tr>
+                    <td>@alumno.NombreAlumno</td>
+                    <td>@alumno.Mes</td>
+                    <td>@alumno.Año</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
