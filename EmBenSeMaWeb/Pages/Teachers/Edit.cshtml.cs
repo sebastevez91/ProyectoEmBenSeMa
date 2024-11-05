@@ -8,14 +8,17 @@ namespace SchoolMusic.Web.Pages.Teachers
     public class EditModel : PageModel
     {
         private readonly SchoolMusic.Web.Data.SchoolMusicWebContext _context;
+        private readonly ImageService _imageService;
 
-        public EditModel(SchoolMusic.Web.Data.SchoolMusicWebContext context)
+        public EditModel(SchoolMusic.Web.Data.SchoolMusicWebContext context, ImageService imageService)
         {
             _context = context;
+            _imageService = imageService;
         }
 
         [BindProperty]
         public Teacher Teacher { get; set; } = default!;
+        public string newPerfile { get; set; }
         public string AlertMessage { get; set; }
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -35,14 +38,31 @@ namespace SchoolMusic.Web.Pages.Teachers
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(IFormFile ProfileImage)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            _context.Attach(Teacher).State = EntityState.Modified;
+            // Obtener el registro actual de Teacher desde la base de datos
+            var teacherInDb = await _context.Teacher.FindAsync(Teacher.IdTeacher);
+
+            // Si hay una nueva imagen seleccionada, súbela a Cloudinary y actualiza la URL
+            if (ProfileImage != null)
+            {
+                var imageUrl = await _imageService.UploadImageAsync(ProfileImage);
+                Teacher.FotoTeacher = imageUrl;
+            }
+            else
+            {
+                // Si no hay nueva imagen, mantener la URL existente
+                Teacher.FotoTeacher = teacherInDb.FotoTeacher;
+            }
+
+            // Actualizar otros datos de Teacher
+            _context.Entry(teacherInDb).CurrentValues.SetValues(Teacher);
+            _context.Entry(teacherInDb).State = EntityState.Modified;
 
             try
             {
@@ -61,9 +81,9 @@ namespace SchoolMusic.Web.Pages.Teachers
             }
 
             AlertMessage = "Perfil actualizado";
-
             return RedirectToPage("/Aula/AulaTeacher", new { id = Teacher?.IdUser });
         }
+
 
         private bool TeacherExists(int id)
         {
