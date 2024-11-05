@@ -12,7 +12,7 @@ namespace SchoolMusic.Entidades
         public string? Description { get; set; }
         
         // FK
-        public Cursada Cursada { get; set; }
+        public List<Cursada>? Cursadas { get; set; }
 
         // Constructores
         public Course(int idCourse, string instrument)

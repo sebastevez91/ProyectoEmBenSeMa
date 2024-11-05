@@ -5,10 +5,6 @@
       "PackagePath": "staticwebassets\\SchoolMusic.Web.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\20231014_182752.jpg",
-      "PackagePath": "staticwebassets\\20231014_182752.jpg"
-    },
-    {
       "Id": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\Instrumentos-musicales-y-calidad-de-sonido.png",
       "PackagePath": "staticwebassets\\Instrumentos-musicales-y-calidad-de-sonido.png"
     },
@@ -23,6 +19,10 @@
     {
       "Id": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\img\\20231014_182752.jpg",
+      "PackagePath": "staticwebassets\\img\\20231014_182752.jpg"
     },
     {
       "Id": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\img\\Bajo.jpg",

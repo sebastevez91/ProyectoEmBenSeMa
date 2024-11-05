@@ -14,14 +14,29 @@ namespace SchoolMusic.Web.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Cursada>()
-                .HasOne(c => c.Course)
-                .WithOne(c => c.Cursada)
-                .HasForeignKey<Cursada>(c => c.IdCourse)
+                .HasOne(c => c.Course)            // Relación uno a muchos: una Cursada tiene un Course
+                .WithMany(c => c.Cursadas)        // Un Course tiene muchas Cursadas
+                .HasForeignKey(c => c.IdCourse)   // La FK en Cursada es IdCourse
                 .IsRequired();
+
             modelBuilder.Entity<Cursada>()
                 .HasOne(t => t.Teacher)
                 .WithMany(t => t.Cursada)  // Un Teacher tiene muchas Cursadas
                 .HasForeignKey(t => t.IdTeacher)
+                .IsRequired();
+
+            // Relación uno a muchos entre Student e Inscription
+            modelBuilder.Entity<Inscription>()
+                .HasOne(i => i.Student)
+                .WithMany(s => s.Inscriptions)
+                .HasForeignKey(i => i.idStudent)
+                .IsRequired();
+
+            // Relación uno a muchos entre Cursada e Inscription
+            modelBuilder.Entity<Inscription>()
+                .HasOne(i => i.Cursada)
+                .WithMany(c => c.Inscriptions)
+                .HasForeignKey(i => i.idCursada)
                 .IsRequired();
         }
 
@@ -34,5 +49,9 @@ namespace SchoolMusic.Web.Data
         public DbSet<SchoolMusic.Entidades.Teacher> Teacher { get; set; } = default!;
 
         public DbSet<SchoolMusic.Entidades.Student> Student { get; set; } = default!;
+
+        public DbSet<SchoolMusic.Entidades.Inscription> Inscription { get; set; } = default!;
+
+        public DbSet<SchoolMusic.Entidades.Tablon> Tablon { get; set; } = default!;
     }
 }

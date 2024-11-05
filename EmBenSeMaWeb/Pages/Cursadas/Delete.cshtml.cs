@@ -57,7 +57,7 @@ namespace SchoolMusic.Web.Pages.Cursadas
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Details", new { id = Cursada?.IdTeacher });
         }
     }
 }

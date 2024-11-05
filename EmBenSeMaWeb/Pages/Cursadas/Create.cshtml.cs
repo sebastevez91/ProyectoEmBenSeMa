@@ -29,7 +29,9 @@ namespace SchoolMusic.Web.Pages.Cursadas
         }
 
         [BindProperty]
-        public Cursada Cursada { get; set; } = new Cursada();
+        public Cursada? Cursada { get; set; } = new Cursada();
+        [BindProperty]
+        public Tablon Tablon { get; set; } = new Tablon();
 
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
@@ -44,8 +46,11 @@ namespace SchoolMusic.Web.Pages.Cursadas
 
             _context.Cursada.Add(Cursada);
             await _context.SaveChangesAsync();
+            Tablon.idCursada = Cursada.IdCursada;
+            _context.Tablon.Add(Tablon);
+            await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Details");
+            return RedirectToPage("./Details" ,new { id = Cursada?.IdTeacher });
         }
     }
 }

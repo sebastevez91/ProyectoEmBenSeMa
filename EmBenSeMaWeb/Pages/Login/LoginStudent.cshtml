@@ -3,46 +3,53 @@
 @{
     ViewData["Title"] = "Login Alumnos";
 }
+<body onload="ocultarButto()">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="text-center mb-4">
+                    <h1>Aula virtual de alumnos</h1>
+                </div>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="text-center mb-4">
-                <h1>Aula virtual de alumnos</h1>
+                <form method="post">
+                    <!-- Mostrar errores del modelo -->
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <!-- Campo de Nombre de usuario -->
+                    <div class="form-group">
+                        <label asp-for="Users.Username" class="control-label"></label>
+                        <input asp-for="Users.Username" class="form-control" placeholder="Nombre de usuario" />
+                        <span asp-validation-for="Users.Username" class="text-danger"></span>
+                    </div>
+
+                    <!-- Campo de Contraseña -->
+                    <div class="form-group">
+                        <label asp-for="Users.UserPassword" class="control-label"></label>
+                        <input asp-for="Users.UserPassword" type="password" class="form-control" id="passwordField" placeholder="Contraseña" />
+                        <span asp-validation-for="Users.UserPassword" class="text-danger"></span>
+                    </div>
+
+                    <!-- Checkbox para mostrar la contraseña -->
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="showPasswordCheckbox" onclick="togglePassword()">
+                        <label class="form-check-label" for="showPasswordCheckbox">Mostrar contraseña</label>
+                    </div>
+
+                    <!-- Botón de inicio de sesión -->
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+                    </div>
+
+                    <!-- Link de registrarse -->
+                    <div>
+                        <label class="control-label label-black"> Si aún no tienes usuario puedes </label>
+                        <a asp-page="/Students/Create" class="link-primary linkRes">Registrarte</a>
+                    </div>
+                </form>
             </div>
-
-            <form method="post" >
-                <!-- Mostrar errores del modelo -->
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                <!-- Campo de Nombre de usuario -->
-                <div class="form-group">
-                    <label asp-for="Users.Username" class="control-label"></label>
-                    <input asp-for="Users.Username" class="form-control" placeholder="Nombre de usuario" />
-                    <span asp-validation-for="Users.Username" class="text-danger"></span>
-                </div>
-
-                <!-- Campo de Contraseña -->
-                <div class="form-group">
-                    <label asp-for="Users.UserPassword" class="control-label"></label>
-                    <input asp-for="Users.UserPassword" type="password" class="form-control" placeholder="Contraseña" />
-                    <span asp-validation-for="Users.UserPassword" class="text-danger"></span>
-                </div>
-
-                <!-- Botón de inicio de sesión -->
-                <div class="form-group text-center">
-                    <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
-                </div>
-
-                <!-- Link de registrarse -->
-                <div>
-                    <label class="control-label label-black"> Si aún no tienes usuario puedes </label>
-                    <a asp-page="/Students/Create" class="link-primary linkRes">Registrarte</a>
-                </div>
-            </form>
         </div>
     </div>
-</div>
-<div>
-    <a asp-page="/Aula/AulaVirtual" class="btn btn-primary btn-block">Volver a atras</a>
-</div>
+    <div>
+        <a asp-page="/Aula/AulaVirtual" class="btn btn-primary btn-block">Volver a atras</a>
+    </div>
+</body>

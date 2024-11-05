@@ -102,24 +102,45 @@ a {
 
 /*Parte contacto*/
 
-.caja-contacto .fila {
-    display: flex;
+.caja-contacto {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.caja-contacto .col {
-    width: 50%;
-    padding: 10px;
-    position: relative;
+.fila {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
+
+.caja-contatos .col {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.izquierda {
+    flex: 2; 
+}
+
+.derecha {
+    flex: 1;
+}
+
+.redes a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #000;
+}
+
 .caja-contacto .col input, .contacto .col, textarea {
-        display: block;
         width: 100%;
-        padding: 18px;
+        padding: 12px;
         border: none;
-        margin-bottom: 20px;
         background-color: #333333;
         color: #f1f1f1;
-        font-size: 18px;
     }
 
 .caja-contacto button {
@@ -149,6 +170,17 @@ a {
 
 .caja-contacto button:hover .overlay {
     width: 100%;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .fila {
+        flex-direction: column;
+    }
+
+    .izquierda, .derecha {
+        flex: 1;
+    }
 }
 
 /*Registro*/
@@ -205,7 +237,6 @@ a {
     padding: 20px;
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra */
-    max-width: 400px;
     margin: 30px auto; /* Centrar el div */
     animation: fadeIn 1.5s ease-in-out; /* Animación */
 }
@@ -226,6 +257,10 @@ a {
     }
 }
 
+.card {
+    padding: 3.5%;
+}
+
 /* Aula Teacher */
 
 .infoTeacher {
@@ -233,6 +268,7 @@ a {
     width: max-content;
     justify-content: space-evenly;
     flex-direction: row-reverse;
+    padding: 05%;
 }
 
 .fotoTeacher {
@@ -277,6 +313,25 @@ a {
             background-color: #d1e7fd;
             cursor: pointer;
         }
+
+/* Información de Incripción */
+.info-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+    .info-container div {
+        margin-bottom: 10px;
+    }
+
+.info-title {
+    font-weight: bold;
+    color: #333;
+}
 
 /* Animación de fade-in */
 @keyframes fadeIn {

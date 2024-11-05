@@ -20,6 +20,9 @@ namespace SchoolMusic.Web.Pages.Cursadas
         }
 
         public IList<Cursada> Cursadas { get; set; } = default!;
+        public Course? Course { get; set; }
+        public int? idTeacher { get; set; }
+        public int? idUserSesion { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -33,6 +36,12 @@ namespace SchoolMusic.Web.Pages.Cursadas
                 .Include(c => c.Course)
                 .Where(c => c.IdTeacher == id)
                 .ToListAsync();
+            // Almaceno el curso.
+            Course = Cursadas[1].Course;
+            // Almaceno id de Teacher
+            idTeacher = Cursadas[1].IdTeacher;
+            // Almaceno el ID del usuario en sesión 
+            idUserSesion = Cursadas[0].Teacher.IdUser;
 
             if (Cursadas == null || Cursadas.Count == 0)
             {

@@ -12,7 +12,7 @@
 <div class="container-fluid">
     <div class="row">
         <!-- Un solo formulario que contiene ambas columnas -->
-        <form method="post" class="w-100">
+        <form method="post" enctype="multipart/form-data"  class="w-100">
             <div class="row">
                 <!-- Primera columna (lado izquierdo) -->
                 <div class="col-md-6">
@@ -85,12 +85,19 @@
                         <textarea asp-for="Teacher.Description" cols="10" rows="6" placeholder="Detalle sus conocimientos" class="form-control"></textarea><br>
                         <span asp-validation-for="Teacher.Description" class="text-danger"></span>
                     </div>
+
+                    <!-- Para la foto de perfil -->
+                    <div class="form-group">
+                        <label asp-for="Teacher.FotoTeacher" class="control-label">Foto de perfil</label>
+                        <input asp-for="Teacher.FotoTeacher" type="file" id="ProfileImage" name="ProfileImage" class="form-control" />
+                        <span asp-validation-for="Teacher.FotoTeacher" class="text-danger"></span>
+                    </div>
                 </div>
             </div>
 
             <!-- Botón de envío centrado -->
             <div class="form-group text-center">
-                <input type="submit" value="Registrarse" class="btn btn-primary" />
+                <input type="submit" value="Registrarse" class="btn btn-primary" onclick="mensajeAlert(@Model.confirmacionRegistro)"/>
             </div>
         </form>
     </div>

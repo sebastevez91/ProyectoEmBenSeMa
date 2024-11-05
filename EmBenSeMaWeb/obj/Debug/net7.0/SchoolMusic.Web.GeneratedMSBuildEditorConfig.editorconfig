@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\EmBenSeMaWeb
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Aula/AulaStudent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXVsYVxBdWxhU3R1ZGVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Aula/AulaTeacher.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXVsYVxBdWxhVGVhY2hlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -62,6 +66,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Inscrptions/NewInscription.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5zY3JwdGlvbnNcTmV3SW5zY3JpcHRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/LaEscuela.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGFFc2N1ZWxhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -98,6 +106,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Tablons/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFibG9uc1xpbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Teachers/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhY2hlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -125,3 +137,7 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-yfrpaszh5f
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Shared/_LayoutSesion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXRTZXNpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-pln5030x3v

@@ -2,41 +2,45 @@
 @model SchoolMusic.Web.Pages.Aula.AulaTeacherModel
 @{
     ViewData["Title"] = "Aula del profesor";
+    Layout = "_LayoutSesion";
 }
-<div class="text-center infoTeacher">
-    <h1 style="padding: 5%;">Bienvenido profesor @Model.Teacher.NameTeacher @Model.Teacher.Surname</h1>
-    <img src="~/@Model.Teacher.FotoTeacher" alt="Alternate Text" class="fotoTeacher" />
-</div>
-
-<div>
-    <h4>Tus datos</h4>
-    <div>
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th>Nombre completo</th>
-                    <th>Correo</th>
-                    <th>DNI</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>@Model.Teacher.NameTeacher @Model.Teacher.Surname</td>
-                    <td>@Model.Teacher.Mail</td>
-                    <td>@Model.Teacher.Dni</td>
-                </tr>
-            </tbody>
-        </table>
+<body onload = "ocultarButton()" >
+    <div class="text-center infoTeacher">
+        <h1 style="padding: 5%;">Bienvenido profesor @Model.Teacher.NameTeacher @Model.Teacher.Surname</h1>
+        <img src="@Model.Teacher.FotoTeacher" alt="Alternate Text" class="fotoTeacher" />
     </div>
-    <a asp-page="/Teachers/Edit" asp-route-id="@Model.Teacher?.IdTeacher" class="btn btn-primary">Modificar datos</a>
-    <div>
-        <a asp-page="/Cursadas/Details" asp-route-id="@Model.Teacher.IdTeacher" class="btn btn-primary">Ver cursadas</a>
-        <a asp-page="./Edit" asp-route-id="" class="btn btn-primary">Ver cursadas</a>
-        <a asp-page="./Edit" asp-route-id="" class="btn btn-primary">Ver </a>
-    </div>
-</div>
 
-<div>
-    <a asp-page="/Index" class="btn btn-primary">Cerrar Sección</a>
-</div>
+    <div>
+        <h4>Tus datos</h4>
+        <div>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Nombre completo</th>
+                        <th>Correo</th>
+                        <th>DNI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Model.Teacher.NameTeacher @Model.Teacher.Surname</td>
+                        <td>@Model.Teacher.Mail</td>
+                        <td>@Model.Teacher.Dni</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div>
+            <a asp-page="/Teachers/Edit" asp-route-id="@Model.Teacher?.IdTeacher" class="btn btn-primary"> Modificar datos </a>
+            <a asp-page="/Cursadas/Details" asp-route-id="@Model.Teacher.IdTeacher" class="btn btn-primary"> Tus cursadas </a>
+            <a asp-page="/Cursadas/Details" asp-route-id="@Model.Teacher.IdTeacher" class="btn btn-primary"> Notificaciones </a>
+            <a asp-page="/Cursadas/Details" asp-route-id="@Model.Teacher.IdTeacher" class="btn btn-primary"> Billetera </a>
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="/Index" class="btn btn-primary"> Cerrar Sesión </a>
+    </div>
+</body>
 
