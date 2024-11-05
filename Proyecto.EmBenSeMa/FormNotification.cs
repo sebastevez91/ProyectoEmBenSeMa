@@ -50,14 +50,14 @@ namespace SchoolMusic.Proyecto
             listEnvio.Clear();
             foreach (Notification n in listSubject)
             {
-                if (n.tipo == "Recepción")
-                {
-                    listRecibidos.Add(n);
-                }
-                else
-                {
-                    listEnvio.Add(n);
-                }
+                //if (n.tipo == "Recepción")
+                //{
+                //    listRecibidos.Add(n);
+                //}
+                //else
+                //{
+                //    listEnvio.Add(n);
+                //}
             }
             listRecpcion.DataSource = null;
             listRecpcion.DataSource = listRecibidos;
@@ -104,21 +104,21 @@ namespace SchoolMusic.Proyecto
             btnEnviar.Visible = true;
             foreach (Notification n in listSubject)
             {
-                if (n.idNotification == int.Parse(selectedValue))
-                {
-                    etqSubject.Text = $"Asunto: {n.subject}";
-                    if (tipoUser == "Student")
-                    {
-                        teacher = notifService.GetTeacher(n.idTeacher);
-                        etqTo.Text = $"Para: {teacher.NameTeacher}";
-                    }
-                    else
-                    {
-                        student = notifService.GetStudent(n.idStudent);
-                        etqTo.Text = $"Para: {student.Name}";
-                    }
-                    txtAsunto.Text = n.subject;
-                }
+                //if (n.idNotification == int.Parse(selectedValue))
+                //{
+                //    etqSubject.Text = $"Asunto: {n.subject}";
+                //    if (tipoUser == "Student")
+                //    {
+                //        teacher = notifService.GetTeacher(n.idTeacher);
+                //        etqTo.Text = $"Para: {teacher.NameTeacher}";
+                //    }
+                //    else
+                //    {
+                //        student = notifService.GetStudent(n.idStudent);
+                //        etqTo.Text = $"Para: {student.Name}";
+                //    }
+                //    txtAsunto.Text = n.subject;
+                //}
             }
         }
         private void btnMostrar_Click(object sender, EventArgs e)
@@ -154,14 +154,14 @@ namespace SchoolMusic.Proyecto
                 if (listSubject != null && listSubject.Count > 0)
                 {
                     etqMensaje.Visible = true;
-                    foreach (Notification n in listSubject)
-                    {
-                        if (selectedValue == n.idNotification.ToString())
-                        {
-                            etqMensaje.Text = "Fecha del mensaje: " + n.dateNotification + "\n" +
-                                "Mensaje: " + n.body;
-                        }
-                    }
+                    //foreach (Notification n in listSubject)
+                    //{
+                    //    if (selectedValue == n.idNotification.ToString())
+                    //    {
+                    //        etqMensaje.Text = "Fecha del mensaje: " + n.dateNotification + "\n" +
+                    //            "Mensaje: " + n.body;
+                    //    }
+                    //}
                 }
             }
             else
@@ -214,30 +214,30 @@ namespace SchoolMusic.Proyecto
                         }
                         else
                         {
-                            foreach (Notification n in listSubject)
-                            {
-                                if (n.idNotification == int.Parse(selectedValue))
-                                {
-                                    foreach (Teacher t in listTeacher)
-                                    {
-                                        if (t.IdTeacher == n.idTeacher)
-                                        {
-                                            name = t.NameTeacher;
-                                            selectedValue = t.IdTeacher.ToString();
-                                        }
-                                    }
-                                }
-                            }
+                            //foreach (Notification n in listSubject)
+                            //{
+                            //    if (n.idNotification == int.Parse(selectedValue))
+                            //    {
+                            //        foreach (Teacher t in listTeacher)
+                            //        {
+                            //            if (t.IdTeacher == n.idTeacher)
+                            //            {
+                            //                name = t.NameTeacher;
+                            //                selectedValue = t.IdTeacher.ToString();
+                            //            }
+                            //        }
+                            //    }
+                            //}
                         }
 
-                        student = notifService.GetStudent(idFound);
-                        notification.idStudent = student.IdStudent;
-                        notification.idTeacher = int.Parse(selectedValue);
-                        notification.subject = txtAsunto.Text;
-                        notification.body = txtMensaje.Text + "\n" +
-                            $"Para: {name} \n" +
-                            $"Enviado por: {student.Name}";
-                        notifService.SendNotifiStudent(notification);
+                        //student = notifService.GetStudent(idFound);
+                        //notification.idStudent = student.IdStudent;
+                        //notification.idTeacher = int.Parse(selectedValue);
+                        //notification.subject = txtAsunto.Text;
+                        //notification.body = txtMensaje.Text + "\n" +
+                        //    $"Para: {name} \n" +
+                        //    $"Enviado por: {student.Name}";
+                        //notifService.SendNotifiStudent(notification);
                     }
                 }
                 else
@@ -249,38 +249,38 @@ namespace SchoolMusic.Proyecto
                             selectedValue = comboTo.SelectedValue.ToString();
                             foreach (Student s in listStudent)
                             {
-                                if (s.IdStudent == int.Parse(selectedValue))
-                                {
-                                    name = s.Name;
-                                }
+                                //if (s.IdStudent == int.Parse(selectedValue))
+                                //{
+                                //    name = s.Name;
+                                //}
                             }
                         }
                         else
                         {
                             foreach (Notification n in listSubject)
                             {
-                                if (n.idNotification == int.Parse(selectedValue))
-                                {
-                                    foreach (Student s in listStudent)
-                                    {
-                                        if (s.IdStudent == n.idStudent)
-                                        {
-                                            name = s.Name;
-                                        }
-                                    }
-                                    selectedValue = n.idStudent.ToString();
-                                }
+                                //if (n.idNotification == int.Parse(selectedValue))
+                                //{
+                                //    foreach (Student s in listStudent)
+                                //    {
+                                //        if (s.IdStudent == n.idStudent)
+                                //        {
+                                //            name = s.Name;
+                                //        }
+                                //    }
+                                //    selectedValue = n.idStudent.ToString();
+                                //}
                             }
                         }
 
-                        teacher = notifService.GetTeacher(idFound);
-                        notification.idStudent = int.Parse(selectedValue);
-                        notification.idTeacher = teacher.IdTeacher;
-                        notification.subject = txtAsunto.Text;
-                        notification.body = txtMensaje.Text + "\n" +
-                            $"Para: {name}\n" +
-                            $"Enviado por: {teacher.NameTeacher}";
-                        notifService.SendNotifiTeacher(notification);
+                        //teacher = notifService.GetTeacher(idFound);
+                        //notification.idStudent = int.Parse(selectedValue);
+                        //notification.idTeacher = teacher.IdTeacher;
+                        //notification.subject = txtAsunto.Text;
+                        //notification.body = txtMensaje.Text + "\n" +
+                        //    $"Para: {name}\n" +
+                        //    $"Enviado por: {teacher.NameTeacher}";
+                        //notifService.SendNotifiTeacher(notification);
                     }
                 }
             }

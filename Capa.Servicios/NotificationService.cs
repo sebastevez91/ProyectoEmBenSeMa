@@ -28,16 +28,16 @@ namespace SchoolMusic.Serv
             {
                 foreach (DataRow n in dateNotif.Rows)
                 {
-                    listNotif.Add(new Notification
-                    {
-                        idNotification = int.Parse(n["IdNotifiStudent"].ToString()),
-                        idStudent = int.Parse(n["IdStudent"].ToString()),
-                        tipo = n["Tipo"].ToString(),
-                        subject = n["Subject"].ToString(),
-                        body = n["Body"].ToString(),
-                        dateNotification = Convert.ToDateTime(n["DateNotification"].ToString()),
-                        idTeacher = int.Parse(n["IdTeacher"].ToString())
-                    });
+                    //listNotif.Add(new Notification
+                    //{
+                    //    idNotification = int.Parse(n["IdNotifiStudent"].ToString()),
+                    //    idStudent = int.Parse(n["IdStudent"].ToString()),
+                    //    tipo = n["Tipo"].ToString(),
+                    //    subject = n["Subject"].ToString(),
+                    //    body = n["Body"].ToString(),
+                    //    dateNotification = Convert.ToDateTime(n["DateNotification"].ToString()),
+                    //    idTeacher = int.Parse(n["IdTeacher"].ToString())
+                    //});
                 }
             }
             return listNotif;
@@ -56,16 +56,16 @@ namespace SchoolMusic.Serv
             {
                 foreach (DataRow n in dateNotif.Rows)
                 {
-                    listNotif.Add(new Notification()
-                    {
-                        idNotification = int.Parse(n["IdNotifiTeacher"].ToString()),
-                        idTeacher = int.Parse(n["IdTeacher"].ToString()),
-                        tipo = n["Tipo"].ToString(),
-                        subject = n["Subject"].ToString(),
-                        body = n["Body"].ToString(),
-                        dateNotification = Convert.ToDateTime(n["DateNotification"].ToString()),
-                        idStudent = int.Parse(n["IdStudent"].ToString())
-                    });
+                    //listNotif.Add(new Notification()
+                    //{
+                    //    idNotification = int.Parse(n["IdNotifiTeacher"].ToString()),
+                    //    idTeacher = int.Parse(n["IdTeacher"].ToString()),
+                    //    tipo = n["Tipo"].ToString(),
+                    //    subject = n["Subject"].ToString(),
+                    //    body = n["Body"].ToString(),
+                    //    dateNotification = Convert.ToDateTime(n["DateNotification"].ToString()),
+                    //    idStudent = int.Parse(n["IdStudent"].ToString())
+                    //});
                 }
             }
             return listNotif;
@@ -117,12 +117,12 @@ namespace SchoolMusic.Serv
         {
             int result = 0;
             // Agrego parametros
-            prm.Clear();
-            prm.Add("@idStudent", notification.idStudent.ToString());
-            prm.Add("@idTeacher", notification.idTeacher.ToString());
-            prm.Add("@tipo", "Envio");
-            prm.Add("@subject", notification.subject);
-            prm.Add("@body", notification.body);
+            //prm.Clear();
+            //prm.Add("@idStudent", notification.idStudent.ToString());
+            //prm.Add("@idTeacher", notification.idTeacher.ToString());
+            //prm.Add("@tipo", "Envio");
+            //prm.Add("@subject", notification.subject);
+            //prm.Add("@body", notification.body);
 
 
             // Query
@@ -143,12 +143,12 @@ namespace SchoolMusic.Serv
         {
             int result = 0;
             // Agrego parametros
-            prm.Clear();
-            prm.Add("@idStudent", notification.idStudent.ToString());
-            prm.Add("@idTeacher", notification.idTeacher.ToString());
-            prm.Add("@tipo", "Recepción");
-            prm.Add("@subject", notification.subject);
-            prm.Add("@body", notification.body);
+            //prm.Clear();
+            //prm.Add("@idStudent", notification.idStudent.ToString());
+            //prm.Add("@idTeacher", notification.idTeacher.ToString());
+            //prm.Add("@tipo", "Recepción");
+            //prm.Add("@subject", notification.subject);
+            //prm.Add("@body", notification.body);
 
 
             // Query
@@ -160,12 +160,12 @@ namespace SchoolMusic.Serv
         {
             int result = 0;
             // Agrego parametros
-            prm.Clear();
-            prm.Add("@idTeacher", notification.idTeacher.ToString());
-            prm.Add("@idStudent", notification.idStudent.ToString());
-            prm.Add("@tipo", "Envio");
-            prm.Add("@subject", notification.subject);
-            prm.Add("@body", notification.body);
+            //prm.Clear();
+            //prm.Add("@idTeacher", notification.idTeacher.ToString());
+            //prm.Add("@idStudent", notification.idStudent.ToString());
+            //prm.Add("@tipo", "Envio");
+            //prm.Add("@subject", notification.subject);
+            //prm.Add("@body", notification.body);
 
             // Query
             string sqlQueryNotif = "INSERT INTO NotifiTeacher (IdTeacher, Tipo, Subject, Body, IdStudent)" +
@@ -185,12 +185,12 @@ namespace SchoolMusic.Serv
         {
             int result = 0;
             // Agrego parametros
-            prm.Clear();
-            prm.Add("@idTeacher", notification.idTeacher.ToString());
-            prm.Add("@idStudent", notification.idStudent.ToString());
-            prm.Add("@tipo", "Recepción");
-            prm.Add("@subject", notification.subject);
-            prm.Add("@body", notification.body);
+            //prm.Clear();
+            //prm.Add("@idTeacher", notification.idTeacher.ToString());
+            //prm.Add("@idStudent", notification.idStudent.ToString());
+            //prm.Add("@tipo", "Recepción");
+            //prm.Add("@subject", notification.subject);
+            //prm.Add("@body", notification.body);
 
 
             // Query

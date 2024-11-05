@@ -1,0 +1,66 @@
+﻿@page
+@model SchoolMusic.Web.Pages.Payments.IndexPaymentModel
+
+@{
+    ViewData["Title"] = "IndexPayment";
+}
+
+<h1>IndexPayment</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].IdInscription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].PaymentStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].Month)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].Metodo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Payment[0].Fecha)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Payment) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdInscription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Month)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Metodo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IdPayment">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdPayment">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdPayment">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

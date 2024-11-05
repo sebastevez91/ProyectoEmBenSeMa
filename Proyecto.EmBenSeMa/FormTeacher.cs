@@ -55,7 +55,7 @@ namespace SchoolMusic.Proyecto
                 course = teacherService.GetCourse(cur.IdCourse);
                 foreach (Student student in listStudent)
                 {
-                    item = lvCursada.Items.Add(student.Name.ToString());
+                    //item = lvCursada.Items.Add(student.Name.ToString());
                     item.SubItems.Add(student.Surname);
                     item.SubItems.Add(course.Instrument);
                     item.SubItems.Add(cur.StarTime.ToString("HH:mm") + " a " + cur.EndTime.ToString("HH:mm"));
