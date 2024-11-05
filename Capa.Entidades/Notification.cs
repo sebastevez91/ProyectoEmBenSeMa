@@ -1,7 +1,10 @@
-﻿namespace SchoolMusic.Entidades
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SchoolMusic.Entidades
 {
     public class Notification
     {
+        [Key]
         public int idNotification { get; set; }
         public int idStudent { get; set; }
         public int idTeacher { get; set; }
