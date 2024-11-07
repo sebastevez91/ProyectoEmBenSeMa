@@ -36,12 +36,13 @@ namespace Proyecto.EmBenSeMa
             tipoCurso = curso;
             courses = courseService.GetListCourse();
             comboCursada.DataSource = null;
-            etqTitle.Text = $"Curso de {tipoCurso}";
+            gBoxDescription.Name = $"Curso de {tipoCurso}";
 
             foreach (Course c in courses)
             {
                 if (c.Instrument == curso)
                 {
+                    etqDescription.Text = c.Description;
                     listCursadas = courseService.GetListCursadas(c.IdCourse);
                     if (listCursadas.Count > 0)
                     {
@@ -60,33 +61,27 @@ namespace Proyecto.EmBenSeMa
             comboCursada.SelectedIndex = -1;
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Mensaje("Piano");
 
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             Mensaje("Guitarra");
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
             Mensaje("Bateria");
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Mensaje("Saxo");
         }
-
         private void button4_Click(object sender, EventArgs e)
         {
             Mensaje("Bajo");
         }
-
         private void button6_Click(object sender, EventArgs e)
         {
             Mensaje("Canto");
@@ -145,7 +140,7 @@ namespace Proyecto.EmBenSeMa
                         if (courseService.AddInscription(student.IdStudent, cursada.IdCursada))
                         {
                             idInscription = courseService.GetIdInscription(student.IdStudent, cursada.IdCursada);
-                            if (courseService.AddPayment(idInscription, cursada))
+                            if (courseService.AddPayment(idInscription, cursada.PayFee))
                             {
                                 MessageBox.Show("Inscripción exitosa!!");
                                 this.Close();

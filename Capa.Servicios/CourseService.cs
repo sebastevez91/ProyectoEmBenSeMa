@@ -25,7 +25,8 @@ namespace SchoolMusic.Serv
                     courses.Add(new()
                     {
                         IdCourse = int.Parse(course["IdCourse"].ToString()),
-                        Instrument = course["Instrument"].ToString()
+                        Instrument = course["Instrument"].ToString(),
+                        Description = course["Description"].ToString()
                     });
                 }
             }
@@ -103,7 +104,7 @@ namespace SchoolMusic.Serv
             catch (Exception e)
             {
 
-                //MessageBox.Show("Error: " + e.Message);
+                result = 0;
             }
             return result;
         }
@@ -147,60 +148,20 @@ namespace SchoolMusic.Serv
 
             return result > 0 ? true : false;
         }
-        public bool AddPayment(int idInscription, Cursada cursada)
+        public bool AddPayment(int idInscription, float amount)
         {
-            List<string> listMonth = new List<string>();
-            List<int> listYear = new List<int>();
-            listMonth = GetMonthPayment(cursada);
-            listYear = GetYearPayment(cursada);
-
             int result = 0;
-            int contadorYear = 0;
             // Limpio el diccionario
             prm.Clear();
+            prm.Add("@idInscription", idInscription.ToString());
+            prm.Add("@amount", amount.ToString());
 
-            foreach (string month in listMonth)
-            {
-                // Agrego parametros
-                prm.Add("@idInscription", idInscription.ToString());
-                prm.Add("@month", month);
-                prm.Add("@year", listYear[contadorYear].ToString());
-                // Query
-                string sqlQueryPay = "INSERT INTO Payment (IdInscription,PaymentStatus,Month,Year)" +
-                    "VALUES (@idInscription,'Pendiente',@month,@year)";
-                result = accion.AccionEjecutar(sqlQueryPay, prm);
-                prm.Clear();
-                contadorYear++;
-            }
+            // Query
+            string sqlQueryPay = "INSERT INTO Payment (IdInscription,PaymentStatus,Amount)" +
+                "VALUES (@idInscription,'Pendiente',@amount)";
+            result = accion.AccionEjecutar(sqlQueryPay, prm);
+
             return result > 0 ? true : false;
-        }
-        private List<string> GetMonthPayment(Cursada cursada)
-        {
-            List<string> month = new List<string>();
-
-            DateTime fechaInicio = cursada.Initiation; // Fecha de inicio
-            DateTime fechaFin = cursada.Finish; // Fecha de fin
-
-            while (fechaInicio <= fechaFin)
-            {
-                month.Add(fechaInicio.ToString("MMMM")); // Agrega el nombre del mes a la lista
-                fechaInicio = fechaInicio.AddMonths(1); // Incrementa la fecha en un mes
-            }
-            return month;
-        }
-        private List<int> GetYearPayment(Cursada cursada)
-        {
-            List<int> year = new List<int>();
-
-            DateTime fechaInicio = cursada.Initiation; // Fecha de inicio
-            DateTime fechaFin = cursada.Finish; // Fecha de fin
-
-            while (fechaInicio <= fechaFin)
-            {
-                year.Add(fechaInicio.Year); // Agrega el año a la lista
-                fechaInicio = fechaInicio.AddMonths(1); // Incrementa la fecha en un mes
-            }
-            return year;
         }
     }
 }
