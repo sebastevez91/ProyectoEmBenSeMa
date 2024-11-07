@@ -23,12 +23,10 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var alumno in Model.PaymentData.AlumnosPagos.Where(a => a.EstadoPago == "Pagado"))
+            @foreach (var alumno in Model.Payment)
             {
                 <tr>
-                    <td>@alumno.NombreAlumno</td>
-                    <td>@alumno.Mes</td>
-                    <td>@alumno.Año</td>
+                    
                 </tr>
             }
         </tbody>
@@ -45,12 +43,10 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var alumno in Model.PaymentData.AlumnosPagos.Where(a => a.EstadoPago == "Adeuda"))
+            @foreach (var alumno in Model.Payment)
             {
                 <tr>
-                    <td>@alumno.NombreAlumno</td>
-                    <td>@alumno.Mes</td>
-                    <td>@alumno.Año</td>
+                    
                 </tr>
             }
         </tbody>

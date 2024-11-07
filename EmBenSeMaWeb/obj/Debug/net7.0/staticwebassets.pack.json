@@ -49,6 +49,10 @@
       "PackagePath": "staticwebassets\\img\\regisTeacher.jpg"
     },
     {
+      "Id": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\img\\userSesion.png",
+      "PackagePath": "staticwebassets\\img\\userSesion.png"
+    },
+    {
       "Id": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

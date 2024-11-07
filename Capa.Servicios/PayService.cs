@@ -34,10 +34,10 @@ namespace SchoolMusic.Serv
                         IdPayment = int.Parse(p["IdPayment"].ToString()),
                         IdInscription = int.Parse(p["IdInscription"].ToString()),
                         PaymentStatus = p["PaymentStatus"].ToString(),
-                        Month = p["Month"].ToString(),
-                        Year = int.Parse(p["Year"].ToString()),
-                        Metodo = p["TypePay"].ToString(),
-                        Fecha = p["Fecha"].ToString()
+                        //Month = p["Month"].ToString(),
+                        //Year = int.Parse(p["Year"].ToString()),
+                        //Metodo = p["TypePay"].ToString(),
+                        //Fecha = p["Fecha"].ToString()
                     });
                 }
             }

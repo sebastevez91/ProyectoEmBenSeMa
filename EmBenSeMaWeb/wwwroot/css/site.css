@@ -263,19 +263,38 @@ a {
 
 /* Aula Teacher */
 
+.containerTeacher {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
 .infoTeacher {
     display: flex;
     width: max-content;
     justify-content: space-evenly;
     flex-direction: row-reverse;
     padding: 05%;
+    text-align: left;
+    flex: 1;
+}
+.infoTeacher h1 {
+     font-size: 24px;
+     margin: 0;
 }
 
 .fotoTeacher {
-    width: 250px;
-    height: 210px;
-    border-radius: 34%;
-    margin-right: 20px;
+    max-width: 100px;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.details, .upcoming-classes {
+    margin-top: 38px;
+    flex: 1;
+    padding: 40px;
+    color: white;
 }
 
 /* Estilo de la tabla */
@@ -313,6 +332,28 @@ a {
             background-color: #d1e7fd;
             cursor: pointer;
         }
+.upcoming-classes ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.upcoming-classes li {
+    margin-bottom: 10px;
+}
+
+.top-right-button {
+    position: absolute;
+    top: 90px;
+    right: 50px;
+}
+
+.footer-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
 
 /* Información de Incripción */
 .info-container {
@@ -345,3 +386,27 @@ a {
         transform: translateY(0);
     }
 }
+
+/*boton user sesión*/
+.user-button {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #007bff; /* color de fondo del botón */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    .user-button .user-image {
+        width: 30px; /* tamaño de la imagen */
+        height: 30px;
+        border-radius: 50%; /* hace la imagen circular */
+        margin-right: 10px; /* espacio entre la imagen y el nombre */
+    }
+
+    .user-button .user-name {
+        font-weight: bold;
+    }
