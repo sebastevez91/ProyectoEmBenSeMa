@@ -2,69 +2,64 @@
 @model SchoolMusic.Web.Pages.Students.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Alumnos de tu cursada";
+    Layout = "_LayoutSesion";
 }
 
-<h1>Index</h1>
+<h1>Alumnos de tu cursada</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
+<table class="table" style="color:white;">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Student[0].NameStudent)
+                Nombre del alumno
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Student[0].Surname)
+                Apellido
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Student[0].Mail)
+                Email
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Student[0].Dni)
+                Dni
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Student[0].Age)
+                Edad
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Student[0].IdUser)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Student[0].Genero)
+                Genero
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Student) {
+@foreach (var item in Model.Inscriptions) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.NameStudent)
+                @Html.DisplayFor(modelItem => item.Student.NameStudent)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Surname)
+                @Html.DisplayFor(modelItem => item.Student.Surname)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Mail)
+                @Html.DisplayFor(modelItem => item.Student.Mail)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Dni)
+                @Html.DisplayFor(modelItem => item.Student.Dni)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Age)
+                @Html.DisplayFor(modelItem => item.Student.Age)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdUser)
+                @Html.DisplayFor(modelItem => item.Student.Genero)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Genero)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.IdStudent">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.IdStudent">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.IdStudent">Delete</a>
+                <button>
+                        <img src="~/img/ver.png" alt="verPerfil" />
+                </button>
+                <button>
+                        <img src="~/img/mensaje.png" alt="mensaje" />
+                </button>
             </td>
         </tr>
 }

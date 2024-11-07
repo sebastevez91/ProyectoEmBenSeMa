@@ -2,8 +2,9 @@
 @model SchoolMusic.Web.Pages.Aula.AulaStudentModel
 @{
     ViewData["Title"] = "Aula del alumno";
+    Layout = "_LayoutSesion";
 }
-<body onload="ocultarButto()">
+<body onload="userSesion('@Model.Username')">
     <div class="text-center ">
         <h1 style="padding: 5%;">Bienvenido @Model.Student.NameStudent @Model.Student.Surname</h1>
     </div>
@@ -28,15 +29,31 @@
                 </tbody>
             </table>
         </div>
-        <div>
-            <h2>Tus cursadas</h2>
-            @foreach(var ins in Model.Inscriptions)
+    <div style="margin-top: 30px; color:white;">
+        <h2>Tus horarios de clase</h2>
+        <ul>
+            @if (Model.Inscriptions != null && Model.Inscriptions.Any(ins => ins.Cursada.Initiation > DateTime.Today))
             {
-                <div>
-                    <a asp-page="/Cursadas/IndexCursada" asp-route-id="@ins.Cursada.IdCourse"> Iscribirse a una cursada </a>
-                </div>
+                foreach (var ins in Model.Inscriptions)
+                {
+                    if (ins.Cursada.Initiation > DateTime.Today && ins.Cursada.Finish > DateTime.Today)
+                    {
+                        <li>
+                            <span>Cursada de @ins.Cursada.Course.Instrument: @ins.Cursada.StarTime.ToString("t") - @ins.Cursada.EndTime.ToString("t")</span>
+                            <div style="margin-top: 10px;">
+                                <a asp-page="/Teachers/IndexCursada" asp-route-id="@ins.Cursada.IdTeacher" class="btn btn-primary">
+                                    Tu profesor
+                                </a>
+                            </div>
+                        </li>
+                    }
+                }
             }
-            
-        </div>
+            else
+            {
+                <li>No tienes clases futuras programadas.</li>
+            }
+        </ul>
+    </div>
     </div>
 </body>

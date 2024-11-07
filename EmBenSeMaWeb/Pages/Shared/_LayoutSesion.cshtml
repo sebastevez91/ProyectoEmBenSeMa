@@ -14,10 +14,15 @@
                 <img src="~/img/Logo.png" class="iconoLogo" alt="IconoLogo" />
                 <label class="navbar-brand"> EmBenSeMaWeb  </label>
             </div>
-            <button class="user-button">
+            <button class="user-button" onclick="toggleMenu()">
                 <img src="~/img/userSesion.png" alt="Foto de perfil" class="user-image">
-                <span class="user-name">Nombre de Usuario</span>
+                <span class="user-name" id="user-name">Nombre de Usuario</span>
             </button>
+            <!-- Menú desplegable -->
+            <div id="user-menu" class="user-menu">
+                <a asp-page="/Index" class="btn btn-primary"> Ajustes </a>
+                <a asp-page="/Index" class="btn btn-primary"> Cerrar Sesión </a>
+            </div>
         </nav>
     </header>
     <div class="container">

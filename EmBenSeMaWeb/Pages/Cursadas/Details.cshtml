@@ -16,7 +16,7 @@
     }
     
     <div class="content">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="row row-cols-1 row-cols-sm-2 g-2">
             @if (Model.Cursadas != null && Model.Cursadas.Count > 0)
             {
                 foreach (var cursada in Model.Cursadas)
@@ -80,6 +80,7 @@
                             </dd>
                             <div>
                                 <a asp-page="/Tablons/index" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Tablón</a>
+                                <a asp-page="/Students/Index" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Alumnos</a>
                                 <a asp-page="./Edit" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Modificar</a>
                                 <a asp-page="./Delete" asp-route-id="@cursada?.IdCursada" class="btn btn-danger">Eliminar</a>
                             </div>

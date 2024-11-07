@@ -4,7 +4,7 @@
     ViewData["Title"] = "Aula del profesor";
     Layout = "_LayoutSesion";
 }
-<body >
+<body onload="userSesion('@Model.Username')">
 
     <div class="top-right-button">
         <a asp-page="/Notifications/IndexNotification" class="btn">Notificaciones</a>
@@ -55,11 +55,6 @@
                 <a asp-page="/Payments/IndexPayment" asp-route-id="@Model.Teacher.IdTeacher" class="btn">Billetera</a>
             </div>
         </div>
-    </div>
-
-
-    <div>
-        <a asp-page="/Index" class="btn btn-primary"> Cerrar Sesión </a>
     </div>
 </body>
 
