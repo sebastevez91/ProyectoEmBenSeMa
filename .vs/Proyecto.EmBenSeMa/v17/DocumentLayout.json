@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\proyecto.embensema\\formcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\proyecto.embensema\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\capa.servicios\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|solutionrelative:capa.servicios\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\proyecto.embensema\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\capa.servicios\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|solutionrelative:capa.servicios\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,26 +39,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FormCourse.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormCourse.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormCourse.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormCourse.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormCourse.cs [Dise\u00F1o]",
+              "Title": "FormLogin.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormLogin.cs",
+              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormLogin.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormLogin.cs",
+              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormLogin.cs",
+              "ViewState": "AQIAAHUAAAAAAAAAAAAuwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T19:15:47.527Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-11-07T19:42:40.291Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CourseService.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\CourseService.cs",
-              "RelativeDocumentMoniker": "Capa.Servicios\\CourseService.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\CourseService.cs",
-              "RelativeToolTip": "Capa.Servicios\\CourseService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFkAAAAtAAAA",
+              "Title": "FormLogin.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormLogin.cs",
+              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormLogin.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormLogin.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormLogin.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T18:45:25.456Z",
+              "WhenOpened": "2024-11-07T19:42:15.41Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginService.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\LoginService.cs",
+              "RelativeDocumentMoniker": "Capa.Servicios\\LoginService.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\LoginService.cs",
+              "RelativeToolTip": "Capa.Servicios\\LoginService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-07T19:37:26.161Z",
               "EditorCaption": ""
             }
           ]

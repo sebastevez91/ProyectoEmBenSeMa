@@ -15,7 +15,7 @@ namespace SchoolMusic.Serv
         MailService mailService = new MailService();
         Users userFound = null;
         Student student = null;
-        Teacher teacher;
+        Teacher teacher = null;
         public bool LoginValido(string username, string password)
         {
             int result = 0;
@@ -42,7 +42,7 @@ namespace SchoolMusic.Serv
             catch (Exception e)
             {
 
-                //MessageBox.Show("Error al iniciar sesión:", e.Message);
+                result = 0;
             }
 
             return result > 0 ? true : false;
