@@ -5,6 +5,7 @@
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{FB75BD0A-73FC-4635-B02B-A04812641966}|Capa.Entidades\\SchoolMusic.Entidades.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\capa.entidades\\notifiteacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB75BD0A-73FC-4635-B02B-A04812641966}|Capa.Entidades\\SchoolMusic.Entidades.csproj|solutionrelative:capa.entidades\\notifiteacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -30,16 +31,21 @@
       "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\proyecto.embensema\\formteacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formteacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
 >>>>>>> secondMain
+=======
+      "AbsoluteMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\capa.servicios\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|solutionrelative:capa.servicios\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> secondMain
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\proyecto.embensema\\formteacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formteacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\capa.servicios\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|solutionrelative:capa.servicios\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\capa.servicios\\teacherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|solutionrelative:capa.servicios\\teacherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\capa.servicios\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|solutionrelative:capa.servicios\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{FB75BD0A-73FC-4635-B02B-A04812641966}|Capa.Entidades\\SchoolMusic.Entidades.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\capa.entidades\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB75BD0A-73FC-4635-B02B-A04812641966}|Capa.Entidades\\SchoolMusic.Entidades.csproj|solutionrelative:capa.entidades\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -60,6 +66,10 @@
       "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\proyecto.embensema\\formtablon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formtablon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
 >>>>>>> secondMain
+=======
+      "AbsoluteMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\capa.servicios\\payservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|solutionrelative:capa.servicios\\payservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> secondMain
     }
   ],
   "DocumentGroupContainers": [
@@ -71,6 +81,7 @@
           "DockedWidth": 200,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           "SelectedChildIndex": 4,
 =======
           "SelectedChildIndex": 3,
@@ -78,7 +89,62 @@
 =======
           "SelectedChildIndex": 7,
 >>>>>>> secondMain
+=======
+          "SelectedChildIndex": 0,
+>>>>>>> secondMain
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CourseService.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\CourseService.cs",
+              "RelativeDocumentMoniker": "Capa.Servicios\\CourseService.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\CourseService.cs",
+              "RelativeToolTip": "Capa.Servicios\\CourseService.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAowI4AAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T23:04:31.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginService.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\LoginService.cs",
+              "RelativeDocumentMoniker": "Capa.Servicios\\LoginService.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\LoginService.cs",
+              "RelativeToolTip": "Capa.Servicios\\LoginService.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAqwFkAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T22:53:56.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\NotificationService.cs",
+              "RelativeDocumentMoniker": "Capa.Servicios\\NotificationService.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\NotificationService.cs",
+              "RelativeToolTip": "Capa.Servicios\\NotificationService.cs",
+              "ViewState": "AQIAAHQAAAAAAAAAAAAxwI0AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T22:46:35.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PayService.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\PayService.cs",
+              "RelativeDocumentMoniker": "Capa.Servicios\\PayService.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\PayService.cs",
+              "RelativeToolTip": "Capa.Servicios\\PayService.cs",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAwwF4AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T22:37:57.925Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
@@ -102,6 +168,7 @@
 =======
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+<<<<<<< HEAD
             },
             {
               "$type": "Document",
@@ -269,6 +336,8 @@
               "WhenOpened": "2024-11-08T20:33:24.365Z",
 >>>>>>> secondMain
               "EditorCaption": ""
+=======
+>>>>>>> secondMain
             }
           ]
         }

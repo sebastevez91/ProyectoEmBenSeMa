@@ -15,36 +15,50 @@ namespace SchoolMusic.Serv
 
         public Student GetStudent(int idUser)
         {
-            // Agrego parametros
+            // Agrego parámetros
             prm.Clear();
             prm.Add("@idUser", idUser.ToString());
+
             try
             {
                 // Query
                 string sqlQueryStudent = "SELECT * FROM Student WHERE IdUser = @idUser";
 
-                var table = select.SelectData(sqlQueryStudent, prm).Rows[0];
+                var resultTable = select.SelectData(sqlQueryStudent, prm);
 
-                student = new()
+                // Verifica si hay filas antes de acceder
+                if (resultTable.Rows.Count > 0)
                 {
-                    IdStudent = int.Parse(table["IdStudent"].ToString()),
-                    NameStudent = table["NameStudent"].ToString(),
-                    Surname = table["Surname"].ToString(),
-                    Mail = table["Mail"].ToString(),
-                    Dni = int.Parse(table["Dni"].ToString()),
-                    Age = int.Parse(table["Age"].ToString()),
-                    IdUser = int.Parse(table["IdUser"].ToString()),
-                    Genero = table["Genero"].ToString()
-                };
-            }
-            catch (NullReferenceException)
-            {
+                    var table = resultTable.Rows[0];
 
+                    student = new Student()
+                    {
+                        IdStudent = int.Parse(table["IdStudent"].ToString()),
+                        NameStudent = table["NameStudent"].ToString(),
+                        Surname = table["Surname"].ToString(),
+                        Mail = table["Mail"].ToString(),
+                        Dni = int.Parse(table["Dni"].ToString()),
+                        Age = int.Parse(table["Age"].ToString()),
+                        IdUser = int.Parse(table["IdUser"].ToString()),
+                        Genero = table["Genero"].ToString()
+                    };
+                }
+                else
+                {
+                    // No hay resultados, asigna null a student
+                    student = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log o manejo de excepciones si es necesario
+                Console.WriteLine("Error: " + ex.Message);
                 student = null;
             }
 
             return student;
         }
+
         public List<Cursada> GetListCursada(int idStudent)
         {
             List<Inscription> listInscription = new List<Inscription>();
@@ -82,16 +96,27 @@ namespace SchoolMusic.Serv
             prm.Clear();
             prm.Add("@idCourse", idCourse.ToString());
 
-            // Query
-            string sqlQueryCourse = "SELECT IdCourse, CONCAT('Curso de ', Instrument) AS NameCourse FROM Course WHERE IdCourse = @idCourse";
-            var dataCourse = select.SelectData(sqlQueryCourse, prm).Rows[0];
-
-            course = new Course()
+            try
             {
-                IdCourse = int.Parse(dataCourse["IdCourse"].ToString()),
-                Instrument = dataCourse["NameCourse"].ToString(),
-            };
+                // Query
+                string sqlQueryCourse = "SELECT IdCourse, CONCAT('Curso de ', Instrument) AS NameCourse FROM Course WHERE IdCourse = @idCourse";
+                var dataCourse = select.SelectData(sqlQueryCourse, prm);
+                // Verifica si hay filas antes de acceder
+                if (dataCourse.Rows.Count > 0)
+                {
+                    var table = dataCourse.Rows[0];
+                    course = new Course()
+                    {
+                        IdCourse = int.Parse(table["IdCourse"].ToString()),
+                        Instrument = table["NameCourse"].ToString(),
+                    };
+                }
+            }
+            catch (Exception e)
+            {
 
+                Console.WriteLine("Error: " + e.Message);
+            }
             return course;
         }
         private Cursada GetCursada(int idCursada)
@@ -101,22 +126,34 @@ namespace SchoolMusic.Serv
             prm.Clear();
             prm.Add("@idCursada", idCursada.ToString());
 
-            // Query
-            string sqlQueryCursada = "SELECT * FROM Cursada WHERE IdCursada = @idCursada";
-            var table = select.SelectData(sqlQueryCursada, prm).Rows[0];
-
-            cursada = new()
+            try
             {
-                IdCursada = int.Parse(table["IdCursada"].ToString()),
-                IdCourse = int.Parse(table["IdCourse"].ToString()),
-                Initiation = Convert.ToDateTime(table["Initiation"].ToString()),
-                Finish = Convert.ToDateTime(table["Finish"].ToString()),
-                IdTeacher = int.Parse(table["IdTeacher"].ToString()),
-                StarTime = Convert.ToDateTime(table["StartTime"].ToString()),
-                EndTime = Convert.ToDateTime(table["EndTime"].ToString()),
-                Vacantes = int.Parse(table["Vacantes"].ToString()),
-                Days = table["Days"].ToString()
-            };
+                // Query
+                string sqlQueryCursada = "SELECT * FROM Cursada WHERE IdCursada = @idCursada";
+                var dataCursada = select.SelectData(sqlQueryCursada, prm);
+                if (dataCursada.Rows.Count > 0)
+                {
+                    var table = dataCursada.Rows[0];
+                    cursada = new()
+                    {
+                        IdCursada = int.Parse(table["IdCursada"].ToString()),
+                        IdCourse = int.Parse(table["IdCourse"].ToString()),
+                        Initiation = Convert.ToDateTime(table["Initiation"].ToString()),
+                        Finish = Convert.ToDateTime(table["Finish"].ToString()),
+                        IdTeacher = int.Parse(table["IdTeacher"].ToString()),
+                        StarTime = Convert.ToDateTime(table["StartTime"].ToString()),
+                        EndTime = Convert.ToDateTime(table["EndTime"].ToString()),
+                        Vacantes = int.Parse(table["Vacantes"].ToString()),
+                        Days = table["Days"].ToString()
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error: " + ex.Message);
+                cursada = null;
+            }
             return cursada;
         }
         public Teacher GetTeacher(int idTeacher)
@@ -126,21 +163,34 @@ namespace SchoolMusic.Serv
             prm.Clear();
             prm.Add("@idTeacher", idTeacher.ToString());
 
-            // Query
-            string sqlQueryTeacher = "SELECT * FROM Teacher WHERE IdTeacher = @idTeacher";
-            var table = select.SelectData(sqlQueryTeacher, prm).Rows[0];
-
-            teacher = new()
+            try
             {
-                IdTeacher = int.Parse(table["IdTeacher"].ToString()),
-                NameTeacher = table["NameTeacher"].ToString(),
-                Surname = table["Surname"].ToString(),
-                Mail = table["Mail"].ToString(),
-                Dni = int.Parse(table["Dni"].ToString()),
-                Age = int.Parse(table["Age"].ToString()),
-                IdUser = int.Parse(table["IdUser"].ToString()),
-                Genero = table["Genero"].ToString()
-            };
+                // Query
+                string sqlQueryTeacher = "SELECT * FROM Teacher WHERE IdTeacher = @idTeacher";
+                var dataTeacher = select.SelectData(sqlQueryTeacher, prm);
+
+                if (dataTeacher.Rows.Count > 0)
+                {
+                    var table = dataTeacher.Rows[0];
+                    teacher = new()
+                    {
+                        IdTeacher = int.Parse(table["IdTeacher"].ToString()),
+                        NameTeacher = table["NameTeacher"].ToString(),
+                        Surname = table["Surname"].ToString(),
+                        Mail = table["Mail"].ToString(),
+                        Dni = int.Parse(table["Dni"].ToString()),
+                        Age = int.Parse(table["Age"].ToString()),
+                        IdUser = int.Parse(table["IdUser"].ToString()),
+                        Genero = table["Genero"].ToString()
+                    }; 
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error: " + ex.Message);
+                teacher = null;
+            }
             return teacher;
         }
         public bool DeleteInscription(int idCursada, int idStudent)
@@ -156,7 +206,7 @@ namespace SchoolMusic.Serv
             string sqlDeleteinscription = "DELETE FROM Inscription WHERE IdCursada = @idCursada AND IdStudent = @idStudent";
             result = accion.AccionEjecutar(sqlDeleteinscription, prm);
 
-            return result > 0? true: false;
+            return result > 0 ? true : false;
         }
     }
 }

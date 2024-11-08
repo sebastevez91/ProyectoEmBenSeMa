@@ -16,12 +16,16 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd39302469217e41ecc146b470faf6843ee8d2d4")]
 =======
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f43f475b8d05061a7e3d9d9375ffff5e1ed4e98e")]
 >>>>>>> secondMain
 =======
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1ff878ffacce61fad9f628853f8555ad041cb32")]
+>>>>>>> secondMain
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85a8684833e155e2d5230585489336245b8f550b")]
 >>>>>>> secondMain
 [assembly: System.Reflection.AssemblyProductAttribute("SchoolMusic.Serv")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SchoolMusic.Serv")]

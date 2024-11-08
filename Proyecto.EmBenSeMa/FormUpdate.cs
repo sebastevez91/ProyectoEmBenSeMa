@@ -16,20 +16,20 @@ namespace SchoolMusic.Proyecto
         private int idTeacher;
         private int idUser;
         // Datos del usuario
-        public void SetUsers(Users userSession)
+        public void SetUsers(Users userSesion)
         {
-            idUser = userSession.IdUser;
-            //txtUsuario.Text = userSession.Username;
-            //txtContra.Text = userSession.Password;
+            idUser = userSesion.IdUser;
+            txtUsuario.Text = userSesion.Username;
+            txtContra.Text = userSesion.UserPassword;
         }
         public void SetStudent(Student student)
         {
-            //idStudent = student.IdStudent;
-            //txtNombre.Text = student.Name;
-            //txtApellido.Text = student.Surname;
-            //txtDni.Text = student.Dni.ToString();
-            //txtEdad.Text = student.Age.ToString();
-            //txtCorreo.Text = student.Mail;
+            idStudent = student.IdStudent;
+            txtNombre.Text = student.NameStudent;
+            txtApellido.Text = student.Surname;
+            txtDni.Text = student.Dni.ToString();
+            txtEdad.Text = student.Age.ToString();
+            txtCorreo.Text = student.Mail;
         }
         public void SetTeacher(Teacher teacher)
         {
@@ -67,22 +67,26 @@ namespace SchoolMusic.Proyecto
             Teacher updateTeacher = new Teacher();
             if (txtUsuario.Text != null && txtUsuario.Text != "" && txtContra.Text != null && txtContra.Text != "")
             {
-                //updateUser.IdUser = idUser;
-                //updateUser.Username = txtUsuario.Text;
-                //updateUser.Password = txtContra.Text;
+                updateUser.IdUser = idUser;
+                updateUser.Username = txtUsuario.Text;
+                updateUser.UserPassword = txtContra.Text;
                 if (boxDatPer.Visible)
                 {
                     if (ValidacionGeneral.ActualizaRegistro(txtNombre.Text, txtApellido.Text, txtDni.Text, txtEdad.Text, txtCorreo.Text))
                     {
                         if (etqUpdate.Text == "Alumno")
                         {
-                            //updateStudent.IdStudent = idStudent;
-                            //updateStudent.Name = txtNombre.Text;
-                            //updateStudent.Surname = txtApellido.Text;
-                            //updateStudent.Dni = int.Parse(txtDni.Text);
-                            //updateStudent.Age = int.Parse(txtEdad.Text);
-                            //updateStudent.Mail = txtCorreo.Text;
-                            updateService.UpdateStudent(updateStudent);
+                            updateStudent.IdStudent = idStudent;
+                            updateStudent.NameStudent = txtNombre.Text;
+                            updateStudent.Surname = txtApellido.Text;
+                            updateStudent.Dni = int.Parse(txtDni.Text);
+                            updateStudent.Age = int.Parse(txtEdad.Text);
+                            updateStudent.Mail = txtCorreo.Text;
+                            if (!updateService.UpdateStudent(updateStudent))
+                            {
+                                MessageBox.Show("No se pudo modificar los datos personales");
+                            }
+                            
                         }
                         else
                         {
@@ -92,7 +96,10 @@ namespace SchoolMusic.Proyecto
                             updateTeacher.Dni = int.Parse(txtDni.Text);
                             updateTeacher.Age = int.Parse(txtEdad.Text);
                             updateTeacher.Mail = txtCorreo.Text;
-                            updateService.UpdateTeacher(updateTeacher);
+                            if (!updateService.UpdateTeacher(updateTeacher))
+                            {
+                                MessageBox.Show("No se pudo modificar los datos personales");
+                            }                            
                         }
                     }
                 }

@@ -23,13 +23,14 @@ namespace SchoolMusic.Serv
             string sqlSelectTablon = "SELECT * FROM Tablon WHERE IdCursada = @idCursada";
             try
             {
-                var dataTablon = select.SelectData(sqlSelectTablon, prm).Rows[0];
-                if (dataTablon != null)
+                var dataTablon = select.SelectData(sqlSelectTablon, prm);
+                if (dataTablon.Rows.Count > 0)
                 {
+                    var table = dataTablon.Rows[0];
                     tablon = new Tablon()
                     {
-                        idTablon = int.Parse(dataTablon["IdTablon"].ToString()),
-                        idCursada = int.Parse(dataTablon["IdCursada"].ToString())
+                        idTablon = int.Parse(table["IdTablon"].ToString()),
+                        idCursada = int.Parse(table["IdCursada"].ToString())
                     };
                 }
 
@@ -37,7 +38,7 @@ namespace SchoolMusic.Serv
             catch (Exception e)
             {
 
-                throw;
+               Console.WriteLine("Error: " + e.Message);
             }
             return tablon;
         }
@@ -140,12 +141,17 @@ namespace SchoolMusic.Serv
 
             try
             {
-                var dataName = select.SelectData(sqlSelect, prm).Rows[0];
-                nameUser = dataName["completoName"].ToString();
+                var dataName = select.SelectData(sqlSelect, prm);
+                if (dataName.Rows.Count > 0)
+                {
+                    var table = dataName.Rows[0];
+                    nameUser = table["completoName"].ToString(); 
+                }
             }
             catch (Exception ex)
             {
                 // Manejo de la excepción (por ejemplo, registrar el error, devolver un valor por defecto, etc.)
+                Console.WriteLine("Error: " + ex.Message);
                 nameUser = "Unknown User";
             }
 
@@ -159,13 +165,22 @@ namespace SchoolMusic.Serv
             prm.Clear();
             prm.Add("@idTeacher", idTeacher.ToString());
 
-            // Query
-            string sqlSelectNameTeacher = "SELECT CONCAT(NameTeacher,' ',Surname) AS completo FROM Teacher WHERE IdTeacher = @idTeacher";
-            var dataNameTeacher = select.SelectData(sqlSelectNameTeacher, prm).Rows[0];
-
-            if(dataNameTeacher != null)
+            try
             {
-                nameTeacher = dataNameTeacher["completo"].ToString();
+                // Query
+                string sqlSelectNameTeacher = "SELECT CONCAT(NameTeacher,' ',Surname) AS completo FROM Teacher WHERE IdTeacher = @idTeacher";
+                var dataNameTeacher = select.SelectData(sqlSelectNameTeacher, prm);
+
+                if (dataNameTeacher.Rows.Count > 0)
+                {
+                    var table = dataNameTeacher.Rows[0];
+                    nameTeacher = table["completo"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                nameTeacher = "Unknown User";
             }
             return nameTeacher;
         }
@@ -200,10 +215,23 @@ namespace SchoolMusic.Serv
             prm.Clear();
             prm.Add("@idCourse", idCourse.ToString());
 
-            // Query
-            string sqlSelectCourse = "SELECT Instrument FROM Course WHERE IdCourse = @idCourse";
-            var dataCourse = select.SelectData(sqlSelectCourse, prm).Rows[0];
-            course = dataCourse["Instrument"].ToString();
+            try
+            {
+                // Query
+                string sqlSelectCourse = "SELECT Instrument FROM Course WHERE IdCourse = @idCourse";
+                var dataCourse = select.SelectData(sqlSelectCourse, prm);
+                if (dataCourse.Rows.Count > 0)
+                {
+                    var table = dataCourse.Rows[0];
+                    course = table["Instrument"].ToString(); 
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error: " + ex.Message);
+                course = "Unknown course";
+            }
 
             return course;
         }
@@ -215,19 +243,29 @@ namespace SchoolMusic.Serv
             prm.Clear();
             prm.Add("@idCursada", idCursada.ToString());
 
-            // Query
-            string sqlSelectCursada = "SELECT IdCourse, IdTeacher, StarTime, EndTime FROM Cursada WHERE IdCursada = @idCursada";
-            var dataCursada = select.SelectData(sqlSelectCursada, prm).Rows[0];
-
-            if(dataCursada != null)
+            try
             {
-                cursada = new()
+                // Query
+                string sqlSelectCursada = "SELECT IdCourse, IdTeacher, StarTime, EndTime FROM Cursada WHERE IdCursada = @idCursada";
+                var dataCursada = select.SelectData(sqlSelectCursada, prm);
+
+                if (dataCursada.Rows.Count > 0)
                 {
-                    IdCourse = int.Parse(dataCursada["IdCourse"].ToString()),
-                    IdTeacher = int.Parse(dataCursada["IdTeacher"].ToString()),
-                    StarTime = Convert.ToDateTime(dataCursada["StarTime"].ToString()),
-                    EndTime = Convert.ToDateTime(dataCursada["EndTime"].ToString()),
-                };
+                    var table = dataCursada.Rows[0];
+                    cursada = new()
+                    {
+                        IdCourse = int.Parse(table["IdCourse"].ToString()),
+                        IdTeacher = int.Parse(table["IdTeacher"].ToString()),
+                        StarTime = Convert.ToDateTime(table["StarTime"].ToString()),
+                        EndTime = Convert.ToDateTime(table["EndTime"].ToString()),
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error: " + ex.Message);
+                cursada = null;
             }
             return cursada;
         }

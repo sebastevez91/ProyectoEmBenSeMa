@@ -20,24 +20,32 @@ namespace SchoolMusic.Serv
             prm.Clear();
             prm.Add("@idUser", idUser.ToString());
 
-            // Query
-            string sqlQueryNotif = "SELECT * FROM Notification WHERE NotificationTo = @idUser";
-            var dateNotif = select.SelectData(sqlQueryNotif, prm);
-
-            if (dateNotif != null && dateNotif.Rows.Count > 0)
+            try
             {
-                foreach (DataRow n in dateNotif.Rows)
+                // Query
+                string sqlQueryNotif = "SELECT * FROM Notification WHERE NotificationTo = @idUser";
+                var dateNotification = select.SelectData(sqlQueryNotif, prm);
+
+                if (dateNotification != null && dateNotification.Rows.Count > 0)
                 {
-                    listNotif.Add(new Notification
+                    foreach (DataRow n in dateNotification.Rows)
                     {
-                        IdNotification = int.Parse(n["IdNotifiStudent"].ToString()),
-                        NotificationTo = int.Parse(n["NotificatinTo"].ToString()),
-                        NotificationFrom = int.Parse(n["NotificationFrom"].ToString()),
-                        Subject = n["Subject"].ToString(),
-                        Body = n["Body"].ToString(),
-                        DateNotification = Convert.ToDateTime(n["DateNotification"].ToString()),
-                    });
+                        listNotif.Add(new Notification
+                        {
+                            IdNotification = int.Parse(n["IdNotifiStudent"].ToString()),
+                            NotificationTo = int.Parse(n["NotificatinTo"].ToString()),
+                            NotificationFrom = int.Parse(n["NotificationFrom"].ToString()),
+                            Subject = n["Subject"].ToString(),
+                            Body = n["Body"].ToString(),
+                            DateNotification = Convert.ToDateTime(n["DateNotification"].ToString()),
+                        });
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error: " + ex.Message);
             }
             return listNotif;
         }
@@ -47,24 +55,32 @@ namespace SchoolMusic.Serv
             prm.Clear();
             prm.Add("@idUser", idUser.ToString());
 
-            // Query
-            string sqlQueryNotif = "SELECT * FROM Notification WHERE NotificationFrom = @idUser";
-            var dateNotif = select.SelectData(sqlQueryNotif, prm);
-
-            if (dateNotif != null && dateNotif.Rows.Count > 0)
+            try
             {
-                foreach (DataRow n in dateNotif.Rows)
+                // Query
+                string sqlQueryNotif = "SELECT * FROM Notification WHERE NotificationFrom = @idUser";
+                var dateNotification = select.SelectData(sqlQueryNotif, prm);
+
+                if (dateNotification != null && dateNotification.Rows.Count > 0)
                 {
-                    listNotif.Add(new Notification
+                    foreach (DataRow n in dateNotification.Rows)
                     {
-                        IdNotification = int.Parse(n["IdNotifiStudent"].ToString()),
-                        NotificationTo = int.Parse(n["NotificatinTo"].ToString()),
-                        NotificationFrom = int.Parse(n["NotificationFrom"].ToString()),
-                        Subject = n["Subject"].ToString(),
-                        Body = n["Body"].ToString(),
-                        DateNotification = Convert.ToDateTime(n["DateNotification"].ToString()),
-                    });
+                        listNotif.Add(new Notification
+                        {
+                            IdNotification = int.Parse(n["IdNotifiStudent"].ToString()),
+                            NotificationTo = int.Parse(n["NotificatinTo"].ToString()),
+                            NotificationFrom = int.Parse(n["NotificationFrom"].ToString()),
+                            Subject = n["Subject"].ToString(),
+                            Body = n["Body"].ToString(),
+                            DateNotification = Convert.ToDateTime(n["DateNotification"].ToString()),
+                        });
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error: " + ex.Message);
             }
             return listNotif;
         }
@@ -78,18 +94,23 @@ namespace SchoolMusic.Serv
             string sqlQueryTeacher = "SELECT IdTeacher, CONCAT('Prof.',NameTeacher,' ', Surname) AS nombreCompleto FROM Teacher WHERE IdTeacher = @idTeacher";
             try
             {
-                var dateTeacher = select.SelectData(sqlQueryTeacher, prm).Rows[0];
+                var dateTeacher = select.SelectData(sqlQueryTeacher, prm);
 
-                teacher = new()
+                if (dateTeacher.Rows.Count > 0)
                 {
-                    IdTeacher = int.Parse(dateTeacher["IdTeacher"].ToString()),
-                    NameTeacher = dateTeacher["nombreCompleto"].ToString()
-                };
+                    var table = dateTeacher.Rows[0];
+                    teacher = new()
+                    {
+                        IdTeacher = int.Parse(table["IdTeacher"].ToString()),
+                        NameTeacher = table["nombreCompleto"].ToString()
+                    }; 
+                }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                return null;
+                Console.WriteLine("Error: " + ex.Message);
+                teacher = null;
             }
             return teacher;
         }
@@ -99,15 +120,28 @@ namespace SchoolMusic.Serv
             prm.Clear();
             prm.Add("@idStudent", idStudent.ToString());
 
-            // Query
-            string sqlQueryStudent = "SELECT IdStudent, CONCAT(NameStudent,' ', Surname) AS nombreCompleto FROM Student WHERE IdStudent = @idStudent";
-            var dateStudent = select.SelectData(sqlQueryStudent, prm).Rows[0];
-
-            student = new()
+            try
             {
-                IdStudent = int.Parse(dateStudent["IdStudent"].ToString()),
-                NameStudent = dateStudent["nombreCompleto"].ToString(),
-            };
+                // Query
+                string sqlQueryStudent = "SELECT IdStudent, CONCAT(NameStudent,' ', Surname) AS nombreCompleto FROM Student WHERE IdStudent = @idStudent";
+                var dateStudent = select.SelectData(sqlQueryStudent, prm);
+
+                if (dateStudent.Rows.Count > 0)
+                {
+                    var table = dateStudent.Rows[0];
+                    student = new()
+                    {
+                        IdStudent = int.Parse(table["IdStudent"].ToString()),
+                        NameStudent = table["nombreCompleto"].ToString(),
+                    }; 
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error: " + ex.Message);
+                student = null;
+            }
 
             return student;
         }

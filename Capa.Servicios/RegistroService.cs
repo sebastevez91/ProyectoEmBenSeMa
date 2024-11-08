@@ -1,7 +1,6 @@
 ﻿using Capa.Base.De.Datos;
 using SchoolMusic.BD;
 using SchoolMusic.Entidades;
-using System.Data;
 
 namespace SchoolMusic.Serv
 {
@@ -89,18 +88,26 @@ namespace SchoolMusic.Serv
             prm.Add("@username", users.Username);
             prm.Add("@userPassword", users.UserPassword);
 
-            // Query
-            string sqlSelectUser = "SELECT * FROM Users WHERE Username = @username AND UserPassword = @userPassword";
-
-            var table = select.SelectData(sqlSelectUser, prm).Rows[0];
-            userFound = new Users()
+            try
             {
-                IdUser = int.Parse(table["IdUser"].ToString()),
-                Username = table["Username"].ToString(),
-                UserPassword = table["UserPassword"].ToString()
-            };
-            //result = int.Parse(table["IdUser"].ToString());
-            return result = userFound.IdUser;
+                // Query
+                string sqlSelectUser = "SELECT IdUser FROM Users WHERE Username = @username AND UserPassword = @userPassword";
+
+                var dataUser = select.SelectData(sqlSelectUser, prm);
+                if (dataUser.Rows.Count > 0)
+                {
+                    var table = dataUser.Rows[0];
+
+                    result = int.Parse(table["IdUser"].ToString())
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error: " + ex.Message);
+            }
+
+            return result;
         }
     }
 }
