@@ -42,10 +42,13 @@
             etqCursada = new Label();
             comboCursada = new ComboBox();
             btnInscription = new Button();
-            etqTitle = new Label();
             etqInfo = new Label();
+            gBoxDescription = new GroupBox();
+            etqDescription = new Label();
+            button8 = new Button();
             groupBox1.SuspendLayout();
             grBoxInfo.SuspendLayout();
+            gBoxDescription.SuspendLayout();
             SuspendLayout();
             // 
             // btnPiano
@@ -179,13 +182,12 @@
             grBoxInfo.Controls.Add(etqCursada);
             grBoxInfo.Controls.Add(comboCursada);
             grBoxInfo.Controls.Add(btnInscription);
-            grBoxInfo.Controls.Add(etqTitle);
             grBoxInfo.Controls.Add(etqInfo);
             grBoxInfo.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             grBoxInfo.ForeColor = Color.White;
-            grBoxInfo.Location = new Point(510, 37);
+            grBoxInfo.Location = new Point(510, 166);
             grBoxInfo.Name = "grBoxInfo";
-            grBoxInfo.Size = new Size(340, 392);
+            grBoxInfo.Size = new Size(340, 263);
             grBoxInfo.TabIndex = 22;
             grBoxInfo.TabStop = false;
             grBoxInfo.Text = "Información";
@@ -195,7 +197,7 @@
             // 
             button1.Font = new Font("Segoe Print", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.Black;
-            button1.Location = new Point(225, 46);
+            button1.Location = new Point(116, 90);
             button1.Name = "button1";
             button1.Size = new Size(94, 23);
             button1.TabIndex = 25;
@@ -206,7 +208,7 @@
             // etqCursada
             // 
             etqCursada.AutoSize = true;
-            etqCursada.Location = new Point(10, 45);
+            etqCursada.Location = new Point(10, 27);
             etqCursada.Name = "etqCursada";
             etqCursada.Size = new Size(69, 23);
             etqCursada.TabIndex = 24;
@@ -215,7 +217,7 @@
             // comboCursada
             // 
             comboCursada.FormattingEnabled = true;
-            comboCursada.Location = new Point(10, 71);
+            comboCursada.Location = new Point(10, 53);
             comboCursada.Name = "comboCursada";
             comboCursada.Size = new Size(309, 31);
             comboCursada.TabIndex = 23;
@@ -236,15 +238,6 @@
             btnInscription.Visible = false;
             btnInscription.Click += button7_Click;
             // 
-            // etqTitle
-            // 
-            etqTitle.AutoSize = true;
-            etqTitle.Location = new Point(116, 17);
-            etqTitle.Name = "etqTitle";
-            etqTitle.Size = new Size(67, 23);
-            etqTitle.TabIndex = 0;
-            etqTitle.Text = "Curso de";
-            // 
             // etqInfo
             // 
             etqInfo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -255,6 +248,43 @@
             etqInfo.Text = "aaaa";
             etqInfo.Visible = false;
             // 
+            // gBoxDescription
+            // 
+            gBoxDescription.BackColor = Color.Transparent;
+            gBoxDescription.Controls.Add(etqDescription);
+            gBoxDescription.Controls.Add(button8);
+            gBoxDescription.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            gBoxDescription.ForeColor = Color.White;
+            gBoxDescription.Location = new Point(510, 37);
+            gBoxDescription.Name = "gBoxDescription";
+            gBoxDescription.Size = new Size(340, 133);
+            gBoxDescription.TabIndex = 23;
+            gBoxDescription.TabStop = false;
+            gBoxDescription.Visible = false;
+            // 
+            // etqDescription
+            // 
+            etqDescription.AutoSize = true;
+            etqDescription.Location = new Point(10, 26);
+            etqDescription.Name = "etqDescription";
+            etqDescription.Size = new Size(0, 23);
+            etqDescription.TabIndex = 24;
+            // 
+            // button8
+            // 
+            button8.BackgroundImage = (Image)resources.GetObject("button8.BackgroundImage");
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button8.ForeColor = Color.Transparent;
+            button8.ImageAlign = ContentAlignment.MiddleLeft;
+            button8.Location = new Point(94, 339);
+            button8.Name = "button8";
+            button8.Size = new Size(157, 35);
+            button8.TabIndex = 22;
+            button8.Text = "Inscripbirse";
+            button8.UseVisualStyleBackColor = true;
+            button8.Visible = false;
+            // 
             // FormCourse
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -263,6 +293,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(900, 545);
+            Controls.Add(gBoxDescription);
             Controls.Add(grBoxInfo);
             Controls.Add(btnSalir);
             Controls.Add(groupBox1);
@@ -275,6 +306,8 @@
             groupBox1.ResumeLayout(false);
             grBoxInfo.ResumeLayout(false);
             grBoxInfo.PerformLayout();
+            gBoxDescription.ResumeLayout(false);
+            gBoxDescription.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -291,9 +324,11 @@
         private GroupBox grBoxInfo;
         private Button btnInscription;
         private Label etqInfo;
-        private Label etqTitle;
         private Label etqCursada;
         private ComboBox comboCursada;
         private Button button1;
+        private GroupBox gBoxDescription;
+        private Label etqDescription;
+        private Button button8;
     }
 }

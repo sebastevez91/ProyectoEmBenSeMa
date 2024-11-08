@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNotification));
-            listRecpcion = new ListBox();
+            Recpcion = new ListBox();
             etqRegistro = new Label();
             grboxMensaje = new GroupBox();
             etqMensaje = new Label();
@@ -43,24 +43,23 @@
             label4 = new Label();
             etqTo = new Label();
             groupBoxSend = new GroupBox();
-            comboTo = new ComboBox();
             button1 = new Button();
             btnRecpcion = new Button();
             btnEnviados = new Button();
-            listEnviados = new ListBox();
+            Enviados = new ListBox();
             TypeMjs = new Label();
             grboxMensaje.SuspendLayout();
             groupBoxSend.SuspendLayout();
             SuspendLayout();
             // 
-            // listRecpcion
+            // Recpcion
             // 
-            listRecpcion.FormattingEnabled = true;
-            listRecpcion.ItemHeight = 15;
-            listRecpcion.Location = new Point(82, 144);
-            listRecpcion.Name = "listRecpcion";
-            listRecpcion.Size = new Size(199, 154);
-            listRecpcion.TabIndex = 0;
+            Recpcion.FormattingEnabled = true;
+            Recpcion.ItemHeight = 15;
+            Recpcion.Location = new Point(82, 144);
+            Recpcion.Name = "Recpcion";
+            Recpcion.Size = new Size(199, 154);
+            Recpcion.TabIndex = 0;
             // 
             // etqRegistro
             // 
@@ -216,7 +215,6 @@
             // groupBoxSend
             // 
             groupBoxSend.BackColor = Color.Transparent;
-            groupBoxSend.Controls.Add(comboTo);
             groupBoxSend.Controls.Add(etqSubject);
             groupBoxSend.Controls.Add(etqTo);
             groupBoxSend.Controls.Add(txtMensaje);
@@ -229,16 +227,6 @@
             groupBoxSend.TabStop = false;
             groupBoxSend.Text = "Mensaje";
             groupBoxSend.Visible = false;
-            // 
-            // comboTo
-            // 
-            comboTo.FormattingEnabled = true;
-            comboTo.Location = new Point(112, 19);
-            comboTo.Name = "comboTo";
-            comboTo.Size = new Size(220, 23);
-            comboTo.TabIndex = 25;
-            comboTo.Tag = "";
-            comboTo.Text = "Seleccione Curso";
             // 
             // button1
             // 
@@ -275,15 +263,15 @@
             btnEnviados.UseVisualStyleBackColor = true;
             btnEnviados.Click += btnEnviados_Click;
             // 
-            // listEnviados
+            // Enviados
             // 
-            listEnviados.FormattingEnabled = true;
-            listEnviados.ItemHeight = 15;
-            listEnviados.Location = new Point(82, 144);
-            listEnviados.Name = "listEnviados";
-            listEnviados.Size = new Size(199, 154);
-            listEnviados.TabIndex = 48;
-            listEnviados.Visible = false;
+            Enviados.FormattingEnabled = true;
+            Enviados.ItemHeight = 15;
+            Enviados.Location = new Point(82, 144);
+            Enviados.Name = "Enviados";
+            Enviados.Size = new Size(199, 154);
+            Enviados.TabIndex = 48;
+            Enviados.Visible = false;
             // 
             // TypeMjs
             // 
@@ -305,7 +293,7 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(872, 450);
             Controls.Add(TypeMjs);
-            Controls.Add(listEnviados);
+            Controls.Add(Enviados);
             Controls.Add(btnEnviados);
             Controls.Add(btnRecpcion);
             Controls.Add(button1);
@@ -315,7 +303,7 @@
             Controls.Add(btnSalir);
             Controls.Add(grboxMensaje);
             Controls.Add(etqRegistro);
-            Controls.Add(listRecpcion);
+            Controls.Add(Recpcion);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
@@ -331,7 +319,7 @@
 
         #endregion
 
-        private ListBox listRecpcion;
+        private ListBox Recpcion;
         private Label etqRegistro;
         private GroupBox grboxMensaje;
         private Button btnSalir;
@@ -345,11 +333,10 @@
         private GroupBox groupBoxSend;
         private Label etqMensaje;
         private Button btnResponde;
-        private ComboBox comboTo;
         private Button button1;
         private Button btnRecpcion;
         private Button btnEnviados;
-        private ListBox listEnviados;
+        private ListBox Enviados;
         private Label TypeMjs;
     }
 }

@@ -5,6 +5,7 @@ namespace SchoolMusic.Entidades
     public class Notification
     {
         [Key]
+<<<<<<< HEAD
         public int idNotification { get; set; }
         public int idStudent { get; set; }
         public int idTeacher { get; set; }
@@ -23,6 +24,14 @@ namespace SchoolMusic.Entidades
             this.body = body;
             this.dateNotification = dateNotification;
         }
+=======
+        public int IdNotification { get; set; }
+        public int NotificationTo { get; set; }
+        public int NotificationFrom { get; set; }
+        public string Subject { get; set; }
+        public string Body { get; set; }
+        public DateTime DateNotification { get; set; }
+>>>>>>> secondMain
 
 
         public Notification()

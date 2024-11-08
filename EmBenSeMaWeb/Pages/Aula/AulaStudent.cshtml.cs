@@ -14,15 +14,21 @@ namespace SchoolMusic.Web.Pages.Aula
             _context = context;
         }
         public Student Student { get; set; } = default!;
+        public string Username {  get; set; }
         public IList<Inscription> Inscriptions { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Teacher == null)
+            if (id == null || _context.Student == null)
             {
                 return NotFound();
             }
 
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.IdUser == id);
+            if (user != null)
+            {
+                Username = user.Username;
+            }
             var student = await _context.Student.FirstOrDefaultAsync(m => m.IdUser == id);
             if (student == null)
             {

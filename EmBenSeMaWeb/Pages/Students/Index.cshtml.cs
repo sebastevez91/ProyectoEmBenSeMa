@@ -20,12 +20,17 @@ namespace SchoolMusic.Web.Pages.Students
         }
 
         public IList<Student> Student { get;set; } = default!;
+        public IList<Inscription> Inscriptions { get;set; } = default!;
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(int? id)
         {
-            if (_context.Student != null)
+            var incriptiones = await _context.Inscription
+                .Include(x => x.Student)
+                .Where(c => c.idCursada == id)
+                .ToListAsync();
+            if (incriptiones != null)
             {
-                Student = await _context.Student.ToListAsync();
+                Inscriptions = incriptiones;
             }
         }
     }

@@ -4,15 +4,20 @@
     ViewData["Title"] = "Aula del profesor";
     Layout = "_LayoutSesion";
 }
-<body onload = "ocultarButton()" >
-    <div class="text-center infoTeacher">
-        <h1 style="padding: 5%;">Bienvenido profesor @Model.Teacher.NameTeacher @Model.Teacher.Surname</h1>
-        <img src="@Model.Teacher.FotoTeacher" alt="Alternate Text" class="fotoTeacher" />
+<body onload="userSesion('@Model.Username')">
+
+    <div class="top-right-button">
+        <a asp-page="/Notifications/IndexNotification" class="btn">Notificaciones</a>
     </div>
 
-    <div>
-        <h4>Tus datos</h4>
-        <div>
+    <div class="containerTeacher">
+        <div class="details">
+            <div class="infoTeacher">
+                <h1>Bienvenido profesor @Model.Teacher.NameTeacher @Model.Teacher.Surname</h1>
+                <img src="@Model.Teacher.FotoTeacher" alt="Foto de perfil" class="fotoTeacher" />
+            </div>
+
+            <h4>Tus datos</h4>
             <table class="styled-table">
                 <thead>
                     <tr>
@@ -30,17 +35,26 @@
                 </tbody>
             </table>
         </div>
-        
-        <div>
-            <a asp-page="/Teachers/Edit" asp-route-id="@Model.Teacher?.IdTeacher" class="btn btn-primary"> Modificar datos </a>
-            <a asp-page="/Cursadas/Details" asp-route-id="@Model.Teacher.IdTeacher" class="btn btn-primary"> Tus cursadas </a>
-            <a asp-page="/Cursadas/Details" asp-route-id="@Model.Teacher.IdTeacher" class="btn btn-primary"> Notificaciones </a>
-            <a asp-page="/Cursadas/Details" asp-route-id="@Model.Teacher.IdTeacher" class="btn btn-primary"> Billetera </a>
-        </div>
-    </div>
 
-    <div>
-        <a asp-page="/Index" class="btn btn-primary"> Cerrar Sesión </a>
+        <div class="upcoming-classes" ">
+                <h3>Tus próximas clases</h3>
+                <ul>
+                    @foreach (var cursada in Model.Cursada)
+                    {
+                        if (cursada.Initiation > DateTime.Today && cursada.Finish > DateTime.Today)
+                        {
+                            <li>Cursada a las @cursada.StarTime.ToString("t") a @cursada.EndTime.ToString("t")</li>
+                        }
+                    }
+                </ul>
+            
+
+            <div class="footer-buttons">
+                <a asp-page="/Teachers/Edit" asp-route-id="@Model.Teacher?.IdTeacher" class="btn">Modificar datos</a>
+                <a asp-page="/Cursadas/Details" asp-route-id="@Model.Teacher.IdTeacher" class="btn">Tus cursadas</a>
+                <a asp-page="/Payments/IndexPayment" asp-route-id="@Model.Teacher.IdTeacher" class="btn">Billetera</a>
+            </div>
+        </div>
     </div>
 </body>
 

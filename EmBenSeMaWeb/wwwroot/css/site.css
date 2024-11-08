@@ -263,19 +263,41 @@ a {
 
 /* Aula Teacher */
 
+.containerTeacher {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
 .infoTeacher {
     display: flex;
     width: max-content;
     justify-content: space-evenly;
     flex-direction: row-reverse;
-    padding: 05%;
+    padding: 1%;
+    text-align: left;
+    flex: 1;
+}
+.infoTeacher h1 {
+     font-size: 24px;
+     margin: 0;
 }
 
 .fotoTeacher {
-    width: 250px;
-    height: 210px;
-    border-radius: 34%;
-    margin-right: 20px;
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 10px;
+    border: 4px solid #ddd; /* Color y grosor del borde */
+    padding: 1px; /* Espacio entre la imagen y el borde */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra alrededor de la imagen */
+}
+
+.details, .upcoming-classes {
+    margin-top: 38px;
+    flex: 1;
+    padding: 40px;
+    color: white;
 }
 
 /* Estilo de la tabla */
@@ -289,30 +311,48 @@ a {
     animation: fadeIn 1.5s ease-in-out;
 }
 
-    .styled-table thead tr {
-        background-color: #001f3f; 
-        color: #ffffff; 
-        text-align: left;
-    }
+.styled-table thead tr {
+    background-color: #001f3f; 
+    color: #ffffff; 
+    text-align: left;
+}
 
-    .styled-table th, .styled-table td {
-        padding: 12px 15px; 
-        border: 1px solid #dddddd; 
-    }
+.styled-table th, .styled-table td {
+    padding: 12px 15px; 
+    border: 1px solid #dddddd; 
+}
 
-    .styled-table tbody tr {
-        background-color: #000;
-        transition: background-color 0.3s;
-    }
+.styled-table tbody tr {
+    background-color: #000;
+    transition: background-color 0.3s;
+}
+    
+.styled-table tbody tr:nth-child(even) {
+    background-color: #e9e9e9; 
+}
 
-        .styled-table tbody tr:nth-child(even) {
-            background-color: #e9e9e9; 
-        }
+.upcoming-classes ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-        .styled-table tbody tr:hover {
-            background-color: #d1e7fd;
-            cursor: pointer;
-        }
+.upcoming-classes li {
+    margin-bottom: 10px;
+}
+
+.top-right-button {
+    position: absolute;
+    top: 90px;
+    right: 50px;
+}
+
+.footer-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
 
 /* Información de Incripción */
 .info-container {
@@ -324,9 +364,9 @@ a {
     border-radius: 5px;
 }
 
-    .info-container div {
-        margin-bottom: 10px;
-    }
+.info-container div {
+    margin-bottom: 10px;
+}
 
 .info-title {
     font-weight: bold;
@@ -344,4 +384,56 @@ a {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/*boton user sesión*/
+
+.user-button {
+    background: none;
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #007bff; /* color de fondo del botón */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 2%;
+}
+
+.user-button .user-image {
+    width: 30px; /* tamaño de la imagen */
+    height: 30px;
+    border-radius: 50%; /* hace la imagen circular */
+    margin-right: 10px; /* espacio entre la imagen y el nombre */
+}
+
+.user-button .user-name {
+    font-weight: bold;
+}
+
+.user-menu {
+    background-color: black;
+    position: absolute;
+    top: 60px; /* Ajusta según la ubicación del botón */
+    right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 20%;
+    padding: 2%;
+    display: none; /* Oculto por defecto */
+    z-index: 100;
+}
+
+.user-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.user-menu a:hover {
+    background-color: blue;
 }

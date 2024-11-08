@@ -29,7 +29,7 @@ namespace SchoolMusic.Web.Pages.Login
             if (users != null)
             {
                 // Inicio de sesión exitoso
-                return RedirectToPage("/Index");
+                return RedirectToPage("/Aula/AulaStudent", new { id = users.IdUser });
             }
             else
             {

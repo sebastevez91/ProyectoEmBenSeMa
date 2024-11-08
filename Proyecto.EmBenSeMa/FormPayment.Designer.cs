@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPayment));
             etqPlataforma = new Label();
             pictureBox1 = new PictureBox();
-            comboMesPagar = new ComboBox();
+            comboPay = new ComboBox();
             groupCuota = new GroupBox();
             etqMetodo = new Label();
             comboMetodo = new ComboBox();
@@ -40,10 +40,7 @@
             eqtEstado = new Label();
             etqDni = new Label();
             btnSalir = new Button();
-            label2 = new Label();
-            comboCurso = new ComboBox();
             label3 = new Label();
-            btnMostrar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupCuota.SuspendLayout();
             SuspendLayout();
@@ -71,13 +68,13 @@
             pictureBox1.TabIndex = 12;
             pictureBox1.TabStop = false;
             // 
-            // comboMesPagar
+            // comboPay
             // 
-            comboMesPagar.FormattingEnabled = true;
-            comboMesPagar.Location = new Point(61, 19);
-            comboMesPagar.Name = "comboMesPagar";
-            comboMesPagar.Size = new Size(203, 23);
-            comboMesPagar.TabIndex = 13;
+            comboPay.FormattingEnabled = true;
+            comboPay.Location = new Point(126, 17);
+            comboPay.Name = "comboPay";
+            comboPay.Size = new Size(203, 23);
+            comboPay.TabIndex = 13;
             // 
             // groupCuota
             // 
@@ -88,7 +85,7 @@
             groupCuota.Controls.Add(btnVerPagar);
             groupCuota.Controls.Add(eqtEstado);
             groupCuota.Controls.Add(etqDni);
-            groupCuota.Controls.Add(comboMesPagar);
+            groupCuota.Controls.Add(comboPay);
             groupCuota.Location = new Point(55, 104);
             groupCuota.Name = "groupCuota";
             groupCuota.Size = new Size(480, 187);
@@ -148,7 +145,7 @@
             btnVerPagar.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnVerPagar.ForeColor = Color.Transparent;
             btnVerPagar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnVerPagar.Location = new Point(270, 17);
+            btnVerPagar.Location = new Point(356, 12);
             btnVerPagar.Name = "btnVerPagar";
             btnVerPagar.Size = new Size(74, 30);
             btnVerPagar.TabIndex = 18;
@@ -176,11 +173,11 @@
             etqDni.BackColor = Color.Transparent;
             etqDni.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             etqDni.ForeColor = Color.Snow;
-            etqDni.Location = new Point(15, 20);
+            etqDni.Location = new Point(47, 18);
             etqDni.Name = "etqDni";
-            etqDni.Size = new Size(45, 22);
+            etqDni.Size = new Size(73, 22);
             etqDni.TabIndex = 15;
-            etqDni.Text = "Mes:";
+            etqDni.Text = "Registro";
             // 
             // btnSalir
             // 
@@ -199,57 +196,18 @@
             btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label2.ForeColor = Color.Snow;
-            label2.Location = new Point(55, 79);
-            label2.Name = "label2";
-            label2.Size = new Size(52, 22);
-            label2.TabIndex = 23;
-            label2.Text = "Curso";
-            label2.Visible = false;
-            // 
-            // comboCurso
-            // 
-            comboCurso.FormattingEnabled = true;
-            comboCurso.Location = new Point(95, 79);
-            comboCurso.Name = "comboCurso";
-            comboCurso.Size = new Size(141, 23);
-            comboCurso.TabIndex = 22;
-            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label3.ForeColor = Color.Snow;
-            label3.Location = new Point(279, 43);
+            label3.Location = new Point(55, 79);
             label3.Name = "label3";
             label3.Size = new Size(71, 22);
             label3.TabIndex = 24;
             label3.Text = "Alumno:";
             label3.Visible = false;
-            // 
-            // btnMostrar
-            // 
-            btnMostrar.BackColor = Color.Transparent;
-            btnMostrar.BackgroundImage = (Image)resources.GetObject("btnMostrar.BackgroundImage");
-            btnMostrar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnMostrar.FlatStyle = FlatStyle.Flat;
-            btnMostrar.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnMostrar.ForeColor = Color.Transparent;
-            btnMostrar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMostrar.Location = new Point(242, 69);
-            btnMostrar.Name = "btnMostrar";
-            btnMostrar.Size = new Size(69, 33);
-            btnMostrar.TabIndex = 25;
-            btnMostrar.Text = "Mostrar";
-            btnMostrar.TextAlign = ContentAlignment.TopLeft;
-            btnMostrar.UseVisualStyleBackColor = false;
-            btnMostrar.Click += btnMostrar_Click;
             // 
             // FormPayment
             // 
@@ -258,10 +216,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(595, 388);
-            Controls.Add(btnMostrar);
             Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(comboCurso);
             Controls.Add(btnSalir);
             Controls.Add(groupCuota);
             Controls.Add(pictureBox1);
@@ -282,7 +237,7 @@
 
         private Label etqPlataforma;
         private PictureBox pictureBox1;
-        private ComboBox comboMesPagar;
+        private ComboBox comboPay;
         private GroupBox groupCuota;
         private Label eqtEstado;
         private Label etqDni;
@@ -291,9 +246,6 @@
         private Button btnPagar;
         private Label etqMetodo;
         private ComboBox comboMetodo;
-        private Label label2;
-        private ComboBox comboCurso;
         private Label label3;
-        private Button btnMostrar;
     }
 }

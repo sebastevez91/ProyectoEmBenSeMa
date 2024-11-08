@@ -9,31 +9,36 @@ namespace SchoolMusic.Proyecto
         {
             InitializeComponent();
         }
-        // Creo Lista de tipo Payment y Inscription.
-        List<Payment> listPay = new List<Payment>();
-        List<Inscription> listInscrip = new List<Inscription>();
-        List<Cursada> listCursada = new List<Cursada>();
-        // Creamos una instancia de la entidad Payment.
-        PayService payService = new PayService();
-        // Creamos una intancia de Student en nulo.
-        Student studentPay = null;
-        public void ShowPay(Student student, List<Course> listCourse, List<Cursada> cursadas)
-        {
-            // Almaceno el Alumno que esta en sessón.
-            studentPay = student;
-            listCursada = cursadas;
-            // En el comboCurso muestro los curso que está inscripto el alumno.
-            comboCurso.DataSource = listCourse;
-            comboCurso.DisplayMember = "Instrument";
-            comboCurso.ValueMember = "IdCourse";
-            // Pongo el indexe en -1 para que no muestre los datos cuando los almacena en el comboBox.
-            comboCurso.SelectedIndex = -1;
+        List<Payment> listPayment = new List<Payment>();
+        List<Inscription> listInscription = new List<Inscription>();
 
-            foreach (Cursada c in cursadas)
+        PayService payService = new PayService();
+        public void ShowPaymentStudent(Student student, string typeUser)
+        {
+            if(typeUser == "Teacher")
             {
-                listInscrip.Add(payService.GetInscription(student.IdStudent, c.IdCursada));
+                btnPagar.Enabled = false;
             }
+            else
+            {
+                btnPagar.Enabled = false;
+            }
+            listInscription.Clear();
+            listPayment.Clear();
+            listInscription = payService.GetInscriptions(student.IdStudent);
+            foreach (Inscription i in listInscription)
+            {
+                listPayment.Add(payService.GetPayment(i.idInscription));
+            }
+
+            comboPay.DataSource = null;
+            comboPay.DataSource = listPayment;
+            comboPay.DisplayMember = "IdInscription";
+            comboPay.ValueMember = "IdPayment";
+            comboPay.SelectedIndex = -1;
+            
         }
+
         // Botones
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -52,7 +57,7 @@ namespace SchoolMusic.Proyecto
             if (resp == DialogResult.Yes)
             {
                 // Se envia la respuesta a la capa de Servicio
-                if (payService.PaymentCuota(int.Parse(comboMesPagar.SelectedValue.ToString()), comboMetodo.SelectedItem.ToString()))
+                if (payService.PaymentCuota(int.Parse(comboPay.SelectedValue.ToString()), comboMetodo.SelectedItem.ToString()))
                 {
                     MessageBox.Show("Pago exitoso!!!");
                     MostrarCuota();
@@ -70,46 +75,19 @@ namespace SchoolMusic.Proyecto
         private void MostrarCuota()
         {
             // Mostramos la informacion de la cuota seleccionada
-            foreach (Payment payment in listPay)
+            foreach (Payment payment in listPayment)
             {
-                if (comboMesPagar.SelectedValue.ToString() == payment.IdPayment.ToString())
+                if (comboPay.SelectedValue.ToString() == payment.IdPayment.ToString())
                 {
                     eqtEstado.Visible = true;
-                    eqtEstado.Text = $"Detalles de cuota: {payment.Month} / {payment.Year}\n" +
+                    eqtEstado.Text = $"Detalles de cuota con fecha " + payment.DatePayment.ToString() +" \n" +
                         "El estado de la cuota es : " + payment.PaymentStatus.ToString();
                     btnPagar.Visible = payment.PaymentStatus == "Pendiente";
                     etqMetodo.Visible = payment.PaymentStatus == "Pendiente";
                     comboMetodo.Visible = payment.PaymentStatus == "Pendiente";
-                    if (payment.Metodo == "Pagada")
+                    if (payment.TypePay == "Pagada")
                     {
-                        eqtEstado.Text += "\nMetodo :" + payment.Metodo;
-                    }
-                }
-            }
-        }
-        private void btnMostrar_Click(object sender, EventArgs e)
-        {
-            listPay.Clear();
-            comboMesPagar.DataSource = null;
-            int idInscription = 0;
-            // Almaceno el IdInscription para buscar las cuotas según el registro de inscription.
-            // Busco la inscripcion según el id del alumno.
-            foreach (Cursada c in listCursada)
-            {
-                if (c.IdCourse == int.Parse(comboCurso.SelectedValue.ToString()))
-                {
-                    idInscription = payService.GetIdInscription(studentPay.IdStudent, c.IdCursada);
-                    if (idInscription > 0)
-                    {
-                        // Limpio el comboBox
-                        comboMesPagar.Items.Clear();
-                        // Almaceno los pagos en una lista de tipo Payment
-                        listPay = payService.GetPayment(idInscription);
-                        // En el comboMesPagar muestro los meses de cada elemento en la lista
-                        comboMesPagar.DataSource = listPay;
-                        comboMesPagar.DisplayMember = "Fecha";
-                        comboMesPagar.ValueMember = "IdPayment";
-                        groupCuota.Visible = true;
+                        eqtEstado.Text += "\nMetodo :" + payment.TypePay;
                     }
                 }
             }

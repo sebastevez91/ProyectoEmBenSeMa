@@ -45,15 +45,15 @@ namespace Proyecto.EmBenSeMa
             {
                 // Si todos los campos son válidos se agrega el usuario a la base de datos.
                 // User
-                user.Username = txtUsuario.Text;
-                user.Password = txtContra.Text;
+                //user.Username = txtUsuario.Text;
+                //user.Password = txtContra.Text;
                 if (registroService.AddUser(user))
                 {
                     // Compruebo que tipo de usuario voy a registrar en la BD
                     if (etqRegistro.Text == "Nuevo Alumno")
                     {
-                        // Nuevo Alumno
-                        student.Name = txtNombre.Text;
+                        //// Nuevo Alumno
+                        //student.Name = txtNombre.Text;
                         student.Surname = txtApellido.Text;
                         student.Mail = txtCorreo.Text;
                         student.Dni = int.Parse(txtDni.Text);

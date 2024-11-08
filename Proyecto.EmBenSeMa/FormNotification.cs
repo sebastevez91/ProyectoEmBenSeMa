@@ -5,88 +5,41 @@ namespace SchoolMusic.Proyecto
 {
     public partial class FormNotification : Form
     {
-        public FormNotification()
+        public FormNotification(int idUser)
         {
             InitializeComponent();
+            idUserSesion = idUser;
         }
-        NotificationService notifService = new NotificationService();
-        List<Notification> listSubject = new List<Notification>();
-        List<Teacher> listTeacher = new List<Teacher>();
-        List<Student> listStudent = new List<Student>();
+        NotificationService notificationService = new NotificationService();
+        List<Notification> listRecibidos = new List<Notification>();
+        List<Notification> listEnvios = new List<Notification>();
         Notification notification = new Notification();
 
-        private int idFound = 0;
-        private string selectedValue;
-        private string tipoUser = "";
-        public void ShowNotifStudent(int numId, List<Cursada> listCursada)
-        {
-            tipoUser = "Student";
+        private int idUserSesion;
+        private int idUserTo;
 
-            idFound = numId;
-            foreach (Cursada c in listCursada)
-            {
-                listTeacher.Add(notifService.GetTeacher(c.IdTeacher));
-            }
-            UpdateSubject(numId);
-            MostrarSubject();
-        }
-        public void ShowNotifTeacher(int numId, List<Student> listStudent)
+        public void ShowNotification()
         {
-            tipoUser = "Teacher";
-
-            idFound = numId;
-            foreach (Student s in listStudent)
-            {
-                this.listStudent.Add(notifService.GetStudent(s.IdStudent));
-            }
-            UpdateSubject(numId);
-            MostrarSubject();
+            listRecibidos.Clear();
+            listRecibidos = notificationService.GetNotificationRecibidas(idUserSesion);
+            listEnvios.Clear();
+            listEnvios = notificationService.GetNotificationEnviadas(idUserSesion);
         }
         private void MostrarSubject()
         {
-            List<Notification> listRecibidos = new List<Notification>();
-            List<Notification> listEnvio = new List<Notification>();
-            listRecibidos.Clear();
-            listEnvio.Clear();
-            foreach (Notification n in listSubject)
-            {
-                if (n.tipo == "Recepción")
-                {
-                    listRecibidos.Add(n);
-                }
-                else
-                {
-                    listEnvio.Add(n);
-                }
-            }
-            listRecpcion.DataSource = null;
-            listRecpcion.DataSource = listRecibidos;
-            listRecpcion.DisplayMember = "Subject";
-            listRecpcion.ValueMember = "IdNotification";
-            listRecpcion.SelectedIndex = -1;
 
-            listEnviados.DataSource = null;
-            listEnviados.DataSource = listEnvio;
-            listEnviados.DisplayMember = "Subject";
-            listEnviados.ValueMember = "IdNotification";
-            listEnviados.SelectedIndex = -1;
+            Recpcion.DataSource = null;
+            Recpcion.DataSource = listRecibidos;
+            Recpcion.DisplayMember = "Subject";
+            Recpcion.ValueMember = "IdNotification";
+            Recpcion.SelectedIndex = -1;
 
-        }
-        private void MostrarTeacher()
-        {
-            comboTo.DataSource = null;
-            comboTo.DataSource = listTeacher;
-            comboTo.DisplayMember = "Name";
-            comboTo.ValueMember = "IdTeacher";
-            comboTo.SelectedIndex = -1;
-        }
-        private void MostrarStudent()
-        {
-            comboTo.DataSource = null;
-            comboTo.DataSource = listStudent;
-            comboTo.DisplayMember = "Name";
-            comboTo.ValueMember = "IdStudent";
-            comboTo.SelectedIndex = -1;
+            Enviados.DataSource = null;
+            Enviados.DataSource = listEnvios;
+            Enviados.DisplayMember = "Subject";
+            Enviados.ValueMember = "IdNotification";
+            Enviados.SelectedIndex = -1;
+
         }
         // Botones
         private void btnSalir_Click(object sender, EventArgs e)
@@ -95,31 +48,10 @@ namespace SchoolMusic.Proyecto
         }
         private void btnResponde_Click(object sender, EventArgs e)
         {
-            Student student = new Student();
-            Teacher teacher = new Teacher();
             grboxMensaje.Visible = false;
-            comboTo.Visible = false;
             txtAsunto.Visible = false;
             groupBoxSend.Visible = true;
             btnEnviar.Visible = true;
-            foreach (Notification n in listSubject)
-            {
-                if (n.idNotification == int.Parse(selectedValue))
-                {
-                    etqSubject.Text = $"Asunto: {n.subject}";
-                    if (tipoUser == "Student")
-                    {
-                        teacher = notifService.GetTeacher(n.idTeacher);
-                        etqTo.Text = $"Para: {teacher.NameTeacher}";
-                    }
-                    else
-                    {
-                        student = notifService.GetStudent(n.idStudent);
-                        etqTo.Text = $"Para: {student.Name}";
-                    }
-                    txtAsunto.Text = n.subject;
-                }
-            }
         }
         private void btnMostrar_Click(object sender, EventArgs e)
         {
@@ -129,44 +61,30 @@ namespace SchoolMusic.Proyecto
                 groupBoxSend.Visible = false;
                 btnEnviar.Visible = false;
             }
-
-
-            if (TypeMjs.Text == "Mensajes Recibidos")
+            if (Recpcion.Visible == true)
             {
-                selectedValue = listRecpcion.SelectedValue?.ToString();
                 btnResponde.Visible = true;
-            }
-            else
-            {
-                selectedValue = listEnviados.SelectedValue?.ToString();
-                btnResponde.Visible = false;
-            }
-
-            // Esta línea de código verifica si la variable selectedValue no es nula ni está vacía.
-            // Si es así, el resultado será true; de lo contrario, será false.
-            if (!string.IsNullOrEmpty(selectedValue))
-            {
-                if (groupBoxSend.Visible == true)
+                foreach (Notification n in listRecibidos)
                 {
-                    grboxMensaje.Visible = true;
-                    groupBoxSend.Visible = false;
-                }
-                if (listSubject != null && listSubject.Count > 0)
-                {
-                    etqMensaje.Visible = true;
-                    foreach (Notification n in listSubject)
+                    if (Recpcion.SelectedValue?.ToString() == n.IdNotification.ToString())
                     {
-                        if (selectedValue == n.idNotification.ToString())
-                        {
-                            etqMensaje.Text = "Fecha del mensaje: " + n.dateNotification + "\n" +
-                                "Mensaje: " + n.body;
-                        }
+                        etqMensaje.Text = "Fecha del mensaje: " + n.DateNotification + "\n" +
+                            "Mensaje: " + n.Body;
+                        idUserTo = n.NotificationFrom;
                     }
                 }
             }
             else
             {
-                MessageBox.Show("No se a seleccionado ningún mensaje.");
+                btnResponde.Visible = false;
+                foreach (Notification n in listEnvios)
+                {
+                    if (Enviados.SelectedValue?.ToString() == n.IdNotification.ToString())
+                    {
+                        etqMensaje.Text = "Fecha del mensaje: " + n.DateNotification + "\n" +
+                            "Mensaje: " + n.Body;
+                    }
+                }
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -176,113 +94,23 @@ namespace SchoolMusic.Proyecto
             groupBoxSend.Visible = true;
             btnEnviar.Visible = true;
             btnResponde.Visible = false;
-            comboTo.Visible = true;
             etqSubject.Text = "Asunto: ";
             etqTo.Text = "Para: ";
             txtAsunto.Clear();
             txtAsunto.Visible = true;
-            if (tipoUser == "Student")
-            {
-                MostrarTeacher();
-            }
-            else
-            {
-                MostrarStudent();
-            }
         }
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            Student student = new Student();
-            Teacher teacher = new Teacher();
-            string name = "";
+            int result;
+
             if (txtAsunto.Text != " " && txtMensaje.Text != " ")
             {
-                if (tipoUser == "Student")
-                {
-                    if (idFound > 0)
-                    {
-                        if (comboTo.Visible == true)
-                        {
-                            selectedValue = comboTo.SelectedValue.ToString();
-                            foreach (Teacher t in listTeacher)
-                            {
-                                if(t.IdTeacher == int.Parse(selectedValue))
-                                {
-                                    name = t.NameTeacher;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            foreach (Notification n in listSubject)
-                            {
-                                if (n.idNotification == int.Parse(selectedValue))
-                                {
-                                    foreach (Teacher t in listTeacher)
-                                    {
-                                        if (t.IdTeacher == n.idTeacher)
-                                        {
-                                            name = t.NameTeacher;
-                                            selectedValue = t.IdTeacher.ToString();
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                notification.NotificationTo = idUserTo;
+                notification.NotificationFrom = idUserSesion;
+                notification.Subject = txtAsunto.Text;
+                notification.Body = txtMensaje.Text;
+                result = notificationService.SendNotification(notification);
 
-                        student = notifService.GetStudent(idFound);
-                        notification.idStudent = student.IdStudent;
-                        notification.idTeacher = int.Parse(selectedValue);
-                        notification.subject = txtAsunto.Text;
-                        notification.body = txtMensaje.Text + "\n" +
-                            $"Para: {name} \n" +
-                            $"Enviado por: {student.Name}";
-                        notifService.SendNotifiStudent(notification);
-                    }
-                }
-                else
-                {
-                    if (idFound > 0 && tipoUser == "Teacher")
-                    {
-                        if (comboTo.Visible == true)
-                        {
-                            selectedValue = comboTo.SelectedValue.ToString();
-                            foreach (Student s in listStudent)
-                            {
-                                if (s.IdStudent == int.Parse(selectedValue))
-                                {
-                                    name = s.Name;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            foreach (Notification n in listSubject)
-                            {
-                                if (n.idNotification == int.Parse(selectedValue))
-                                {
-                                    foreach (Student s in listStudent)
-                                    {
-                                        if (s.IdStudent == n.idStudent)
-                                        {
-                                            name = s.Name;
-                                        }
-                                    }
-                                    selectedValue = n.idStudent.ToString();
-                                }
-                            }
-                        }
-
-                        teacher = notifService.GetTeacher(idFound);
-                        notification.idStudent = int.Parse(selectedValue);
-                        notification.idTeacher = teacher.IdTeacher;
-                        notification.subject = txtAsunto.Text;
-                        notification.body = txtMensaje.Text + "\n" +
-                            $"Para: {name}\n" +
-                            $"Enviado por: {teacher.NameTeacher}";
-                        notifService.SendNotifiTeacher(notification);
-                    }
-                }
             }
             else
             {
@@ -300,33 +128,21 @@ namespace SchoolMusic.Proyecto
         private void btnRecpcion_Click(object sender, EventArgs e)
         {
             TypeMjs.Text = "Mensajes Recibidos";
-            listRecpcion.DataSource = null;
-            UpdateSubject(idFound);
+            Recpcion.DataSource = null;
+            ShowNotification();
             MostrarSubject();
-            listEnviados.Visible = false;
-            listRecpcion.Visible = true;
+            Enviados.Visible = false;
+            Recpcion.Visible = true;
         }
         private void btnEnviados_Click(object sender, EventArgs e)
         {
             TypeMjs.Text = "Mensajes Enviados";
-            listEnviados.DataSource = null;
-            listEnviados.Items.Clear();
-            UpdateSubject(idFound);
+            ShowNotification();
+            Enviados.DataSource = null;
+            Enviados.Items.Clear();
             MostrarSubject();
-            listRecpcion.Visible = false;
-            listEnviados.Visible = true;
-        }
-        private void UpdateSubject(int numId)
-        {
-            listSubject.Clear();
-            if (tipoUser == "Student")
-            {
-                listSubject = notifService.GetNotificationStudent(numId);
-            }
-            else
-            {
-                listSubject = notifService.GetNotificationTeacher(numId);
-            }
+            Recpcion.Visible = false;
+            Enviados.Visible = true;
         }
     }
 }

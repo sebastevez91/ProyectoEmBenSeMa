@@ -15,6 +15,8 @@ namespace SchoolMusic.Web.Pages.Aula
         }
 
         public Teacher Teacher { get; set; } = default!;
+        public string Username { get; set; }
+        public IList<Cursada> Cursada { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -22,8 +24,17 @@ namespace SchoolMusic.Web.Pages.Aula
             {
                 return NotFound();
             }
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.IdUser == id);
+            if (user != null)
+            {
+                Username = user.Username;
+            }
 
             var teacher = await _context.Teacher.FirstOrDefaultAsync(m => m.IdUser == id);
+            var cursadas = await _context.Cursada
+                .Where(c => c.IdTeacher == teacher.IdTeacher)
+                .ToListAsync();
+
             if (teacher == null)
             {
                 return NotFound();
@@ -31,6 +42,7 @@ namespace SchoolMusic.Web.Pages.Aula
             else
             {
                 Teacher = teacher;
+                Cursada = cursadas;
             }
             return Page();
         }

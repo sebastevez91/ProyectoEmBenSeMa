@@ -53,5 +53,9 @@ namespace SchoolMusic.Web.Data
         public DbSet<SchoolMusic.Entidades.Inscription> Inscription { get; set; } = default!;
 
         public DbSet<SchoolMusic.Entidades.Tablon> Tablon { get; set; } = default!;
+
+        public DbSet<SchoolMusic.Entidades.Notification> Notification { get; set; } = default!;
+
+        public DbSet<SchoolMusic.Entidades.Payment> Payment { get; set; } = default!;
     }
 }

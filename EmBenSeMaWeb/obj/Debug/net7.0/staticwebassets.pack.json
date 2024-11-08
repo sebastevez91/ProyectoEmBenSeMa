@@ -21,10 +21,6 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\img\\20231014_182752.jpg",
-      "PackagePath": "staticwebassets\\img\\20231014_182752.jpg"
-    },
-    {
       "Id": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\img\\Bajo.jpg",
       "PackagePath": "staticwebassets\\img\\Bajo.jpg"
     },
@@ -37,6 +33,10 @@
       "PackagePath": "staticwebassets\\img\\bateria.jpg"
     },
     {
+      "Id": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\img\\mensaje.png",
+      "PackagePath": "staticwebassets\\img\\mensaje.png"
+    },
+    {
       "Id": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\img\\piano.jpg",
       "PackagePath": "staticwebassets\\img\\piano.jpg"
     },
@@ -47,6 +47,14 @@
     {
       "Id": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\img\\regisTeacher.jpg",
       "PackagePath": "staticwebassets\\img\\regisTeacher.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\img\\userSesion.png",
+      "PackagePath": "staticwebassets\\img\\userSesion.png"
+    },
+    {
+      "Id": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\img\\ver.png",
+      "PackagePath": "staticwebassets\\img\\ver.png"
     },
     {
       "Id": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\js\\site.js",

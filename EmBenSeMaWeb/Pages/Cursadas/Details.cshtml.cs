@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SchoolMusic.Entidades;
-using SchoolMusic.Web.Data;
 
 namespace SchoolMusic.Web.Pages.Cursadas
 {
@@ -32,21 +27,27 @@ namespace SchoolMusic.Web.Pages.Cursadas
             }
 
             Cursadas = await _context.Cursada
-                .Include(t => t.Teacher )
+                .Include(t => t.Teacher)
                 .Include(c => c.Course)
                 .Where(c => c.IdTeacher == id)
                 .ToListAsync();
-            // Almaceno el curso.
-            Course = Cursadas[1].Course;
-            // Almaceno id de Teacher
-            idTeacher = Cursadas[1].IdTeacher;
-            // Almaceno el ID del usuario en sesión 
-            idUserSesion = Cursadas[0].Teacher.IdUser;
-
             if (Cursadas == null || Cursadas.Count == 0)
             {
-                return NotFound(); // Si no hay Cursadas asociadas, devolver NotFound
+                var teacherSesion = await _context.Teacher.FirstOrDefaultAsync(t => t.IdTeacher == id);
+                // Almaceno el ID del usuario en sesión 
+                idUserSesion = teacherSesion.IdUser;
+                return Page(); // Si no hay Cursadas asociadas, devolver NotFound
             }
+            else
+            {
+                // Almaceno el curso.
+                Course = Cursadas[1].Course;
+                // Almaceno id de Teacher
+                idTeacher = Cursadas[1].IdTeacher;
+                // Almaceno el ID del usuario en sesión 
+                idUserSesion = Cursadas[0].Teacher.IdUser;
+            }
+
 
             return Page();
         }

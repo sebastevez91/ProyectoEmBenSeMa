@@ -69,9 +69,9 @@ namespace SchoolMusic.Proyecto
             if (student != null)
             {
                 // Datos Personales
-                etqData.Text = $"NOMBRE COMPLETO: {student.Name} {student.Surname}\n" +
-                    $"DNI: {student.Dni}  EDAD: {student.Age}\n" +
-                    $"CORREO: {student.Mail}\n";
+                //etqData.Text = $"NOMBRE COMPLETO: {student.Name} {student.Surname}\n" +
+                //    $"DNI: {student.Dni}  EDAD: {student.Age}\n" +
+                //    $"CORREO: {student.Mail}\n";
 
                 // Traemos las cursadas a las que está inscripto
                 listCursada = studentsService.GetListCursada(student.IdStudent);
