@@ -55,7 +55,7 @@
             btnPay = new Button();
             btnMostrar = new Button();
             btnCanceCurs = new Button();
-            btnForo = new Button();
+            btnTablon = new Button();
             groupBox1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -121,7 +121,7 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(593, 378);
+            btnSalir.Location = new Point(673, 370);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(75, 23);
             btnSalir.TabIndex = 2;
@@ -149,7 +149,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { aulaToolStripMenuItem, verCursoToolStripMenuItem, contactoToolStripMenuItem, ayudaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(704, 24);
+            menuStrip1.Size = new Size(760, 24);
             menuStrip1.TabIndex = 4;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -163,21 +163,21 @@
             // modificarPerfilToolStripMenuItem
             // 
             modificarPerfilToolStripMenuItem.Name = "modificarPerfilToolStripMenuItem";
-            modificarPerfilToolStripMenuItem.Size = new Size(180, 22);
+            modificarPerfilToolStripMenuItem.Size = new Size(155, 22);
             modificarPerfilToolStripMenuItem.Text = "Modificar Perfil";
             modificarPerfilToolStripMenuItem.Click += modificarPerfilToolStripMenuItem_Click;
             // 
             // cerrarSecciónToolStripMenuItem
             // 
             cerrarSecciónToolStripMenuItem.Name = "cerrarSecciónToolStripMenuItem";
-            cerrarSecciónToolStripMenuItem.Size = new Size(180, 22);
+            cerrarSecciónToolStripMenuItem.Size = new Size(155, 22);
             cerrarSecciónToolStripMenuItem.Text = "Notificaciones";
             cerrarSecciónToolStripMenuItem.Click += cerrarSecciónToolStripMenuItem_Click;
             // 
             // cerrarSessiónToolStripMenuItem
             // 
             cerrarSessiónToolStripMenuItem.Name = "cerrarSessiónToolStripMenuItem";
-            cerrarSessiónToolStripMenuItem.Size = new Size(180, 22);
+            cerrarSessiónToolStripMenuItem.Size = new Size(155, 22);
             cerrarSessiónToolStripMenuItem.Text = "Cerrar Sessión";
             cerrarSessiónToolStripMenuItem.Click += cerrarSessiónToolStripMenuItem_Click;
             // 
@@ -192,7 +192,7 @@
             // 
             pagosToolStripMenuItem.Enabled = false;
             pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
-            pagosToolStripMenuItem.Size = new Size(180, 22);
+            pagosToolStripMenuItem.Size = new Size(106, 22);
             pagosToolStripMenuItem.Text = "Pagos";
             pagosToolStripMenuItem.Click += pagosToolStripMenuItem_Click;
             // 
@@ -200,7 +200,7 @@
             // 
             foroToolStripMenuItem.Enabled = false;
             foroToolStripMenuItem.Name = "foroToolStripMenuItem";
-            foroToolStripMenuItem.Size = new Size(180, 22);
+            foroToolStripMenuItem.Size = new Size(106, 22);
             foroToolStripMenuItem.Text = "Foro";
             foroToolStripMenuItem.Click += foroToolStripMenuItem_Click;
             // 
@@ -240,11 +240,11 @@
             btnNotificacion.ForeColor = Color.Transparent;
             btnNotificacion.Image = (Image)resources.GetObject("btnNotificacion.Image");
             btnNotificacion.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNotificacion.Location = new Point(554, 38);
+            btnNotificacion.Location = new Point(583, 38);
             btnNotificacion.Name = "btnNotificacion";
-            btnNotificacion.Size = new Size(137, 41);
+            btnNotificacion.Size = new Size(165, 41);
             btnNotificacion.TabIndex = 21;
-            btnNotificacion.Text = "Mensajes";
+            btnNotificacion.Text = "Notificaciones";
             btnNotificacion.TextAlign = ContentAlignment.MiddleRight;
             btnNotificacion.UseVisualStyleBackColor = true;
             btnNotificacion.Click += btnNotificacion_Click;
@@ -297,21 +297,21 @@
             btnCanceCurs.UseVisualStyleBackColor = true;
             btnCanceCurs.Click += btnCanceCurs_Click;
             // 
-            // btnForo
+            // btnTablon
             // 
-            btnForo.BackgroundImage = (Image)resources.GetObject("btnForo.BackgroundImage");
-            btnForo.Enabled = false;
-            btnForo.FlatStyle = FlatStyle.Flat;
-            btnForo.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnForo.ForeColor = Color.Transparent;
-            btnForo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnForo.Location = new Point(554, 85);
-            btnForo.Name = "btnForo";
-            btnForo.Size = new Size(137, 41);
-            btnForo.TabIndex = 26;
-            btnForo.Text = "Foro";
-            btnForo.UseVisualStyleBackColor = true;
-            btnForo.Click += btnForo_Click;
+            btnTablon.BackgroundImage = (Image)resources.GetObject("btnTablon.BackgroundImage");
+            btnTablon.Enabled = false;
+            btnTablon.FlatStyle = FlatStyle.Flat;
+            btnTablon.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTablon.ForeColor = Color.Transparent;
+            btnTablon.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTablon.Location = new Point(583, 85);
+            btnTablon.Name = "btnTablon";
+            btnTablon.Size = new Size(165, 41);
+            btnTablon.TabIndex = 26;
+            btnTablon.Text = "Tablon";
+            btnTablon.UseVisualStyleBackColor = true;
+            btnTablon.Click += btnForo_Click;
             // 
             // FormStudent
             // 
@@ -319,8 +319,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(704, 450);
-            Controls.Add(btnForo);
+            ClientSize = new Size(760, 450);
+            Controls.Add(btnTablon);
             Controls.Add(btnCanceCurs);
             Controls.Add(btnMostrar);
             Controls.Add(btnPay);
@@ -371,7 +371,7 @@
         private ColumnHeader StartTime;
         private ColumnHeader EndTime;
         private Button btnCanceCurs;
-        private Button btnForo;
+        private Button btnTablon;
         private ToolStripMenuItem foroToolStripMenuItem;
     }
 }

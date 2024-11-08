@@ -42,7 +42,7 @@ namespace SchoolMusic.Proyecto
             if(listCursada.Count <= 0)
             {
                 btnCanceCurs.Enabled = false;
-                btnForo.Enabled = false;
+                btnTablon.Enabled = false;
                 btnPay.Enabled = false;
                 pagosToolStripMenuItem.Enabled = false;
                 foroToolStripMenuItem.Enabled = false;
@@ -370,7 +370,7 @@ namespace SchoolMusic.Proyecto
                         if (selectedItem == cur.IdCursada)
                         {
                             idCursada = cur.IdCursada;
-                            btnForo.Enabled = true;
+                            btnTablon.Enabled = true;
                             btnCanceCurs.Enabled = true;
                             btnPay.Enabled = true;
                             pagosToolStripMenuItem.Enabled = true;

@@ -20,9 +20,9 @@ namespace SchoolMusic.Proyecto
 
         public void SessionTablon(Users user, int idCursada, string tipoUser)
         {
-            // Usuario en sessión
+            // Usuario en sesión
             userSession = user;
-            // Cursada en sessión
+            // Cursada en sesión
             cursada = tablonService.GetCursada(idCursada);
             // Titulo
             tittle.Text = $"Cursada de {tablonService.GetNameCourse(cursada.IdCourse)}, de {cursada.StarTime.ToString("HH:mm")} a {cursada.EndTime.ToString("HH:mm")}";

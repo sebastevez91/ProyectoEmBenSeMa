@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\capa.servicios\\studentsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|solutionrelative:capa.servicios\\studentsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\capa.servicios\\tablonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|solutionrelative:capa.servicios\\tablonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\proyecto.embensema\\formstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\proyecto.embensema\\formtablon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formtablon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\proyecto.embensema\\formpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\proyecto.embensema\\formpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\proyecto.embensema\\formstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\proyecto.embensema\\formtablon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formtablon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,65 +38,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormPayment.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormPayment.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormPayment.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormPayment.cs",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormPayment.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T19:33:25.665Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormPayment.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormPayment.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormPayment.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormPayment.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormPayment.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T19:33:22.086Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormStudent.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormStudent.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormStudent.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormStudent.cs",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormStudent.cs",
-              "ViewState": "AQIAAI4AAAAAAAAAAAA1wH8BAABDAAAA",
+              "Title": "FormTablon.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormTablon.cs",
+              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormTablon.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormTablon.cs",
+              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormTablon.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAABNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T19:20:24.313Z",
+              "WhenOpened": "2024-11-08T20:29:19.114Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FormStudent.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormStudent.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormStudent.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormStudent.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormStudent.cs [Dise\u00F1o]",
+              "DocumentIndex": 2,
+              "Title": "FormTablon.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormTablon.cs",
+              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormTablon.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormTablon.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormTablon.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T19:19:58.213Z",
+              "WhenOpened": "2024-11-08T20:29:09.135Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "StudentsService.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\StudentsService.cs",
-              "RelativeDocumentMoniker": "Capa.Servicios\\StudentsService.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\StudentsService.cs",
-              "RelativeToolTip": "Capa.Servicios\\StudentsService.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAxwKAAAAAFAAAA",
+              "Title": "TablonService.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\TablonService.cs",
+              "RelativeDocumentMoniker": "Capa.Servicios\\TablonService.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\TablonService.cs",
+              "RelativeToolTip": "Capa.Servicios\\TablonService.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T19:13:51.918Z",
+              "WhenOpened": "2024-11-08T20:27:35.278Z",
               "EditorCaption": ""
             }
           ]
