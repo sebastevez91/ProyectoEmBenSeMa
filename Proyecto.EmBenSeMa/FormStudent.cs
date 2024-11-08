@@ -12,7 +12,7 @@ namespace SchoolMusic.Proyecto
         }
         // Declaración de variables globales
         private int idCursada;
-        private Users userSession = null;
+        private Users userSesion = null;
         private Student student = new Student();
         private Teacher teacher = new Teacher();
         private StudentsService studentsService = new StudentsService();
@@ -42,7 +42,7 @@ namespace SchoolMusic.Proyecto
             if(listCursada.Count <= 0)
             {
                 btnCanceCurs.Enabled = false;
-                btnForo.Enabled = false;
+                btnTablon.Enabled = false;
                 btnPay.Enabled = false;
                 pagosToolStripMenuItem.Enabled = false;
                 foroToolStripMenuItem.Enabled = false;
@@ -60,23 +60,21 @@ namespace SchoolMusic.Proyecto
             }
             CourseDate();
         }
-        public void ShowData(Users userSession)
+        public void ShowData(Users userSesion)
         {
-            this.userSession = userSession;
-
-            student = studentsService.GetStudent(userSession.IdUser);
+            this.userSesion = userSesion;
+            student = studentsService.GetStudent(userSesion.IdUser);
 
             if (student != null)
             {
-                // Datos Personales
-                //etqData.Text = $"NOMBRE COMPLETO: {student.Name} {student.Surname}\n" +
-                //    $"DNI: {student.Dni}  EDAD: {student.Age}\n" +
-                //    $"CORREO: {student.Mail}\n";
+                //Datos Personales
+                etqData.Text = $"NOMBRE COMPLETO: {student.NameStudent} {student.Surname}\n" +
+                    $"DNI: {student.Dni}  EDAD: {student.Age}\n" +
+                    $"CORREO: {student.Mail}\n";
 
                 // Traemos las cursadas a las que está inscripto
                 listCursada = studentsService.GetListCursada(student.IdStudent);
                 CourseDate();
-
             }
             else
             {
@@ -109,7 +107,7 @@ namespace SchoolMusic.Proyecto
             try
             {
                 viewNotification();
-                notification.ShowNotifStudent(student.IdStudent, listCursada);
+                notification.ShowNotification(userSesion.IdUser);
                 notification.Show();
             }
             catch (System.ObjectDisposedException)
@@ -123,7 +121,7 @@ namespace SchoolMusic.Proyecto
             try
             {
                 viewPayment();
-                payment.ShowPay(student, listCourse, listCursada);
+                payment.ShowPaymentStudent(student, "Student");
                 payment.Show();
             }
             catch (System.ObjectDisposedException)
@@ -134,7 +132,7 @@ namespace SchoolMusic.Proyecto
         }
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            student = studentsService.GetStudent(userSession.IdUser);
+            student = studentsService.GetStudent(userSesion.IdUser);
             listCursada = studentsService.GetListCursada(student.IdStudent);
             if (listCursada.Count <= 0)
             {
@@ -147,7 +145,7 @@ namespace SchoolMusic.Proyecto
             try
             {
                 viewTablon();
-                formTablon.SessionTablon(userSession, idCursada, "Student");
+                formTablon.SesionTablon(userSesion, idCursada, "Student");
                 formTablon.Show();
             }
             catch (System.ObjectDisposedException)
@@ -166,7 +164,7 @@ namespace SchoolMusic.Proyecto
             try
             {
                 viewUpdate();
-                updateStudent.SetUsers(userSession);
+                updateStudent.SetUsers(userSesion);
                 updateStudent.SetStudent(student);
                 updateStudent.Show();
             }
@@ -181,7 +179,7 @@ namespace SchoolMusic.Proyecto
             try
             {
                 viewNotification();
-                notification.ShowNotifStudent(student.IdStudent, listCursada);
+                notification.ShowNotification(userSesion.IdUser);
                 notification.Show();
             }
             catch (System.ObjectDisposedException)
@@ -212,7 +210,7 @@ namespace SchoolMusic.Proyecto
             try
             {
                 viewPayment();
-                payment.ShowPay(student, listCourse, listCursada);
+                payment.ShowPaymentStudent(student, "Student");
                 payment.Show();
             }
             catch (System.ObjectDisposedException)
@@ -226,7 +224,7 @@ namespace SchoolMusic.Proyecto
             try
             {
                 viewTablon();
-                formTablon.SessionTablon(userSession, idCursada, "Student");
+                formTablon.SesionTablon(userSesion, idCursada, "Student");
                 formTablon.Show();
             }
             catch (System.ObjectDisposedException)
@@ -372,7 +370,7 @@ namespace SchoolMusic.Proyecto
                         if (selectedItem == cur.IdCursada)
                         {
                             idCursada = cur.IdCursada;
-                            btnForo.Enabled = true;
+                            btnTablon.Enabled = true;
                             btnCanceCurs.Enabled = true;
                             btnPay.Enabled = true;
                             pagosToolStripMenuItem.Enabled = true;
@@ -385,7 +383,20 @@ namespace SchoolMusic.Proyecto
         }
         private void btnCanceCurs_Click(object sender, EventArgs e)
         {
-            studentsService.DeleteInscription(idCursada, student.IdStudent);
+            DialogResult dialogResult = MessageBox.Show("¿Queres cancelar la cursada?", "Cancelación de cursada", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if(studentsService.DeleteInscription(idCursada, student.IdStudent))
+                {
+                    MessageBox.Show("Inscripción a cursada cancelada");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo cancelar la cursada");
+                }
+            }
+                
+
             listCursada = studentsService.GetListCursada(student.IdStudent);
             idCursada = 0;
             ShowInfo();

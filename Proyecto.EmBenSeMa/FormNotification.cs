@@ -5,10 +5,9 @@ namespace SchoolMusic.Proyecto
 {
     public partial class FormNotification : Form
     {
-        public FormNotification(int idUser)
+        public FormNotification()
         {
             InitializeComponent();
-            idUserSesion = idUser;
         }
         NotificationService notificationService = new NotificationService();
         List<Notification> listRecibidos = new List<Notification>();
@@ -18,8 +17,9 @@ namespace SchoolMusic.Proyecto
         private int idUserSesion;
         private int idUserTo;
 
-        public void ShowNotification()
+        public void ShowNotification(int idUser)
         {
+            idUserSesion = idUser;
             listRecibidos.Clear();
             listRecibidos = notificationService.GetNotificationRecibidas(idUserSesion);
             listEnvios.Clear();
