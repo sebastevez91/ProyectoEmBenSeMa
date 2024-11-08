@@ -15,7 +15,6 @@ namespace SchoolMusic.Serv
 
         public Student GetStudent(int idUser)
         {
-            int result = 0;
             // Agrego parametros
             prm.Clear();
             prm.Add("@idUser", idUser.ToString());
@@ -41,7 +40,7 @@ namespace SchoolMusic.Serv
             catch (NullReferenceException)
             {
 
-                //MessageBox.Show("Error");
+                student = null;
             }
 
             return student;
@@ -55,7 +54,7 @@ namespace SchoolMusic.Serv
             prm.Add("@idStudent", idStudent.ToString());
 
             // Query
-            string sqlQueryInscription = "SELECT * FROM Inscription WHERE IdStudent = @idStudent";
+            string sqlQueryInscription = "SELECT IdCursada FROM Inscription WHERE IdStudent = @idStudent";
             var dataInscription = select.SelectData(sqlQueryInscription, prm);
 
             if (dataInscription != null && dataInscription.Rows.Count > 0)
@@ -64,10 +63,7 @@ namespace SchoolMusic.Serv
                 {
                     listInscription.Add(new Inscription()
                     {
-                        idInscription = int.Parse(ins["IdInscription"].ToString()),
-                        idStudent = int.Parse(ins["IdStudent"].ToString()),
                         idCursada = int.Parse(ins["IdCursada"].ToString()),
-                        dateInscription = Convert.ToDateTime(ins["DateInscription"].ToString()),
                     });
                 }
 
@@ -147,30 +143,20 @@ namespace SchoolMusic.Serv
             };
             return teacher;
         }
-        public void DeleteInscription(int idCursada, int idStudent)
+        public bool DeleteInscription(int idCursada, int idStudent)
         {
             int result = 0;
-            //DialogResult dialogResult = MessageBox.Show("¿Queres cancelar la cursada?", "Cancelación de cursada", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            //if (dialogResult == DialogResult.Yes)
-            //{
-            //    // Agrego parámetros
-            //    prm.Clear();
-            //    prm.Add("@idCursada", idCursada.ToString());
-            //    prm.Add("@idStudent", idStudent.ToString());
+            // Agrego parámetros
+            prm.Clear();
+            prm.Add("@idCursada", idCursada.ToString());
+            prm.Add("@idStudent", idStudent.ToString());
 
-            //    // Query
-            //    string sqlDeleteinscription = "DELETE FROM Inscription WHERE IdCursada = @idCursada AND IdStudent = @idStudent";
-            //    result = accion.AccionEjecutar(sqlDeleteinscription, prm);
-            //    if (result > 0)
-            //    {
-            //        MessageBox.Show("Inscripción a cursada cancelada");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("No se pudo cancelar la cursada");
-            //    }
-            //}
+            // Query
+            string sqlDeleteinscription = "DELETE FROM Inscription WHERE IdCursada = @idCursada AND IdStudent = @idStudent";
+            result = accion.AccionEjecutar(sqlDeleteinscription, prm);
+
+            return result > 0? true: false;
         }
     }
 }
