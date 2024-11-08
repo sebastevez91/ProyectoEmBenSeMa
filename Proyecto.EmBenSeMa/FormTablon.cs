@@ -18,7 +18,7 @@ namespace SchoolMusic.Proyecto
         private string itemElegido = "";
         private string tipo = "";
 
-        public void SessionTablon(Users user, int idCursada, string tipoUser)
+        public void SesionTablon(Users user, int idCursada, string tipoUser)
         {
             // Usuario en sesión
             userSession = user;

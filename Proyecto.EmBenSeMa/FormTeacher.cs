@@ -55,7 +55,7 @@ namespace SchoolMusic.Proyecto
                 course = teacherService.GetCourse(cur.IdCourse);
                 foreach (Student student in listStudent)
                 {
-                    //item = lvCursada.Items.Add(student.Name.ToString());
+                    item = lvCursada.Items.Add(student.NameStudent.ToString());
                     item.SubItems.Add(student.Surname);
                     item.SubItems.Add(course.Instrument);
                     item.SubItems.Add(cur.StarTime.ToString("HH:mm") + " a " + cur.EndTime.ToString("HH:mm"));
@@ -79,7 +79,7 @@ namespace SchoolMusic.Proyecto
             {
 
                 viewNotification();
-                //notification.ShowNotifTeacher(teacher.IdTeacher, teacherService.GetStudentList(cursada.IdCursada));
+                notification.ShowNotification(userSession.IdUser);
                 notification.Show();
             }
             catch (System.ObjectDisposedException)
@@ -100,7 +100,7 @@ namespace SchoolMusic.Proyecto
                 {
                     selectValue = int.Parse(comboCursada.SelectedValue.ToString());
                     viewTablon();
-                    formTablon.SessionTablon(userSession, selectValue, "Teacher");
+                    formTablon.SesionTablon(userSession, selectValue, "Teacher");
                     formTablon.Show();
                 }
             }
@@ -135,7 +135,7 @@ namespace SchoolMusic.Proyecto
             try
             {
                 viewNotification();
-                notification.ShowNotifTeacher(teacher.IdTeacher, listStudent);
+                notification.ShowNotification(userSession.IdUser);
                 notification.Show();
             }
             catch (System.ObjectDisposedException)
@@ -166,6 +166,7 @@ namespace SchoolMusic.Proyecto
             try
             {
                 viewTablon();
+                formTablon.SesionTablon(userSession, selectValue, "Teacher");
                 formTablon.Show();
             }
             catch (System.ObjectDisposedException)
@@ -306,16 +307,24 @@ namespace SchoolMusic.Proyecto
                 // Agrega la cursada a la BD
                 if (teacherService.AddCursada(cursada))
                 {
-
+                    MessageBox.Show("Se agrego la cursada exitosamente!!!");
                     UpdateCursada();
                     foreach (Cursada cr in listCursada)
                     {
-                        if (cr.Description == cursada.Description)
+                        if (cr.Description == cursada.Description && cr.Initiation == cursada.Initiation 
+                            && cr.Finish == cursada.Finish && cr.StarTime == cursada.StarTime)
                         {
-                            teacherService.AddTablon(cr.IdCursada.ToString());
+                            if (!teacherService.AddTablon(cr.IdCursada.ToString()))
+                            {
+                                MessageBox.Show("No se pudo crear el tablón de la cursada", "Falla del registro BD" + MessageBoxIcon.Error);
+                            }
                         }
                     }
                     ShowStudent();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo registar la cursada");
                 }
 
                 grBoxCursada.Visible = false;
@@ -352,7 +361,7 @@ namespace SchoolMusic.Proyecto
                 comboCursada.DisplayMember = "IdCursada";
                 comboCursada.ValueMember = "IdCursada";
                 comboCursada.SelectedIndex = -1;
-                btnForo.Enabled = true;
+                btnTablon.Enabled = true;
             }
         }
     }

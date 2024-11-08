@@ -72,7 +72,7 @@
             dateFinish = new DateTimePicker();
             dateInitiation = new DateTimePicker();
             comboCourse = new ComboBox();
-            btnForo = new Button();
+            btnTablon = new Button();
             lvCursada = new ListView();
             NameStudent = new ColumnHeader();
             Surname = new ColumnHeader();
@@ -199,11 +199,11 @@
             btnNotificacion.ForeColor = Color.Transparent;
             btnNotificacion.Image = (Image)resources.GetObject("btnNotificacion.Image");
             btnNotificacion.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNotificacion.Location = new Point(730, 27);
+            btnNotificacion.Location = new Point(687, 27);
             btnNotificacion.Name = "btnNotificacion";
-            btnNotificacion.Size = new Size(137, 45);
+            btnNotificacion.Size = new Size(180, 45);
             btnNotificacion.TabIndex = 22;
-            btnNotificacion.Text = "Mensajes";
+            btnNotificacion.Text = "Notificaciones";
             btnNotificacion.TextAlign = ContentAlignment.MiddleRight;
             btnNotificacion.UseVisualStyleBackColor = true;
             btnNotificacion.Click += btnNotificacion_Click;
@@ -527,22 +527,22 @@
             comboCourse.Size = new Size(142, 23);
             comboCourse.TabIndex = 0;
             // 
-            // btnForo
+            // btnTablon
             // 
-            btnForo.BackgroundImage = (Image)resources.GetObject("btnForo.BackgroundImage");
-            btnForo.Enabled = false;
-            btnForo.FlatStyle = FlatStyle.Flat;
-            btnForo.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnForo.ForeColor = Color.Transparent;
-            btnForo.ImageAlign = ContentAlignment.MiddleLeft;
-            btnForo.Location = new Point(382, 223);
-            btnForo.Name = "btnForo";
-            btnForo.Size = new Size(129, 31);
-            btnForo.TabIndex = 28;
-            btnForo.Text = "Foro";
-            btnForo.TextAlign = ContentAlignment.TopCenter;
-            btnForo.UseVisualStyleBackColor = true;
-            btnForo.Click += btnForo_Click;
+            btnTablon.BackgroundImage = (Image)resources.GetObject("btnTablon.BackgroundImage");
+            btnTablon.Enabled = false;
+            btnTablon.FlatStyle = FlatStyle.Flat;
+            btnTablon.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnTablon.ForeColor = Color.Transparent;
+            btnTablon.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTablon.Location = new Point(382, 223);
+            btnTablon.Name = "btnTablon";
+            btnTablon.Size = new Size(129, 33);
+            btnTablon.TabIndex = 28;
+            btnTablon.Text = "Tablon";
+            btnTablon.TextAlign = ContentAlignment.TopCenter;
+            btnTablon.UseVisualStyleBackColor = true;
+            btnTablon.Click += btnForo_Click;
             // 
             // lvCursada
             // 
@@ -605,7 +605,7 @@
             Controls.Add(comboCursada);
             Controls.Add(label12);
             Controls.Add(lvCursada);
-            Controls.Add(btnForo);
+            Controls.Add(btnTablon);
             Controls.Add(button1);
             Controls.Add(grBoxCursada);
             Controls.Add(menuStrip1);
@@ -677,7 +677,7 @@
         private Label label10;
         private TextBox txtCuota;
         private Label label11;
-        private Button btnForo;
+        private Button btnTablon;
         private ListView lvCursada;
         private ColumnHeader NameStudent;
         private ColumnHeader Surname;

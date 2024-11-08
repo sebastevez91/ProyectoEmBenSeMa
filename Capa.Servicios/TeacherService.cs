@@ -35,18 +35,10 @@ namespace SchoolMusic.Serv
                 "VALUES (@idCourse,TRY_CONVERT(DATETIME, @initiation, 103),TRY_CONVERT(DATETIME, @finish, 103),@idTeacher,CONVERT(DATETIME, @starTime, 103),CONVERT(DATETIME, @endTime, 103),@vacantes,@days,@description,@payFee)";
 
             result = accion.AccionEjecutar(sqlInsertCourse, prm);
-            if (result > 0)
-            {
-                //MessageBox.Show("Se agrego la cursada exitosamente!!!");
-                return true;
-            }
-            else
-            {
-                //MessageBox.Show("No se pudo registar la cursada");
-                return false;
-            }
+            
+            return result > 0 ? true : false;
         }
-        public void AddTablon(string idCursada)
+        public bool AddTablon(string idCursada)
         {
             int result = 0;
             // Agrego parámetros
@@ -56,10 +48,8 @@ namespace SchoolMusic.Serv
             // Query
             string sqlInsertTablon = "INSERT INTO Tablon (IdCursada) VALUES (@idCursada)";
             result = accion.AccionEjecutar(sqlInsertTablon, prm);
-            if(result < 0)
-            {
-                //MessageBox.Show("No se pudo crear el tablón de la cursada","Falla del registro BD" + MessageBoxIcon.Error);
-            }
+
+            return result > 0? true : false;
         }
         public Teacher GetTeacher(int idUser)
         {
