@@ -23,7 +23,7 @@ namespace SchoolMusic.Serv
 
             return result > 0 ? true : false;
         }
-        public void UpdateStudent(Student updateStudent)
+        public bool UpdateStudent(Student updateStudent)
         {
             int result = 0;
             // Agrego parametros
@@ -38,12 +38,9 @@ namespace SchoolMusic.Serv
             // Query
             string sqlQueryUpdate = "UPDATE Student SET NameStudent = @nameStudent, Surname = @surname, Mail = @mail, Dni = @dni, Age = @age WHERE IdStudent = @idStudent";
             result = accion.AccionEjecutar(sqlQueryUpdate, prm);
-            if(result < 0)
-            {
-                //MessageBox.Show("No se pudo modificar los datos personales");
-            }
+            return result > 0? true : false;
         }
-        public void UpdateTeacher(Teacher updateTeacher)
+        public bool UpdateTeacher(Teacher updateTeacher)
         {
             int result = 0;
             // Agrego parametros
@@ -58,10 +55,7 @@ namespace SchoolMusic.Serv
             // Query
             string sqlQueryUpdate = "UPDATE Teacher SET NameTeacher = @nameTeacher, Surname = @surname, Mail = @mail, Dni = @dni, Age = @age WHERE IdTeacher = @idTeacher";
             result = accion.AccionEjecutar(sqlQueryUpdate, prm);
-            if (result < 0)
-            {
-                //MessageBox.Show("No se pudo modificar los datos personales");
-            }
+            return result > 0? true: false;
         }
     }
 }
