@@ -129,7 +129,7 @@ namespace SchoolMusic.Proyecto
         {
             TypeMjs.Text = "Mensajes Recibidos";
             Recpcion.DataSource = null;
-            ShowNotification();
+            ShowNotification(idUserSesion);
             MostrarSubject();
             Enviados.Visible = false;
             Recpcion.Visible = true;
@@ -137,7 +137,7 @@ namespace SchoolMusic.Proyecto
         private void btnEnviados_Click(object sender, EventArgs e)
         {
             TypeMjs.Text = "Mensajes Enviados";
-            ShowNotification();
+            ShowNotification(idUserSesion);
             Enviados.DataSource = null;
             Enviados.Items.Clear();
             MostrarSubject();

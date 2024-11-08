@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SchoolMusic.BD")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09818652768e4f14cd0b974c32ffe9068e81e4c9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85a8684833e155e2d5230585489336245b8f550b")]
 [assembly: System.Reflection.AssemblyProductAttribute("SchoolMusic.BD")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SchoolMusic.BD")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

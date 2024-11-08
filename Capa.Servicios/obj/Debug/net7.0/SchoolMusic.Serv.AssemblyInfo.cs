@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SchoolMusic.Serv")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1ff878ffacce61fad9f628853f8555ad041cb32")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85a8684833e155e2d5230585489336245b8f550b")]
 [assembly: System.Reflection.AssemblyProductAttribute("SchoolMusic.Serv")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SchoolMusic.Serv")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
