@@ -27,21 +27,16 @@ namespace SchoolMusic.Serv
             string sqlQueryLogin = "SELECT * FROM Users WHERE Username = @username AND UserPassword = @userPassword";
             try
             {
-                var table = select.SelectData(sqlQueryLogin, prm).Rows[0];
-                if (table != null)
+                var dataLogin = select.SelectData(sqlQueryLogin, prm);
+                if (dataLogin != null && dataLogin.Rows.Count > 0)
                 {
-                    userFound = new()
-                    {
-                        IdUser = int.Parse(table["IdUser"].ToString()),
-                        Username = table["Username"].ToString(),
-                        UserPassword = table["UserPassword"].ToString()
-                    };
+                    var table = dataLogin.Rows[0];
                     result = 1;
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-
+                Console.WriteLine("Error: " + ex.Message);
                 result = 0;
             }
 
@@ -56,37 +51,39 @@ namespace SchoolMusic.Serv
         {
             string newPassword = new Random().Next().ToString();
             int result = 0;
+            int idUser = 0;
             // Agrego parametros
             prm.Clear();
             prm.Add("@dni", dni);
             prm.Add("@mail", mail);
 
-            // Query
-            string sqlQueryChange = "SELECT * FROM Student WHERE Dni = @dni AND Mail = @mail";
-
-            var table = select.SelectData(sqlQueryChange, prm).Rows[0];
-            if (table != null)
+            try
             {
-                student = new()
+                // Query
+                string sqlQueryChange = "SELECT IdUser FROM Student WHERE Dni = @dni AND Mail = @mail";
+
+                var dataStudent = select.SelectData(sqlQueryChange, prm);
+                if (dataStudent != null && dataStudent.Rows.Count > 0)
                 {
-                    IdStudent = int.Parse(table["IdStudent"].ToString()),
-                    NameStudent = table["NameStudent"].ToString(),
-                    Surname = table["Surname"].ToString(),
-                    Mail = table["Mail"].ToString(),
-                    Dni = int.Parse(table["Dni"].ToString()),
-                    Age = int.Parse(table["Age"].ToString()),
-                    IdUser = int.Parse(table["IdUser"].ToString())
-                };
-                // Agrego parametros
-                prm.Clear();
-                prm.Add("@userPassword", newPassword);
-                prm.Add("@idUser", student.IdUser.ToString());
-                string sqlUpdatePass = "UPDATE Users SET UserPassword = @userPassword, ChangePassword = 1 WHERE IdUser = @idUser";
-                result = accion.AccionEjecutar(sqlUpdatePass, prm);
-                if (result > 0)
-                {
-                    EnviarMail(mail, newPassword);
+                    var table = dataStudent.Rows[0];
+
+                    idUser = int.Parse(table["IdUser"].ToString());
+                    // Agrego parametros
+                    prm.Clear();
+                    prm.Add("@userPassword", newPassword);
+                    prm.Add("@idUser", student.IdUser.ToString());
+                    string sqlUpdatePass = "UPDATE Users SET UserPassword = @userPassword, ChangePassword = 1 WHERE IdUser = @idUser";
+                    result = accion.AccionEjecutar(sqlUpdatePass, prm);
+                    if (result > 0)
+                    {
+                        EnviarMail(mail, newPassword);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error: " + ex.Message);
             }
             return result > 0 ? true : false;
         }
@@ -94,38 +91,40 @@ namespace SchoolMusic.Serv
         {
             string newPassword = new Random().Next().ToString();
             int result = 0;
+            int idUser = 0;
             // Agrego parametros
             prm.Clear();
             prm.Add("@dni", dni);
             prm.Add("@mail", mail);
 
-            // Query
-            string sqlQueryChange = $"SELECT * FROM Teacher WHERE Dni = @dni AND Mail = @mail";
-
-            var table = select.SelectData(sqlQueryChange, prm).Rows[0];
-            if (table != null)
+            try
             {
-                teacher = new()
+                // Query
+                string sqlQueryChange = $"SELECT IdUser FROM Teacher WHERE Dni = @dni AND Mail = @mail";
+
+                var dataTeacher = select.SelectData(sqlQueryChange, prm);
+                if (dataTeacher != null && dataTeacher.Rows.Count > 0)
                 {
-                    IdTeacher = int.Parse(table["IdTeacher"].ToString()),
-                    NameTeacher = table["NameTeacher"].ToString(),
-                    Surname = table["Surname"].ToString(),
-                    Mail = table["Mail"].ToString(),
-                    Dni = int.Parse(table["Dni"].ToString()),
-                    Age = int.Parse(table["Age"].ToString()),
-                    IdUser = int.Parse(table["IdUser"].ToString()),
-                    Genero = table["Genero"].ToString()
-                };
-                // Agrego parametros
-                prm.Clear();
-                prm.Add("@userPassword", newPassword);
-                prm.Add("@idUser", student.IdUser.ToString());
-                string sqlUpdatePass = "UPDATE Users SET UserPassword = @userPassword, ChangePassword = 1 WHERE IdUser = @idUser";
-                result = accion.AccionEjecutar(sqlUpdatePass, prm);
-                if (result > 0)
-                {
-                    EnviarMail(mail, newPassword);
+                    var table = dataTeacher.Rows[0];
+
+                    idUser = int.Parse(table["IdUser"].ToString());
+
+                    // Agrego parametros
+                    prm.Clear();
+                    prm.Add("@userPassword", newPassword);
+                    prm.Add("@idUser", student.IdUser.ToString());
+                    string sqlUpdatePass = "UPDATE Users SET UserPassword = @userPassword, ChangePassword = 1 WHERE IdUser = @idUser";
+                    result = accion.AccionEjecutar(sqlUpdatePass, prm);
+                    if (result > 0)
+                    {
+                        EnviarMail(mail, newPassword);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error: " + ex.Message);
             }
             return result > 0 ? true : false;
         }

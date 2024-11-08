@@ -43,11 +43,23 @@ namespace SchoolMusic.Serv
             prm.Clear();
             prm.Add("@idTeacher", idTeacher.ToString());
 
-            // Query 
-            string sqlQueryTeacher = "SELECT CONCAT(NameTeacher, ' ', Surname) AS Completo FROM Teacher WHERE IdTeacher = @idTeacher";
-            var dataTeacher = select.SelectData(sqlQueryTeacher, prm).Rows[0];
+            try
+            {
+                // Query 
+                string sqlQueryTeacher = "SELECT CONCAT(NameTeacher, ' ', Surname) AS Completo FROM Teacher WHERE IdTeacher = @idTeacher";
+                var dataTeacher = select.SelectData(sqlQueryTeacher, prm);
 
-            nameCompleto = dataTeacher["Completo"].ToString();
+                if (dataTeacher.Rows.Count > 0)
+                {
+                    var table = dataTeacher.Rows[0];
+                    nameCompleto = table["Completo"].ToString(); 
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error: " + ex.Message);
+            }
             return nameCompleto;
         }
         public List<Cursada> GetListCursadas(int idCourse)
@@ -120,14 +132,18 @@ namespace SchoolMusic.Serv
             string sqlQueryInscription = "SELECT * FROM Inscription WHERE IdStudent = @idStudent AND IdCursada = @idCursada";
             try
             {
-                var dataInscription = select.SelectData(sqlQueryInscription, prm).Rows[0];
+                var dataInscription = select.SelectData(sqlQueryInscription, prm);
 
-                result = int.Parse(dataInscription["IdInscription"].ToString());
+                if (dataInscription.Rows.Count > 0)
+                {
+                    var table = dataInscription.Rows[0];
+                    result = int.Parse(table["IdInscription"].ToString()); 
+                }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                return result;
+                Console.WriteLine("Error: " + ex.Message);
             }
 
             return result;

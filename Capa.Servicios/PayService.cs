@@ -18,28 +18,36 @@ namespace SchoolMusic.Serv
             prm.Clear();
             prm.Add("@idInscription", idInscription.ToString());
 
-            // Query
-            string sqlQueryPay = "SELECT * FROM Payment WHERE IdInscription = @idInscription";
-            var dataPayment = select.SelectData(sqlQueryPay, prm);
-
-            if (dataPayment != null && dataPayment.Rows.Count > 0)
+            try
             {
-                foreach (DataRow p in dataPayment.Rows)
+                // Query
+                string sqlQueryPay = "SELECT * FROM Payment WHERE IdInscription = @idInscription";
+                var dataPayment = select.SelectData(sqlQueryPay, prm);
+
+                if (dataPayment != null && dataPayment.Rows.Count > 0)
                 {
+                    var table = dataPayment.Rows[0];
                     Payment = new()
                     {
-                        IdPayment = int.Parse(p["IdPayment"].ToString()),
-                        IdInscription = int.Parse(p["IdInscription"].ToString()),
-                        PaymentStatus = p["PaymentStatus"].ToString(),
-                        TypePay = p["TypePay"].ToString(),
-                        Amount = float.Parse(p["Amount"].ToString()),
-                        DatePayment = Convert.ToDateTime(p["DatePayment"].ToString())
+                        IdPayment = int.Parse(table["IdPayment"].ToString()),
+                        IdInscription = int.Parse(table["IdInscription"].ToString()),
+                        PaymentStatus = table["PaymentStatus"].ToString(),
+                        TypePay = table["TypePay"].ToString(),
+                        Amount = float.Parse(table["Amount"].ToString()),
+                        DatePayment = Convert.ToDateTime(table["DatePayment"].ToString())
                     };
+
                 }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error: " + ex.Message);
+                Payment = null;
             }
             return Payment;
         }
-        public bool PaymentCuota(int idPayment,string typePay)
+        public bool PaymentCuota(int idPayment, string typePay)
         {
             // En este método actualizamos el campo PaymentStatus de la tabla Payment
             int result = 0;
@@ -61,17 +69,31 @@ namespace SchoolMusic.Serv
             prm.Clear();
             prm.Add("@idStudent", idStudent.ToString());
 
-            // Query
-            string sqlQueryInscription = "SELECT * FROM Inscription WHERE IdStudent = @idStudent";
-            var dataIncription = select.SelectData(sqlQueryInscription, prm).Rows[0];
-
-            inscriptions.Add(new()
+            try
             {
-                idInscription = int.Parse(dataIncription["IdInscription"].ToString()),
-                idCursada = int.Parse(dataIncription["IdCursada"].ToString()),
-                idStudent = int.Parse(dataIncription["IdStudent"].ToString()),
-                dateInscription = Convert.ToDateTime(dataIncription["DateInscription"].ToString())
-            });
+                // Query
+                string sqlQueryInscription = "SELECT * FROM Inscription WHERE IdStudent = @idStudent";
+                var dataInscription = select.SelectData(sqlQueryInscription, prm);
+                if (dataInscription != null && dataInscription.Rows.Count > 0)
+                {
+                    foreach (DataRow ins in dataInscription.Rows)
+                    {
+                        inscriptions.Add(new()
+                        {
+                            idInscription = int.Parse(ins["IdInscription"].ToString()),
+                            idCursada = int.Parse(ins["IdCursada"].ToString()),
+                            idStudent = int.Parse(ins["IdStudent"].ToString()),
+                            dateInscription = Convert.ToDateTime(ins["DateInscription"].ToString())
+                        });
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error: " + ex.Message);
+            }
             return inscriptions;
         }
     }
