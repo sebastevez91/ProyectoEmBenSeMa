@@ -59,7 +59,6 @@ namespace Capa.Servicios
             }
             else
             {
-                //MessageBox.Show("Las contraseña ingresada no son validas");
                 return false;
             }
 
@@ -96,8 +95,7 @@ namespace Capa.Servicios
             }
             // Dni
             if (dniValido(dni.ToString()) == false)
-            {
-                //MessageBox.Show("El dni ingresado no es valido", "Error detectado", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            {               
                 valido = false;
             }
             // Edad
@@ -105,14 +103,12 @@ namespace Capa.Servicios
             {
                 if (parseAge <= 0 || parseAge > 110)
                 {
-                    //MessageBox.Show("La edad ingresa no es válida");
                     valido = false;
                 } 
             }
             // Email
             if (mailValido(mail) == false)
             {
-                //MessageBox.Show("El email ingresado no es válido", "Error detectado", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 valido = false;
             }
             // Contraseña
@@ -148,7 +144,6 @@ namespace Capa.Servicios
             // Dni
             if (dniValido(dni.ToString()) == false)
             {
-                //MessageBox.Show("El dni ingresado no es valido", "Error detectado", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 valido = false;
             }
             // Edad
@@ -156,14 +151,12 @@ namespace Capa.Servicios
             {
                 if (parseAge <= 0 || parseAge > 110)
                 {
-                    //MessageBox.Show("La edad ingresa no es válida");
                     valido = false;
                 }
             }
             // Email
             if (mailValido(mail) == false)
             {
-                //MessageBox.Show("El email ingresado no es válido", "Error detectado", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 valido = false;
             }
             return valido;

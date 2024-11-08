@@ -39,7 +39,7 @@ namespace SchoolMusic.Serv
                 return false;
             }
         }
-        public void AddStudent(Student student)
+        public int AddStudent(Student student)
         {
             // Agrego nuevo Alumno a la tabla Student
             int result = 0;
@@ -57,8 +57,10 @@ namespace SchoolMusic.Serv
                   "VALUES (@nameStudent,@surname,@mail,@dni,@age,@idUser,@genero)";
 
             result = accion.AccionEjecutar(sqlInsertStudent, prm);
+
+            return result;
         }
-        public void AddTeacher(Teacher teacher)
+        public int AddTeacher(Teacher teacher)
         {
             // Agrego nuevo profesor a la tabla Teacher
             int result = 0;
@@ -75,6 +77,8 @@ namespace SchoolMusic.Serv
                   "VALUES (@nameTeacher,@surname,@mail,@dni,@age,@idUser,@genero)";
 
             result = accion.AccionEjecutar(sqlInsertTeacher, prm);
+
+            return result;
         }
         public int GetIdUser(Users users)
         {
