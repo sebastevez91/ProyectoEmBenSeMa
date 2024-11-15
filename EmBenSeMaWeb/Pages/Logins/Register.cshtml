@@ -1,113 +1,99 @@
 ﻿@page
 @model SchoolMusic.Web.Pages.Logins.RegisterModel
 @{
-    ViewData["Title"] = "Registro de usuario";
+    ViewData["Title"] = "Registro de usuarios";
 }
 
-<h1>Nuevo Usuario</h1>
-<h3>Paso 1: Datos de usuario</h3>
-<h4>Completa los siguientes campos para registrarte</h4>
-<hr />
+<h2>Registro de Usuario</h2>
+
 <div class="container-fluid">
-    <div class="row">
-        <form method="post" class="w-100">
-            <div class="row">
-                <!-- Primera columna (lado izquierdo) -->
-                <figure>
-        
-        <figcaption>Hola mundo </figcaption>        
-   </figure>
-                <div class="col-md-3">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <fieldset>
+                    <legend>Datos de Usuario</legend>
                     <div class="form-group">
-                        <label asp-for="Users.Username" class="control-label"> Nombre de usuario </label>
-                        <input asp-for="Users.Username" class="form-control" />
-                        <span asp-validation-for="Users.Username" class="text-danger"></span>
+                        <label asp-for="RegisterViewModel.Username" class="form-label"></label>
+                        <input asp-for="RegisterViewModel.Username" class="form-control" />
+                        <span asp-validation-for="RegisterViewModel.Username" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
-                        <label asp-for="Users.UserPassword" class="control-label"> Contraseña </label>
-                        <input asp-for="Users.UserPassword" type="password" class="form-control" />
-                        <span asp-validation-for="Users.UserPassword" class="text-danger"></span>
+                        <label asp-for="RegisterViewModel.Password" class="form-label"></label>
+                        <input asp-for="RegisterViewModel.Password" type="password" class="form-control" />
+                        <span asp-validation-for="RegisterViewModel.Password" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="rePassword" class="control-label">Confirmar Contraseña</label>
-                        <input id="rePassword" name="rePassword" type="password" class="form-control" />
-                        <span asp-validation-for="rePassword" class="text-danger"></span>
-                    </div>
-
-                        <div class="form-group">
-                            <label asp-for="Users.Rol" class="control-label"> Tipo de usuario </label>
-                            <select asp-for="Users.Rol" class="form-control">
-                                <option value=""> ¿Qué tipo de usuario es? </option>
-                                <option value="Profesor">Profesor</option>
-                                <option value="Alumno">Alumno</option>
-                            </select>
-                            <span asp-validation-for="Users.Rol" class="text-danger"></span>
-                        </div>
-                </div>
-                <div class="col-md-3">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-                    <div class="form-group">
-                        <label asp-for="Teacher.NameTeacher" class="control-label"> Nombre </label>
-                        <input asp-for="Teacher.NameTeacher" class="form-control" />
-                        <span asp-validation-for="Teacher.NameTeacher" class="text-danger"></span>
+                        <label asp-for="RegisterViewModel.ConfirmPassword" class="form-label"></label>
+                        <input asp-for="RegisterViewModel.ConfirmPassword" type="password" class="form-control" />
+                        <span asp-validation-for="RegisterViewModel.ConfirmPassword" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
-                        <label asp-for="Teacher.Surname" class="control-label"> Apellido </label>
-                        <input asp-for="Teacher.Surname" class="form-control" />
-                        <span asp-validation-for="Teacher.Surname" class="text-danger"></span>
+                        <label asp-for="RegisterViewModel.Rol" class="form-label"></label>
+                        <select asp-for="RegisterViewModel.Rol" class="form-control">
+                            <option value="">Seleccione un rol</option>
+                            <option value="Profesor">Profesor</option>
+                            <option value="Alumno">Alumno</option>
+                        </select>
+                        <span asp-validation-for="RegisterViewModel.Rol" class="text-danger"></span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Datos Personales</legend>
+                    <div class="form-group">
+                        <label asp-for="RegisterViewModel.Name" class="form-label"></label>
+                        <input asp-for="RegisterViewModel.Name" class="form-control" />
+                        <span asp-validation-for="RegisterViewModel.Name" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
-                        <label asp-for="Teacher.Mail" class="control-label"> Email </label>
-                        <input asp-for="Teacher.Mail" class="form-control" />
-                        <span asp-validation-for="Teacher.Mail" class="text-danger"></span>
+                        <label asp-for="RegisterViewModel.Surname" class="form-label"></label>
+                        <input asp-for="RegisterViewModel.Surname" class="form-control" />
+                        <span asp-validation-for="RegisterViewModel.Surname" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
-                        <label asp-for="Teacher.Dni" class="control-label"> N° Dni </label>
-                        <input asp-for="Teacher.Dni" class="form-control" />
-                        <span asp-validation-for="Teacher.Dni" class="text-danger"></span>
+                        <label asp-for="RegisterViewModel.Email" class="form-label"></label>
+                        <input asp-for="RegisterViewModel.Email" type="email" class="form-control" />
+                        <span asp-validation-for="RegisterViewModel.Email" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
-                        <label asp-for="Teacher.Age" class="control-label"> Edad </label>
-                        <input asp-for="Teacher.Age" class="form-control" />
-                        <span asp-validation-for="Teacher.Age" class="text-danger"></span>
+                        <label asp-for="RegisterViewModel.Dni" class="form-label"></label>
+                        <input asp-for="RegisterViewModel.Dni" type="number" class="form-control" />
+                        <span asp-validation-for="RegisterViewModel.Dni" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
-                        <label asp-for="Teacher.Genero" class="control-label"> Genero </label>
-                        <select asp-for="Teacher.Genero" class="form-control">
-                            <option value="">Selecciona un género</option>
+                        <label asp-for="RegisterViewModel.Age" class="form-label"></label>
+                        <input asp-for="RegisterViewModel.Age" type="number" class="form-control" />
+                        <span asp-validation-for="RegisterViewModel.Age" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="RegisterViewModel.Genero" class="form-label"></label>
+                        <select asp-for="RegisterViewModel.Genero" class="form-control">
+                            <option value="">Seleccione un género</option>
                             <option value="Masculino">Masculino</option>
                             <option value="Femenino">Femenino</option>
                             <option value="Otro">Otro</option>
                         </select>
-                        <span asp-validation-for="Teacher.Genero" class="text-danger"></span>
+                        <span asp-validation-for="RegisterViewModel.Genero" class="text-danger"></span>
                     </div>
-                </div>
-            </div>
 
-            <!-- Botón de envío centrado -->
-            <div class="form-group text-center">
-                <input type="submit" value="Registrarse" class="btn btn-primary" />
+                </fieldset>
             </div>
-        </form>
-    </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </div>
+        </div>
+    </form>
 </div>
 
-<div>
-    <a asp-page="/Login/LoginTeacher" class="btn btn-primary btn-block">Volver a atras</a>
-</div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    <partial name="_ValidationScriptsPartial" />
 }

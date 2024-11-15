@@ -17,39 +17,68 @@ namespace SchoolMusic.Web.Pages.Logins
         }
 
         [BindProperty]
-        public Users Users { get; set; } 
-        [BindProperty]
-        public string rePassword { get; set; } = default!;
-        [BindProperty]
-        public Teacher Teacher {  get; set; }
+        public RegisterViewModel RegisterViewModel { get; set; }
+
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Users == null || Users == null)
+            if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            // Verificar si las contraseñas coinciden
-            if (Users.UserPassword != rePassword)
+            try
             {
-                ModelState.AddModelError(string.Empty, "Las contraseñas ingresadas no son idénticas");
-                return Page();
+                // Crear usuario
+                var user = new Users
+                {
+                    Username = RegisterViewModel.Username,
+                    UserPassword = RegisterViewModel.Password,
+                    Rol = RegisterViewModel.Rol
+                };
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();
+
+                // Crear datos específicos según el rol
+                if (RegisterViewModel.Rol == "Profesor")
+                {
+                    var teacher = new Teacher
+                    {
+                        NameTeacher = RegisterViewModel.Name,
+                        Surname = RegisterViewModel.Surname,
+                        Mail = RegisterViewModel.Email,
+                        Dni = RegisterViewModel.Dni,
+                        Age = RegisterViewModel.Age,
+                        IdUser = user.IdUser,
+                        Genero = RegisterViewModel.Genero,
+                    };
+                    _context.Teacher.Add(teacher);
+                }
+                else if (RegisterViewModel.Rol == "Alumno")
+                {
+                    var student = new Student
+                    {
+                        NameStudent = RegisterViewModel.Name,
+                        Surname = RegisterViewModel.Surname,
+                        Mail = RegisterViewModel.Email,
+                        Dni = RegisterViewModel.Dni,
+                        Age = RegisterViewModel.Age,
+                        IdUser = user.IdUser,
+                        Genero = RegisterViewModel.Genero
+                    };
+                    _context.Student.Add(student);
+                }
+
+                await _context.SaveChangesAsync();
+
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, "Error al registrar el usuario: " + ex.Message);
+                return RedirectToPage("~/Index");
             }
 
-            // Agregar el usuario y guardar los cambios
-            _context.Users.Add(Users);
-            await _context.SaveChangesAsync();
-
-            if(Users.Rol == "Profesor")
-            {
-                return RedirectToPage("/Teachers/Create", new { id = Users?.IdUser });
-            }
-            if(Users.Rol == "Alumno")
-            {
-                return RedirectToPage("/Students/Create", new { id = Users?.IdUser });
-            }
-            return Page();
+            return RedirectToPage("~/Index");
         }
     }
 }
