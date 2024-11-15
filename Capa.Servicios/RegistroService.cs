@@ -98,7 +98,7 @@ namespace SchoolMusic.Serv
                 {
                     var table = dataUser.Rows[0];
 
-                    result = int.Parse(table["IdUser"].ToString())
+                    result = int.Parse(table["IdUser"].ToString());
                 }
             }
             catch (Exception ex)

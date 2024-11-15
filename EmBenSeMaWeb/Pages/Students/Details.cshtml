@@ -2,60 +2,52 @@
 @model SchoolMusic.Web.Pages.Students.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Tu perfil";
+    Layout = "_LayoutSesion";
+    ViewData["id"] = Model.Student.IdUser;
 }
 
-<h1>Details</h1>
+<h1>Datos de tu perfil</h1>
 
 <div>
-    <h4>Student</h4>
+    <h4> Alumno </h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Student.NameStudent)
+            Nombre 
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Student.NameStudent)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Student.Surname)
+            Apellido
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Student.Surname)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Student.Mail)
+            Email
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Student.Mail)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Student.Dni)
+            Dni
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Student.Dni)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Student.Age)
+            Edad
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Student.Age)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Student.IdUser)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Student.IdUser)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Student.Genero)
+            Genero
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Student.Genero)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Student?.IdStudent">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
 </div>

@@ -3,8 +3,10 @@
 @{
     ViewData["Title"] = "Aula del alumno";
     Layout = "_LayoutSesion";
+    ViewData["userName"] = Model.Username;
+    ViewData["ruta"] = "/Aula/AulaStudent";
+    ViewData["id"] = Model.Student.IdUser;
 }
-<body onload="userSesion('@Model.Username')">
     <div class="text-center ">
         <h1 style="padding: 5%;">Bienvenido @Model.Student.NameStudent @Model.Student.Surname</h1>
     </div>
@@ -29,6 +31,7 @@
                 </tbody>
             </table>
         </div>
+        <a asp-page="/Courses/ListaCourses" asp-route-idUser="@Model.Student?.IdUser" class="btn btn-primary"> Inscribirse a un curso </a>
     <div style="margin-top: 30px; color:white;">
         <h2>Tus horarios de clase</h2>
         <ul>
@@ -56,4 +59,3 @@
         </ul>
     </div>
     </div>
-</body>

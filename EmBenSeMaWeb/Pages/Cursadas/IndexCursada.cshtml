@@ -4,15 +4,15 @@
 @{
     ViewData["Title"] = "Lista de cursadas";
     string nombreImagen = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdeSfY6nyQq3k9gJPyhFq1hendlATeg9ohPQ&s";
+
+    Layout = "_LayoutSesion";
+    ViewData["userName"] = Model.UserSesion.Username;
+    ViewData["ruta"] = "/Aula/AulaStudent";
+    ViewData["id"] = Model.UserSesion.IdUser;
 }
 <div class="text-center">
     <h1>Lista de cursadas</h1>
 </div>
-
-<p>
-    <a asp-page="Create">Nueva Cursada</a>
-</p>
-
 <div>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         @foreach (var cur in Model.Cursada)
@@ -31,10 +31,19 @@
                         <li class="list-group-item">Dias de cursada @cur.Days</li>
                         <li class="list-group-item">Horario @cur.StarTime.ToString("HH:mm") a @cur.EndTime.ToString("HH:mm") hs</li>
                         <li class="list-group-item">Inicia @cur.Initiation.ToString("yyyy/MM/dd")</li>
+                        <li class="list-group-item">Vacantes @cur.Vacantes</li>
                     </ul>
                     <div class="card-body">
-                        <a asp-page="/Cursadas/Details" asp-route-id="@cur.IdCursada" class="card-link">Ver cursada</a>
-                        <a href="#" class="card-link">Inscripción</a> >>>
+                        <form method="post">
+                            <input type="hidden" asp-for="IdUser" value="@Model.Student.IdUser" />
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Inscription.idStudent" value="@Model.Student.IdStudent"/>
+                            <input type="hidden" asp-for="Inscription.idCursada" value="@cur.IdCursada" />
+                            <input type="hidden" asp-for="Inscription.dateInscription" value="@DateTime.Now" />
+                            <div class="form-group">
+                                <input type="submit" value=" Inscribirse " class="btn btn-primary" />
+                            </div>
+                        </form> 
                     </div>
                 </div>
             </div>

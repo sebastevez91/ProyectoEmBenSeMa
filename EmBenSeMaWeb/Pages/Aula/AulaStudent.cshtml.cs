@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -6,6 +7,7 @@ using SchoolMusic.Web.Data;
 
 namespace SchoolMusic.Web.Pages.Aula
 {
+    [Authorize(Roles = "Alumno")]
     public class AulaStudentModel : PageModel
     {
         private readonly SchoolMusicWebContext _context;

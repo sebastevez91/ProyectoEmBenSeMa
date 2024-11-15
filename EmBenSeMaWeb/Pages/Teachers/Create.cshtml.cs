@@ -10,12 +10,10 @@ namespace SchoolMusic.Web.Pages.Teachers
     public class CreateModel : PageModel
     {
         private readonly SchoolMusic.Web.Data.SchoolMusicWebContext _context;
-        private readonly ImageService _imageService; // Inyectar ImageService
 
-        public CreateModel(SchoolMusic.Web.Data.SchoolMusicWebContext context, ImageService imageService)
+        public CreateModel(SchoolMusic.Web.Data.SchoolMusicWebContext context)
         {
             _context = context;
-            _imageService = imageService;
         }
 
         public IActionResult OnGet()
@@ -33,11 +31,9 @@ namespace SchoolMusic.Web.Pages.Teachers
         [BindProperty]
         public string rePassword { get; set; } = default!;
 
-        public int idUser { get; set; }
         public string confirmacionRegistro = ""; 
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync(IFormFile ProfileImage)
+        public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid || _context.Teacher == null || Teacher == null)
             {
@@ -51,12 +47,7 @@ namespace SchoolMusic.Web.Pages.Teachers
                 return Page();
             }
 
-            // Si hay una imagen seleccionada, súbela a Cloudinary
-            if (ProfileImage != null)
-            {
-                var imageUrl = await _imageService.UploadImageAsync(ProfileImage);
-                Teacher.FotoTeacher = imageUrl; // Guardar la URL en el modelo Teacher
-            }
+
 
             // Agregar el usuario y guardar los cambios
             _context.Users.Add(Users);

@@ -284,19 +284,19 @@ a {
 }
 
 .fotoTeacher {
-    max-width: 150px;
+    max-width: 250px;
     height: auto;
     border-radius: 50%;
     margin-top: 10px;
-    border: 4px solid #ddd; /* Color y grosor del borde */
+    border: 4px solid #ddd; 
     padding: 1px; /* Espacio entre la imagen y el borde */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra alrededor de la imagen */
 }
 
 .details, .upcoming-classes {
-    margin-top: 38px;
+    margin-top: 60px;
     flex: 1;
-    padding: 40px;
+    padding: 20px;
     color: white;
 }
 

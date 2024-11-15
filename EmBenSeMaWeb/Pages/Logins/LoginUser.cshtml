@@ -1,14 +1,14 @@
 ﻿@page
-@model SchoolMusic.Web.Pages.Login.LoginStudentModel
+@model SchoolMusic.Web.Pages.Logins.LoginModel
 @{
-    ViewData["Title"] = "Login Alumnos";
+    ViewData["Title"] = "Inicio sesion";
 }
-<body onload="ocultarButton()">
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="text-center mb-4">
-                    <h1>Aula virtual de alumnos</h1>
+                    <h1> Aula virtual de EmBenSeMa </h1>
                 </div>
 
                 <form method="post">
@@ -37,13 +37,13 @@
 
                     <!-- Botón de inicio de sesión -->
                     <div class="form-group text-center">
-                        <button type="submit" class="btn btn-primary btn-block" >Iniciar sesión</button>
+                        <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
                     </div>
 
                     <!-- Link de registrarse -->
                     <div>
                         <label class="control-label label-black"> Si aún no tienes usuario puedes </label>
-                        <a asp-page="/Students/Create" class="link-primary linkRes">Registrarte</a>
+                        <a asp-page="./Register" class="link-primary linkRes"> Registrarte </a>
                     </div>
                 </form>
             </div>
@@ -52,4 +52,4 @@
     <div>
         <a asp-page="/Aula/AulaVirtual" class="btn btn-primary btn-block">Volver a atras</a>
     </div>
-</body>
+

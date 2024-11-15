@@ -14,10 +14,12 @@ namespace SchoolMusic.Web.Pages.Students
     public class EditModel : PageModel
     {
         private readonly SchoolMusic.Web.Data.SchoolMusicWebContext _context;
+        private readonly ImageService _imageService; // Inyectar ImageService
 
-        public EditModel(SchoolMusic.Web.Data.SchoolMusicWebContext context)
+        public EditModel(SchoolMusic.Web.Data.SchoolMusicWebContext context, ImageService imageService)
         {
             _context = context;
+            _imageService = imageService;   
         }
 
         [BindProperty]
@@ -39,9 +41,7 @@ namespace SchoolMusic.Web.Pages.Students
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(IFormFile ProfileImage)
         {
             if (!ModelState.IsValid)
             {

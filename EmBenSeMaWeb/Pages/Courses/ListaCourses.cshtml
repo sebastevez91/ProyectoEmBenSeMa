@@ -3,6 +3,17 @@
 
 @{
     ViewData["Title"] = "Lista de cursos";
+    if (Model.UserSesion == null)
+    {
+        Layout = "_Layout";
+    }
+    if (Model.UserSesion != null)
+    {
+        Layout = "_LayoutSesion";
+        ViewData["userName"] = Model.UserSesion.Username;
+        ViewData["ruta"] = "/Aula/AulaStudent";
+        ViewData["id"] = Model.UserSesion.IdUser;
+    }
 }
 <div class="text-center">
     <h1>Cursos de EmBenSeMa</h1>
@@ -19,7 +30,7 @@
                         <h5 class="card-title">Curso de @cou.Instrument</h5> 
                     </div>
                     <div class="card-body">
-                        <a class="card-link" asp-page="/Courses/InfoCourse" asp-route-idCourse="@cou.IdCourse">Mas información</a> >>>
+                        <a class="card-link" asp-page="/Courses/InfoCourse" asp-route-idUser="@Model.UserSesion?.IdUser" asp-route-idCourse="@cou.IdCourse">Mas información</a> >>>
                     </div> 
                 </div> 
             </div> 

@@ -3,18 +3,19 @@
 @{
     ViewData["Title"] = "Aula del profesor";
     Layout = "_LayoutSesion";
+    ViewData["userName"] = Model.UserSesion.Username;
+    ViewData["userButton"] = "block";
 }
-<body onload="userSesion('@Model.Username')">
 
     <div class="top-right-button">
-        <a asp-page="/Notifications/IndexNotification" class="btn">Notificaciones</a>
+        <a asp-page="/Notifications/IndexNotification" asp-route-CurrentUserId="@Model.UserSesion?.IdUser" class="btn">Notificaciones</a>
     </div>
 
     <div class="containerTeacher">
         <div class="details">
             <div class="infoTeacher">
                 <h1>Bienvenido profesor @Model.Teacher.NameTeacher @Model.Teacher.Surname</h1>
-                <img src="@Model.Teacher.FotoTeacher" alt="Foto de perfil" class="fotoTeacher" />
+                    <img src="@Model.Teacher.FotoTeacher" alt="Foto de perfil" class="fotoTeacher" />
             </div>
 
             <h4>Tus datos</h4>
@@ -36,7 +37,7 @@
             </table>
         </div>
 
-        <div class="upcoming-classes" ">
+        <div class="upcoming-classes">
                 <h3>Tus próximas clases</h3>
                 <ul>
                     @foreach (var cursada in Model.Cursada)
@@ -47,14 +48,10 @@
                         }
                     }
                 </ul>
-            
 
             <div class="footer-buttons">
                 <a asp-page="/Teachers/Edit" asp-route-id="@Model.Teacher?.IdTeacher" class="btn">Modificar datos</a>
-                <a asp-page="/Cursadas/Details" asp-route-id="@Model.Teacher.IdTeacher" class="btn">Tus cursadas</a>
-                <a asp-page="/Payments/IndexPayment" asp-route-id="@Model.Teacher.IdTeacher" class="btn">Billetera</a>
+                <a asp-page="/Cursadas/Details" asp-route-id="@Model.Teacher?.IdTeacher" class="btn">Tus cursadas</a>
             </div>
         </div>
     </div>
-</body>
-

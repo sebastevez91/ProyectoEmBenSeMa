@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -6,6 +7,7 @@ using SchoolMusic.Web.Data;
 
 namespace SchoolMusic.Web.Pages.Aula
 {
+    [Authorize(Roles = "Profesor")]
     public class AulaTeacherModel : PageModel
     {
         private readonly SchoolMusicWebContext _context;
@@ -15,7 +17,7 @@ namespace SchoolMusic.Web.Pages.Aula
         }
 
         public Teacher Teacher { get; set; } = default!;
-        public string Username { get; set; }
+        public Users UserSesion { get; set; }
         public IList<Cursada> Cursada { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -27,7 +29,7 @@ namespace SchoolMusic.Web.Pages.Aula
             var user = await _context.Users.FirstOrDefaultAsync(u => u.IdUser == id);
             if (user != null)
             {
-                Username = user.Username;
+                UserSesion = user;
             }
 
             var teacher = await _context.Teacher.FirstOrDefaultAsync(m => m.IdUser == id);

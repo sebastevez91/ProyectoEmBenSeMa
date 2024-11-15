@@ -13,13 +13,7 @@ namespace SchoolMusic.Entidades
         [StringLength(100, MinimumLength = 8, ErrorMessage = "La contraseña debe tener al menos 8 caracteres.")]
         public string UserPassword { get; set; }
         public byte? ChangePassword { get; set; } = default!;
-
-        public Users(int idUser, string username, string password)
-        {
-            IdUser = idUser;
-            Username = username;
-            UserPassword = password;
-        }
+        public string Rol { get; set; }
 
         public Users()
         {

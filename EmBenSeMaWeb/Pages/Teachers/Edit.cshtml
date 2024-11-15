@@ -10,64 +10,71 @@
 <hr />
 <div class="row">
     <form method="post" class="w-100" enctype="multipart/form-data">
-            <div class="row">
-                <div class="col-md-6">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <input type="hidden" asp-for="Teacher.IdTeacher" />
-                    <input type="hidden" asp-for="Teacher.IdUser" />
-                    <div class="form-group">
-                        <label asp-for="Teacher.NameTeacher" class="control-label"></label>
-                        <input asp-for="Teacher.NameTeacher" class="form-control" />
-                        <span asp-validation-for="Teacher.NameTeacher" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Teacher.Surname" class="control-label"></label>
-                        <input asp-for="Teacher.Surname" class="form-control" />
-                        <span asp-validation-for="Teacher.Surname" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Teacher.Mail" class="control-label"></label>
-                        <input asp-for="Teacher.Mail" class="form-control" />
-                        <span asp-validation-for="Teacher.Mail" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Teacher.Dni" class="control-label"></label>
-                        <input asp-for="Teacher.Dni" class="form-control" />
-                        <span asp-validation-for="Teacher.Dni" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Teacher.Age" class="control-label"></label>
-                        <input asp-for="Teacher.Age" class="form-control" />
-                        <span asp-validation-for="Teacher.Age" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Teacher.Genero" class="control-label"></label>
-                        <select asp-for="Teacher.Genero" class="form-control">
-                            <option value="">Selecciona un género</option>
-                            <option value="Masculino">Masculino</option>
-                            <option value="Femenino">Femenino</option>
-                            <option value="Otro">Otro</option>
-                        </select>
-                        <span asp-validation-for="Teacher.Genero" class="text-danger"></span>
-                    </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Teacher.IdTeacher" />
+                <input type="hidden" asp-for="Teacher.IdUser" />
+                <input type="hidden" asp-for="Teacher.Description"  />
+                <div class="form-group">
+                    <label asp-for="Teacher.NameTeacher" class="control-label"></label>
+                    <input asp-for="Teacher.NameTeacher" class="form-control" />
+                    <span asp-validation-for="Teacher.NameTeacher" class="text-danger"></span>
                 </div>
+                <div class="form-group">
+                    <label asp-for="Teacher.Surname" class="control-label"></label>
+                    <input asp-for="Teacher.Surname" class="form-control" />
+                    <span asp-validation-for="Teacher.Surname" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Teacher.Mail" class="control-label"></label>
+                    <input asp-for="Teacher.Mail" class="form-control" />
+                    <span asp-validation-for="Teacher.Mail" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Teacher.Dni" class="control-label"></label>
+                    <input asp-for="Teacher.Dni" class="form-control" />
+                    <span asp-validation-for="Teacher.Dni" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Teacher.Age" class="control-label"></label>
+                    <input asp-for="Teacher.Age" class="form-control" />
+                    <span asp-validation-for="Teacher.Age" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Teacher.Genero" class="control-label"></label>
+                    <select asp-for="Teacher.Genero" class="form-control">
+                        <option value="">Selecciona un género</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                    <span asp-validation-for="Teacher.Genero" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" name="action" value="updateData" class="btn btn-primary">Modificar Datos</button>
+                </div>
+            </div>
 
             <!-- Campo de la foto de perfil -->
             <div class="col-md-6">
                 <div class="form-group">
                     <label class="control-label">Foto de perfil</label>
-                    <img src="@Model.Teacher.FotoTeacher" alt="Foto de Teacher" class="profesor-foto" />
+                    @if (!string.IsNullOrEmpty(Model.Teacher.FotoTeacher))
+                    {
+                        <img src="@Model.Teacher.FotoTeacher" alt="Foto de Teacher" class="profesor-foto" />
+                    }
                     <input type="file" id="ProfileImage" name="ProfileImage" class="form-control" />
                 </div>
             </div>
+        </div>
 
+        <!-- Botón para actualizar solo la imagen -->
+        <div class="form-group text-center">
+            <button type="submit" name="action" value="updateImage" class="btn btn-secondary">Editar Imagen</button>
+        </div>
+    </form>
 
-                <div class="form-group text-center">
-                    <input type="submit" value="Actualizar datos" class="btn btn-primary" />
-                </div>
-            </>
-            
-        </form>
 </div>
 
 <div>

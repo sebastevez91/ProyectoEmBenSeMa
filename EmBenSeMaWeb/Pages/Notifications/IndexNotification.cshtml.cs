@@ -21,9 +21,15 @@ namespace SchoolMusic.Web.Pages.Notifications
 
         public IList<Notification> NotificacionesRecibidas { get;set; } = default!;
         public IList<Notification> NotificacionesEnviadas { get; set; } = default!;
+        public Users UserSesion { get; set; } = default!;
 
-        public async Task OnGetAsync(int CurrentUserId)
+        public async Task OnGetAsync(int? CurrentUserId)
         {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.IdUser == CurrentUserId);
+            if(user != null)
+            {
+                UserSesion = user;
+            }
             // Cargar notificaciones recibidas y enviadas
             NotificacionesRecibidas = await _context.Notification
                 .Where(n => n.NotificationTo == CurrentUserId)

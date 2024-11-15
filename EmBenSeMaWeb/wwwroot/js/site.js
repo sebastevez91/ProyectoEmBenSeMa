@@ -11,13 +11,6 @@ function togglePassword() {
     }
 }
 
-function ocultarButton() {
-    var btnOcultar = document.getElementById("btnAula");
-    if (btnOcultar.style.display === "block") {
-        btnOcultar.style.display = "none";
-    }
-}
-
 // Función para actualizar el nombre de usuario en el botón
 function userSesion(username) {
     var name = document.getElementById("user-name");
@@ -32,7 +25,6 @@ function toggleMenu() {
     menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
 
-// Cierra el menú si se hace clic fuera de él
 window.onclick = function (event) {
     var menu = document.getElementById("user-menu");
     var button = document.querySelector(".user-button");

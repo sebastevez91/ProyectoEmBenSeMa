@@ -4,54 +4,59 @@
 @{
     ViewData["Title"] = "Notificaciones";
     Layout = "_LayoutSesion";
+    ViewData["ruta"] = "/Aula/AulaTeacher";
+    ViewData["userButton"] = "none";
+    ViewData["id"] = Model.UserSesion.IdUser;
 }
 
+<body onload="userSesion('@Model.UserSesion.Username')">
+    <div class="container">
+        <h2>Notificaciones</h2>
 
-<div class="container">
-    <h2>Notificaciones</h2>
-
-    <!-- Botones de Recibidos y Enviados -->
-    <div class="btn-group" role="group" aria-label="Opciones de notificaciones">
-        <button type="button" class="btn btn-primary" id="btnRecibidos" onclick="mostrarRecibidos()"> Recibidos </button>
-        <button type="button" class="btn btn-secondary" id="btnEnviados" onclick="mostrarEnviados()"> Enviados </button>
-    </div>
-
-    <div class="row mt-4">
-        <!-- Lista de Notificaciones Recibidas -->
-        <div class="col-md-4" id="listaRecibidos">
-            <h4>Recibidos</h4>
-            <ul class="list-group">
-                @foreach (var notificacion in Model.NotificacionesRecibidas)
-                {
-                    <li class="list-group-item" onclick="mostrarMensaje(@notificacion.IdNotification)">
-                        <strong>@notificacion.Subject</strong>
-                        <span class="text-muted float-right">@notificacion.DateNotification.ToString("dd/MM/yyyy")</span>
-                    </li>
-                }
-            </ul>
+        <!-- Botones de Recibidos y Enviados -->
+        <div class="btn-group" role="group" aria-label="Opciones de notificaciones">
+            <button type="button" class="btn btn-primary" id="btnRecibidos" onclick="mostrarRecibidos()"> Recibidos </button>
+            <button type="button" class="btn btn-secondary" id="btnEnviados" onclick="mostrarEnviados()"> Enviados </button>
         </div>
 
-        <!-- Lista de Notificaciones Enviadas (inicialmente oculta) -->
-        <div class="col-md-4 d-none" id="listaEnviados">
-            <h4>Enviados</h4>
-            <ul class="list-group">
-                @foreach (var notificacion in Model.NotificacionesEnviadas)
-                {
-                    <li class="list-group-item" @* onclick="mostrarMensaje(@notificacion.IdNotifications)" *@>
-                        <strong>@notificacion.Subject</strong>
-                        <span class="text-muted float-right">@notificacion.DateNotification.ToString("dd/MM/yyyy")</span>
-                    </li>
-                }
-            </ul>
-        </div>
+        <div class="row mt-4">
+            <!-- Lista de Notificaciones Recibidas -->
+            <div class="col-md-4" id="listaRecibidos">
+                <h4>Recibidos</h4>
+                <ul class="list-group">
+                    @foreach (var notificacion in Model.NotificacionesRecibidas)
+                    {
+                        <li class="list-group-item" onclick="mostrarMensaje(@notificacion.IdNotification)">
+                            <strong>@notificacion.Subject</strong>
+                            <span class="text-muted float-right">@notificacion.DateNotification.ToString("dd/MM/yyyy")</span>
+                        </li>
+                    }
+                </ul>
+            </div>
 
-        <!-- Detalle del Mensaje -->
-        <div class="col-md-8">
-            <div id="mensajeDetalle">
-                <h5>Detalles de la notificación</h5>
-                <p id="contenidoMensaje">Seleccione una notificación para ver el mensaje.</p>
+            <!-- Lista de Notificaciones Enviadas (inicialmente oculta) -->
+            <div class="col-md-4 d-none" id="listaEnviados">
+                <h4>Enviados</h4>
+                <ul class="list-group">
+                    @foreach (var notificacion in Model.NotificacionesEnviadas)
+                    {
+                        <li class="list-group-item" @* onclick="mostrarMensaje(@notificacion.IdNotifications)" *@>
+                            <strong>@notificacion.Subject</strong>
+                            <span class="text-muted float-right">@notificacion.DateNotification.ToString("dd/MM/yyyy")</span>
+                        </li>
+                    }
+                </ul>
+            </div>
+
+            <!-- Detalle del Mensaje -->
+            <div class="col-md-8">
+                <div id="mensajeDetalle">
+                    <h5>Detalles de la notificación</h5>
+                    <p id="contenidoMensaje">Seleccione una notificación para ver el mensaje.</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</body>
+
 
