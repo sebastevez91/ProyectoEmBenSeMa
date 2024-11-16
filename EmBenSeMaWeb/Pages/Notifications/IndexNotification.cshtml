@@ -4,12 +4,8 @@
 @{
     ViewData["Title"] = "Notificaciones";
     Layout = "_LayoutSesion";
-    ViewData["ruta"] = "/Aula/AulaTeacher";
-    ViewData["userButton"] = "none";
-    ViewData["id"] = Model.UserSesion.IdUser;
 }
 
-<body onload="userSesion('@Model.UserSesion.Username')">
     <div class="container">
         <h2>Notificaciones</h2>
 
@@ -57,6 +53,4 @@
             </div>
         </div>
     </div>
-</body>
-
 

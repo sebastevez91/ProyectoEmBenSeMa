@@ -3,10 +3,11 @@
 
 @{
     ViewData["Title"] = "Editar tu perfil";
+    Layout = "_LayoutSesion";
 }
+<h1>Datos de tu perfil</h1>
 
-<h4>Profesor @Model.Teacher.NameTeacher @Model.Teacher.Surname</h4>
-
+<h4>Profesor de EmBenSeMa</h4>
 <hr />
 <div class="row">
     <form method="post" class="w-100" enctype="multipart/form-data">
@@ -16,6 +17,7 @@
                 <input type="hidden" asp-for="Teacher.IdTeacher" />
                 <input type="hidden" asp-for="Teacher.IdUser" />
                 <input type="hidden" asp-for="Teacher.Description"  />
+                <input type="hidden" asp-for="Teacher.FotoTeacher" />
                 <div class="form-group">
                     <label asp-for="Teacher.NameTeacher" class="control-label"></label>
                     <input asp-for="Teacher.NameTeacher" class="form-control" />
@@ -51,9 +53,6 @@
                     </select>
                     <span asp-validation-for="Teacher.Genero" class="text-danger"></span>
                 </div>
-                <div class="form-group text-center">
-                    <button type="submit" name="action" value="updateData" class="btn btn-primary">Modificar Datos</button>
-                </div>
             </div>
 
             <!-- Campo de la foto de perfil -->
@@ -71,14 +70,10 @@
 
         <!-- Botón para actualizar solo la imagen -->
         <div class="form-group text-center">
-            <button type="submit" name="action" value="updateImage" class="btn btn-secondary">Editar Imagen</button>
+            <input type="submit" value="Actualizar datos" class="btn btn-secondary" />
         </div>
     </form>
 
-</div>
-
-<div>
-    <a asp-page="/Aula/AulaTeacher" asp-route-id="@Model.Teacher?.IdUser" class="btn btn-primary">Volver atras</a>
 </div>
 
 @section Scripts {

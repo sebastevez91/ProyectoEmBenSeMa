@@ -14,13 +14,25 @@
                 <img src="~/img/Logo.png" class="iconoLogo" alt="IconoLogo" />
                 <label class="navbar-brand"> EmBenSeMaWeb  </label>
             </div>
-            <button class="user-button" onclick="toggleMenu()" style="display:@ViewData["userButton"]">
+            <button class="user-button" onclick="toggleMenu()">
                 <img src="~/img/userSesion.png" alt="Foto de perfil" class="user-image">
-                <span class="user-name" >@ViewData["userName"]</span>
+                <span class="user-name">@User.Identity.Name</span>
             </button>
             <!-- Menú desplegable -->
             <div id="user-menu" class="user-menu">
-                <a asp-page="@ViewData["ruta"]" asp-route-id="@ViewData["id"]" class="btn btn-primary"> Perfil </a>
+                @{
+                    string rutaPerfil = "/Index";
+
+                    if (User.IsInRole("Profesor"))
+                    {
+                        rutaPerfil = "/Aula/AulaTeacher";
+                    }
+                    else if (User.IsInRole("Alumno"))
+                    {
+                        rutaPerfil = "/Aula/AulaStudent";
+                    }
+                }
+                <a asp-page="@rutaPerfil" class="btn btn-primary"> Perfil </a>
                 <a asp-page="/Index" class="btn btn-primary"> Cerrar Sesión </a>
             </div>
         </nav>

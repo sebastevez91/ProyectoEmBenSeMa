@@ -2,62 +2,72 @@
 @model SchoolMusic.Web.Pages.Students.EditModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar tu perfil";
+    Layout = "_LayoutSesion";
 }
 
-<h1>Edit</h1>
+<h1>Datos de tu perfil</h1>
 
-<h4>Student</h4>
+<h4>Alumno de EmBenSeMa</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form method="post" class="w-100" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Student.IdStudent" />
+            <input type="hidden" asp-for="Student.IdUser" />
+            <input type="hidden" asp-for="Student.FotoStudent"/>
             <div class="form-group">
-                <label asp-for="Student.NameStudent" class="control-label"></label>
+                <label asp-for="Student.NameStudent" class="control-label"> Nombre </label>
                 <input asp-for="Student.NameStudent" class="form-control" />
                 <span asp-validation-for="Student.NameStudent" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Student.Surname" class="control-label"></label>
+                <label asp-for="Student.Surname" class="control-label"> Apellido </label>
                 <input asp-for="Student.Surname" class="form-control" />
                 <span asp-validation-for="Student.Surname" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Student.Mail" class="control-label"></label>
+                <label asp-for="Student.Mail" class="control-label"> Email </label>
                 <input asp-for="Student.Mail" class="form-control" />
                 <span asp-validation-for="Student.Mail" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Student.Dni" class="control-label"></label>
+                <label asp-for="Student.Dni" class="control-label"> Dni </label>
                 <input asp-for="Student.Dni" class="form-control" />
                 <span asp-validation-for="Student.Dni" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Student.Age" class="control-label"></label>
+                <label asp-for="Student.Age" class="control-label"> Edad </label>
                 <input asp-for="Student.Age" class="form-control" />
                 <span asp-validation-for="Student.Age" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Student.IdUser" class="control-label"></label>
-                <input asp-for="Student.IdUser" class="form-control" />
-                <span asp-validation-for="Student.IdUser" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Student.Genero" class="control-label"></label>
-                <input asp-for="Student.Genero" class="form-control" />
+                <label asp-for="Student.Genero" class="form-label"> Genero</label>
+                <select asp-for="Student.Genero" class="form-control">
+                    <option value="">Seleccione un género</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otro">Otro</option>
+                </select>
                 <span asp-validation-for="Student.Genero" class="text-danger"></span>
             </div>
+            <!-- Campo de la foto de perfil -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Foto de perfil</label>
+                    @if (!string.IsNullOrEmpty(Model.Student.FotoStudent))
+                    {
+                        <img src="@Model.Student.FotoStudent" alt="Foto de Student" class="profesor-foto" />
+                    }
+                    <input type="file" id="ProfileImage" name="ProfileImage" class="form-control" />
+                </div>
+            </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Actualizar datos" class="btn btn-primary" />
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {

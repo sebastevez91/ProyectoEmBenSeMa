@@ -3,16 +3,13 @@
 @{
     ViewData["Title"] = "Aula del alumno";
     Layout = "_LayoutSesion";
-    ViewData["userName"] = User.Identity.Name;
-    ViewData["ruta"] = "/Aula/AulaStudent";
-    ViewData["id"] = Model.Student.IdUser;
 }
     <div class="text-center ">
         <h1 style="padding: 5%;">Bienvenido @Model.Student.NameStudent @Model.Student.Surname</h1>
     </div>
 
     <div>
-        <h4>Tus datos</h4>
+        <h4>Estos son tus datos personales</h4>
         <div>
             <table class="styled-table">
                 <thead>
@@ -31,13 +28,14 @@
                 </tbody>
             </table>
         </div>
+    <a asp-page="/Students/Edit"  class="btn btn-primary"> Modificar tus datos </a>
         <a asp-page="/Courses/ListaCourses" asp-route-idUser="@Model.Student?.IdUser" class="btn btn-primary"> Inscribirse a un curso </a>
     <div style="margin-top: 30px; color:white;">
         <h2>Tus horarios de clase</h2>
         <ul>
-            @if (Model.Inscriptions != null && Model.Inscriptions.Any(ins => ins.Cursada.Initiation > DateTime.Today))
+            @if (Model.Student.Inscriptions != null && Model.Student.Inscriptions.Any(ins => ins.Cursada.Initiation > DateTime.Today))
             {
-                foreach (var ins in Model.Inscriptions)
+                foreach (var ins in Model.Student.Inscriptions)
                 {
                     if (ins.Cursada.Initiation > DateTime.Today && ins.Cursada.Finish > DateTime.Today)
                     {

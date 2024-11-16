@@ -16,8 +16,6 @@ namespace SchoolMusic.Web.Pages.Aula
             _context = context;
         }
         public Student Student { get; set; } = default!;
-        public string Username {  get; set; }
-        public IList<Inscription> Inscriptions { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync()
         {
@@ -28,19 +26,15 @@ namespace SchoolMusic.Web.Pages.Aula
                 return RedirectToPage("/Logins/LoginUser");
             }
 
-            var student = await _context.Student.FirstOrDefaultAsync(m => m.IdUser == int.Parse(userId));
+            var student = await _context.Student
+                .Include(i => i.Inscriptions)
+                .FirstOrDefaultAsync(m => m.IdUser == int.Parse(userId));
             if (student == null)
             {
                 return NotFound();
             }
-            else
-            {
-                Student = student;
-                Inscriptions = await _context.Inscription
-                    .Include(c => c.Cursada)
-                    .Where(s => s.idStudent == Student.IdStudent)
-                    .ToListAsync();
-            }
+            Student = student;
+
             return Page();
 
         }

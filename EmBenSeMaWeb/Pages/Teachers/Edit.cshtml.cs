@@ -18,16 +18,16 @@ namespace SchoolMusic.Web.Pages.Teachers
 
         [BindProperty]
         public Teacher Teacher { get; set; } = default!;
-
-
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync()
         {
-            if (id == null || _context.Teacher == null)
+            var userId = User.FindFirst("UserId")?.Value;
+
+            if (string.IsNullOrEmpty(userId))
             {
-                return NotFound();
+                return RedirectToPage("/Logins/LoginUser");
             }
 
-            var teacher = await _context.Teacher.FirstOrDefaultAsync(m => m.IdTeacher == id);
+            var teacher = await _context.Teacher.FirstOrDefaultAsync(m => m.IdUser == int.Parse(userId));
             if (teacher == null)
             {
                 return NotFound();
@@ -36,53 +36,25 @@ namespace SchoolMusic.Web.Pages.Teachers
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(IFormFile ProfileImage, string action)
+        public async Task<IActionResult> OnPostAsync(IFormFile? ProfileImage)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            // Obtener el registro actual de Teacher desde la base de datos
-            var teacherInDb = await _context.Teacher.FindAsync(Teacher.IdTeacher);
-            if (teacherInDb == null)
-            {
-                return NotFound();
-            }
-
-            if (action == "updateData")
-            {
-                // Actualizar solo los datos personales
-                teacherInDb.NameTeacher = Teacher.NameTeacher;
-                teacherInDb.Surname = Teacher.Surname;
-                teacherInDb.Mail = Teacher.Mail;
-                teacherInDb.Dni = Teacher.Dni;
-                teacherInDb.Age = Teacher.Age;
-                teacherInDb.Genero = Teacher.Genero;
-
-                _context.Entry(teacherInDb).State = EntityState.Modified;
-                await _context.SaveChangesAsync();
-            }
-            else if (action == "updateImage" && ProfileImage != null)
+            if (ProfileImage != null)
             {
                 // Subir y actualizar solo la imagen
                 var imageUrl = await _imageService.UploadImageAsync(ProfileImage);
-                teacherInDb.FotoTeacher = imageUrl;
-
-                _context.Entry(teacherInDb).State = EntityState.Modified;
-                await _context.SaveChangesAsync();
+                Teacher.FotoTeacher = imageUrl;
             }
 
-            return RedirectToPage("/Aula/AulaTeacher", new { id = Teacher?.IdUser });
+            _context.Attach(Teacher).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage("/Aula/AulaTeacher");
         }
 
-
-
-
-
-        private bool TeacherExists(int id)
-        {
-            return (_context.Teacher?.Any(e => e.IdTeacher == id)).GetValueOrDefault();
-        }
     }
 }
