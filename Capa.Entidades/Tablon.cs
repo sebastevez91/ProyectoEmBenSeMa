@@ -12,5 +12,6 @@ namespace SchoolMusic.Entidades
         [Key]
         public int idTablon { get; set; }
         public int idCursada { get; set; }
+        public string? Description { get; set; }
     }
 }

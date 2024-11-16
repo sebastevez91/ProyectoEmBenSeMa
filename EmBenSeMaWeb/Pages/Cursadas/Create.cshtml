@@ -16,6 +16,19 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <label asp-for="Cursada.IdCourse" class="control-label"></label>
+                <select asp-for="Cursada.IdCourse" class="form-control">
+                    <option value="">Selecciona un instrumento</option>
+                    <option value="2004">Piano</option>
+                    <option value="2005">Guitarra</option>
+                    <option value="2006">Bateria</option>
+                    <option value="2007">Saxo</option>
+                    <option value="2008">Bajo</option>
+                    <option value="2009">Canto</option>
+                </select>
+                <span asp-validation-for="Cursada.IdCourse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Cursada.Initiation" class="control-label"></label>
                 <input asp-for="Cursada.Initiation" class="form-control" type="date" />
                 <span asp-validation-for="Cursada.Initiation" class="text-danger"></span>
@@ -56,14 +69,10 @@
                 <span asp-validation-for="Cursada.PayFee" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value=" Crear " class="btn btn-primary" />
+                <input type="submit" value=" Crear cursada " class="btn btn-primary" />
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {

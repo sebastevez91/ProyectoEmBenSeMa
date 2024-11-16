@@ -6,9 +6,6 @@
     string nombreImagen = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdeSfY6nyQq3k9gJPyhFq1hendlATeg9ohPQ&s";
 
     Layout = "_LayoutSesion";
-    ViewData["userName"] = Model.UserSesion.Username;
-    ViewData["ruta"] = "/Aula/AulaStudent";
-    ViewData["id"] = Model.UserSesion.IdUser;
 }
 <div class="text-center">
     <h1>Lista de cursadas</h1>
@@ -35,9 +32,8 @@
                     </ul>
                     <div class="card-body">
                         <form method="post">
-                            <input type="hidden" asp-for="IdUser" value="@Model.Student.IdUser" />
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <input type="hidden" asp-for="Inscription.idStudent" value="@Model.Student.IdStudent"/>
+                            <input type="hidden" asp-for="Inscription.idStudent"/>
                             <input type="hidden" asp-for="Inscription.idCursada" value="@cur.IdCursada" />
                             <input type="hidden" asp-for="Inscription.dateInscription" value="@DateTime.Now" />
                             <div class="form-group">

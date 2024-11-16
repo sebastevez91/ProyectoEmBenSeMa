@@ -16,6 +16,7 @@ namespace SchoolMusic.Web.Pages.Aula
             _context = context;
         }
         public Student Student { get; set; } = default!;
+        public IList<Inscription> Inscriptions { get; set; }
 
         public async Task<IActionResult> OnGetAsync()
         {
@@ -27,8 +28,11 @@ namespace SchoolMusic.Web.Pages.Aula
             }
 
             var student = await _context.Student
-                .Include(i => i.Inscriptions)
-                .FirstOrDefaultAsync(m => m.IdUser == int.Parse(userId));
+                        .Include(i => i.Inscriptions)
+                            .ThenInclude(i => i.Cursada)
+                                .ThenInclude(i => i.Course)
+                        .FirstOrDefaultAsync(m => m.IdUser == int.Parse(userId));
+
             if (student == null)
             {
                 return NotFound();

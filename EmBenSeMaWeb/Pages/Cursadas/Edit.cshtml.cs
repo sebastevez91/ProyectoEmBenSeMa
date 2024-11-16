@@ -40,9 +40,6 @@ namespace SchoolMusic.Web.Pages.Cursadas
             Cursada = cursada;
             return Page();
         }
-
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -51,29 +48,9 @@ namespace SchoolMusic.Web.Pages.Cursadas
             }
 
             _context.Attach(Cursada).State = EntityState.Modified;
-
-            try
-            {
                 await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CursadaExists(Cursada.IdCursada))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
 
-            return RedirectToPage("./Details", new { id = Cursada?.IdTeacher });
-        }
-
-        private bool CursadaExists(int id)
-        {
-          return (_context.Cursada?.Any(e => e.IdCursada == id)).GetValueOrDefault();
+            return RedirectToPage("./Details");
         }
     }
 }

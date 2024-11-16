@@ -31,7 +31,7 @@ namespace SchoolMusic.Web.Pages.Tablons
             var tablon = await _context.Tablon.FirstOrDefaultAsync(m => m.idCursada == id);
             if (tablon == null)
             {
-                return NotFound();
+                return Page();
             }
             else 
             {

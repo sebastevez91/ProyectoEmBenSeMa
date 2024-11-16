@@ -14,13 +14,8 @@ namespace SchoolMusic.Web.Pages.Courses
         }
 
         public IList<Course> Course { get; set; } = default!;
-        public Users UserSesion { get; set; }
-        public async Task OnGetAsync(int? idUser)
+        public async Task OnGetAsync()
         {
-            if (idUser != null)
-            {
-                UserSesion = await _context.Users.FirstOrDefaultAsync(u => u.IdUser == idUser);
-            }
             if (_context.Course != null)
             {
                 Course = await _context.Course.ToListAsync();

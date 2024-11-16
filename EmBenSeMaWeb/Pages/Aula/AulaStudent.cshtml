@@ -4,6 +4,10 @@
     ViewData["Title"] = "Aula del alumno";
     Layout = "_LayoutSesion";
 }
+
+<div class="top-right-button">
+    <a asp-page="/Notifications/IndexNotification" class="btn">Notificaciones</a>
+</div>
     <div class="text-center ">
         <h1 style="padding: 5%;">Bienvenido @Model.Student.NameStudent @Model.Student.Surname</h1>
     </div>
@@ -29,7 +33,7 @@
             </table>
         </div>
     <a asp-page="/Students/Edit"  class="btn btn-primary"> Modificar tus datos </a>
-        <a asp-page="/Courses/ListaCourses" asp-route-idUser="@Model.Student?.IdUser" class="btn btn-primary"> Inscribirse a un curso </a>
+        <a asp-page="/Courses/ListaCourses" class="btn btn-primary"> Inscribirse a un curso </a>
     <div style="margin-top: 30px; color:white;">
         <h2>Tus horarios de clase</h2>
         <ul>
@@ -40,12 +44,7 @@
                     if (ins.Cursada.Initiation > DateTime.Today && ins.Cursada.Finish > DateTime.Today)
                     {
                         <li>
-                            <span>Cursada de @ins.Cursada.Course.Instrument: @ins.Cursada.StarTime.ToString("t") - @ins.Cursada.EndTime.ToString("t")</span>
-                            <div style="margin-top: 10px;">
-                                <a asp-page="/Teachers/IndexCursada" asp-route-id="@ins.Cursada.IdTeacher" class="btn btn-primary">
-                                    Tu profesor
-                                </a>
-                            </div>
+                            <span>Cursada de @ins.Cursada.Course.Instrument a las @ins.Cursada.StarTime.ToString("t") - @ins.Cursada.EndTime.ToString("t")</span>
                         </li>
                     }
                 }

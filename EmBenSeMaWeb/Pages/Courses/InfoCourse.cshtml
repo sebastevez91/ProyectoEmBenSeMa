@@ -2,18 +2,14 @@
 @model SchoolMusic.Web.Pages.Courses.InfoCourseModel
 @{
     ViewData["Title"] = "Curso de Saxo";
-    if(Model.UserSesion == null)
+    if (!User.Identity.IsAuthenticated)
     {
         Layout = "_Layout";
     }
-    if(Model.UserSesion != null)
+    else if (User.Identity.IsAuthenticated)
     {
         Layout = "_LayoutSesion";
-        ViewData["userName"] = Model.UserSesion.Username;
-        ViewData["ruta"] = "/Aula/AulaStudent";
-        ViewData["id"] = Model.UserSesion.IdUser;
     }
-
 }
 
 <div class="text-center">
@@ -34,10 +30,10 @@
             </div>
     }
 
-    @if(Model.UserSesion != null)
+    @if (User.Identity.IsAuthenticated)
     {
         <div>
-            <a asp-page="/Cursadas/IndexCursada" asp-route-idCourse="@Model.Course?.IdCourse" asp-route-idUser="@Model.UserSesion?.IdUser" class="btn btn-primary"> Ver cursadas </a>
+            <a asp-page="/Cursadas/IndexCursada" asp-route-idCourse="@Model.Course?.IdCourse" class="btn btn-primary"> Ver cursadas </a>
         </div>
     }
 </div>

@@ -21,7 +21,7 @@ namespace SchoolMusic.Web.Pages.Cursadas
         [BindProperty]
         public Inscription Inscription { get; set; } = new Inscription();
 
-        public async Task OnGetAsync(int? idCourse,int? idUser)
+        public async Task OnGetAsync(int? idCourse)
         {
             if (idCourse != null &&  _context.Cursada != null)
             {
@@ -29,28 +29,32 @@ namespace SchoolMusic.Web.Pages.Cursadas
                     .Where(c => c.IdCourse == idCourse)
                     .Include(cou => cou.Course).ToListAsync();
             }
-
-            if (idUser != null)
-            {
-                var student = await _context.Student.FirstOrDefaultAsync(s => s.IdUser == idUser);
-                Student = student;
-
-                var userSesion = await _context.Users.FirstOrDefaultAsync(u => u.IdUser == idUser);
-                UserSesion = userSesion;
-            }
         }
 
-        public async Task<IActionResult> OnPostAsync(int? IdUser)
+        public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid || _context.Inscription == null || Inscription == null)
             {
                 return Page();
             }
 
+            var userId = User.FindFirst("UserId")?.Value;
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                return RedirectToPage("/Logins/LoginUser");
+            }
+
+            var student = await _context.Student.FirstOrDefaultAsync(m => m.IdUser == int.Parse(userId));
+            if (student == null)
+            {
+                return Page();
+            }
+            Inscription.idStudent = student.IdStudent;
             _context.Inscription.Add(Inscription);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("/Aula/AulaStudent", new { id = IdUser });
+            return RedirectToPage("/Aula/AulaStudent");
         }
     }
 }

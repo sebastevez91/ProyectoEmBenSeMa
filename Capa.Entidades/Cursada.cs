@@ -30,7 +30,7 @@ namespace SchoolMusic.Entidades
         [Range(1, 50, ErrorMessage = "La cantidad de vacantes no debe superar los 50.")]
         public int Vacantes {  get; set; }
         [Required(ErrorMessage = "El día de cursada es obligatorio")]
-        [RegularExpression(@"^(?i)((lunes|martes|miércoles|jueves|viernes|sábado|domingo)([\s,]+)?)+$", ErrorMessage = "Debe ingresar días de la semana válidos, separados por comas o espacios.")]
+        [RegularExpression(@"^(?i)((lunes|martes|miercoles|jueves|viernes|sabado|domingo)([\s,]+)?)+$", ErrorMessage = "Debe ingresar días de la semana válidos, separados por comas o espacios.")]
         public string Days { get; set; }
 
         [Required(ErrorMessage = "Se tiene que ingresar el contenido de la cursada")]

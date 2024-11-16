@@ -3,9 +3,9 @@
 
 @{
     ViewData["Title"] = "Editar cursada";
+    Layout = "_LayoutSesion";
 }
 
-<body onload="ocultarButton()">
     <h1>Modificar tu cursada</h1>
     @{
         if(Model.Cursada.Course != null)
@@ -69,10 +69,6 @@
         </div>
     </div>
 
-    <div>
-        <a asp-page="./Details" asp-route-id="@Model.Cursada?.IdTeacher" class="btn btn-primary btn-block"> Volver a atras </a>
-    </div>
-</body>
 
 
 @section Scripts {
