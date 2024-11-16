@@ -19,19 +19,16 @@ namespace SchoolMusic.Web.Pages.Aula
         public string Username {  get; set; }
         public IList<Inscription> Inscriptions { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync()
         {
-            if (id == null || _context.Student == null)
+            var userId = User.FindFirst("UserId")?.Value;
+
+            if (string.IsNullOrEmpty(userId))
             {
-                return NotFound();
+                return RedirectToPage("/Logins/LoginUser");
             }
 
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.IdUser == id);
-            if (user != null)
-            {
-                Username = user.Username;
-            }
-            var student = await _context.Student.FirstOrDefaultAsync(m => m.IdUser == id);
+            var student = await _context.Student.FirstOrDefaultAsync(m => m.IdUser == int.Parse(userId));
             if (student == null)
             {
                 return NotFound();

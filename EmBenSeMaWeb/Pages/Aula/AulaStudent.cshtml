@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Aula del alumno";
     Layout = "_LayoutSesion";
-    ViewData["userName"] = Model.Username;
+    ViewData["userName"] = User.Identity.Name;
     ViewData["ruta"] = "/Aula/AulaStudent";
     ViewData["id"] = Model.Student.IdUser;
 }

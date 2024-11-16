@@ -61,5 +61,4 @@ namespace SchoolMusic.Web.Pages.Logins
             return Page();
         }
     }
-
 }

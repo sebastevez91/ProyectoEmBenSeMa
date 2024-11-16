@@ -3,12 +3,12 @@
 @{
     ViewData["Title"] = "Aula del profesor";
     Layout = "_LayoutSesion";
-    ViewData["userName"] = Model.UserSesion.Username;
+    ViewData["userName"] = User.Identity.Name;
     ViewData["userButton"] = "block";
 }
 
     <div class="top-right-button">
-        <a asp-page="/Notifications/IndexNotification" asp-route-CurrentUserId="@Model.UserSesion?.IdUser" class="btn">Notificaciones</a>
+        <a asp-page="/Notifications/IndexNotification" asp-route-CurrentUserId="@Model.Teacher?.IdUser" class="btn">Notificaciones</a>
     </div>
 
     <div class="containerTeacher">
@@ -40,7 +40,7 @@
         <div class="upcoming-classes">
                 <h3>Tus próximas clases</h3>
                 <ul>
-                    @foreach (var cursada in Model.Cursada)
+                    @foreach (var cursada in Model.Teacher.Cursada)
                     {
                         if (cursada.Initiation > DateTime.Today && cursada.Finish > DateTime.Today)
                         {

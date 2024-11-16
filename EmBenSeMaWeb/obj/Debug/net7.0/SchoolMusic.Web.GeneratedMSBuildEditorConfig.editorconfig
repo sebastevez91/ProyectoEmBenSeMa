@@ -94,10 +94,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Students/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Students/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -116,10 +112,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Tablons/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFibG9uc1xpbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Teachers/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhY2hlcnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Teachers/Delete.cshtml]
