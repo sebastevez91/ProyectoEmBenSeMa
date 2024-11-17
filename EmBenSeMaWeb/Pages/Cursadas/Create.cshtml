@@ -16,7 +16,7 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Cursada.IdCourse" class="control-label"></label>
+                <label asp-for="Cursada.IdCourse" class="control-label"> Instrumento </label>
                 <select asp-for="Cursada.IdCourse" class="form-control">
                     <option value="">Selecciona un instrumento</option>
                     <option value="2004">Piano</option>
@@ -29,42 +29,42 @@
                 <span asp-validation-for="Cursada.IdCourse" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cursada.Initiation" class="control-label"></label>
+                <label asp-for="Cursada.Initiation" class="control-label"> Fecha de inicio </label>
                 <input asp-for="Cursada.Initiation" class="form-control" type="date" />
                 <span asp-validation-for="Cursada.Initiation" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cursada.Finish" class="control-label"></label>
+                <label asp-for="Cursada.Finish" class="control-label">Fecha de finalización </label>
                 <input asp-for="Cursada.Finish" class="form-control" type="date"/>
                 <span asp-validation-for="Cursada.Finish" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cursada.StarTime" class="control-label"></label>
+                <label asp-for="Cursada.StarTime" class="control-label"> Hora de inicio </label>
                 <input asp-for="Cursada.StarTime" class="form-control" />
                 <span asp-validation-for="Cursada.StarTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cursada.EndTime" class="control-label"></label>
+                <label asp-for="Cursada.EndTime" class="control-label"> Hora en que termina </label>
                 <input asp-for="Cursada.EndTime" class="form-control" />
                 <span asp-validation-for="Cursada.EndTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cursada.Vacantes" class="control-label"></label>
+                <label asp-for="Cursada.Vacantes" class="control-label"> Número de vacantes </label>
                 <input asp-for="Cursada.Vacantes" class="form-control" />
                 <span asp-validation-for="Cursada.Vacantes" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cursada.Days" class="control-label"></label>
+                <label asp-for="Cursada.Days" class="control-label"> Dias de cursada </label>
                 <input asp-for="Cursada.Days" class="form-control" />
                 <span asp-validation-for="Cursada.Days" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cursada.Description" class="control-label"></label>
+                <label asp-for="Cursada.Description" class="control-label"> Descripción del contenido </label>
                 <input asp-for="Cursada.Description" class="form-control" />
                 <span asp-validation-for="Cursada.Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Cursada.PayFee" class="control-label"></label>
+                <label asp-for="Cursada.PayFee" class="control-label"> Precio de la inscripción </label>
                 <input asp-for="Cursada.PayFee" class="form-control" />
                 <span asp-validation-for="Cursada.PayFee" class="text-danger"></span>
             </div>

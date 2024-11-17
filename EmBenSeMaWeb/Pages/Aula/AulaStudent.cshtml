@@ -8,12 +8,15 @@
 <div class="top-right-button">
     <a asp-page="/Notifications/IndexNotification" class="btn">Notificaciones</a>
 </div>
-    <div class="text-center ">
-        <h1 style="padding: 5%;">Bienvenido @Model.Student.NameStudent @Model.Student.Surname</h1>
+    <div class="infoAula">
+        <img src="@Model.Student.FotoStudent" alt="Foto de perfil" class="fotoTeacher" />
+        <div style="width:70%;">
+            <h1 style="padding: 5%;">Bienvenido @Model.Student.NameStudent @Model.Student.Surname</h1>
+        </div>
     </div>
 
-    <div>
-        <h4>Estos son tus datos personales</h4>
+<div>
+        <h4 style="color:white">Estos son tus datos personales</h4>
         <div>
             <table class="styled-table">
                 <thead>
@@ -32,27 +35,28 @@
                 </tbody>
             </table>
         </div>
-    <a asp-page="/Students/Edit"  class="btn btn-primary"> Modificar tus datos </a>
-        <a asp-page="/Courses/ListaCourses" class="btn btn-primary"> Inscribirse a un curso </a>
-    <div style="margin-top: 30px; color:white;">
-        <h2>Tus horarios de clase</h2>
-        <ul>
-            @if (Model.Student.Inscriptions != null && Model.Student.Inscriptions.Any(ins => ins.Cursada.Initiation > DateTime.Today))
-            {
-                foreach (var ins in Model.Student.Inscriptions)
+        
+    <div class="upcoming-classes">
+            <h2>Tus horarios de clase</h2>
+            <ul>
+                @if (Model.Student.Inscriptions != null && Model.Student.Inscriptions.Any(ins => ins.Cursada.Initiation > DateTime.Today))
                 {
-                    if (ins.Cursada.Initiation > DateTime.Today && ins.Cursada.Finish > DateTime.Today)
+                    foreach (var ins in Model.Student.Inscriptions)
                     {
-                        <li>
-                            <span>Cursada de @ins.Cursada.Course.Instrument a las @ins.Cursada.StarTime.ToString("t") - @ins.Cursada.EndTime.ToString("t")</span>
-                        </li>
+                        if (ins.Cursada.Initiation > DateTime.Today && ins.Cursada.Finish > DateTime.Today)
+                        {
+                            <li>
+                                <span>Cursada de @ins.Cursada.Course.Instrument a las @ins.Cursada.StarTime.ToString("t") - @ins.Cursada.EndTime.ToString("t")</span>
+                            </li>
+                        }
                     }
                 }
-            }
-            else
-            {
-                <li>No tienes clases futuras programadas.</li>
-            }
-        </ul>
+                else
+                {
+                    <li>No tienes clases futuras programadas.</li>
+                }
+            </ul>
+        <a asp-page="/Students/Edit" class="btn btn-primary"> Modificar tus datos </a>
+        <a asp-page="/Courses/ListaCourses" class="btn btn-primary"> Inscribirse a un curso </a>
     </div>
-    </div>
+</div>

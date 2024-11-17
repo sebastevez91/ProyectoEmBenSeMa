@@ -23,11 +23,13 @@
     <h2>Profesores de @Model.Course.Instrument</h2>
     @foreach (var profesor in Model.Teacher)
     {
+        <div class="contenidoCard">
             <img src="@profesor.FotoTeacher" alt="Foto de @profesor.NameTeacher" class="profesor-foto" />
             <div class="profesor-info">
                 <h2>@profesor.NameTeacher @profesor.Surname</h2>
                 <p>@profesor.Mail</p>
             </div>
+        </div>
     }
 
     @if (User.Identity.IsAuthenticated)

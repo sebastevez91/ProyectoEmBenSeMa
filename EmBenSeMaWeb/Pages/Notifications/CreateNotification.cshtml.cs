@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using SchoolMusic.Entidades;
-using SchoolMusic.Web.Data;
 
 namespace SchoolMusic.Web.Pages.Notifications
 {
@@ -19,19 +13,33 @@ namespace SchoolMusic.Web.Pages.Notifications
             _context = context;
         }
 
-        public IActionResult OnGet()
+        [BindProperty]
+        public Notification Notification { get; set; } = new Notification();
+        public int IdTo { get; set; }
+        public async Task<IActionResult> OnGetAsync(int idTo)
         {
+            var userId = User.FindFirst("UserId")?.Value;
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                return RedirectToPage("/Logins/LoginUser");
+            }
+
+            if(idTo != null)
+            {
+                IdTo = idTo;
+            }
+            
+            Notification.NotificationFrom = int.Parse(userId);
+            Notification.NotificationTo = IdTo;
             return Page();
         }
 
-        [BindProperty]
-        public Notification Notification { get; set; } = default!;
-        
-
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Notification == null || Notification == null)
+            Notification.DateNotification = DateTime.Now;
+
+            if (!ModelState.IsValid || _context.Notification == null || Notification == null)
             {
                 return Page();
             }
@@ -39,7 +47,7 @@ namespace SchoolMusic.Web.Pages.Notifications
             _context.Notification.Add(Notification);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Notifications/IndexNotification");
         }
     }
 }

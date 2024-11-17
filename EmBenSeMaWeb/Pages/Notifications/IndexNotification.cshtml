@@ -6,51 +6,61 @@
     Layout = "_LayoutSesion";
 }
 
-    <div class="container">
-        <h2>Tus notificaciones</h2>
+<div class="container">
+    <h2>Tus notificaciones</h2>
 
-        <!-- Botones de Recibidos y Enviados -->
-        <div class="btn-group" role="group" aria-label="Opciones de notificaciones">
-            <button type="button" class="btn btn-primary" id="btnRecibidos" onclick="mostrarRecibidos()"> Recibidos </button>
-            <button type="button" class="btn btn-secondary" id="btnEnviados" onclick="mostrarEnviados()"> Enviados </button>
+    <!-- Botones de Recibidos y Enviados -->
+    <div role="group" aria-label="Opciones de notificaciones" class="mb-3">
+        <form method="post" class="d-inline">
+            <input type="submit" name="action" value="Recibidos" class="btn @(Model.CurrentView == "Recibidos" ? "btn-primary" : "btn-outline-primary")" />
+        </form>
+        <form method="post" class="d-inline">
+            <input type="submit" name="action" value="Enviados" class="btn @(Model.CurrentView == "Enviados" ? "btn-secondary" : "btn-outline-secondary")" />
+        </form>
+    </div>
+
+    <div class="row mt-4">
+        <!-- Lista de Notificaciones -->
+        <div class="col-md-4">
+            <h4 style="color:white">@(Model.CurrentView == "Recibidos" ? "Recibidos" : "Enviados")</h4>
+            <ul class="list-group">
+                @if ((Model.CurrentView == "Recibidos" && Model.ReceivedNotifications?.Any() == true) ||
+                (Model.CurrentView == "Enviados" && Model.SentNotifications?.Any() == true))
+                {
+                    var notifications = Model.CurrentView == "Recibidos" ? Model.ReceivedNotifications : Model.SentNotifications;
+                    foreach (var notificacion in notifications)
+                    {
+                        <li class="list-group-item list-group-item-action"
+                            data-asunto="@notificacion.Subject"
+                            data-fecha="@notificacion.DateNotification.ToString("dd/MM/yyyy")"
+                            data-cuerpo="@notificacion.Body"
+                            onclick="mostrarNotificacion(this)">
+                            <img src="~/img/mensaje.png" alt="mensaje" class="icon-image" />
+                            @notificacion.Subject
+                            <span class="text-muted float-right">@notificacion.DateNotification.ToString("dd/MM/yyyy")</span>
+                        </li>
+                    }
+                }
+                else
+                {
+                    <span>No hay notificaciones</span>
+                }
+            </ul>
         </div>
 
-        <div class="row mt-4">
-            <!-- Lista de Notificaciones Recibidas -->
-            <div class="col-md-4" id="listaRecibidos">
-                <h4>Recibidos</h4>
-                <ul class="list-group">
-                    @foreach (var notificacion in Model.NotificacionesRecibidas)
-                    {
-                        <li class="list-group-item" onclick="mostrarMensaje(@notificacion.IdNotification)">
-                            <strong>@notificacion.Subject</strong>
-                            <span class="text-muted float-right">@notificacion.DateNotification.ToString("dd/MM/yyyy")</span>
-                        </li>
-                    }
-                </ul>
-            </div>
-
-            <!-- Lista de Notificaciones Enviadas (inicialmente oculta) -->
-            <div class="col-md-4 d-none" id="listaEnviados">
-                <h4>Enviados</h4>
-                <ul class="list-group">
-                    @foreach (var notificacion in Model.NotificacionesEnviadas)
-                    {
-                        <li class="list-group-item" @* onclick="mostrarMensaje(@notificacion.IdNotifications)" *@>
-                            <strong>@notificacion.Subject</strong>
-                            <span class="text-muted float-right">@notificacion.DateNotification.ToString("dd/MM/yyyy")</span>
-                        </li>
-                    }
-                </ul>
-            </div>
-
-            <!-- Detalle del Mensaje -->
-            <div class="col-md-8">
-                <div id="mensajeDetalle">
-                    <h5>Detalles de la notificación</h5>
-                    <p id="contenidoMensaje">Seleccione una notificación para ver el mensaje.</p>
-                </div>
+        <!-- Detalle de la Notificación -->
+        <div class="col-md-8">
+            <div id="detalleMensaje">
+                <h5 style="color:white">Detalles de la notificación</h5>
+                <fieldset id="mensajeContenido" style="display:none;">
+                    <p id="detalleAsunto"><strong>Asunto:</strong> </p>
+                    <p id="detalleFecha"><strong>Fecha:</strong> </p>
+                    <p id="detalleCuerpo"><strong>Mensaje:</strong> </p>
+                </fieldset>
             </div>
         </div>
     </div>
+</div>
+
+
 

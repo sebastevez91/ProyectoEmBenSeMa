@@ -75,10 +75,10 @@ namespace SchoolMusic.Web.Pages.Logins
             catch (Exception ex)
             {
                 ModelState.AddModelError(string.Empty, "Error al registrar el usuario: " + ex.Message);
-                return RedirectToPage("~/Index");
+                return RedirectToPage("/Index");
             }
 
-            return RedirectToPage("~/Index");
+            return RedirectToPage("/Index");
         }
     }
 }

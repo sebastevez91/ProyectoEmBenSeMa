@@ -7,7 +7,7 @@
 }
 <h1>Datos de tu perfil</h1>
 
-<h4>Profesor de EmBenSeMa</h4>
+<h4 style="color:white;">Profesor de EmBenSeMa</h4>
 <hr />
 <div class="row">
     <form method="post" class="w-100" enctype="multipart/form-data">
@@ -19,32 +19,32 @@
                 <input type="hidden" asp-for="Teacher.Description"  />
                 <input type="hidden" asp-for="Teacher.FotoTeacher" />
                 <div class="form-group">
-                    <label asp-for="Teacher.NameTeacher" class="control-label"></label>
+                    <label asp-for="Teacher.NameTeacher" class="control-label"> Nombre </label>
                     <input asp-for="Teacher.NameTeacher" class="form-control" />
                     <span asp-validation-for="Teacher.NameTeacher" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Teacher.Surname" class="control-label"></label>
+                    <label asp-for="Teacher.Surname" class="control-label"> Apellido </label>
                     <input asp-for="Teacher.Surname" class="form-control" />
                     <span asp-validation-for="Teacher.Surname" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Teacher.Mail" class="control-label"></label>
+                    <label asp-for="Teacher.Mail" class="control-label"> Email </label>
                     <input asp-for="Teacher.Mail" class="form-control" />
                     <span asp-validation-for="Teacher.Mail" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Teacher.Dni" class="control-label"></label>
+                    <label asp-for="Teacher.Dni" class="control-label"> Dni </label>
                     <input asp-for="Teacher.Dni" class="form-control" />
                     <span asp-validation-for="Teacher.Dni" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Teacher.Age" class="control-label"></label>
+                    <label asp-for="Teacher.Age" class="control-label"> Edad </label>
                     <input asp-for="Teacher.Age" class="form-control" />
                     <span asp-validation-for="Teacher.Age" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Teacher.Genero" class="control-label"></label>
+                    <label asp-for="Teacher.Genero" class="control-label"> Genero </label>
                     <select asp-for="Teacher.Genero" class="form-control">
                         <option value="">Selecciona un género</option>
                         <option value="Masculino">Masculino</option>
@@ -65,7 +65,16 @@
                     }
                     <input type="file" id="ProfileImage" name="ProfileImage" class="form-control" />
                 </div>
+
+                <div class="form-group">
+                    <label asp-for="Teacher.Description"> Descripción de tus conocimientos </label>
+                    <textarea asp-for="Teacher.Description" cols="20" rows="5" placeholder="Breve reseña de su trayecto en la música" class="form-control"></textarea>
+                    <span asp-validation-for="Teacher.Description" class="text-danger"></span>
+                </div>
+
             </div>
+
+            
         </div>
 
         <!-- Botón para actualizar solo la imagen -->

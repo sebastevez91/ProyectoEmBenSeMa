@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SchoolMusic.Entidades;
-using SchoolMusic.Web.Data;
 
 namespace SchoolMusic.Web.Pages.Notifications
 {
@@ -19,9 +14,9 @@ namespace SchoolMusic.Web.Pages.Notifications
             _context = context;
         }
 
-        public IList<Notification> NotificacionesRecibidas { get;set; } = default!;
-        public IList<Notification> NotificacionesEnviadas { get; set; } = default!;
-
+        public IList<Notification> ReceivedNotifications { get; set; } = default!;
+        public IList<Notification> SentNotifications { get; set; } = default!;
+        public string CurrentView { get; set; } = "Recibidos"; // Vista predeterminada
         public async Task<IActionResult> OnGetAsync()
         {
             var userId = User.FindFirst("UserId")?.Value;
@@ -31,13 +26,38 @@ namespace SchoolMusic.Web.Pages.Notifications
                 return RedirectToPage("/Logins/LoginUser");
             }
             // Cargar notificaciones recibidas y enviadas
-            NotificacionesRecibidas = await _context.Notification
+            ReceivedNotifications = await _context.Notification
                 .Where(n => n.NotificationTo == int.Parse(userId))
                 .ToListAsync();
+            return Page();
+        }
 
-            NotificacionesEnviadas = await _context.Notification
-                .Where(n => n.NotificationFrom == int.Parse(userId))
-                .ToListAsync();
+        public async Task<IActionResult> OnPostAsync()
+        {
+            var userId = User.FindFirst("UserId")?.Value;
+            if (string.IsNullOrEmpty(userId))
+            {
+                return RedirectToPage("/Logins/LoginUser");
+            }
+
+            var action = Request.Form["action"]; // Obtener el valor del botón presionado
+
+            if (action == "Recibidos")
+            {
+                CurrentView = "Recibidos";
+                // Obtener notificaciones recibidas
+                ReceivedNotifications = await _context.Notification
+                    .Where(n => n.NotificationTo == int.Parse(userId))
+                    .ToListAsync();
+            }
+            else if (action == "Enviados")
+            {
+                CurrentView = "Enviados";
+                // Obtener notificaciones enviadas
+                SentNotifications = await _context.Notification
+                    .Where(n => n.NotificationFrom == int.Parse(userId))
+                    .ToListAsync();
+            }
             return Page();
         }
     }
