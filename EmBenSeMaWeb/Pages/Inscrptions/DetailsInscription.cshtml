@@ -1,0 +1,68 @@
+﻿@page
+@model SchoolMusic.Web.Pages.Inscrptions.DetailsInscriptionModel
+
+@{
+    ViewData["Title"] = "DetailsInscription";
+    Layout = "_LayoutSesion";
+}
+
+<h1> Detalles de tus inscripciones </h1>
+
+<table class="table" style="color:white;background-color: black;
+    border: 1px solid #dddddd;">
+    <thead>
+        <tr>
+            <th>
+                Fecha de Inscripción
+            </th>
+            <th>
+                Dias de cursada
+            </th>
+            <th>
+                Fecha de finalización
+            </th>
+            <th>
+                Horario
+            </th>
+            <th>
+                Estado de cursada
+            </th>
+            <th>
+                Profesor
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Inscription) {
+        <tr>
+            <td>
+                @item.dateInscription
+            </td>
+            <td>
+                @item.Cursada.Days
+            </td>
+            <td>
+                @item.Cursada.Finish.ToString("yyyy/MM/dd")
+            </td>
+            <td>
+                @item.Cursada.StarTime.ToString("HH:mm") a @item.Cursada.EndTime.ToString("HH:mm")
+            </td>
+            <td>
+                @item.Status
+            </td>
+            <td>
+                @item.Cursada.Teacher.NameTeacher @item.Cursada.Teacher.Surname
+            </td>
+            <td>
+                    <div class="button-container">
+                        <button class="icon-button">
+                            <a asp-page="/Notifications/CreateNotification" asp-route-idTo="@item.Student.IdUser">
+                                <img src="~/img/mensaje.png" alt="mensaje" class="icon-image" title="Enviar un mensaje" />
+                            </a>
+                        </button>
+                    </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\embensemaweb\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|solutionrelative:embensemaweb\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\embensemaweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|solutionrelative:embensemaweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\embensemaweb\\pages\\notifications\\createnotification.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|solutionrelative:embensemaweb\\pages\\notifications\\createnotification.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,27 +31,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Index.cshtml",
-              "RelativeDocumentMoniker": "EmBenSeMaWeb\\Pages\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Index.cshtml",
-              "RelativeToolTip": "EmBenSeMaWeb\\Pages\\Index.cshtml",
-              "ViewState": "AQIAADwAAAAAAAAAAAAIwEsAAABWAAAA",
+              "Title": "CreateNotification.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Notifications\\CreateNotification.cshtml",
+              "RelativeDocumentMoniker": "EmBenSeMaWeb\\Pages\\Notifications\\CreateNotification.cshtml",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Notifications\\CreateNotification.cshtml",
+              "RelativeToolTip": "EmBenSeMaWeb\\Pages\\Notifications\\CreateNotification.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-17T20:48:00.936Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "EmBenSeMaWeb\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "EmBenSeMaWeb\\wwwroot\\css\\site.css",
-              "ViewState": "AQIAAGwAAAAAAAAAAAAAAHwAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-11-17T19:56:17.079Z",
+              "WhenOpened": "2024-11-18T02:41:50.707Z",
               "EditorCaption": ""
             }
           ]

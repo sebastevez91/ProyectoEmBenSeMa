@@ -47,6 +47,7 @@
                         {
                             <li>
                                 <span>Cursada de @ins.Cursada.Course.Instrument a las @ins.Cursada.StarTime.ToString("t") - @ins.Cursada.EndTime.ToString("t")</span>
+                                
                             </li>
                         }
                     }
@@ -56,6 +57,7 @@
                     <li>No tienes clases futuras programadas.</li>
                 }
             </ul>
+        <a asp-page="/Inscrptions/DetailsInscription" class="btn btn-primary"> Ver incripciones </a>
         <a asp-page="/Students/Edit" class="btn btn-primary"> Modificar tus datos </a>
         <a asp-page="/Courses/ListaCourses" class="btn btn-primary"> Inscribirse a un curso </a>
     </div>

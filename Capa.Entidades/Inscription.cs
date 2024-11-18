@@ -18,6 +18,7 @@ namespace SchoolMusic.Entidades
         public int idCursada { get; set; }
         public Cursada? Cursada { get; set; }
         public DateTime dateInscription { get; set; }
+        [RegularExpression("Aprobado|Desaprobado|Cursando", ErrorMessage = "Seleccione una opción válida.")]
         public string? Status {  get; set; }
 
         public Inscription() { }

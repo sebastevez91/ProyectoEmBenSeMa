@@ -26,10 +26,11 @@ namespace SchoolMusic.Web.Pages.Cursadas
             }
 
             Cursadas = await _context.Cursada
-                        .Include(c => c.Teacher)
-                        .Include(c => c.Course)
-                        .Where(c => c.Teacher.IdUser == int.Parse(userId))
-                        .ToListAsync();
+                                    .Include(c => c.Teacher)
+                                    .Include(c => c.Course)
+                                    .Where(c => c.Teacher.IdUser == int.Parse(userId))
+                                    .ToListAsync();
+
 
             return Page();
         }

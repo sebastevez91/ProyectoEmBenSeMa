@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -18,8 +19,6 @@ namespace SchoolMusic.Web.Pages.Students
         {
             _context = context;
         }
-
-        public IList<Student> Student { get;set; } = default!;
         public IList<Inscription> Inscriptions { get;set; } = default!;
 
         public async Task OnGetAsync(int? id)

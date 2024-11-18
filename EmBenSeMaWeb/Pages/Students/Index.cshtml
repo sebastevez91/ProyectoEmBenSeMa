@@ -30,7 +30,9 @@
             <th>
                 Genero
             </th>
-            <th></th>
+            <th>
+                Estado de cursada
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -54,10 +56,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Student.Genero)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
                 <td>
                     <div class="button-container">
                         <button class="icon-button">
-                            <img src="~/img/ver.png" alt="verPerfil" class="icon-image" title="Ver perfil" />
+                            <a asp-page="/Students/Details" asp-route-id="@item.idInscription">
+                                <img src="~/img/ver.png" alt="verPerfil" class="icon-image" title="Ver perfil" />
+                            </a>
                         </button>
                         <button class="icon-button">
                             <a asp-page="/Notifications/CreateNotification" asp-route-idTo="@item.Student.IdUser">

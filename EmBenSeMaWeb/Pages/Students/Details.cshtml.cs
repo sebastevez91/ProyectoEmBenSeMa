@@ -19,25 +19,43 @@ namespace SchoolMusic.Web.Pages.Students
             _context = context;
         }
 
-      public Student Student { get; set; } = default!; 
+        [BindProperty]
+        public Inscription Inscription { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Student == null)
+            if (id == null || _context.Inscription == null)
             {
                 return NotFound();
             }
 
-            var student = await _context.Student.FirstOrDefaultAsync(m => m.IdStudent == id);
-            if (student == null)
+            // Consulta la inscripción con la relación cargada
+            var inscription = await _context.Inscription
+                                            .Include(i => i.Student) // Carga la relación con Student
+                                            .FirstOrDefaultAsync(m => m.idInscription == id);
+
+            if (inscription == null)
             {
                 return NotFound();
             }
             else 
             {
-                Student = student;
+                Inscription = inscription;
             }
             return Page();
+        }
+
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            _context.Attach(Inscription).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage("/Students/Index", new {id = Inscription.idCursada});
         }
     }
 }
