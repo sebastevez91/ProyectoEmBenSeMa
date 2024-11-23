@@ -217,6 +217,10 @@
               "target": "Package",
               "version": "[7.0.12, )"
             },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[4.26.1, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.6, )"
@@ -277,9 +281,6 @@
             "projectReferences": {
               "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Entidades\\SchoolMusic.Entidades.csproj": {
                 "projectPath": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Entidades\\SchoolMusic.Entidades.csproj"
-              },
-              "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\SchoolMusic.Serv.csproj": {
-                "projectPath": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\SchoolMusic.Serv.csproj"
               }
             }
           }

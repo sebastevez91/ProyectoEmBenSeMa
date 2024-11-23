@@ -24,5 +24,6 @@ namespace Capa.Entidades
             this.userName = userName;
             this.password = password;
         }
+        public MailSettings() { }
     }
 }

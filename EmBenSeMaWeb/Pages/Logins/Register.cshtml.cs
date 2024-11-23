@@ -1,3 +1,4 @@
+using Capa.Entidades;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -8,9 +9,11 @@ namespace SchoolMusic.Web.Pages.Logins
     public class RegisterModel : PageModel
     {
         private readonly SchoolMusic.Web.Data.SchoolMusicWebContext _context;
-        public RegisterModel(SchoolMusic.Web.Data.SchoolMusicWebContext context)
+        private readonly SchoolMusic.Web.Service.MailService _mailService;
+        public RegisterModel(SchoolMusic.Web.Data.SchoolMusicWebContext context, Service.MailService mailService)
         {
             _context = context;
+            _mailService = mailService;
         }
         public void OnGet()
         {
@@ -18,6 +21,7 @@ namespace SchoolMusic.Web.Pages.Logins
 
         [BindProperty]
         public RegisterViewModel RegisterViewModel { get; set; }
+        public MailData MailData { get; set; }
 
 
         public async Task<IActionResult> OnPostAsync()
@@ -71,14 +75,21 @@ namespace SchoolMusic.Web.Pages.Logins
 
                 await _context.SaveChangesAsync();
 
+                // Construimos el cuerpo del correo con la información proporcionada por el usuario.
+                MailData.subject = $"Asunto: Nuevo usuario de School EmBenSeMa";
+                MailData.body = $"Te damos la bienvenida a la mejor plataforma educativa de musica";
+
+                _mailService.sendMail(MailData);
+                TempData["Message"] = "¡Te registraste exitosamente!";
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError(string.Empty, "Error al registrar el usuario: " + ex.Message);
-                return RedirectToPage("/Index");
+                TempData["ErrorMessage"] = "No se pudo registrar tu usuario. Intenta nuevamente";
+                return RedirectToPage("/Register");
             }
 
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Logins/RegisterExitoso");
         }
     }
 }

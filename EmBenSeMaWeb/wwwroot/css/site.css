@@ -230,10 +230,6 @@ h1, h2, p, td, label, .text-item {
     color: white;
 }
 
-/*.cardCourse {
-    align-items: stretch;
-}*/
-
 /* Cursada */
 
 .content {
@@ -275,7 +271,7 @@ h1, h2, p, td, label, .text-item {
 }
 
 /* Aula Teacher */
-.fotoTeacher {
+.imagen-perfil {
     max-width: 250px;
     height: auto;
     border-radius: 50%;
@@ -459,6 +455,14 @@ h1, h2, p, td, label, .text-item {
 .infoAula {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-end
+}
+
+/* Contenido */
+
+.contenido-div {
+    background-color: black;
+    color: white;
+    border: 1px solid #dddddd;
 }

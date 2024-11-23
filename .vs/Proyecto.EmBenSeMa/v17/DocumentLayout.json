@@ -3,8 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\embensemaweb\\pages\\notifications\\createnotification.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|solutionrelative:embensemaweb\\pages\\notifications\\createnotification.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\embensemaweb\\pages\\aula\\aulateacher.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|solutionrelative:embensemaweb\\pages\\aula\\aulateacher.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\embensemaweb\\pages\\tablons\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|solutionrelative:embensemaweb\\pages\\tablons\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\embensemaweb\\pages\\cursadas\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|solutionrelative:embensemaweb\\pages\\cursadas\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\embensemaweb\\pages\\tablons\\createpost.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|solutionrelative:embensemaweb\\pages\\tablons\\createpost.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\embensemaweb\\pages\\tablons\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|solutionrelative:embensemaweb\\pages\\tablons\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\embensemaweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|solutionrelative:embensemaweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\embensemaweb\\pages\\tablons\\createpost.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|solutionrelative:embensemaweb\\pages\\tablons\\createpost.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\embensemaweb\\pages\\aula\\aulateacher.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|solutionrelative:embensemaweb\\pages\\aula\\aulateacher.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\embensemaweb\\pages\\teachers\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{885B459B-3685-4853-979E-6095F9E404F3}|EmBenSeMaWeb\\SchoolMusic.Web.csproj|solutionrelative:embensemaweb\\pages\\teachers\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,15 +62,119 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CreateNotification.cshtml",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Notifications\\CreateNotification.cshtml",
-              "RelativeDocumentMoniker": "EmBenSeMaWeb\\Pages\\Notifications\\CreateNotification.cshtml",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Notifications\\CreateNotification.cshtml",
-              "RelativeToolTip": "EmBenSeMaWeb\\Pages\\Notifications\\CreateNotification.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAAcAAAA",
+              "DocumentIndex": 5,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "EmBenSeMaWeb\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "EmBenSeMaWeb\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAALwBAAAAAAAAAAAAAMMBAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-11-23T14:43:07.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AulaTeacher.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Aula\\AulaTeacher.cshtml.cs",
+              "RelativeDocumentMoniker": "EmBenSeMaWeb\\Pages\\Aula\\AulaTeacher.cshtml.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Aula\\AulaTeacher.cshtml.cs",
+              "RelativeToolTip": "EmBenSeMaWeb\\Pages\\Aula\\AulaTeacher.cshtml.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAA9wCYAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T14:26:01.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Cursadas\\Details.cshtml",
+              "RelativeDocumentMoniker": "EmBenSeMaWeb\\Pages\\Cursadas\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Cursadas\\Details.cshtml",
+              "RelativeToolTip": "EmBenSeMaWeb\\Pages\\Cursadas\\Details.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-18T02:41:50.707Z",
+              "WhenOpened": "2024-11-23T14:26:22.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CreatePost.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Tablons\\CreatePost.cshtml.cs",
+              "RelativeDocumentMoniker": "EmBenSeMaWeb\\Pages\\Tablons\\CreatePost.cshtml.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Tablons\\CreatePost.cshtml.cs",
+              "RelativeToolTip": "EmBenSeMaWeb\\Pages\\Tablons\\CreatePost.cshtml.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAA1wB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T14:16:25.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreatePost.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Tablons\\CreatePost.cshtml",
+              "RelativeDocumentMoniker": "EmBenSeMaWeb\\Pages\\Tablons\\CreatePost.cshtml",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Tablons\\CreatePost.cshtml",
+              "RelativeToolTip": "EmBenSeMaWeb\\Pages\\Tablons\\CreatePost.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-23T14:16:25.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Tablons\\index.cshtml.cs",
+              "RelativeDocumentMoniker": "EmBenSeMaWeb\\Pages\\Tablons\\index.cshtml.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Tablons\\index.cshtml.cs",
+              "RelativeToolTip": "EmBenSeMaWeb\\Pages\\Tablons\\index.cshtml.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAAwB0AAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T13:56:31.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Tablons\\index.cshtml",
+              "RelativeDocumentMoniker": "EmBenSeMaWeb\\Pages\\Tablons\\index.cshtml",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Tablons\\index.cshtml",
+              "RelativeToolTip": "EmBenSeMaWeb\\Pages\\Tablons\\index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-23T13:55:52.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Edit.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Teachers\\Edit.cshtml.cs",
+              "RelativeDocumentMoniker": "EmBenSeMaWeb\\Pages\\Teachers\\Edit.cshtml.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Teachers\\Edit.cshtml.cs",
+              "RelativeToolTip": "EmBenSeMaWeb\\Pages\\Teachers\\Edit.cshtml.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAB0AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T02:06:42.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AulaTeacher.cshtml",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Aula\\AulaTeacher.cshtml",
+              "RelativeDocumentMoniker": "EmBenSeMaWeb\\Pages\\Aula\\AulaTeacher.cshtml",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\EmBenSeMaWeb\\Pages\\Aula\\AulaTeacher.cshtml",
+              "RelativeToolTip": "EmBenSeMaWeb\\Pages\\Aula\\AulaTeacher.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-23T02:02:30.166Z",
               "EditorCaption": ""
             }
           ]

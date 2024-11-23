@@ -631,3 +631,10 @@ C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\obj\Debug\net7.0-windows\SchoolMu.09C40107.Up2Date
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\obj\Debug\net7.0-windows\SchoolMusic.Proyecto.genruntimeconfig.cache
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\obj\Debug\net7.0-windows\ref\SchoolMusic.Proyecto.dll
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\bin\Debug\net7.0-windows\selenium-manager\linux\selenium-manager
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\bin\Debug\net7.0-windows\selenium-manager\macos\selenium-manager
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\bin\Debug\net7.0-windows\selenium-manager\windows\selenium-manager.exe
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\bin\Debug\net7.0-windows\WebDriver.dll
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\bin\Debug\net7.0-windows\System.Text.Encodings.Web.dll
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\bin\Debug\net7.0-windows\System.Text.Json.dll
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\bin\Debug\net7.0-windows\runtimes\browser\lib\net7.0\System.Text.Encodings.Web.dll

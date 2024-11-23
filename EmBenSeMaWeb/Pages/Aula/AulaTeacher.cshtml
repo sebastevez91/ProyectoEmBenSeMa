@@ -6,10 +6,20 @@
 }
 
 <div class="top-right-button">
-    <a asp-page="/Notifications/IndexNotification" class="btn">Notificaciones</a>
+    <a asp-page="/Notifications/IndexNotification" id="notificationButton" class="btn @(Model.NotificationCount > 0 ? "btn-danger" : "btn-secondary") position-relative">
+        Notificaciones
+        @if (Model.NotificationCount > 0)
+        {
+            <span id="notificationCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                @Model.NotificationCount
+            </span>
+        }
+    </a>
 </div>
+
+
 <div class="infoAula">
-    <img src="@Model.Teacher.FotoTeacher" alt="Foto de perfil" class="fotoTeacher" />
+    <img src="@Model.Teacher.FotoTeacher" alt="Foto de perfil" class="imagen-perfil" />
     <div style="width:70%;">
         <h1 style="padding: 5%;">Bienvenido profesor @Model.Teacher.NameTeacher @Model.Teacher.Surname</h1>
     </div>

@@ -9,12 +9,12 @@ namespace Capa.Servicios
 {
     public class MailService
     {
-        MailSettings settingsMail;
+        MailSettings _settingsMail;
 
         public MailService()
         {
             var section = (NameValueCollection)ConfigurationManager.GetSection("MailSettings");
-            settingsMail = new MailSettings(
+            _settingsMail = new MailSettings(
                     section["server"], int.Parse(section["port"]),
                     section["fromName"], section["fromMail"],
                     section["userName"], section["password"]
@@ -25,16 +25,16 @@ namespace Capa.Servicios
             var mail = new MailMessage();
             mail.To.Add(mailData.mailTo);
             mail.Subject = mailData.subject;
-            mail.From = new MailAddress(settingsMail.fromMail, settingsMail.fromName);
+            mail.From = new MailAddress(_settingsMail.fromMail, _settingsMail.fromName);
             mail.IsBodyHtml = true;
             mail.Body = mailData.body;
 
             // Nos conectamos a Gmail
 
             var client = new SmtpClient();
-            client.Host = settingsMail.server;
-            client.Port = settingsMail.port;
-            client.Credentials = new NetworkCredential(settingsMail.userName, settingsMail.password);
+            client.Host = _settingsMail.server;
+            client.Port = _settingsMail.port;
+            client.Credentials = new NetworkCredential(_settingsMail.userName, _settingsMail.password);
             client.UseDefaultCredentials = false;
             client.EnableSsl = true;
 

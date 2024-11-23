@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Capa.Entidades;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace EmBenSeMaWeb.Pages
@@ -16,7 +17,7 @@ namespace EmBenSeMaWeb.Pages
 
         public void OnGet()
         {
-
+            
         }
     }
 }

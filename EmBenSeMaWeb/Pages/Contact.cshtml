@@ -1,0 +1,59 @@
+﻿@page
+@model SchoolMusic.Web.Pages.Index1Model
+@{
+    ViewData["Title"] = "EmBenSeMa School";
+}
+<div style="background-color:black; border: 1px solid #dddddd;">
+    <div class="caja-contacto">
+        <div class="col izquierda">
+            <h2>Contáctanos</h2>
+
+            <!-- Mensajes de confirmación o error -->
+            @if (TempData["Message"] != null)
+            {
+                <div class="alert alert-success">@TempData["Message"]</div>
+            }
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+            }
+
+            <form method="post">
+                <label for="Name">Nombre</label>
+                <input asp-for="Name" type="text" id="name" placeholder="Ingrese su Nombre" required>
+                <span asp-validation-for="Name" class="text-danger"></span><br>
+
+                <label for="Surname">Apellido</label>
+                <input asp-for="Surname" type="text" id="surname" placeholder="Ingrese su Apellido" required>
+                <span asp-validation-for="Surname" class="text-danger"></span><br>
+
+                <label for="MailFrom">E-mail</label>
+                <input asp-for="Mail.mailTo" type="email" placeholder="Ingrese su E-mail">
+                <span asp-validation-for="Mail.mailTo" class="text-danger"></span><br>
+
+                <label for="Mail.body">Comentario</label>
+                <textarea asp-for="Mail.body" id="Mail_body" cols="30" rows="5" placeholder="Deje su mensaje" required></textarea>
+                <span asp-validation-for="Mail.body" class="text-danger"></span><br>
+
+                <button type="submit">Enviar <i class="fa-solid fa-file-import"></i></button>
+            </form>
+        </div>
+        <div class="col derecha">
+            <h4>Redes Sociales</h4>
+            <div class="redes">
+                <a href="#">
+                    <img src="~/img/facebook.png" alt="Facebook" class="icon-redes" />
+                </a><br>
+                <a href="#">
+                    <img src="~/img/gorjeo.png" alt="X" class="icon-redes" />
+                </a><br>
+                <a href="#">
+                    <img src="~/img/instagram.png" alt="Instagram" class="icon-redes" />
+                </a><br>
+                <a href="#">
+                    <img src="~/img/whatsapp.png" alt="Whatsapp" class="icon-redes" />
+                </a><br>
+            </div>
+        </div>
+    </div>
+</div>

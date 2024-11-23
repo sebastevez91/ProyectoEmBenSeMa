@@ -26,6 +26,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXVsYVxBdWxhVGVhY2hlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Courses/InfoCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291cnNlc1xJbmZvQ291cnNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -86,10 +90,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTm90aWZpY2F0aW9uc1xJbmRleE5vdGlmaWNhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Payments/IndexPayment.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudHNcSW5kZXhQYXltZW50LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -104,6 +104,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Students/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Tablons/CreatePost.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFibG9uc1xDcmVhdGVQb3N0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Sebastian/Desktop/Proyectos C\#/Proyecto.EmBenSeMa\[1\]/ProyectoEmBenSeMa/EmBenSeMaWeb/Pages/Tablons/index.cshtml]

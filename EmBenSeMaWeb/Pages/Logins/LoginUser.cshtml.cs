@@ -34,11 +34,11 @@ namespace SchoolMusic.Web.Pages.Logins
             {
                 // Crear los claims de autenticación
                 var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, user.Username),
-                new Claim("UserId", user.IdUser.ToString()),
-                new Claim(ClaimTypes.Role, user.Rol) // Rol: "Profesor" o "Alumno"
-            };
+                {
+                    new Claim(ClaimTypes.Name, user.Username),
+                    new Claim("UserId", user.IdUser.ToString()),
+                    new Claim(ClaimTypes.Role, user.Rol) // Rol: "Profesor" o "Alumno"
+                };
 
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 

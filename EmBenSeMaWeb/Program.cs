@@ -1,9 +1,16 @@
+using Capa.Entidades;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using SchoolMusic.Web.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Agregar configuración de MailSettings desde appsettings.json
+builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+
+// Registrar MailService para la inyección de dependencias
+builder.Services.AddScoped<SchoolMusic.Web.Service.MailService>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();

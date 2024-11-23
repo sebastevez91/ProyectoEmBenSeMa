@@ -60,5 +60,37 @@ namespace SchoolMusic.Web.Pages.Notifications
             }
             return Page();
         }
+
+        public async Task<IActionResult> OnPostMarkAsReadAsync(int id)
+        {
+            var notification = await _context.Notification.FindAsync(id);
+
+            if (notification == null)
+            {
+                return NotFound();
+            }
+
+            // Actualizar el estado de la notificación a true
+            notification.Status = true;
+            await _context.SaveChangesAsync();
+
+            // Recargar las notificaciones
+            var userId = User.FindFirst("UserId")?.Value;
+
+            if (CurrentView == "Recibidos")
+            {
+                ReceivedNotifications = await _context.Notification
+                    .Where(n => n.NotificationTo == int.Parse(userId))
+                    .ToListAsync();
+            }
+            else if (CurrentView == "Enviados")
+            {
+                SentNotifications = await _context.Notification
+                    .Where(n => n.NotificationFrom == int.Parse(userId))
+                    .ToListAsync();
+            }
+
+            return Page();
+        }
     }
 }

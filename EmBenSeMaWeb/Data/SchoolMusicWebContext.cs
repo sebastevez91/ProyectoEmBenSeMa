@@ -38,6 +38,13 @@ namespace SchoolMusic.Web.Data
                 .WithMany(c => c.Inscriptions)
                 .HasForeignKey(i => i.idCursada)
                 .IsRequired();
+
+            // Relación uno a muchos entre Tpoic e Coment
+            modelBuilder.Entity<Coment>()
+                .HasOne(t => t.Topic)
+                .WithMany(c => c.Coments)
+                .HasForeignKey(i => i.IdTopic)
+                .IsRequired();
         }
 
         public DbSet<SchoolMusic.Entidades.Course> Course { get; set; } = default!;
@@ -52,9 +59,9 @@ namespace SchoolMusic.Web.Data
 
         public DbSet<SchoolMusic.Entidades.Inscription> Inscription { get; set; } = default!;
 
-        public DbSet<SchoolMusic.Entidades.Tablon> Tablon { get; set; } = default!;
-
         public DbSet<SchoolMusic.Entidades.Notification> Notification { get; set; } = default!;
+
+        public DbSet<SchoolMusic.Entidades.Topic> Topic { get; set; } = default!;
 
         public DbSet<SchoolMusic.Entidades.Payment> Payment { get; set; } = default!;
     }

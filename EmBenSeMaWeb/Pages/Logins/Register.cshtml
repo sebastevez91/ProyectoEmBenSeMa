@@ -7,6 +7,15 @@
 <h2>Registro de Usuario</h2>
 
 <div class="container-fluid">
+    <!-- Mensajes de confirmación o error -->
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">@TempData["Message"]</div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
     <form method="post">
         <div class="row">
             <div class="col-md-4">
@@ -33,7 +42,7 @@
                     <div class="form-group">
                         <label asp-for="RegisterViewModel.Rol" class="form-label"> Tipo de usuario </label>
                         <select asp-for="RegisterViewModel.Rol" class="form-control">
-                            <option value="">Seleccione un rol</option>
+                            <option value="">Seleccione un tipo usuario</option>
                             <option value="Profesor">Profesor</option>
                             <option value="Alumno">Alumno</option>
                         </select>

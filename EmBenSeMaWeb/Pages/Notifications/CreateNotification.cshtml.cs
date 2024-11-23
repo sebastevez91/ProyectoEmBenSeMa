@@ -38,6 +38,7 @@ namespace SchoolMusic.Web.Pages.Notifications
         public async Task<IActionResult> OnPostAsync()
         {
             Notification.DateNotification = DateTime.Now;
+            Notification.Status = false;
 
             if (!ModelState.IsValid || _context.Notification == null || Notification == null)
             {

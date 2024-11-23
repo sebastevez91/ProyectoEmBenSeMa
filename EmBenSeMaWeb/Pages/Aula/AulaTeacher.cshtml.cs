@@ -17,6 +17,7 @@ namespace SchoolMusic.Web.Pages.Aula
         }
 
         public Teacher Teacher { get; set; } = default!;
+        public int NotificationCount { get; set; } = 0;
 
         public async Task<IActionResult> OnGetAsync()
         {
@@ -31,14 +32,17 @@ namespace SchoolMusic.Web.Pages.Aula
                 .Include(t => t.Cursada)
                 .FirstOrDefaultAsync(m => m.IdUser == int.Parse(userId));
 
+            var notificationCount = await _context.Notification
+                .Where(c => c.Status == false && c.NotificationTo == teacher.IdUser)
+                .CountAsync();
+
             if (teacher == null)
             {
                 return NotFound();
             }
-            else
-            {
-                Teacher = teacher;
-            }
+
+            Teacher = teacher;
+            NotificationCount = notificationCount;
             return Page();
         }
     }
