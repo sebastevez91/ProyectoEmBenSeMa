@@ -36,7 +36,7 @@ namespace SchoolMusic.Entidades
 
         // Relación con Inscription (uno a muchos)
         public IList<Inscription>? Inscriptions { get; set; }
-
+        public Users? Users { get; set; }
         public Student() { }
     }
 }

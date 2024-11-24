@@ -25,10 +25,15 @@ namespace SchoolMusic.Web.Pages.Notifications
             {
                 return RedirectToPage("/Logins/LoginUser");
             }
+
+            // Todas las notificaciones no leídas en una sola operación
+            await MarcarNotificacionesComoLeidasAsync(int.Parse(userId));
+
             // Cargar notificaciones recibidas y enviadas
             ReceivedNotifications = await _context.Notification
                 .Where(n => n.NotificationTo == int.Parse(userId))
                 .ToListAsync();
+            
             return Page();
         }
 
@@ -61,36 +66,21 @@ namespace SchoolMusic.Web.Pages.Notifications
             return Page();
         }
 
-        public async Task<IActionResult> OnPostMarkAsReadAsync(int id)
+        // Método para actualizar el estado de las notificaciones a "leído"
+        private async Task MarcarNotificacionesComoLeidasAsync(int userId)
         {
-            var notification = await _context.Notification.FindAsync(id);
+            // Seleccionar las notificaciones no leídas del usuario
+            var notificacionesNoLeidas = _context.Notification
+                .Where(n => n.NotificationTo == userId && !n.Status);
 
-            if (notification == null)
+            // Actualizar el campo Status a true para todas las no leídas
+            await notificacionesNoLeidas.ForEachAsync(notification =>
             {
-                return NotFound();
-            }
+                notification.Status = true;
+            });
 
-            // Actualizar el estado de la notificación a true
-            notification.Status = true;
+            // Guardar los cambios en una sola operación
             await _context.SaveChangesAsync();
-
-            // Recargar las notificaciones
-            var userId = User.FindFirst("UserId")?.Value;
-
-            if (CurrentView == "Recibidos")
-            {
-                ReceivedNotifications = await _context.Notification
-                    .Where(n => n.NotificationTo == int.Parse(userId))
-                    .ToListAsync();
-            }
-            else if (CurrentView == "Enviados")
-            {
-                SentNotifications = await _context.Notification
-                    .Where(n => n.NotificationFrom == int.Parse(userId))
-                    .ToListAsync();
-            }
-
-            return Page();
         }
     }
 }

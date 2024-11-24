@@ -26,7 +26,7 @@ namespace SchoolMusic.Web.Pages
         {
 
             // Construimos el cuerpo del correo con la información proporcionada por el usuario.
-            Mail.subject = $"Asunto: Consulta a School EmBenSeMa";
+            Mail.subject = "Consulta a School EmBenSeMa";
             Mail.body = $"Recibimos tu consulta en la brevedad te escribiremos." +
                 $"Asunto: {Mail.subject}" +
                 $"Nombre: {Name} {Surname}<br>Email: {Mail.mailTo}<br>Mensaje: {Mail.body}";

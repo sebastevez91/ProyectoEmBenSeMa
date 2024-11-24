@@ -5,10 +5,10 @@
 }
 
 <div class="container d-flex justify-content-center vh-100">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <h1 class="text-center mb-4">Aula virtual de EmBenSeMa</h1>
-            <form method="post" class="p-3 border rounded shadow bg-black">
+    <div class="row justify-content-center " style="align-content: flex-start; flex-wrap: wrap;">
+        <h1 class="text-center mb-4">Aula virtual de EmBenSeMa</h1>
+        <div class="col-md-6 p-3 border rounded shadow bg-black">
+            <form method="post">
                 <!-- Mostrar errores del modelo -->
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
@@ -36,13 +36,16 @@
                 <div class="form-group text-center mb-3">
                     <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
                 </div>
-
-                <!-- Link de registrarse -->
-                <div class="text-center">
-                    <label class="control-label">Si aún no tienes usuario puedes</label>
-                    <a asp-page="./Register" class="link-primary">Registrarte</a>
-                </div>
             </form>
+            <!-- Link para recuperar contraseña -->
+            <div class="text-center">
+                <a asp-page="./RecuperarContrasena" class="link-secondary">¿Olvidaste tu contraseña?</a>
+            </div>
+            <!-- Link de registrarse -->
+            <div class="text-center">
+                <label class="control-label">Si aún no tienes usuario puedes</label>
+                <a asp-page="./Register" class="link-primary">Registrarte</a>
+            </div>
         </div>
     </div>
 </div>

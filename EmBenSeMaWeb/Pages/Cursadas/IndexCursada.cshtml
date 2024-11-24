@@ -11,38 +11,52 @@
     <h1>Lista de cursadas</h1>
 </div>
 <div>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        @foreach (var cur in Model.Cursada)
-        {
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">@TempData["Message"]</div>
+    }
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            @foreach (var cur in Model.Cursada)
+            {
 
-            <div class="col">
-                <div class="card shadow-sm" style="width: 18rem;">
-                    <img src="@nombreImagen" class="card-img top" alt="imgCursada">
-                    <div class="card-body">
-                        <h5 class="card-title">@cur.Course.Instrument</h5>
-                        <p class="card-text description">
-                            @cur.Description.ToString()
-                        </p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Dias de cursada @cur.Days</li>
-                        <li class="list-group-item">Horario @cur.StarTime.ToString("HH:mm") a @cur.EndTime.ToString("HH:mm") hs</li>
-                        <li class="list-group-item">Inicia @cur.Initiation.ToString("yyyy/MM/dd")</li>
-                        <li class="list-group-item">Vacantes @cur.Vacantes</li>
-                    </ul>
-                    <div class="card-body">
-                        <form method="post">
-                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                            <input type="hidden" asp-for="Inscription.idStudent"/>
-                            <input type="hidden" asp-for="Inscription.idCursada" value="@cur.IdCursada" />
-                            <input type="hidden" asp-for="Inscription.dateInscription" value="@DateTime.Now" />
-                            <div class="form-group">
-                                <input type="submit" value=" Inscribirse " class="btn btn-primary" />
-                            </div>
-                        </form> 
+                <div class="col">
+                    <div class="card shadow-sm" style="width: 18rem;">
+                        <img src="@nombreImagen" class="card-img top" alt="imgCursada">
+                        <div class="card-body">
+                            <h5 class="card-title">@cur.Course.Instrument</h5>
+                            <p class="card-text description">
+                                @cur.Description.ToString()
+                            </p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Dias de cursada @cur.Days</li>
+                            <li class="list-group-item">Horario @cur.StarTime.ToString("HH:mm") a @cur.EndTime.ToString("HH:mm") hs</li>
+                            <li class="list-group-item">Inicia @cur.Initiation.ToString("yyyy/MM/dd")</li>
+                                @if(cur.Inscriptions.Count < cur.Vacantes){
+                                <li class="list-group-item">Vacantes @cur.Inscriptions.Count / @cur.Vacantes</li>
+                                }else if(cur.Inscriptions.Count == cur.Vacantes){
+                                <li class="list-group-item"> Vacantes agotadas </li>
+                                }
+                        </ul>
+                        <div class="card-body">
+                            <form method="post">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input type="hidden" asp-for="IdCourse" value="@cur.Course.IdCourse" />
+                                <input type="hidden" asp-for="Inscription.idStudent"/>
+                                <input type="hidden" asp-for="Inscription.idCursada" value="@cur.IdCursada" />
+                                <input type="hidden" asp-for="Inscription.dateInscription" value="@DateTime.Now" />
+                                <div class="form-group">
+                                    <input type="submit" value=" Inscribirse " class="btn btn-primary"
+                                @(cur.Inscriptions.Count == cur.Vacantes ? "disabled" : "") />
+                                </div>
+                            </form> 
+                        </div>
                     </div>
                 </div>
-            </div>
-        }
-    </div>
+            }
+        </div>
 </div>

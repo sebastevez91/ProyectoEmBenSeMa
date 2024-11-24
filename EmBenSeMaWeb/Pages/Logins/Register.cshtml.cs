@@ -1,4 +1,5 @@
 using Capa.Entidades;
+using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -76,9 +77,13 @@ namespace SchoolMusic.Web.Pages.Logins
                 await _context.SaveChangesAsync();
 
                 // Construimos el cuerpo del correo con la información proporcionada por el usuario.
-                MailData.subject = $"Asunto: Nuevo usuario de School EmBenSeMa";
-                MailData.body = $"Te damos la bienvenida a la mejor plataforma educativa de musica";
-
+                MailData = new MailData
+                {
+                    mailTo = RegisterViewModel.Email,
+                    subject = "Nuevo usuario de School EmBenSeMa",
+                    body = $"Te damos la bienvenida a la mejor plataforma educativa de musica\n" +
+                            $"Se vienen cosas buenas!!!"
+                };
                 _mailService.sendMail(MailData);
                 TempData["Message"] = "¡Te registraste exitosamente!";
             }
@@ -89,7 +94,7 @@ namespace SchoolMusic.Web.Pages.Logins
                 return RedirectToPage("/Register");
             }
 
-            return RedirectToPage("/Logins/RegisterExitoso");
+            return Page();
         }
     }
 }

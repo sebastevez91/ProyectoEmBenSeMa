@@ -19,7 +19,7 @@
         </form>
     </div>
 
-    <div style="background-color:black; color:white; border: 1px solid #dddddd; padding: 2%;">
+    <div class="contenido-div">
         <div class="row mt-4">
             <!-- Lista de Notificaciones -->
             <div class="col-md-4">
@@ -31,18 +31,15 @@
                         var notifications = Model.CurrentView == "Recibidos" ? Model.ReceivedNotifications : Model.SentNotifications;
                         foreach (var notificacion in notifications)
                         {
-                            <form method="post" action="/Notifications/MarkAsRead">
-                                <input type="hidden" name="id" value="@notificacion.IdNotification" />
-                                <li class="list-group-item list-group-item-action"
-                                    data-asunto="@notificacion.Subject"
-                                    data-fecha="@notificacion.DateNotification.ToString("dd/MM/yyyy")"
-                                    data-cuerpo="@notificacion.Body"
-                                    onclick="this.closest('form').submit(); mostrarNotificacion(this)">
-                                    <img src="~/img/mensaje.png" alt="mensaje" class="icon-image" />
-                                        @notificacion.Subject
-                                    <span class="text-muted float-right">@notificacion.DateNotification.ToString("dd/MM/yyyy")</span>
-                                </li>
-                            </form>
+                            <li class="list-group-item list-group-item-action"
+                                data-asunto="@notificacion.Subject"
+                                data-fecha="@notificacion.DateNotification.ToString("dd/MM/yyyy")"
+                                data-cuerpo="@notificacion.Body"
+                                onclick="mostrarNotificacion(this)">
+                                <img src="~/img/mensaje.png" alt="mensaje" class="icon-image" />
+                                @notificacion.Subject
+                                <span class="text-muted float-right">@notificacion.DateNotification.ToString("dd/MM/yyyy")</span>
+                            </li>
                         }
                     }
                     else

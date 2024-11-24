@@ -456,7 +456,8 @@ h1, h2, p, td, label, .text-item {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-end
+    align-items: flex-end;
+    margin: 2%;
 }
 
 /* Contenido */

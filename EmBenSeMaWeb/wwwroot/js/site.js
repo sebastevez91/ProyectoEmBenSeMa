@@ -42,27 +42,4 @@ function mostrarNotificacion(elemento) {
     document.getElementById('detalleCuerpo').innerHTML = `<strong>Mensaje:</strong> ${cuerpo}`;
 }
 
-function actualizarNotificaciones(notificationCount) {
-    // Elementos relacionados con las notificaciones
-    const countBadge = document.getElementById("notificationCount");
-    const button = document.getElementById("notificationButton");
-
-    if (notificationCount > 0) {
-        countBadge.textContent = notificationCount;
-        countBadge.style.display = "block"; // Asegura que sea visible
-        button.classList.remove("btn-secondary");
-        button.classList.add("btn-danger"); // Cambia el color del botón
-    } else {
-        countBadge.style.display = "none"; // Oculta el contador si no hay notificaciones
-        button.classList.remove("btn-danger");
-        button.classList.add("btn-secondary"); // Asegura que regrese al color original
-    }
-}
-
-// Escucha el evento de carga de la página y llama a la función
-document.addEventListener("DOMContentLoaded", function () {
-    // Simular valor de ejemplo: reemplázalo con la lógica adecuada en tu aplicación
-    const notificationCount = 0; // Cambia este valor por el que obtengas del servidor
-    actualizarNotificaciones(notificationCount);
-});
 

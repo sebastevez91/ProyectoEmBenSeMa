@@ -17,6 +17,7 @@ namespace SchoolMusic.Web.Pages.Aula
         }
         public Student Student { get; set; } = default!;
         public IList<Inscription> Inscriptions { get; set; }
+        public int NotificationCount { get; set; } = 0;
 
         public async Task<IActionResult> OnGetAsync()
         {

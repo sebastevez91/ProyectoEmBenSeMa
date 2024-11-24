@@ -4,105 +4,122 @@
     ViewData["Title"] = "Registro de usuarios";
 }
 
-<h2>Registro de Usuario</h2>
+<h2 class="text-center mb-4">Registro de Usuario</h2>
 
-<div class="container-fluid">
+<div class="container-fluid contenido-div">
     <!-- Mensajes de confirmación o error -->
     @if (TempData["Message"] != null)
     {
         <div class="alert alert-success">@TempData["Message"]</div>
+        <a asp-page="/Logins/LoginUser" class="btn btn-primary">Iniciar Sesión</a>
     }
     @if (TempData["ErrorMessage"] != null)
     {
         <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
     }
-    <form method="post">
-        <div class="row">
-            <div class="col-md-4">
-                <fieldset>
-                    <legend>Datos de Usuario</legend>
-                    <div class="form-group">
-                        <label asp-for="RegisterViewModel.Username" class="form-label"> Nombre de usuario </label>
-                        <input asp-for="RegisterViewModel.Username" class="form-control" />
-                        <span asp-validation-for="RegisterViewModel.Username" class="text-danger"></span>
+    @if (TempData["Message"] == null)
+    {
+        <div>
+            <form method="post">
+                <div class="row">
+                    <!-- Columna izquierda: Datos personales -->
+                    <div class="col-md-6">
+                        <fieldset>
+                            <legend>Datos Personales</legend>
+                            <div class="form-group">
+                                <label asp-for="RegisterViewModel.Name" class="form-label">Nombre</label>
+                                <input asp-for="RegisterViewModel.Name" class="form-control" />
+                                <span asp-validation-for="RegisterViewModel.Name" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="RegisterViewModel.Surname" class="form-label">Apellido</label>
+                                <input asp-for="RegisterViewModel.Surname" class="form-control" />
+                                <span asp-validation-for="RegisterViewModel.Surname" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="RegisterViewModel.Email" class="form-label">Email</label>
+                                <input asp-for="RegisterViewModel.Email" type="email" class="form-control" />
+                                <span asp-validation-for="RegisterViewModel.Email" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="RegisterViewModel.Dni" class="form-label">Número de DNI</label>
+                                <input asp-for="RegisterViewModel.Dni" type="number" class="form-control" />
+                                <span asp-validation-for="RegisterViewModel.Dni" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="RegisterViewModel.Age" class="form-label">Edad</label>
+                                <input asp-for="RegisterViewModel.Age" type="number" class="form-control" />
+                                <span asp-validation-for="RegisterViewModel.Age" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="RegisterViewModel.Genero" class="form-label">Género</label>
+                                <select asp-for="RegisterViewModel.Genero" class="form-control">
+                                    <option value="">Seleccione un género</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                                <span asp-validation-for="RegisterViewModel.Genero" class="text-danger"></span>
+                            </div>
+                        </fieldset>
                     </div>
 
-                    <div class="form-group">
-                        <label asp-for="RegisterViewModel.Password" class="form-label"> Contraseña </label>
-                        <input asp-for="RegisterViewModel.Password" type="password" class="form-control" />
-                        <span asp-validation-for="RegisterViewModel.Password" class="text-danger"></span>
-                    </div>
+                    <!-- Columna derecha: Datos de usuario -->
+                    <div class="col-md-6">
+                        <fieldset>
+                            <legend>Datos de Usuario</legend>
+                            <div class="form-group">
+                                <label asp-for="RegisterViewModel.Username" class="form-label">Nombre de usuario</label>
+                                <input asp-for="RegisterViewModel.Username" class="form-control" />
+                                <span asp-validation-for="RegisterViewModel.Username" class="text-danger"></span>
+                            </div>
 
-                    <div class="form-group">
-                        <label asp-for="RegisterViewModel.ConfirmPassword" class="form-label"> Confirmar contraseña </label>
-                        <input asp-for="RegisterViewModel.ConfirmPassword" type="password" class="form-control" />
-                        <span asp-validation-for="RegisterViewModel.ConfirmPassword" class="text-danger"></span>
-                    </div>
+                            <div class="form-group">
+                                <label asp-for="RegisterViewModel.Password" class="form-label">Contraseña</label>
+                                <input asp-for="RegisterViewModel.Password" type="password" id="passwordField" class="form-control" />
+                                <span asp-validation-for="RegisterViewModel.Password" class="text-danger"></span>
+                            </div>
 
-                    <div class="form-group">
-                        <label asp-for="RegisterViewModel.Rol" class="form-label"> Tipo de usuario </label>
-                        <select asp-for="RegisterViewModel.Rol" class="form-control">
-                            <option value="">Seleccione un tipo usuario</option>
-                            <option value="Profesor">Profesor</option>
-                            <option value="Alumno">Alumno</option>
-                        </select>
-                        <span asp-validation-for="RegisterViewModel.Rol" class="text-danger"></span>
-                    </div>
-                </fieldset>
+                            <div class="form-group">
+                                <label asp-for="RegisterViewModel.ConfirmPassword" class="form-label">Confirmar contraseña</label>
+                                <input asp-for="RegisterViewModel.ConfirmPassword" type="password" class="form-control" />
+                                <span asp-validation-for="RegisterViewModel.ConfirmPassword" class="text-danger"></span>
+                            </div>
 
-                <fieldset>
-                    <legend>Datos Personales</legend>
-                    <div class="form-group">
-                        <label asp-for="RegisterViewModel.Name" class="form-label"> Nombre </label>
-                        <input asp-for="RegisterViewModel.Name" class="form-control" />
-                        <span asp-validation-for="RegisterViewModel.Name" class="text-danger"></span>
-                    </div>
+                            <!-- Checkbox para mostrar la contraseña -->
+                            <div class="form-group form-check mb-3">
+                                <input type="checkbox" class="form-check-input" id="showPasswordCheckbox" onclick="togglePassword()">
+                                <label class="form-check-label" for="showPasswordCheckbox">Mostrar contraseña</label>
+                            </div>
 
-                    <div class="form-group">
-                        <label asp-for="RegisterViewModel.Surname" class="form-label"> Apellido </label>
-                        <input asp-for="RegisterViewModel.Surname" class="form-control" />
-                        <span asp-validation-for="RegisterViewModel.Surname" class="text-danger"></span>
+                            <div class="form-group">
+                                <label asp-for="RegisterViewModel.Rol" class="form-label">Tipo de usuario</label>
+                                <select asp-for="RegisterViewModel.Rol" class="form-control">
+                                    <option value="">Seleccione un tipo usuario</option>
+                                    <option value="Profesor">Profesor</option>
+                                    <option value="Alumno">Alumno</option>
+                                </select>
+                                <span asp-validation-for="RegisterViewModel.Rol" class="text-danger"></span>
+                            </div>
+                        </fieldset>
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <label asp-for="RegisterViewModel.Email" class="form-label"> Email </label>
-                        <input asp-for="RegisterViewModel.Email" type="email" class="form-control" />
-                        <span asp-validation-for="RegisterViewModel.Email" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="RegisterViewModel.Dni" class="form-label"> Número de Dni </label>
-                        <input asp-for="RegisterViewModel.Dni" type="number" class="form-control" />
-                        <span asp-validation-for="RegisterViewModel.Dni" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="RegisterViewModel.Age" class="form-label"> Edad </label>
-                        <input asp-for="RegisterViewModel.Age" type="number" class="form-control" />
-                        <span asp-validation-for="RegisterViewModel.Age" class="text-danger"></span>
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="RegisterViewModel.Genero" class="form-label"> Genero </label>
-                        <select asp-for="RegisterViewModel.Genero" class="form-control">
-                            <option value="">Seleccione un género</option>
-                            <option value="Masculino">Masculino</option>
-                            <option value="Femenino">Femenino</option>
-                            <option value="Otro">Otro</option>
-                        </select>
-                        <span asp-validation-for="RegisterViewModel.Genero" class="text-danger"></span>
-                    </div>
-
-                </fieldset>
-            </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary"> Registrar nuevo usuario </button>
-            </div>
+                <!-- Botón de registro centrado -->
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary">Registrar nuevo usuario</button>
+                </div>
+            </form>
         </div>
-    </form>
+    }
 </div>
-
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
+

@@ -5,8 +5,8 @@
     Layout = "_LayoutSesion";
 }
 
-<div class="top-right-button">
-    <a asp-page="/Notifications/IndexNotification" id="notificationButton" class="btn @(Model.NotificationCount > 0 ? "btn-danger" : "btn-secondary") position-relative">
+<div>
+    <a asp-page="/Notifications/IndexNotification" id="notificationButton" class="btn @(Model.NotificationCount > 0 ? "btn-danger" : "btn-secondary") top-right-button">
         Notificaciones
         @if (Model.NotificationCount > 0)
         {
@@ -16,7 +16,6 @@
         }
     </a>
 </div>
-
 
 <div class="infoAula">
     <img src="@Model.Teacher.FotoTeacher" alt="Foto de perfil" class="imagen-perfil" />

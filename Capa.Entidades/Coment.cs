@@ -10,13 +10,21 @@ namespace SchoolMusic.Entidades
     public class Coment
     {
         [Key]
-        public int IdComent {  get; set; }
-        public string Content { get; set;}
+        public int IdComent { get; set; }
+
+        [Required(ErrorMessage = "El contenido del comentario es obligatorio.")]
+        [StringLength(500, ErrorMessage = "El comentario no puede tener más de 500 caracteres.")]
+        public string Content { get; set; }
+
+        [Required]
         public int IdTopic { get; set; }
-        public DateTime DateComent { get; set; }
+
+        public DateTime DateComent { get; set; } = DateTime.Now;
+
+        [Required]
         public string Author { get; set; }
 
-        // Fk
+        // Relación con Topic
         public Topic? Topic { get; set; }
     }
 }

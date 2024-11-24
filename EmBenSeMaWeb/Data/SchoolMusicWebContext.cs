@@ -45,6 +45,21 @@ namespace SchoolMusic.Web.Data
                 .WithMany(c => c.Coments)
                 .HasForeignKey(i => i.IdTopic)
                 .IsRequired();
+
+            // Relación uno a uno entre Teacher e User
+            modelBuilder.Entity<Teacher>()
+                .HasOne(t => t.Users) // Un Teacher tiene un User
+                .WithOne(u => u.Teacher) // Un User tiene un Teacher
+                .HasForeignKey<Teacher>(t => t.IdUser) // Clave foránea en Teacher
+                .IsRequired(); // Relación obligatoria
+
+            // Relación uno a uno entre Student e User
+            modelBuilder.Entity<Student>()
+                .HasOne(t => t.Users) // Un Student tiene un User
+                .WithOne(u => u.Student) // Un User tiene un Student
+                .HasForeignKey<Student>(t => t.IdUser) // Clave foránea en Student
+                .IsRequired(); // Relación obligatoria
+
         }
 
         public DbSet<SchoolMusic.Entidades.Course> Course { get; set; } = default!;
@@ -62,6 +77,8 @@ namespace SchoolMusic.Web.Data
         public DbSet<SchoolMusic.Entidades.Notification> Notification { get; set; } = default!;
 
         public DbSet<SchoolMusic.Entidades.Topic> Topic { get; set; } = default!;
+
+        public DbSet<SchoolMusic.Entidades.Coment> Coment { get; set; } = default!;
 
         public DbSet<SchoolMusic.Entidades.Payment> Payment { get; set; } = default!;
     }

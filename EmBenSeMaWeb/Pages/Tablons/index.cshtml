@@ -8,7 +8,7 @@
 
 @if(Model.Topics != null)
 {
-    <div class="infoAula">
+    <div class="infoAula" style="background-color: darkgoldenrod; padding: 3%; border: 5px solid #000;">
         <img src="@Model.Cursada.Course.ImagenURL" class="imagen-perfil" alt="Imagencurso">
         <div style="padding: 2%;">
             <h1>Cursada de @Model.Cursada.Course.Instrument</h1>
@@ -17,18 +17,18 @@
         
     </div>
     <div>
-        <a asp-page="./CreatePost" class="btn btn-success">Crear nueva publicación</a>
+        <a asp-page="./CreatePost" asp-route-id="@Model.Cursada.IdCursada" class="btn btn-success">Crear nueva publicación</a>
     </div>
 
     @foreach (var post in Model.Topics)
     {
-        <div class="card mb-3">
+        <div class="card mb-3 contenido-div">
             <div class="card-header">
-                <strong>@post.Title</strong> - Publicado por  el @post.DateTopic.ToString("g")
+                <h3>@post.Title</h3> - Publicado por  el @post.DateTopic.ToString("g")
             </div>
             <div class="card-body">
                 <p>@post.Content</p>
-                <a asp-page="/PostDetails" asp-route-id="@post.IdTopic" class="btn btn-primary">Ver detalles</a>
+                <a asp-page="./PostDetails" asp-route-id="@post.IdTopic" class="btn btn-primary">Ver detalles</a>
             </div>
         </div>
     }

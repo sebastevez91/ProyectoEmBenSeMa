@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis.FlowAnalysis.DataFlow;
 using SchoolMusic.Entidades;
 using SchoolMusic.Web.Data;
 
@@ -19,13 +20,17 @@ namespace SchoolMusic.Web.Pages.Tablons
             _context = context;
         }
 
-        public IActionResult OnGet()
-        {
-            return Page();
-        }
-
         [BindProperty]
         public Topic Topic { get; set; } = default!;
+
+        public async Task<IActionResult> OnGetAsync(int? id)
+        {
+            Topic = new Topic
+            {
+                IdCursada = id.Value
+            };
+            return Page();
+        }
         
 
         public async Task<IActionResult> OnPostAsync()
@@ -38,7 +43,7 @@ namespace SchoolMusic.Web.Pages.Tablons
             _context.Topic.Add(Topic);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Tablons/Index", new { id = Topic.IdCursada});
         }
     }
 }

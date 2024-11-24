@@ -43,7 +43,7 @@ namespace SchoolMusic.Entidades
 
         // FK
         public IList<Cursada>? Cursada { get; set; } 
-
+        public Users? Users { get; set; }
         public Teacher()
         {
         }

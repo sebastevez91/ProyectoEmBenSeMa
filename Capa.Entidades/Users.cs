@@ -15,6 +15,10 @@ namespace SchoolMusic.Entidades
         public byte? ChangePassword { get; set; } = default!;
         public string Rol { get; set; }
 
+        // FK
+        public Teacher? Teacher { get; set; }
+        public Student? Student { get; set; }
+
         public Users()
         {
         }
