@@ -32,8 +32,8 @@ namespace SchoolMusic.Serv
                     {
                         listNotif.Add(new Notification
                         {
-                            IdNotification = int.Parse(n["IdNotifiStudent"].ToString()),
-                            NotificationTo = int.Parse(n["NotificatinTo"].ToString()),
+                            IdNotification = int.Parse(n["IdNotification"].ToString()),
+                            NotificationTo = int.Parse(n["NotificationTo"].ToString()),
                             NotificationFrom = int.Parse(n["NotificationFrom"].ToString()),
                             Subject = n["Subject"].ToString(),
                             Body = n["Body"].ToString(),

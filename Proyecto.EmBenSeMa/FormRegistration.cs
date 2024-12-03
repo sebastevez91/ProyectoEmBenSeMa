@@ -1,4 +1,5 @@
 ﻿using Capa.Servicios;
+using Microsoft.VisualBasic.ApplicationServices;
 using SchoolMusic.Entidades;
 using SchoolMusic.Serv;
 
@@ -8,7 +9,7 @@ namespace Proyecto.EmBenSeMa
     {
         // Creamos instancias y listas que vamos a utilizar en este Form
         private RegistroService registroService = new RegistroService();
-        private Users user = new Users();
+        private Users NewUser = null;
         private Student student = new Student();
         private Teacher teacher = new Teacher();
         public FormRegistration()
@@ -23,69 +24,104 @@ namespace Proyecto.EmBenSeMa
         }
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            // logitud de contraseña
-            if (txtContra.Text.Length < 8)
+            try
             {
-                // Si es true se muestra la eqtNotifica
-                etqNotifica.Visible = true;
-            }
-            // Compruebo que el gruopBox este seleccionado y almaceno en la variable según la selección entre los radiusButton
-            string generoSeleccionado = raBtnFem.Checked ? "Femenino" : "Masculino";
-
-            // Validación de registro.
-            // Valido los datos con una clase de validaciones generales en la capa servicio 
-            if (ValidacionGeneral.validaRegistro(txtNombre.Text,
-                txtApellido.Text,
-                txtDni.Text,
-                txtEdad.Text,
-                txtCorreo.Text,
-                txtUsuario.Text,
-                txtContra.Text,
-                txtConfirma.Text))
-            {
-                // Si todos los campos son válidos se agrega el usuario a la base de datos.
-                // User
-                user.Username = txtUsuario.Text;
-                user.UserPassword = txtContra.Text;
-                if (registroService.AddUser(user))
+                // Validar campos generales
+                if (!ValidarCampos())
                 {
-                    // Compruebo que tipo de usuario voy a registrar en la BD
-                    if (etqRegistro.Text == "Nuevo Alumno")
-                    {
-                        //// Nuevo Alumno
-                        student.NameStudent = txtNombre.Text;
-                        student.Surname = txtApellido.Text;
-                        student.Mail = txtCorreo.Text;
-                        student.Dni = int.Parse(txtDni.Text);
-                        student.Age = int.Parse(txtEdad.Text);
-                        student.IdUser = registroService.GetIdUser(user);
-                        student.Genero = generoSeleccionado;
+                    MessageBox.Show("Revisa los campos, se encontraron errores");
 
-                        // Agrego el nuevo alumno y traigo el Id del alumno
-                        registroService.AddStudent(student);
-                    }
-                    else
-                    {
-                        // Nuevo Profesor
-                        teacher.NameTeacher = txtNombre.Text;
-                        teacher.Surname = txtApellido.Text;
-                        teacher.Mail = txtCorreo.Text;
-                        teacher.Dni = int.Parse(txtDni.Text);
-                        teacher.Age = int.Parse(txtEdad.Text);
-                        teacher.IdUser = registroService.GetIdUser(user);
-                        teacher.Genero = generoSeleccionado;
+                    // Validar contraseña
+                    etqNotifica.Visible = txtContra.Text.Length < 8 ?  true : false;
 
-                        // Agrego nuevo profesor y traigo el Id del profesor
-                        registroService.AddTeacher(teacher);
-                    }
-                    this.Close();
+                    return;
                 }
+
+                // Crear usuario
+                var newUser = new Users
+                {
+                    Username = txtUsuario.Text,
+                    UserPassword = txtContra.Text,
+                    Rol = raBtnAlumno.Checked ? "Alumno" : "Profesor"
+                };
+
+                // Registrar el usuario en la base de datos
+                if(newUser.Username != null && newUser.UserPassword != null && newUser != null)
+                {
+                    newUser.IdUser = registroService.AddUser(newUser);
+                    if (newUser.IdUser == null || newUser.IdUser <= 0)
+                    {
+                        MessageBox.Show("Error al registrar el usuario.");
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Revisa los campos de datos de usuario");
+                    return;
+                }
+           
+
+                // Registrar datos específicos según el rol
+                if (newUser.Rol == "Alumno")
+                {
+                    var student = CrearAlumno(newUser.IdUser);
+                    registroService.AddStudent(student);
+                }
+                else if (newUser.Rol == "Profesor")
+                {
+                    var teacher = CrearProfesor(newUser.IdUser);
+                    registroService.AddTeacher(teacher);
+                }
+
+                MessageBox.Show("Registro exitoso.");
+                this.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Revisa los campos, se encontraron errores");
+                MessageBox.Show($"Se produjo un error: {ex.Message}");
             }
         }
+
+        // Métodos auxiliares
+
+        private bool ValidarCampos()
+        {
+            return ValidacionGeneral.validaRegistro(
+                txtNombre.Text, txtApellido.Text, txtDni.Text,
+                txtEdad.Text, txtCorreo.Text, txtUsuario.Text,
+                txtContra.Text, txtConfirma.Text
+            );
+        }
+
+        private Student CrearAlumno(int userId)
+        {
+            return new Student
+            {
+                NameStudent = txtNombre.Text,
+                Surname = txtApellido.Text,
+                Mail = txtCorreo.Text,
+                Dni = int.Parse(txtDni.Text),
+                Age = int.Parse(txtEdad.Text),
+                IdUser = userId,
+                Genero = raBtnFem.Checked ? "Femenino" : "Masculino"
+            };
+        }
+
+        private Teacher CrearProfesor(int userId)
+        {
+            return new Teacher
+            {
+                NameTeacher = txtNombre.Text,
+                Surname = txtApellido.Text,
+                Mail = txtCorreo.Text,
+                Dni = int.Parse(txtDni.Text),
+                Age = int.Parse(txtEdad.Text),
+                IdUser = userId,
+                Genero = raBtnFem.Checked ? "Femenino" : "Masculino"
+            };
+        }
+
         // Campos númericos
         private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
         {

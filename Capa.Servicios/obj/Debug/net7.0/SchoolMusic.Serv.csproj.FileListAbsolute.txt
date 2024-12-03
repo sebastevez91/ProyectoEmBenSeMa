@@ -37,3 +37,6 @@ C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Capa.Servicios\obj\Debug\net7.0\SchoolMusic.Serv.genruntimeconfig.cache
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Capa.Servicios\obj\Debug\net7.0\ref\SchoolMusic.Serv.dll
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Capa.Servicios\obj\Debug\net7.0\SchoolMusic.Serv.sourcelink.json
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Capa.Servicios\bin\Debug\net7.0\selenium-manager\linux\selenium-manager
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Capa.Servicios\bin\Debug\net7.0\selenium-manager\macos\selenium-manager
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Capa.Servicios\bin\Debug\net7.0\selenium-manager\windows\selenium-manager.exe

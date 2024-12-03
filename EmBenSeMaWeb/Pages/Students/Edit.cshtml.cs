@@ -1,36 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SchoolMusic.Entidades;
-using SchoolMusic.Web.Data;
 
 namespace SchoolMusic.Web.Pages.Students
 {
     public class EditModel : PageModel
     {
         private readonly SchoolMusic.Web.Data.SchoolMusicWebContext _context;
+        private readonly ImageService _imageService; // Inyectar ImageService
 
-        public EditModel(SchoolMusic.Web.Data.SchoolMusicWebContext context)
+        public EditModel(SchoolMusic.Web.Data.SchoolMusicWebContext context, ImageService imageService)
         {
             _context = context;
+            _imageService = imageService;
         }
 
         [BindProperty]
         public Student Student { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync()
         {
-            if (id == null || _context.Student == null)
+            var userId = User.FindFirst("UserId")?.Value;
+
+            if (string.IsNullOrEmpty(userId))
             {
-                return NotFound();
+                return RedirectToPage("/Logins/LoginUser");
             }
 
-            var student =  await _context.Student.FirstOrDefaultAsync(m => m.IdStudent == id);
+            var student = await _context.Student.FirstOrDefaultAsync(m => m.IdUser == int.Parse(userId));
             if (student == null)
             {
                 return NotFound();
@@ -39,39 +37,24 @@ namespace SchoolMusic.Web.Pages.Students
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(IFormFile? ProfileImage)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
+            if (ProfileImage != null)
+            {
+                // Subir y actualizar solo la imagen
+                var imageUrl = await _imageService.UploadImageAsync(ProfileImage);
+                Student.FotoStudent = imageUrl;
+            }
+
             _context.Attach(Student).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!StudentExists(Student.IdStudent))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return RedirectToPage("./Index");
-        }
-
-        private bool StudentExists(int id)
-        {
-          return (_context.Student?.Any(e => e.IdStudent == id)).GetValueOrDefault();
+            return RedirectToPage("/Aula/AulaStudent");
         }
     }
 }

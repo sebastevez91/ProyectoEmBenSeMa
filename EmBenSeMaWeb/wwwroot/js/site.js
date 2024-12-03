@@ -11,37 +11,35 @@ function togglePassword() {
     }
 }
 
-function ocultarButton() {
-    var btnOcultar = document.getElementById("btnAula");
-    if (btnOcultar.style.display === "block") {
-        btnOcultar.style.display = "none";
-    }
-}
-
-// Función para actualizar el nombre de usuario en el botón
-function userSesion(username) {
-    var name = document.getElementById("user-name");
-
-    if (name) {
-        name.textContent = username;
-    }
-}
-
 function toggleMenu() {
     var menu = document.getElementById("user-menu");
     menu.style.display = menu.style.display === "block" ? "none" : "block";
 }
 
-// Cierra el menú si se hace clic fuera de él
 window.onclick = function (event) {
     var menu = document.getElementById("user-menu");
     var button = document.querySelector(".user-button");
     if (event.target !== button && !button.contains(event.target) && menu.style.display === "block") {
         menu.style.display = "none";
     }
-};
-
-
-function mensajeAlert(mensaje) {
-    return alert(mensaje);
 }
+
+function mostrarNotificacion(elemento) {
+    var contenido = document.getElementById("mensajeContenido");
+    if (contenido.style.display == "none") {
+        contenido.style.display = "block";
+    }
+    
+
+    // Obtener los valores desde los atributos data-*
+    const asunto = elemento.getAttribute('data-asunto');
+    const fecha = elemento.getAttribute('data-fecha');
+    const cuerpo = elemento.getAttribute('data-cuerpo');
+
+    // Actualizar el contenido de los elementos de detalle
+    document.getElementById('detalleAsunto').innerHTML = `<strong>Asunto:</strong> ${asunto}`;
+    document.getElementById('detalleFecha').innerHTML = `<strong>Fecha:</strong> ${fecha}`;
+    document.getElementById('detalleCuerpo').innerHTML = `<strong>Mensaje:</strong> ${cuerpo}`;
+}
+
+

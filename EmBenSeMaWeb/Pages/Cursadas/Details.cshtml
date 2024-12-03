@@ -6,95 +6,95 @@
     Layout = "_LayoutSesion";
 }
 
-<body onload="ocultarButton()">
-    <h1>Detalles de tus cursadas</h1>
-    @if(Model.Course != null)
-    {
-       <div>
-            <h4>Cursadas de @Model.Course?.Instrument</h4>
-        </div> 
-    }
-    
+    <h1>Detalles de tus cursadas</h1>    
     <div class="content">
         <div class="row row-cols-1 row-cols-sm-2 g-2">
-            @if (Model.Cursadas != null && Model.Cursadas.Count > 0)
+        @if (Model.Cursadas != null && Model.Cursadas.Count > 0)
+        {
+            foreach (var cursada in Model.Cursadas)
             {
-                foreach (var cursada in Model.Cursadas)
-                {
-                    <div class="col">
-                        <dl class="card">
-                            <dt class="col-12">
-                                Fecha de inicio de cursada:
-                            </dt>
-                            <dd class="col-12">
-                                @cursada.Initiation.ToString("yyyy/MM/dd")
-                            </dd>
+                <div class="col">
+                    <dl class="card contenido-div" >
+                        <dt class="col-12">
+                            Instrumento:
+                        </dt>
+                        <dd class="col-12">
+                            @cursada.Course.Instrument
+                        </dd>
 
-                            <dt class="col-12">
-                                Fecha de finalización de cursada:
-                            </dt>
-                            <dd class="col-12">
-                                @cursada.Finish.ToString("yyyy/MM/dd")
-                            </dd>
+                        <dt class="col-12">
+                            Fecha de inicio de cursada:
+                        </dt>
+                        <dd class="col-12">
+                            @cursada.Initiation.ToString("yyyy/MM/dd")
+                        </dd>
 
-                            <dt class="col-12">
-                                Profesor:
-                            </dt>
-                            <dd class="col-12">
-                                @cursada.Teacher.NameTeacher  @cursada.Teacher.Surname
-                            </dd>
+                        <dt class="col-12">
+                            Fecha de finalización de cursada:
+                        </dt>
+                        <dd class="col-12">
+                            @cursada.Finish.ToString("yyyy/MM/dd")
+                        </dd>
 
-                            <dt class="col-12">
-                                Horario:
-                            </dt>
-                            <dd class="col-12">
-                                @cursada.StarTime.ToString("HH:mm") a @cursada.EndTime.ToString("HH:mm")
-                            </dd>
+                        <dt class="col-12">
+                            Profesor:
+                        </dt>
+                        <dd class="col-12">
+                            @cursada.Teacher.NameTeacher  @cursada.Teacher.Surname
+                        </dd>
 
-                            <dt class="col-12">
-                                Vacantes:
-                            </dt>
-                            <dd class="col-12">
-                                @cursada.Vacantes
-                            </dd>
+                        <dt class="col-12">
+                            Horario:
+                        </dt>
+                        <dd class="col-12">
+                            @cursada.StarTime.ToString("HH:mm") a @cursada.EndTime.ToString("HH:mm")
+                        </dd>
 
-                            <dt class="col-12">
-                                Días de cursada:
-                            </dt>
-                            <dd class="col-12">
-                                @cursada.Days
-                            </dd>
+                        <dt class="col-12">
+                            Vacantes:
+                        </dt>
+                        <dd class="col-12">
+                            @cursada.Vacantes
+                        </dd>
 
-                            <dt class="col-12">
-                                Descripción de contenido:
-                            </dt>
-                            <dd class="col-12">
-                                @cursada.Description
-                            </dd>
+                        <dt class="col-12">
+                            Días de cursada:
+                        </dt>
+                        <dd class="col-12">
+                            @cursada.Days
+                        </dd>
 
-                            <dt class="col-12">
-                                Cuota por mes:
-                            </dt>
-                            <dd class="col-12">
-                                $ @cursada.PayFee
-                            </dd>
-                            <div>
-                                <a asp-page="/Tablons/index" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Tablón</a>
-                                <a asp-page="/Students/Index" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Alumnos</a>
-                                <a asp-page="./Edit" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Modificar</a>
-                                <a asp-page="./Delete" asp-route-id="@cursada?.IdCursada" class="btn btn-danger">Eliminar</a>
-                            </div>
-                        </dl>
-                    </div>
-                    }
-                }else
-                {
-                    <p> No tienes cursadas creadas </p>
-                }
-        </div>
+                        <dt class="col-12">
+                            Descripción de contenido:
+                        </dt>
+                        <dd class="col-12">
+                            @cursada.Description
+                        </dd>
+
+                        <dt class="col-12">
+                            Cuota por mes:
+                        </dt>
+                        <dd class="col-12">
+                            $ @cursada.PayFee
+                        </dd>
+                        <div>
+                            <a asp-page="/Tablons/index" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Tablón</a>
+                            <a asp-page="/Students/Index" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Alumnos</a>
+                            <a asp-page="./Edit" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Modificar</a>
+                            <a asp-page="./TomarAsistencia" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Tomar Asistencia</a>
+                            <a asp-page="./Delete" asp-route-id="@cursada?.IdCursada" class="btn-danger btn">Eliminar</a>
+                        </div>
+                    </dl>
+                </div>
+            }
+        }
+        else
+        {
+            <p> No tienes cursadas creadas </p>
+        }
+    </div>         
     </div>
-    <a asp-page="./Create" asp-route-idCourse="@Model.Course?.IdCourse" asp-route-idTeacher="@Model.idTeacher" class="btn btn-primary"> Crear nueva cursada </a>
-    <a asp-page="/Aula/AulaTeacher" asp-route-id="@Model.idUserSesion" class="btn btn-primary btn-block"> Volver a atras </a>
-</body>
-
+    <div>
+        <a asp-page="./Create" class="btn btn-primary"> Crear nueva cursada </a>
+    </div>
 

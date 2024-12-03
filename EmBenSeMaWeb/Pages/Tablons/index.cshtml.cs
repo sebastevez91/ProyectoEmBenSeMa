@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using SchoolMusic.Entidades;
-using SchoolMusic.Web.Data;
 
 namespace SchoolMusic.Web.Pages.Tablons
 {
@@ -19,24 +14,43 @@ namespace SchoolMusic.Web.Pages.Tablons
             _context = context;
         }
 
-      public Tablon Tablon { get; set; } = default!; 
+        public IList<Topic> Topics { get; set; } = default!;
+        public Cursada Cursada { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Tablon == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var tablon = await _context.Tablon.FirstOrDefaultAsync(m => m.idCursada == id);
-            if (tablon == null)
+            // Cursada
+            var cursada = await _context.Cursada
+                .Include(c => c.Teacher)
+                .Include(c => c.Course)
+                .FirstOrDefaultAsync(c => c.IdCursada == id);
+
+            // Publicaciones
+            var topics = await _context.Topic
+                .Include(c => c.Coments)
+                .Where(c => c.IdCursada == id)
+                .ToListAsync();
+
+            Cursada = cursada;
+            Topics = topics;
+            return Page();
+        }
+
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (!ModelState.IsValid)
             {
-                return NotFound();
+                return Page();
             }
-            else 
-            {
-                Tablon = tablon;
-            }
+
+            //_context.Tablon.Add(Tablon);
+            await _context.SaveChangesAsync();
+
             return Page();
         }
     }

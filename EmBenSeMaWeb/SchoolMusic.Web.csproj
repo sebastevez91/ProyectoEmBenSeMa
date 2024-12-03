@@ -26,7 +26,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Capa.Entidades\SchoolMusic.Entidades.csproj" />
-    <ProjectReference Include="..\Capa.Servicios\SchoolMusic.Serv.csproj" />
   </ItemGroup>
 
   <ItemGroup>

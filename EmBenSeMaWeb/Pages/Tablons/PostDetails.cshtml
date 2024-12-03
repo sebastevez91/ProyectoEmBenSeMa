@@ -1,0 +1,50 @@
+﻿@page
+@model SchoolMusic.Web.Pages.Tablons.PostDetailsModel
+
+@{
+   ViewData["Title"] = "Detalles de la publicación";
+    Layout = "_LayoutSesion";
+}
+<div>
+    <h1>@Model.Topic.Title</h1>
+    <div class="contenido-div" style="padding: 1%;">
+        <div>
+            <p>@Model.Topic.Content</p>
+            <p><em>Publicado el @Model.Topic.DateTopic.ToString("g")</em></p>
+        </div>
+
+        <div class="comment-section">
+            <h4>Comentarios</h4>
+            <div>
+                @foreach (var comment in Model.Topic.Coments)
+                {
+                    <fieldset class="comment-fieldset">
+                        <strong>@comment.Author</strong>
+                        <small>@comment.DateComent.ToString("g")</small>
+                        <p>@comment.Content</p>
+                    </fieldset>
+                }
+            </div>
+
+            <div>
+                <form method="post" class="comment-form">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Coment.IdTopic" value="@Model.Topic.IdTopic" />
+                    <input type="hidden" asp-for="Coment.DateComent" value="@DateTime.Now" />
+                    <input type="hidden" asp-for="Coment.Author" value="@User.Identity.Name" />
+                    <textarea asp-for="Coment.Content" class="form-control mb-2" placeholder="Escribe un comentario..."></textarea>
+                    <span asp-validation-for="Coment.Content" class="text-danger"></span>
+                    <div class="form-group text-center">
+                        <input type="submit" value="Comentar" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

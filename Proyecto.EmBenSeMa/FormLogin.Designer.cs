@@ -40,8 +40,6 @@
             etqPlataforma = new Label();
             btnRegistrarse = new Button();
             pictureBox1 = new PictureBox();
-            btnCambiar = new Button();
-            btnVolver = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -97,7 +95,7 @@
             btnInicio.ForeColor = Color.Transparent;
             btnInicio.Image = (Image)resources.GetObject("btnInicio.Image");
             btnInicio.ImageAlign = ContentAlignment.MiddleLeft;
-            btnInicio.Location = new Point(407, 216);
+            btnInicio.Location = new Point(457, 216);
             btnInicio.Name = "btnInicio";
             btnInicio.Size = new Size(106, 45);
             btnInicio.TabIndex = 5;
@@ -116,7 +114,7 @@
             btnCerrar.ForeColor = Color.Transparent;
             btnCerrar.Image = (Image)resources.GetObject("btnCerrar.Image");
             btnCerrar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCerrar.Location = new Point(284, 216);
+            btnCerrar.Location = new Point(345, 216);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(106, 45);
             btnCerrar.TabIndex = 6;
@@ -159,9 +157,9 @@
             etqPlataforma.ForeColor = Color.Snow;
             etqPlataforma.Location = new Point(55, 44);
             etqPlataforma.Name = "etqPlataforma";
-            etqPlataforma.Size = new Size(243, 29);
+            etqPlataforma.Size = new Size(286, 29);
             etqPlataforma.TabIndex = 9;
-            etqPlataforma.Text = "Plataforma Alumnos";
+            etqPlataforma.Text = "Plataforma Aula Virtual";
             // 
             // btnRegistrarse
             // 
@@ -193,37 +191,6 @@
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
             // 
-            // btnCambiar
-            // 
-            btnCambiar.BackColor = Color.Transparent;
-            btnCambiar.BackgroundImage = (Image)resources.GetObject("btnCambiar.BackgroundImage");
-            btnCambiar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnCambiar.FlatStyle = FlatStyle.Flat;
-            btnCambiar.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCambiar.ForeColor = Color.Transparent;
-            btnCambiar.Image = (Image)resources.GetObject("btnCambiar.Image");
-            btnCambiar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCambiar.Location = new Point(407, 216);
-            btnCambiar.Name = "btnCambiar";
-            btnCambiar.Size = new Size(123, 45);
-            btnCambiar.TabIndex = 13;
-            btnCambiar.Text = "Cambiar";
-            btnCambiar.TextAlign = ContentAlignment.MiddleRight;
-            btnCambiar.UseVisualStyleBackColor = false;
-            btnCambiar.Visible = false;
-            btnCambiar.Click += btnCambiar_Click;
-            // 
-            // btnVolver
-            // 
-            btnVolver.Location = new Point(350, 44);
-            btnVolver.Name = "btnVolver";
-            btnVolver.Size = new Size(75, 23);
-            btnVolver.TabIndex = 14;
-            btnVolver.Text = "Volver atras";
-            btnVolver.UseVisualStyleBackColor = true;
-            btnVolver.Visible = false;
-            btnVolver.Click += btnVolver_Click;
-            // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -232,8 +199,6 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(630, 322);
-            Controls.Add(btnVolver);
-            Controls.Add(btnCambiar);
             Controls.Add(pictureBox1);
             Controls.Add(btnRegistrarse);
             Controls.Add(etqPlataforma);
@@ -268,7 +233,5 @@
         private Label etqPlataforma;
         private Button btnRegistrarse;
         private PictureBox pictureBox1;
-        private Button btnCambiar;
-        private Button btnVolver;
     }
 }

@@ -2,6 +2,14 @@
 @model SchoolMusic.Web.Pages.Courses.InfoCourseModel
 @{
     ViewData["Title"] = "Curso de Saxo";
+    if (!User.Identity.IsAuthenticated)
+    {
+        Layout = "_Layout";
+    }
+    else if (User.Identity.IsAuthenticated)
+    {
+        Layout = "_LayoutSesion";
+    }
 }
 
 <div class="text-center">
@@ -15,10 +23,19 @@
     <h2>Profesores de @Model.Course.Instrument</h2>
     @foreach (var profesor in Model.Teacher)
     {
+        <div class="contenidoCard">
             <img src="@profesor.FotoTeacher" alt="Foto de @profesor.NameTeacher" class="profesor-foto" />
             <div class="profesor-info">
                 <h2>@profesor.NameTeacher @profesor.Surname</h2>
                 <p>@profesor.Mail</p>
             </div>
+        </div>
+    }
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div>
+            <a asp-page="/Cursadas/IndexCursada" asp-route-idCourse="@Model.Course?.IdCourse" class="btn btn-primary"> Ver cursadas </a>
+        </div>
     }
 </div>

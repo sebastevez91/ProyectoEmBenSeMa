@@ -28,33 +28,32 @@ namespace Proyecto.EmBenSeMa
         }
         private void Mensaje(string curso)
         {
-            // Limpio los controles
-            etqInfo.Text = "";
             btnInscription.Visible = false;
             //Muestro el gruopBox
             grBoxInfo.Visible = true;
+            txtInfoCursada.Text = "";
+            grBoxDescription.Visible = true;
             tipoCurso = curso;
             courses = courseService.GetListCourse();
             comboCursada.DataSource = null;
-            gBoxDescription.Name = $"Curso de {tipoCurso}";
+            grBoxDescription.Text = $"Curso de {tipoCurso}";
 
             foreach (Course c in courses)
             {
                 if (c.Instrument == curso)
                 {
-                    etqDescription.Text = c.Description;
+                    txtInfoCourse.Text = c.Description;
                     listCursadas = courseService.GetListCursadas(c.IdCourse);
                     if (listCursadas.Count > 0)
                     {
                         comboCursada.DataSource = listCursadas;
-                        comboCursada.DisplayMember = "StartTime";
+                        comboCursada.DisplayMember = "StarTime";
                         comboCursada.ValueMember = "IdCursada";
                     }
                     else
                     {
                         MessageBox.Show("No hay cursadas disponibles");
                         grBoxInfo.Visible = false;
-                        etqInfo.Visible = false;
                     }
                 }
             }
@@ -90,7 +89,7 @@ namespace Proyecto.EmBenSeMa
         {
             string nameTeacher = "";
             int inscriptos = 0;
-            etqInfo.Visible = true;
+            txtInfoCursada.Visible = true;
             if (comboCursada.SelectedValue == null)
             {
                 MessageBox.Show("No seleccionaste ninguna cursada");
@@ -102,9 +101,10 @@ namespace Proyecto.EmBenSeMa
                 {
                     if (c.IdCursada == int.Parse(comboCursada.SelectedValue.ToString()))
                     {
-                        etqInfo.Text = $"Fecha de inicio: {c.Initiation.ToString("dd/MM/yyyy")}\n" +
+                        txtInfoCursada.Text = $"Fecha de inicio: {c.Initiation.ToString("dd/MM/yyyy")}\n" +
                             $"Fecha de finalización: {c.Finish.ToString("dd/MM/yyyy")}\n" +
-                            $"Vacantes disponibles: {inscriptos} / {c.Vacantes}\n" +
+                            $"Cantidad de Vacantes: {c.Vacantes}\n" +
+                            $"Vacantes disponibles: {c.Vacantes - inscriptos}\n" +
                             $"Profesor {courseService.GetNameTeacher(c.IdTeacher)}\n" +
                             $"Dia de cursada: {c.Days}\n" +
                             $"Contenido: {c.Description}\n" +

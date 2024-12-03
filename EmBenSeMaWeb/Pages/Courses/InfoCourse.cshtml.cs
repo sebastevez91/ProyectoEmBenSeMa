@@ -16,12 +16,9 @@ namespace SchoolMusic.Web.Pages.Courses
         public IList<Cursada> Cursadas { get; set; } = default!;
 
         public Course Course { get; set; } = default!;
-        [BindProperty(SupportsGet = true)]
-        public int idCourse { get; set; }
 
         public async Task OnGetAsync(int idCourse)
         {
-            this.idCourse = idCourse;
 
             Course = await _context.Course.FirstOrDefaultAsync(m => m.IdCourse == idCourse);
 

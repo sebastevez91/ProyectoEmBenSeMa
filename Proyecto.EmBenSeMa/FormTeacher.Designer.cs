@@ -40,7 +40,6 @@
             eqtTitulo = new Label();
             btnSalir = new Button();
             btnNotificacion = new Button();
-            btnMostrar = new Button();
             menuStrip1 = new MenuStrip();
             aulaToolStripMenuItem = new ToolStripMenuItem();
             modificarPerfilToolStripMenuItem = new ToolStripMenuItem();
@@ -72,12 +71,7 @@
             dateFinish = new DateTimePicker();
             dateInitiation = new DateTimePicker();
             comboCourse = new ComboBox();
-            btnTablon = new Button();
-            lvCursada = new ListView();
-            NameStudent = new ColumnHeader();
-            Surname = new ColumnHeader();
-            Curse = new ColumnHeader();
-            DateTime = new ColumnHeader();
+            btnCursada = new Button();
             comboCursada = new ComboBox();
             label12 = new Label();
             groupBox1.SuspendLayout();
@@ -208,21 +202,6 @@
             btnNotificacion.UseVisualStyleBackColor = true;
             btnNotificacion.Click += btnNotificacion_Click;
             // 
-            // btnMostrar
-            // 
-            btnMostrar.BackgroundImage = (Image)resources.GetObject("btnMostrar.BackgroundImage");
-            btnMostrar.FlatStyle = FlatStyle.Flat;
-            btnMostrar.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnMostrar.ForeColor = Color.White;
-            btnMostrar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnMostrar.Location = new Point(18, 197);
-            btnMostrar.Name = "btnMostrar";
-            btnMostrar.Size = new Size(137, 45);
-            btnMostrar.TabIndex = 23;
-            btnMostrar.Text = "Mostrar Alumnos";
-            btnMostrar.UseVisualStyleBackColor = true;
-            btnMostrar.Click += btnMostrar_Click_1;
-            // 
             // menuStrip1
             // 
             menuStrip1.Items.AddRange(new ToolStripItem[] { aulaToolStripMenuItem, verCursoToolStripMenuItem, contactoToolStripMenuItem, ayudaToolStripMenuItem });
@@ -309,7 +288,7 @@
             button1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(176, 196);
+            button1.Location = new Point(537, 27);
             button1.Name = "button1";
             button1.Size = new Size(137, 45);
             button1.TabIndex = 27;
@@ -527,61 +506,31 @@
             comboCourse.Size = new Size(142, 23);
             comboCourse.TabIndex = 0;
             // 
-            // btnTablon
+            // btnCursada
             // 
-            btnTablon.BackgroundImage = (Image)resources.GetObject("btnTablon.BackgroundImage");
-            btnTablon.Enabled = false;
-            btnTablon.FlatStyle = FlatStyle.Flat;
-            btnTablon.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnTablon.ForeColor = Color.Transparent;
-            btnTablon.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTablon.Location = new Point(382, 223);
-            btnTablon.Name = "btnTablon";
-            btnTablon.Size = new Size(129, 33);
-            btnTablon.TabIndex = 28;
-            btnTablon.Text = "Tablon";
-            btnTablon.TextAlign = ContentAlignment.TopCenter;
-            btnTablon.UseVisualStyleBackColor = true;
-            btnTablon.Click += btnForo_Click;
-            // 
-            // lvCursada
-            // 
-            lvCursada.BackColor = Color.OliveDrab;
-            lvCursada.Columns.AddRange(new ColumnHeader[] { NameStudent, Surname, Curse, DateTime });
-            lvCursada.Location = new Point(12, 260);
-            lvCursada.Name = "lvCursada";
-            lvCursada.Size = new Size(489, 150);
-            lvCursada.TabIndex = 29;
-            lvCursada.UseCompatibleStateImageBehavior = false;
-            lvCursada.View = View.Details;
-            // 
-            // NameStudent
-            // 
-            NameStudent.Text = "Nombre";
-            NameStudent.Width = 110;
-            // 
-            // Surname
-            // 
-            Surname.Text = "Apellido";
-            Surname.Width = 100;
-            // 
-            // Curse
-            // 
-            Curse.Text = "Curso inscripto";
-            Curse.Width = 140;
-            // 
-            // DateTime
-            // 
-            DateTime.Text = "Horario";
-            DateTime.Width = 120;
+            btnCursada.BackgroundImage = (Image)resources.GetObject("btnCursada.BackgroundImage");
+            btnCursada.Enabled = false;
+            btnCursada.FlatStyle = FlatStyle.Flat;
+            btnCursada.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCursada.ForeColor = Color.Transparent;
+            btnCursada.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCursada.Location = new Point(363, 196);
+            btnCursada.Name = "btnCursada";
+            btnCursada.Size = new Size(129, 33);
+            btnCursada.TabIndex = 28;
+            btnCursada.Text = "Ver cursada";
+            btnCursada.TextAlign = ContentAlignment.TopCenter;
+            btnCursada.UseVisualStyleBackColor = true;
+            btnCursada.Click += btnForo_Click;
             // 
             // comboCursada
             // 
             comboCursada.FormattingEnabled = true;
-            comboCursada.Location = new Point(382, 196);
+            comboCursada.Location = new Point(104, 200);
             comboCursada.Name = "comboCursada";
-            comboCursada.Size = new Size(129, 23);
+            comboCursada.Size = new Size(243, 23);
             comboCursada.TabIndex = 30;
+            comboCursada.Text = "Seleccione una cursada";
             // 
             // label12
             // 
@@ -589,11 +538,11 @@
             label12.BackColor = Color.Transparent;
             label12.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label12.ForeColor = Color.White;
-            label12.Location = new Point(319, 197);
+            label12.Location = new Point(18, 206);
             label12.Name = "label12";
-            label12.Size = new Size(57, 17);
+            label12.Size = new Size(86, 17);
             label12.TabIndex = 31;
-            label12.Text = "Cursada";
+            label12.Text = "Tus cursadas";
             // 
             // FormTeacher
             // 
@@ -604,12 +553,10 @@
             ClientSize = new Size(888, 474);
             Controls.Add(comboCursada);
             Controls.Add(label12);
-            Controls.Add(lvCursada);
-            Controls.Add(btnTablon);
+            Controls.Add(btnCursada);
             Controls.Add(button1);
             Controls.Add(grBoxCursada);
             Controls.Add(menuStrip1);
-            Controls.Add(btnMostrar);
             Controls.Add(btnNotificacion);
             Controls.Add(btnSalir);
             Controls.Add(eqtTitulo);
@@ -677,7 +624,7 @@
         private Label label10;
         private TextBox txtCuota;
         private Label label11;
-        private Button btnTablon;
+        private Button btnCursada;
         private ListView lvCursada;
         private ColumnHeader NameStudent;
         private ColumnHeader Surname;

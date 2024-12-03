@@ -8,7 +8,7 @@ namespace SchoolMusic.Web.Pages.Teachers
     public class EditModel : PageModel
     {
         private readonly SchoolMusic.Web.Data.SchoolMusicWebContext _context;
-        private readonly ImageService _imageService;
+        private readonly ImageService _imageService; // Inyectar ImageService
 
         public EditModel(SchoolMusic.Web.Data.SchoolMusicWebContext context, ImageService imageService)
         {
@@ -18,16 +18,16 @@ namespace SchoolMusic.Web.Pages.Teachers
 
         [BindProperty]
         public Teacher Teacher { get; set; } = default!;
-        public string newPerfile { get; set; }
-        public string AlertMessage { get; set; }
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync()
         {
-            if (id == null || _context.Teacher == null)
+            var userId = User.FindFirst("UserId")?.Value;
+
+            if (string.IsNullOrEmpty(userId))
             {
-                return NotFound();
+                return RedirectToPage("/Logins/LoginUser");
             }
 
-            var teacher = await _context.Teacher.FirstOrDefaultAsync(m => m.IdTeacher == id);
+            var teacher = await _context.Teacher.FirstOrDefaultAsync(m => m.IdUser == int.Parse(userId));
             if (teacher == null)
             {
                 return NotFound();
@@ -36,58 +36,25 @@ namespace SchoolMusic.Web.Pages.Teachers
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync(IFormFile ProfileImage)
+        public async Task<IActionResult> OnPostAsync(IFormFile? ProfileImage)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            // Obtener el registro actual de Teacher desde la base de datos
-            var teacherInDb = await _context.Teacher.FindAsync(Teacher.IdTeacher);
-
-            // Si hay una nueva imagen seleccionada, súbela a Cloudinary y actualiza la URL
             if (ProfileImage != null)
             {
+                // Subir y actualizar solo la imagen
                 var imageUrl = await _imageService.UploadImageAsync(ProfileImage);
                 Teacher.FotoTeacher = imageUrl;
             }
-            else
-            {
-                // Si no hay nueva imagen, mantener la URL existente
-                Teacher.FotoTeacher = teacherInDb.FotoTeacher;
-            }
 
-            // Actualizar otros datos de Teacher
-            _context.Entry(teacherInDb).CurrentValues.SetValues(Teacher);
-            _context.Entry(teacherInDb).State = EntityState.Modified;
+            _context.Attach(Teacher).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!TeacherExists(Teacher.IdTeacher))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            AlertMessage = "Perfil actualizado";
-            return RedirectToPage("/Aula/AulaTeacher", new { id = Teacher?.IdUser });
+            return RedirectToPage("/Aula/AulaTeacher");
         }
 
-
-        private bool TeacherExists(int id)
-        {
-            return (_context.Teacher?.Any(e => e.IdTeacher == id)).GetValueOrDefault();
-        }
     }
 }

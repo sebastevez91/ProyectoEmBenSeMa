@@ -4,57 +4,61 @@
     ViewData["Title"] = "Aula del profesor";
     Layout = "_LayoutSesion";
 }
-<body onload="userSesion('@Model.Username')">
 
-    <div class="top-right-button">
-        <a asp-page="/Notifications/IndexNotification" class="btn">Notificaciones</a>
+<div>
+    <a asp-page="/Notifications/IndexNotification" id="notificationButton" class="btn @(Model.NotificationCount > 0 ? "btn-danger" : "btn-secondary") top-right-button">
+        Notificaciones
+        @if (Model.NotificationCount > 0)
+        {
+            <span id="notificationCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                @Model.NotificationCount
+            </span>
+        }
+    </a>
+</div>
+
+<div class="infoAula">
+    <img src="@Model.Teacher.FotoTeacher" alt="Foto de perfil" class="imagen-perfil" />
+    <div style="width:70%;">
+        <h1 style="padding: 5%;">Bienvenido @(Model.Teacher.Genero == "Masculino" ? "Profesor" : "Profesora") @Model.Teacher.NameTeacher @Model.Teacher.Surname</h1>
     </div>
+    
+</div>
 
-    <div class="containerTeacher">
-        <div class="details">
-            <div class="infoTeacher">
-                <h1>Bienvenido profesor @Model.Teacher.NameTeacher @Model.Teacher.Surname</h1>
-                <img src="@Model.Teacher.FotoTeacher" alt="Foto de perfil" class="fotoTeacher" />
-            </div>
+<div>
+    <h5 style="color:white;">Estos son tus datos personales</h5>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Nombre completo</th>
+                <th>Correo</th>
+                <th>DNI</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Teacher.NameTeacher @Model.Teacher.Surname</td>
+                <td>@Model.Teacher.Mail</td>
+                <td>@Model.Teacher.Dni</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="upcoming-classes">
+    <h3>los horarios de las clases</h3>
+    <ul>
+        @foreach (var cursada in Model.Teacher.Cursada)
+        {
+            if (cursada.Initiation > DateTime.Today && cursada.Finish > DateTime.Today)
+            {
+                <li>Cursada a las @cursada.StarTime.ToString("t") a @cursada.EndTime.ToString("t")</li>
+            }
+        }
+    </ul>
 
-            <h4>Tus datos</h4>
-            <table class="styled-table">
-                <thead>
-                    <tr>
-                        <th>Nombre completo</th>
-                        <th>Correo</th>
-                        <th>DNI</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>@Model.Teacher.NameTeacher @Model.Teacher.Surname</td>
-                        <td>@Model.Teacher.Mail</td>
-                        <td>@Model.Teacher.Dni</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="upcoming-classes" ">
-                <h3>Tus próximas clases</h3>
-                <ul>
-                    @foreach (var cursada in Model.Cursada)
-                    {
-                        if (cursada.Initiation > DateTime.Today && cursada.Finish > DateTime.Today)
-                        {
-                            <li>Cursada a las @cursada.StarTime.ToString("t") a @cursada.EndTime.ToString("t")</li>
-                        }
-                    }
-                </ul>
-            
-
-            <div class="footer-buttons">
-                <a asp-page="/Teachers/Edit" asp-route-id="@Model.Teacher?.IdTeacher" class="btn">Modificar datos</a>
-                <a asp-page="/Cursadas/Details" asp-route-id="@Model.Teacher.IdTeacher" class="btn">Tus cursadas</a>
-                <a asp-page="/Payments/IndexPayment" asp-route-id="@Model.Teacher.IdTeacher" class="btn">Billetera</a>
-            </div>
-        </div>
+    <div class="footer-buttons">
+        <a asp-page="/Teachers/Edit" class="btn btn-primary"> Modificar tus datos </a>
+        <a asp-page="/Cursadas/Details" class="btn"> Tus cursadas </a>
+        <a asp-page=""> </a>
     </div>
-</body>
-
+</div>

@@ -1,6 +1,13 @@
+/* Layout principal */
+.barraHeader {
+    background-color: black;
+}
+
 
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -11,11 +18,6 @@ html {
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
 }
 
 body {
@@ -68,36 +70,25 @@ h1, h2, p, td, label, .text-item {
 
 .profesores-container {
     display: flex;
-    flex-wrap: wrap;
     gap: 50px;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.profesor-card {
+.contenidoCard {
     display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 35px;
-    padding: 16px;
-    width: 800px;
+    flex-direction: row;
 }
 
 .profesor-foto {
-    width: 200px;
-    height: 180px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     margin-right: 20px;
 }
 
 .profesor-info {
     flex: 1;
-}
-
-a {
-    color: dodgerblue;
-}
-
-.barraHeader {
-    background-color: black;
 }
 
 /*Parte contacto*/
@@ -126,6 +117,12 @@ a {
 
 .derecha {
     flex: 1;
+    color:white;
+}
+.redes {
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
 }
 
 .redes a {
@@ -170,6 +167,14 @@ a {
 
 .caja-contacto button:hover .overlay {
     width: 100%;
+}
+
+.icon-redes {
+    width: 50px;
+    height: 50px;
+    padding: 10%;
+    margin-left: 70%;
+    border-radius: 6%;
 }
 
 /* Estilos responsivos */
@@ -225,10 +230,6 @@ a {
     color: white;
 }
 
-.cardCourse {
-    align-items: stretch;
-}
-
 /* Cursada */
 
 .content {
@@ -261,43 +262,32 @@ a {
     padding: 3.5%;
 }
 
+/* Lista de cursos */
+.cardCourse {
+    width: 18rem;
+    background-color: black;
+    color: white;
+    border: 1px solid #dddddd;
+}
+
 /* Aula Teacher */
-
-.containerTeacher {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.infoTeacher {
-    display: flex;
-    width: max-content;
-    justify-content: space-evenly;
-    flex-direction: row-reverse;
-    padding: 1%;
-    text-align: left;
-    flex: 1;
-}
-.infoTeacher h1 {
-     font-size: 24px;
-     margin: 0;
-}
-
-.fotoTeacher {
-    max-width: 150px;
+.imagen-perfil {
+    max-width: 250px;
     height: auto;
     border-radius: 50%;
     margin-top: 10px;
-    border: 4px solid #ddd; /* Color y grosor del borde */
+    border: 4px solid #ddd; 
     padding: 1px; /* Espacio entre la imagen y el borde */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra alrededor de la imagen */
 }
 
-.details, .upcoming-classes {
-    margin-top: 38px;
+.upcoming-classes {
+    margin-top: 60px;
     flex: 1;
-    padding: 40px;
+    padding: 20px;
     color: white;
+    background-color: black;
+    border: 1px solid #dddddd;
 }
 
 /* Estilo de la tabla */
@@ -437,3 +427,90 @@ a {
 .user-menu a:hover {
     background-color: blue;
 }
+
+/* Contenedor para alinear botones horizontalmente */
+.button-container {
+    display: flex;
+    gap: 5px; 
+    align-items: center; 
+}
+
+/* Estilo de los botones */
+.icon-button {
+    border: none;
+    background: none;
+    padding: 5;
+    cursor: pointer;
+}
+
+/* Estilo de las imágenes */
+.icon-image {
+    width: 30px; 
+    height: 30px;
+    background-color:white;
+    border-radius: 6%;
+}
+
+/* Estilo de Informacion Aula */
+.infoAula {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 2%;
+}
+
+/* Contenido */
+
+.contenido-div {
+    background-color: black;
+    color: white;
+    border: 1px solid #dddddd;
+}
+
+/* Destalles de publicación */
+.comment-section {
+    background-color: powderblue;
+    border: 3px solid #664d03;
+    padding: 10px;
+    font-size: 0.9rem;
+    color:black;
+}
+
+    .comment-section h4 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+.comment-fieldset {
+    border: 1px solid #000;
+    padding: 5px;
+    background-color: white;
+    color: black;
+    margin: 5px 0;
+}
+
+    .comment-fieldset strong {
+        font-size: 0.9rem;
+    }
+
+    .comment-fieldset small {
+        font-size: 0.8rem;
+    }
+
+    .comment-fieldset p {
+        font-size: 0.9rem;
+        color: black;
+    }
+
+.comment-form textarea {
+    font-size: 0.85rem;
+    padding: 5px;
+    height: 50px;
+}
+
+.comment-form .btn {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+}
+

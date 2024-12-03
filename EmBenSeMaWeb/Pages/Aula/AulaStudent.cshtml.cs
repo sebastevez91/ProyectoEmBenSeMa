@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -6,6 +7,7 @@ using SchoolMusic.Web.Data;
 
 namespace SchoolMusic.Web.Pages.Aula
 {
+    [Authorize(Roles = "Alumno")]
     public class AulaStudentModel : PageModel
     {
         private readonly SchoolMusicWebContext _context;
@@ -14,34 +16,30 @@ namespace SchoolMusic.Web.Pages.Aula
             _context = context;
         }
         public Student Student { get; set; } = default!;
-        public string Username {  get; set; }
-        public IList<Inscription> Inscriptions { get; set; } = default!;
+        public IList<Inscription> Inscriptions { get; set; }
+        public int NotificationCount { get; set; } = 0;
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync()
         {
-            if (id == null || _context.Student == null)
+            var userId = User.FindFirst("UserId")?.Value;
+
+            if (string.IsNullOrEmpty(userId))
             {
-                return NotFound();
+                return RedirectToPage("/Logins/LoginUser");
             }
 
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.IdUser == id);
-            if (user != null)
-            {
-                Username = user.Username;
-            }
-            var student = await _context.Student.FirstOrDefaultAsync(m => m.IdUser == id);
+            var student = await _context.Student
+                        .Include(i => i.Inscriptions)
+                            .ThenInclude(i => i.Cursada)
+                                .ThenInclude(i => i.Course)
+                        .FirstOrDefaultAsync(m => m.IdUser == int.Parse(userId));
+
             if (student == null)
             {
                 return NotFound();
             }
-            else
-            {
-                Student = student;
-                Inscriptions = await _context.Inscription
-                    .Include(c => c.Cursada)
-                    .Where(s => s.idStudent == Student.IdStudent)
-                    .ToListAsync();
-            }
+            Student = student;
+
             return Page();
 
         }

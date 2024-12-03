@@ -17,13 +17,11 @@ namespace SchoolMusic.Entidades
 >>>>>>> secondMain
         public string UserPassword { get; set; }
         public byte? ChangePassword { get; set; } = default!;
+        public string Rol { get; set; }
 
-        public Users(int idUser, string username, string password)
-        {
-            IdUser = idUser;
-            Username = username;
-            UserPassword = password;
-        }
+        // FK
+        public Teacher? Teacher { get; set; }
+        public Student? Student { get; set; }
 
         public Users()
         {

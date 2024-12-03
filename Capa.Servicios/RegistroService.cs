@@ -17,25 +17,33 @@ namespace SchoolMusic.Serv
         // Creamos un diccionario para pasar los parámetros.
         Dictionary<string, string> prm = new Dictionary<string, string>();
 
-        public bool AddUser(Users user)
+        public int AddUser(Users user)
         {
-            // Agrego nuevo Usuario a la tabla Users
-            int result = 0;
-            // Agrego parametros 
-            prm.Add("@Username", user.Username);
-            prm.Add("@UserPassword", user.UserPassword);
-            // Query
-            string sqlInsertUsers = "INSERT INTO Users (Username,UserPassword) " +
-                    "VALUES (@Username,@UserPassword)";
+            try
+            {
+                // Configuración de parámetros
+                var parametros = new Dictionary<string, object>
+                                {
+                                    { "@Username", user.Username },
+                                    { "@UserPassword", user.UserPassword },
+                                    { "@Rol", user.Rol }
+                                };
 
-            result = accion.AccionEjecutar(sqlInsertUsers, prm);
-            if (result > 0 && result != null)
-            {
-                return true;
+                // Consulta SQL para insertar y devolver el ID generado
+                string sqlInsertUsers = @"INSERT INTO Users (Username, UserPassword, Rol) 
+                                        VALUES (@Username, @UserPassword, @Rol);
+                                        SELECT CAST(SCOPE_IDENTITY() AS INT);";
+
+                // Ejecutar la acción y obtener el resultado
+                int userId = accion.AccionEjecutarEscalar(sqlInsertUsers, parametros);
+
+                // Retornar el ID generado
+                return userId;
             }
-            else
+            catch (Exception ex)
             {
-                return false;
+                // Manejo de errores
+                throw new Exception("Error al agregar el usuario a la base de datos", ex);
             }
         }
         public int AddStudent(Student student)
@@ -76,36 +84,6 @@ namespace SchoolMusic.Serv
                   "VALUES (@nameTeacher,@surname,@mail,@dni,@age,@idUser,@genero)";
 
             result = accion.AccionEjecutar(sqlInsertTeacher, prm);
-
-            return result;
-        }
-        public int GetIdUser(Users users)
-        {
-            // Traemos el Id del Usuario
-            int result = 0;
-            // Agrego parametros
-            prm.Clear();
-            prm.Add("@username", users.Username);
-            prm.Add("@userPassword", users.UserPassword);
-
-            try
-            {
-                // Query
-                string sqlSelectUser = "SELECT IdUser FROM Users WHERE Username = @username AND UserPassword = @userPassword";
-
-                var dataUser = select.SelectData(sqlSelectUser, prm);
-                if (dataUser.Rows.Count > 0)
-                {
-                    var table = dataUser.Rows[0];
-
-                    result = int.Parse(table["IdUser"].ToString())
-                }
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine("Error: " + ex.Message);
-            }
 
             return result;
         }

@@ -17,7 +17,7 @@ namespace Proyecto.EmBenSeMa
         {
             try
             {
-                viewLogin("Alumnos");
+                viewLogin();
                 formLogin.Show();
             }
             catch (System.ObjectDisposedException)
@@ -31,7 +31,7 @@ namespace Proyecto.EmBenSeMa
             try
             {
 
-                viewLogin("Profesores");
+                viewLogin();
                 formLogin.Show();
 
             }
@@ -68,23 +68,13 @@ namespace Proyecto.EmBenSeMa
             }
         }
         // Ventanas de Formularios
-        private void viewLogin(string nameForm)
+        private void viewLogin()
         {
             // Verifica si ya existe una instancia del formulario
             if (formLogin == null || formLogin.IsDisposed)
             {
                 // Si no existe, crea una nueva instancia
                 formLogin = new FormLogin();
-            }
-
-            // Personaliza el título según el valor de nameForm
-            if (nameForm == "Alumnos")
-            {
-                formLogin.ChangeTitle("Alumnos");
-            }
-            else
-            {
-                formLogin.ChangeTitle("Profesores");
             }
 
             // Verifica si el formulario está visible

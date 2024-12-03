@@ -8,7 +8,8 @@
 
 <h1>Alumnos de tu cursada</h1>
 
-<table class="table" style="color:white;">
+<table class="table" style="color:white;background-color: black;
+    border-radius: 6%;">
     <thead>
         <tr>
             <th>
@@ -29,7 +30,9 @@
             <th>
                 Genero
             </th>
-            <th></th>
+            <th>
+                Estado de cursada
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -54,13 +57,22 @@
                 @Html.DisplayFor(modelItem => item.Student.Genero)
             </td>
             <td>
-                <button>
-                        <img src="~/img/ver.png" alt="verPerfil" />
-                </button>
-                <button>
-                        <img src="~/img/mensaje.png" alt="mensaje" />
-                </button>
+                @Html.DisplayFor(modelItem => item.Status)
             </td>
+                <td>
+                    <div class="button-container">
+                        <button class="icon-button">
+                            <a asp-page="/Students/Details" asp-route-id="@item.idInscription">
+                                <img src="~/img/ver.png" alt="verPerfil" class="icon-image" title="Ver perfil" />
+                            </a>
+                        </button>
+                        <button class="icon-button">
+                            <a asp-page="/Notifications/CreateNotification" asp-route-idTo="@item.Student.IdUser">
+                                <img src="~/img/mensaje.png" alt="mensaje" class="icon-image" title="Enviar un mensaje" />
+                            </a>                            
+                        </button>
+                    </div>
+                </td>
         </tr>
 }
     </tbody>

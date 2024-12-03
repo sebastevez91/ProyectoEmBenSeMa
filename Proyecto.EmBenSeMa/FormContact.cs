@@ -1,14 +1,5 @@
 ﻿using Capa.Entidades;
 using Capa.Servicios;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 
 namespace Proyecto.EmBenSeMa
@@ -44,7 +35,7 @@ namespace Proyecto.EmBenSeMa
         {
             bool valido = true;
             var emailValido = ValidacionGeneral.mailValido(txtCorreo.Text);
-            if(emailValido == false)
+            if (emailValido == false)
             {
                 MessageBox.Show("El email ingresado no es valido");
                 txtCorreo.Text = "";

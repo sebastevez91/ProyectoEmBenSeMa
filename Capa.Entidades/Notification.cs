@@ -31,6 +31,10 @@ namespace SchoolMusic.Entidades
         public string Subject { get; set; }
         public string Body { get; set; }
         public DateTime DateNotification { get; set; }
+<<<<<<< HEAD
+>>>>>>> secondMain
+=======
+        public bool Status { get; set; }
 >>>>>>> secondMain
 
 

@@ -60,9 +60,9 @@ namespace SchoolMusic.Proyecto
             if (txtTitulo.Text != string.Empty && txtAnuncio.Text != string.Empty)
             {
                 // Asignamos los valores a un nuevo topic
-                topic.title = txtTitulo.Text;
-                topic.asunto = txtAnuncio.Text;
-                topic.idTablon = tablon.idTablon;
+                //topic.title = txtTitulo.Text;
+                //topic.asunto = txtAnuncio.Text;
+                //topic.idTablon = tablon.idTablon;
                 // Cargo el nuevo topic a la base de datos
                 tablonService.SetTopic(topic);
                 // Limpio el listbox de topics
@@ -86,9 +86,9 @@ namespace SchoolMusic.Proyecto
             if (txtComentario.Text != string.Empty)
             {
                 // Asignamos los nuevos valores al nuevo comentario
-                coment.comentDesc = txtComentario.Text;
-                coment.idTopic = int.Parse(itemElegido);
-                coment.nameUser = tablonService.GetNameUser(userSession.IdUser,tipo);
+                //coment.comentDesc = txtComentario.Text;
+                //coment.idTopic = int.Parse(itemElegido);
+                //coment.nameUser = tablonService.GetNameUser(userSession.IdUser,tipo);
                 // Cargo el nuevo comentario a la base de datos
                 tablonService.SetComent(coment);
                 // Actualizo el TreeView con el nuevo comentario
@@ -117,9 +117,9 @@ namespace SchoolMusic.Proyecto
                 foreach (Coment com in coments)
                 {
                     // Agregar al nodo de comentario
-                    TreeNode comentNodo = new TreeNode($"***{com.nameUser}***  Fecha : {com.dateComent}");
-                    trViewComent.Nodes.Add(comentNodo);
-                    comentNodo.Nodes.Add(com.comentDesc);
+                    //TreeNode comentNodo = new TreeNode($"***{com.nameUser}***  Fecha : {com.dateComent}");
+                    //trViewComent.Nodes.Add(comentNodo);
+                    //comentNodo.Nodes.Add(com.comentDesc);
                 }
             }
             catch (Exception ex)
@@ -143,12 +143,12 @@ namespace SchoolMusic.Proyecto
 
                 foreach (Topic top in topics)
                 {
-                    if (top.idTopic.ToString() == listTopic.SelectedValue.ToString())
-                    {
-                        etqTitulo.Text = top.title;
-                        contenidoAnuncio.Text = top.asunto.ToString();
-                        UpdateTreeView(top.idTopic.ToString());
-                    }
+                    //if (top.idTopic.ToString() == listTopic.SelectedValue.ToString())
+                    //{
+                    //    etqTitulo.Text = top.title;
+                    //    contenidoAnuncio.Text = top.asunto.ToString();
+                    //    UpdateTreeView(top.idTopic.ToString());
+                    //}
                 }
             }
         }
@@ -158,10 +158,10 @@ namespace SchoolMusic.Proyecto
             {
                 foreach (Topic top in topics)
                 {
-                    if (top.idTopic == int.Parse(listTopic.SelectedValue.ToString()))
-                    {
-                        tablonService.DeleteTopic(top.idTopic);
-                    }
+                    //if (top.idTopic == int.Parse(listTopic.SelectedValue.ToString()))
+                    //{
+                    //    tablonService.DeleteTopic(top.idTopic);
+                    //}
                 }
                 UpdateListBox();
             }

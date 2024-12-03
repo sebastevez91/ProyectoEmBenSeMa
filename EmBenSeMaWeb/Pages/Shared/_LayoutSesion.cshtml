@@ -12,15 +12,28 @@
         <nav class="barraHeader navbar navbar-expand-sm">
             <div class="container">
                 <img src="~/img/Logo.png" class="iconoLogo" alt="IconoLogo" />
-                <label class="navbar-brand"> EmBenSeMaWeb  </label>
+                <label class="navbar-brand"> @(User.IsInRole("Profesor") ? "Profesor/a" : "Alumno/a") de  EmBenSeMaWeb  </label>
             </div>
             <button class="user-button" onclick="toggleMenu()">
                 <img src="~/img/userSesion.png" alt="Foto de perfil" class="user-image">
-                <span class="user-name" id="user-name">Nombre de Usuario</span>
+                <span class="user-name">@User.Identity.Name</span>
             </button>
             <!-- Menú desplegable -->
             <div id="user-menu" class="user-menu">
-                <a asp-page="/Index" class="btn btn-primary"> Ajustes </a>
+                @{
+                    string rutaPerfil = "/Index";
+
+                    if (User.IsInRole("Profesor"))
+                    {
+                        rutaPerfil = "/Aula/AulaTeacher";
+                    }
+                    else if (User.IsInRole("Alumno"))
+                    {
+                        rutaPerfil = "/Aula/AulaStudent";
+                    }
+                }
+                <a asp-page="@rutaPerfil" class="btn btn-primary"> Perfil </a>
+                <a asp-page="/Contact" class="btn btn-primary">Contactanos</a>
                 <a asp-page="/Index" class="btn btn-primary"> Cerrar Sesión </a>
             </div>
         </nav>

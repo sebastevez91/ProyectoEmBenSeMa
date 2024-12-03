@@ -1,0 +1,62 @@
+﻿@page
+@model SchoolMusic.Web.Pages.Cursadas.TomarAsistenciaModel
+
+@{
+    ViewData["Title"] = "Tomar Asistencia";
+    Layout = "_LayoutSesion";
+}
+
+<h1>Tomar Asistencia</h1>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+
+@if (Model.Assistance != null && Model.Assistance.Any())
+{
+    <form method="post">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Estado de asistencia</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Assistance.Count; i++)
+                {
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <tr>
+                        <td>
+                            @Model.Cursada.Inscriptions[i].Student.NameStudent
+                        </td>
+                        <td>
+                            @Model.Cursada.Inscriptions[i].Student.Surname    
+                        </td>
+                        <td>
+                            <select asp-for="Assistance[i].Status" class="form-select">
+                                <option value="Presente">Presente</option>
+                                <option value="Ausente">Ausente</option>
+                            </select>
+                            <span asp-validation-for="Assistance[i].Status" class="text-danger"></span>
+                            <!-- Campo oculto para asegurar que IdInscription está en el formulario -->
+                            <input type="hidden" asp-for="Assistance[i].IdInscription" />
+                            <input type="hidden" asp-for="Assistance[i].DateAssitance" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-primary">Guardar Asistencia</button>
+    </form>
+}
+else
+{
+    <p>No hay estudiantes inscritos en esta cursada.</p>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

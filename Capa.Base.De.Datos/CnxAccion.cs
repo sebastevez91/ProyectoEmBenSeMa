@@ -40,10 +40,32 @@ namespace Capa.Base.De.Datos
             catch (Exception e)
             {
 
-                //MessageBox.Show("Falla en la capa datos: " + e.Message);
+                Console.WriteLine("Falla en la capa datos: " + e.Message);
             }
             return result;
         }
+
+        public int AccionEjecutarEscalar(string query, Dictionary<string, object> parametros)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand(query, connection))
+                {
+                    // Agregar parámetros
+                    foreach (var param in parametros)
+                    {
+                        command.Parameters.AddWithValue(param.Key, param.Value);
+                    }
+
+                    // Abrir conexión
+                    connection.Open();
+
+                    // Ejecutar y retornar el valor
+                    return (int)command.ExecuteScalar();
+                }
+            }
+        }
+
     }
 }
 
