@@ -29,33 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            btnAlumnos = new Button();
             btnProfe = new Button();
             btnContacto = new Button();
             btnCursos = new Button();
             pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // btnAlumnos
-            // 
-            btnAlumnos.Anchor = AnchorStyles.Left;
-            btnAlumnos.BackColor = Color.Transparent;
-            btnAlumnos.BackgroundImage = (Image)resources.GetObject("btnAlumnos.BackgroundImage");
-            btnAlumnos.BackgroundImageLayout = ImageLayout.Stretch;
-            btnAlumnos.FlatStyle = FlatStyle.Flat;
-            btnAlumnos.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAlumnos.ForeColor = Color.White;
-            btnAlumnos.Image = (Image)resources.GetObject("btnAlumnos.Image");
-            btnAlumnos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAlumnos.Location = new Point(12, 38);
-            btnAlumnos.Name = "btnAlumnos";
-            btnAlumnos.Size = new Size(242, 56);
-            btnAlumnos.TabIndex = 0;
-            btnAlumnos.Text = "Alumnos";
-            btnAlumnos.TextAlign = ContentAlignment.BottomRight;
-            btnAlumnos.UseVisualStyleBackColor = false;
-            btnAlumnos.Click += btnAlumnos_Click;
             // 
             // btnProfe
             // 
@@ -68,11 +47,11 @@
             btnProfe.ForeColor = Color.White;
             btnProfe.Image = (Image)resources.GetObject("btnProfe.Image");
             btnProfe.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProfe.Location = new Point(12, 100);
+            btnProfe.Location = new Point(12, 13);
             btnProfe.Name = "btnProfe";
             btnProfe.Size = new Size(242, 56);
             btnProfe.TabIndex = 1;
-            btnProfe.Text = "Profesores";
+            btnProfe.Text = "Aula Virtual";
             btnProfe.TextAlign = ContentAlignment.BottomRight;
             btnProfe.UseVisualStyleBackColor = false;
             btnProfe.Click += btnProfe_Click;
@@ -88,7 +67,7 @@
             btnContacto.ForeColor = Color.White;
             btnContacto.Image = (Image)resources.GetObject("btnContacto.Image");
             btnContacto.ImageAlign = ContentAlignment.MiddleLeft;
-            btnContacto.Location = new Point(12, 224);
+            btnContacto.Location = new Point(12, 137);
             btnContacto.Name = "btnContacto";
             btnContacto.Size = new Size(242, 56);
             btnContacto.TabIndex = 4;
@@ -108,7 +87,7 @@
             btnCursos.ForeColor = Color.White;
             btnCursos.Image = (Image)resources.GetObject("btnCursos.Image");
             btnCursos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCursos.Location = new Point(12, 162);
+            btnCursos.Location = new Point(12, 75);
             btnCursos.Name = "btnCursos";
             btnCursos.Size = new Size(242, 56);
             btnCursos.TabIndex = 5;
@@ -136,12 +115,11 @@
             BackColor = SystemColors.ActiveBorder;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(702, 374);
+            ClientSize = new Size(702, 376);
             Controls.Add(pictureBox1);
             Controls.Add(btnCursos);
             Controls.Add(btnContacto);
             Controls.Add(btnProfe);
-            Controls.Add(btnAlumnos);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
@@ -152,8 +130,6 @@
         }
 
         #endregion
-
-        private Button btnAlumnos;
         private Button btnProfe;
         private Button btnContacto;
         private Button btnCursos;

@@ -12,7 +12,7 @@
         <nav class="barraHeader navbar navbar-expand-sm">
             <div class="container">
                 <img src="~/img/Logo.png" class="iconoLogo" alt="IconoLogo" />
-                <label class="navbar-brand"> EmBenSeMaWeb  </label>
+                <label class="navbar-brand"> @(User.IsInRole("Profesor") ? "Profesor/a" : "Alumno/a") de  EmBenSeMaWeb  </label>
             </div>
             <button class="user-button" onclick="toggleMenu()">
                 <img src="~/img/userSesion.png" alt="Foto de perfil" class="user-image">
@@ -33,6 +33,7 @@
                     }
                 }
                 <a asp-page="@rutaPerfil" class="btn btn-primary"> Perfil </a>
+                <a asp-page="/Contact" class="btn btn-primary">Contactanos</a>
                 <a asp-page="/Index" class="btn btn-primary"> Cerrar Sesión </a>
             </div>
         </nav>

@@ -57,9 +57,15 @@
             label1 = new Label();
             groupBox1 = new GroupBox();
             grBoxDUser = new GroupBox();
+            groupRol = new GroupBox();
+            radioButton2 = new RadioButton();
+            raBtnAlumno = new RadioButton();
+            radioButton4 = new RadioButton();
+            label10 = new Label();
             grBoxGenero.SuspendLayout();
             groupBox1.SuspendLayout();
             grBoxDUser.SuspendLayout();
+            groupRol.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -118,9 +124,9 @@
             label6.ForeColor = Color.White;
             label6.Location = new Point(18, 19);
             label6.Name = "label6";
-            label6.Size = new Size(73, 22);
+            label6.Size = new Size(135, 22);
             label6.TabIndex = 5;
-            label6.Text = "Usuario:";
+            label6.Text = "Nombre usuario:";
             // 
             // label7
             // 
@@ -128,11 +134,11 @@
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label7.ForeColor = Color.White;
-            label7.Location = new Point(18, 48);
+            label7.Location = new Point(6, 94);
             label7.Name = "label7";
-            label7.Size = new Size(101, 22);
+            label7.Size = new Size(185, 22);
             label7.TabIndex = 6;
-            label7.Text = "Contraseña:";
+            label7.Text = "Contraseña de usuario:";
             // 
             // txtNombre
             // 
@@ -178,7 +184,7 @@
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(97, 18);
+            txtUsuario.Location = new Point(159, 16);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PlaceholderText = "Ingrese el nombre de usuario";
             txtUsuario.Size = new Size(218, 23);
@@ -186,20 +192,20 @@
             // 
             // txtContra
             // 
-            txtContra.Location = new Point(125, 45);
+            txtContra.Location = new Point(197, 93);
             txtContra.Name = "txtContra";
             txtContra.PasswordChar = '*';
             txtContra.PlaceholderText = "Ingrese su contraseña";
-            txtContra.Size = new Size(218, 23);
+            txtContra.Size = new Size(186, 23);
             txtContra.TabIndex = 13;
             // 
             // txtConfirma
             // 
-            txtConfirma.Location = new Point(185, 74);
+            txtConfirma.Location = new Point(197, 130);
             txtConfirma.Name = "txtConfirma";
             txtConfirma.PasswordChar = '*';
             txtConfirma.PlaceholderText = "Reingrese su contraseña";
-            txtConfirma.Size = new Size(198, 23);
+            txtConfirma.Size = new Size(186, 23);
             txtConfirma.TabIndex = 14;
             // 
             // label8
@@ -208,7 +214,7 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(6, 76);
+            label8.Location = new Point(18, 128);
             label8.Name = "label8";
             label8.Size = new Size(173, 22);
             label8.TabIndex = 15;
@@ -222,9 +228,9 @@
             etqRegistro.ForeColor = Color.White;
             etqRegistro.Location = new Point(56, 46);
             etqRegistro.Name = "etqRegistro";
-            etqRegistro.Size = new Size(171, 29);
+            etqRegistro.Size = new Size(176, 29);
             etqRegistro.TabIndex = 18;
-            etqRegistro.Text = "Nuevo Alumno";
+            etqRegistro.Text = "Nuevo Usuario";
             // 
             // btnRegistrar
             // 
@@ -264,7 +270,7 @@
             // 
             etqNotifica.BackColor = Color.Red;
             etqNotifica.ForeColor = Color.Black;
-            etqNotifica.Location = new Point(190, 100);
+            etqNotifica.Location = new Point(230, 155);
             etqNotifica.Name = "etqNotifica";
             etqNotifica.Size = new Size(153, 32);
             etqNotifica.TabIndex = 21;
@@ -275,7 +281,7 @@
             // 
             checkMostrar.AutoSize = true;
             checkMostrar.BackColor = Color.Transparent;
-            checkMostrar.Location = new Point(18, 102);
+            checkMostrar.Location = new Point(18, 158);
             checkMostrar.Name = "checkMostrar";
             checkMostrar.Size = new Size(128, 19);
             checkMostrar.TabIndex = 25;
@@ -292,14 +298,14 @@
             grBoxGenero.ForeColor = Color.White;
             grBoxGenero.Location = new Point(80, 130);
             grBoxGenero.Name = "grBoxGenero";
-            grBoxGenero.Size = new Size(93, 64);
+            grBoxGenero.Size = new Size(177, 47);
             grBoxGenero.TabIndex = 26;
             grBoxGenero.TabStop = false;
             // 
             // raBtnMas
             // 
             raBtnMas.AutoSize = true;
-            raBtnMas.Location = new Point(6, 39);
+            raBtnMas.Location = new Point(91, 14);
             raBtnMas.Name = "raBtnMas";
             raBtnMas.Size = new Size(80, 19);
             raBtnMas.TabIndex = 2;
@@ -378,6 +384,8 @@
             // grBoxDUser
             // 
             grBoxDUser.BackColor = Color.Transparent;
+            grBoxDUser.Controls.Add(groupRol);
+            grBoxDUser.Controls.Add(label10);
             grBoxDUser.Controls.Add(label7);
             grBoxDUser.Controls.Add(label6);
             grBoxDUser.Controls.Add(label8);
@@ -388,10 +396,68 @@
             grBoxDUser.Controls.Add(txtConfirma);
             grBoxDUser.Location = new Point(415, 78);
             grBoxDUser.Name = "grBoxDUser";
-            grBoxDUser.Size = new Size(389, 141);
+            grBoxDUser.Size = new Size(389, 208);
             grBoxDUser.TabIndex = 30;
             grBoxDUser.TabStop = false;
             grBoxDUser.Text = "Datos de usuario";
+            // 
+            // groupRol
+            // 
+            groupRol.BackColor = Color.Transparent;
+            groupRol.Controls.Add(radioButton2);
+            groupRol.Controls.Add(raBtnAlumno);
+            groupRol.Controls.Add(radioButton4);
+            groupRol.ForeColor = Color.White;
+            groupRol.Location = new Point(159, 45);
+            groupRol.Name = "groupRol";
+            groupRol.Size = new Size(177, 42);
+            groupRol.TabIndex = 28;
+            groupRol.TabStop = false;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(90, 14);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(69, 19);
+            radioButton2.TabIndex = 2;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Profesor";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // raBtnAlumno
+            // 
+            raBtnAlumno.AutoSize = true;
+            raBtnAlumno.Location = new Point(6, 14);
+            raBtnAlumno.Name = "raBtnAlumno";
+            raBtnAlumno.Size = new Size(68, 19);
+            raBtnAlumno.TabIndex = 1;
+            raBtnAlumno.TabStop = true;
+            raBtnAlumno.Text = "Alumno";
+            raBtnAlumno.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            radioButton4.AutoSize = true;
+            radioButton4.Location = new Point(-42, 176);
+            radioButton4.Name = "radioButton4";
+            radioButton4.Size = new Size(94, 19);
+            radioButton4.TabIndex = 0;
+            radioButton4.TabStop = true;
+            radioButton4.Text = "radioButton4";
+            radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(18, 49);
+            label10.Name = "label10";
+            label10.Size = new Size(134, 22);
+            label10.TabIndex = 27;
+            label10.Text = "Tipo de usuario:";
             // 
             // FormRegistration
             // 
@@ -417,6 +483,8 @@
             groupBox1.PerformLayout();
             grBoxDUser.ResumeLayout(false);
             grBoxDUser.PerformLayout();
+            groupRol.ResumeLayout(false);
+            groupRol.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -450,5 +518,10 @@
         private Label label1;
         private GroupBox groupBox1;
         private GroupBox grBoxDUser;
+        private Label label10;
+        private GroupBox groupRol;
+        private RadioButton radioButton2;
+        private RadioButton raBtnAlumno;
+        private RadioButton radioButton4;
     }
 }

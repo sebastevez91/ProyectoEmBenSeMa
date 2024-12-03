@@ -16,9 +16,14 @@
         </div>
         
     </div>
-    <div>
-        <a asp-page="./CreatePost" asp-route-id="@Model.Cursada.IdCursada" class="btn btn-success">Crear nueva publicación</a>
-    </div>
+
+    if (User.IsInRole("Profesor"))
+    {
+         <div>
+            <a asp-page="./CreatePost" asp-route-id="@Model.Cursada.IdCursada" class="btn btn-success">Crear nueva publicación</a>
+        </div> 
+    }
+
 
     @foreach (var post in Model.Topics)
     {

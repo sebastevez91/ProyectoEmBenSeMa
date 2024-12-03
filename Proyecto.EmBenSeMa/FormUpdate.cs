@@ -46,12 +46,10 @@ namespace SchoolMusic.Proyecto
             if(boxDatPer.Visible == false)
             {
                 boxDatPer.Visible = true;
-                pictMate.Visible = true;
             }
             else
             {
                 boxDatPer.Visible = false;
-                pictMate.Visible = false;
             }
         }
 

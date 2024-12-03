@@ -37,13 +37,15 @@ namespace SchoolMusic.Entidades
         public string Description {  get; set; }
         [Required(ErrorMessage = "Ingrese el valor de la cuota")]
         public float PayFee {  get; set; }
+        [Required(ErrorMessage = "Ingrese un porcentaje de incripciones que debe tener la cursada")]
+        public float? Porcentaje {  get; set; }
 
         // FK
         public Course? Course { get; set; }
         public Teacher? Teacher { get; set; }
         
         // Relación con Inscription (uno a muchos)
-        public ICollection<Inscription>? Inscriptions { get; set; }
+        public List<Inscription>? Inscriptions { get; set; }
         public Cursada()
         {
         }

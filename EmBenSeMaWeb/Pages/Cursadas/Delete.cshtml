@@ -3,70 +3,80 @@
 
 @{
     ViewData["Title"] = "Eliminar Cursada";
+    Layout = "_LayoutSesion";
 }
 
 <h1>Eliminar cursada</h1>
-
-<h3>Estás seguro que quieres eliminar tu cursada?</h3>
-<div style="color: white;">
-    <h4> Detalles de la cursada </h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            Fecha de inicio: 
-        </dt>
-        <dd class="col-sm-10">
-            @Model.Cursada.Initiation.ToString("yyyy/MM/dd")
-        </dd>
-        <dt class="col-sm-2">
-            Fecha de finalización: 
-        </dt>
-        <dd class="col-sm-10">
-            @Model.Cursada.Finish.ToString("yyyy/MM/dd")
-        </dd>
-        <dt class="col-sm-2">
-            Hora de inicio: 
-        </dt>
-        <dd class="col-sm-10">
-            @Model.Cursada.StarTime.ToString("HH:mm")
-        </dd>
-        <dt class="col-sm-2">
-            Hora de finalización: 
-        </dt>
-        <dd class="col-sm-10">
-            @Model.Cursada.EndTime.ToString("HH:mm")
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cursada.Vacantes)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cursada.Vacantes)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cursada.Days)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cursada.Days)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cursada.Description)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cursada.Description)
-        </dd>
-        <dt class="col-sm-2">
-            Cuota por mes:
-        </dt>
-        <dd class="col-sm-10">
-             $ @Model.Cursada.PayFee
-        </dd>
-    </dl>
+<div>
+    @if (Model.Cursada.Inscriptions == null || (Model.Cursada.Inscriptions.Count * 100 / Model.Cursada.Vacantes) < Model.Cursada.Porcentaje)
+    {
+        <h3>Estás seguro que quieres eliminar tu cursada?</h3>
+        <div style="color: white;">
+            <h4> Detalles de la cursada </h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    Fecha de inicio: 
+                </dt>
+                <dd class="col-sm-10">
+                    @Model.Cursada.Initiation.ToString("yyyy/MM/dd")
+                </dd>
+                <dt class="col-sm-2">
+                    Fecha de finalización: 
+                </dt>
+                <dd class="col-sm-10">
+                    @Model.Cursada.Finish.ToString("yyyy/MM/dd")
+                </dd>
+                <dt class="col-sm-2">
+                    Hora de inicio: 
+                </dt>
+                <dd class="col-sm-10">
+                    @Model.Cursada.StarTime.ToString("HH:mm")
+                </dd>
+                <dt class="col-sm-2">
+                    Hora de finalización: 
+                </dt>
+                <dd class="col-sm-10">
+                    @Model.Cursada.EndTime.ToString("HH:mm")
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Cursada.Vacantes)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Cursada.Vacantes)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Cursada.Days)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Cursada.Days)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Cursada.Description)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Cursada.Description)
+                </dd>
+                <dt class="col-sm-2">
+                    Cuota por mes:
+                </dt>
+                <dd class="col-sm-10">
+                     $ @Model.Cursada.PayFee
+                </dd>
+            </dl>
     
-    <form method="post">
-        <input type="hidden" asp-for="Cursada.IdCursada" />
-        <input type="hidden" asp-for="Cursada.IdCourse" />
-        <input type="hidden" asp-for="Cursada.IdTeacher" />
-        <input type="submit" value=" Eliminar cursada " class="btn btn-danger btn-block" />
-    </form>
-    <a asp-page="./Details" asp-route-id="@Model.Cursada?.IdTeacher" class="btn btn-primary btn-block"> Volver atras </a>
+            <form method="post">
+                <input type="hidden" asp-for="Cursada.IdCursada" />
+                <input type="hidden" asp-for="Cursada.IdCourse" />
+                <input type="hidden" asp-for="Cursada.IdTeacher" />
+                <input type="submit" value=" Eliminar cursada " class="btn btn-danger btn-block" />
+            </form>
+            <a asp-page="./Details" asp-route-id="@Model.Cursada?.IdTeacher" class="btn btn-primary btn-block"> Volver atras </a>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger">Esta cursada no puede eliminarse</div>
+    }
 </div>
+

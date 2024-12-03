@@ -20,7 +20,7 @@
 <div class="infoAula">
     <img src="@Model.Teacher.FotoTeacher" alt="Foto de perfil" class="imagen-perfil" />
     <div style="width:70%;">
-        <h1 style="padding: 5%;">Bienvenido profesor @Model.Teacher.NameTeacher @Model.Teacher.Surname</h1>
+        <h1 style="padding: 5%;">Bienvenido @(Model.Teacher.Genero == "Masculino" ? "Profesor" : "Profesora") @Model.Teacher.NameTeacher @Model.Teacher.Surname</h1>
     </div>
     
 </div>

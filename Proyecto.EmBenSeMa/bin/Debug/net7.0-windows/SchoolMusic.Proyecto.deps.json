@@ -2587,8 +2587,7 @@
           "CloudinaryDotNet": "1.26.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.20",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "7.0.12",
-          "SchoolMusic.Entidades": "1.0.0",
-          "SchoolMusic.Serv": "1.0.0"
+          "SchoolMusic.Entidades": "1.0.0"
         },
         "runtime": {
           "SchoolMusic.Web.dll": {}

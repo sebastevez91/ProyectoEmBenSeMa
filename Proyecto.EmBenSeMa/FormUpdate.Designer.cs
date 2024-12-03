@@ -52,10 +52,8 @@
             groupBox2 = new GroupBox();
             checkMostrar = new CheckBox();
             button1 = new Button();
-            pictMate = new PictureBox();
             boxDatPer.SuspendLayout();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictMate).BeginInit();
             SuspendLayout();
             // 
             // etqUpdate
@@ -334,18 +332,6 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // pictMate
-            // 
-            pictMate.BackColor = Color.Transparent;
-            pictMate.BackgroundImage = (Image)resources.GetObject("pictMate.BackgroundImage");
-            pictMate.BackgroundImageLayout = ImageLayout.Stretch;
-            pictMate.Location = new Point(24, 289);
-            pictMate.Name = "pictMate";
-            pictMate.Size = new Size(124, 140);
-            pictMate.TabIndex = 41;
-            pictMate.TabStop = false;
-            pictMate.Visible = false;
-            // 
             // FormUpdate
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -354,7 +340,6 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(654, 457);
             Controls.Add(button1);
-            Controls.Add(pictMate);
             Controls.Add(groupBox2);
             Controls.Add(btnCancelar);
             Controls.Add(btnActualizar);
@@ -367,7 +352,6 @@
             boxDatPer.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictMate).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -396,7 +380,6 @@
         private Button btnActualizar;
         private GroupBox groupBox2;
         private Button button1;
-        private PictureBox pictMate;
         private CheckBox checkMostrar;
     }
 }

@@ -365,7 +365,6 @@ C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\obj\Debug\net7.0-windows\Proyecto.EmBenSeMa.FormCourse.resources
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\obj\Debug\net7.0-windows\Proyecto.EmBenSeMa.FormLogin.resources
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\obj\Debug\net7.0-windows\Proyecto.EmBenSeMa.FormMain.resources
-C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\obj\Debug\net7.0-windows\SchoolMusic.Proyecto.FormMessage.resources
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\obj\Debug\net7.0-windows\SchoolMusic.Proyecto.FormNotification.resources
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\obj\Debug\net7.0-windows\SchoolMusic.Proyecto.FormPayment.resources
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\obj\Debug\net7.0-windows\Proyecto.EmBenSeMa.FormRegistration.resources
@@ -638,3 +637,5 @@ C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\bin\Debug\net7.0-windows\System.Text.Encodings.Web.dll
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\bin\Debug\net7.0-windows\System.Text.Json.dll
 C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\bin\Debug\net7.0-windows\runtimes\browser\lib\net7.0\System.Text.Encodings.Web.dll
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\obj\Debug\net7.0-windows\SchoolMusic.Proyecto.RecoverPassword.resources
+C:\Users\Sebastian\Desktop\Proyectos C#\Proyecto.EmBenSeMa[1]\ProyectoEmBenSeMa\Proyecto.EmBenSeMa\obj\Debug\net7.0-windows\SchoolMusic.Proyecto.FormCursada.resources

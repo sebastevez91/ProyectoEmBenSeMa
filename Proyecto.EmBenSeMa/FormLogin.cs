@@ -13,7 +13,9 @@ namespace Proyecto.EmBenSeMa
         }
         // Instancia de formulario registro
         private FormRegistration nuevoReg;
+        private RecoverPassword RecoverPassword;
         private LoginService loginService = new LoginService();
+        private Users UserSesion = null; 
         private string tipo = "";
         // Botones y checkbox
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -36,28 +38,28 @@ namespace Proyecto.EmBenSeMa
         {
             FormStudent viewStudent = new FormStudent();
             FormTeacher viewTeachear = new FormTeacher();
-            FormMessage formMessage = new FormMessage();
 
             if (txtUsuario.Text != "" || txtContrasena.Text != "")
             {
-                if (loginService.LoginValido(txtUsuario.Text, txtContrasena.Text))
+                UserSesion = loginService.LoginValido(txtUsuario.Text, txtContrasena.Text);
+                if (UserSesion != null)
                 {
                     MessageBox.Show("Ha iniciado correctamente!!! " + txtUsuario.Text);
-                    if (etqPlataforma.Text == "Plataforma para Alumnos")
+                    if (UserSesion.Rol == "Alumno")
                     {
 
                         viewStudent.Show();
-                        viewStudent.ShowData(loginService.UserSession());
+                        viewStudent.ShowData(UserSesion);
                     }
-                    else
+                    else if (UserSesion.Rol == "Profesor")
                     {
                         viewTeachear.Show();
-                        viewTeachear.ShowData(loginService.UserSession());
+                        viewTeachear.ShowData(UserSesion);
                     }
                 }
                 else
                 {
-                    formMessage.Show();
+                    MessageBox.Show("Usuario no registrado!");
                 }
                 this.Close();
             }
@@ -89,16 +91,6 @@ namespace Proyecto.EmBenSeMa
                 nuevoReg = new FormRegistration();
             }
 
-            // Personaliza el título según el valor de nameForm
-            if (etqPlataforma.Text == "Plataforma para Profesores")
-            {
-                nuevoReg.ShowCourse("Nuevo Profesor");
-            }
-            else
-            {
-                nuevoReg.ShowCourse("Nuevo Alumno");
-            }
-
             // Verifica si el formulario está visible
             if (nuevoReg.Visible)
             {
@@ -109,94 +101,38 @@ namespace Proyecto.EmBenSeMa
             // Muestra el formulario actual
             this.Visible = true;
         }
-        // Limpiar campos y cambiar titulo
-        public void ChangeTitle(string tipo)
+        private void viewRecoverPassword()
         {
-            this.tipo = loginService.TipoUser(tipo);
-            etqPlataforma.Text = "Plataforma para " + tipo;
+            // Verifica si ya existe una instancia del formulario
+            if (RecoverPassword == null || RecoverPassword.IsDisposed)
+            {
+                // Si no existe, crea una nueva instancia
+                RecoverPassword = new RecoverPassword();
+            }
+
+            // Verifica si el formulario está visible
+            if (RecoverPassword.Visible)
+            {
+                // Si está visible, cierra la instancia existente
+                RecoverPassword.Close();
+            }
+
+            // Muestra el formulario actual
+            this.Visible = true;
         }
         // Cambiar contraseña
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //Activo
-            etqPlataforma.Text = "Recuperar contraseña";
-            ChangePassword();
-        }
-        private void btnCambiar_Click(object sender, EventArgs e)
-        {
-            if (txtUsuario.Text == "" || txtContrasena.Text == "")
+            try
             {
-                MessageBox.Show("Completa los campos requeridos");
+                viewRecoverPassword();
+                RecoverPassword.Show();
             }
-            else
+            catch (System.ObjectDisposedException)
             {
-                if (tipo == "Student")
-                {
-                    if (loginService.RecoverPasswordStudent(txtContrasena.Text, txtUsuario.Text))
-                    {
-                        MessageBox.Show("Te enviamos un correo a tu email");
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Hay errores en la validación de tu usuario");
-                        this.Close();
-                    }
-                }
-                else
-                {
-                    if (loginService.RecoverPasswordTeacher(txtContrasena.Text, txtUsuario.Text))
-                    {
-                        MessageBox.Show("Te enviamos un correo a tu email");
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Hay errores en la validación de tu usuario");
-                        this.Close();
-                    }
-                }
+
+                MessageBox.Show("No se puede abrir más de una ventana", "Error de instanciación", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private void ChangePassword()
-        {
-            txtUsuario.Text = "";
-            txtContrasena.Text = "";
-            etqUsuario.Text = "Tu email:";
-            etqPass.Text = "Ingresar dni:";
-            txtUsuario.PlaceholderText = "Ingrese su email";
-            txtContrasena.PlaceholderText = "Ingrese tu dni";
-            btnInicio.Visible = false;
-            btnRegistrarse.Visible = false;
-            checkMostrar.Visible = false;
-            checkMostrar.Checked = true;
-            linkCambiar.Visible = false;
-            btnCambiar.Visible = true;
-            btnVolver.Visible = true;
-        }
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            if(tipo == "Student")
-            {
-                ChangeTitle("Alumnos");
-            }
-            else
-            {
-                ChangeTitle("Profesores");
-            }
-            txtUsuario.Text = "";
-            txtContrasena.Text = "";
-            etqUsuario.Text = "Usuario:";
-            etqPass.Text = "Contraseña:";
-            txtUsuario.PlaceholderText = "Ingrese su usuario";
-            txtContrasena.PlaceholderText = "Ingrese tu Contraseña";
-            btnInicio.Visible = true;
-            btnRegistrarse.Visible = true;
-            checkMostrar.Visible = true;
-            checkMostrar.Checked = false;
-            linkCambiar.Visible = true;
-            btnCambiar.Visible = false;
-            btnVolver.Visible = false;
         }
     }
 }

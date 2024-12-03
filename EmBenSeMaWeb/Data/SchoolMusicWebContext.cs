@@ -81,5 +81,7 @@ namespace SchoolMusic.Web.Data
         public DbSet<SchoolMusic.Entidades.Coment> Coment { get; set; } = default!;
 
         public DbSet<SchoolMusic.Entidades.Payment> Payment { get; set; } = default!;
+
+        public DbSet<SchoolMusic.Entidades.Assitance> Assitance { get; set; } = default!;
     }
 }

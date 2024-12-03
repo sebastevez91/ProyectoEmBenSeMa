@@ -81,6 +81,7 @@
                             <a asp-page="/Tablons/index" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Tablón</a>
                             <a asp-page="/Students/Index" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Alumnos</a>
                             <a asp-page="./Edit" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Modificar</a>
+                            <a asp-page="./TomarAsistencia" asp-route-id="@cursada?.IdCursada" class="btn btn-primary">Tomar Asistencia</a>
                             <a asp-page="./Delete" asp-route-id="@cursada?.IdCursada" class="btn-danger btn">Eliminar</a>
                         </div>
                     </dl>

@@ -467,3 +467,50 @@ h1, h2, p, td, label, .text-item {
     color: white;
     border: 1px solid #dddddd;
 }
+
+/* Destalles de publicación */
+.comment-section {
+    background-color: powderblue;
+    border: 3px solid #664d03;
+    padding: 10px;
+    font-size: 0.9rem;
+    color:black;
+}
+
+    .comment-section h4 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+.comment-fieldset {
+    border: 1px solid #000;
+    padding: 5px;
+    background-color: white;
+    color: black;
+    margin: 5px 0;
+}
+
+    .comment-fieldset strong {
+        font-size: 0.9rem;
+    }
+
+    .comment-fieldset small {
+        font-size: 0.8rem;
+    }
+
+    .comment-fieldset p {
+        font-size: 0.9rem;
+        color: black;
+    }
+
+.comment-form textarea {
+    font-size: 0.85rem;
+    padding: 5px;
+    height: 50px;
+}
+
+.comment-form .btn {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+}
+

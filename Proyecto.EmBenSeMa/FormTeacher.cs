@@ -6,9 +6,11 @@ namespace SchoolMusic.Proyecto
 {
     public partial class FormTeacher : Form
     {
+        private FormCursada FormCursada;
         public FormTeacher()
         {
             InitializeComponent();
+            FormCursada = new FormCursada();
         }
         // Declaración de variables globales
         private TeacherService teacherService = new TeacherService();
@@ -44,34 +46,10 @@ namespace SchoolMusic.Proyecto
                 MessageBox.Show("El usuario no es un profesor");
             }
         }
-        private void ShowStudent()
-        {
-            ListViewItem item = new ListViewItem();
-            Course course = new Course();
-            lvCursada.Items.Clear();
-            foreach (Cursada cur in listCursada)
-            {
-                listStudent = teacherService.GetStudentList(cur.IdCursada);
-                course = teacherService.GetCourse(cur.IdCourse);
-                foreach (Student student in listStudent)
-                {
-                    item = lvCursada.Items.Add(student.NameStudent.ToString());
-                    item.SubItems.Add(student.Surname);
-                    item.SubItems.Add(course.Instrument);
-                    item.SubItems.Add(cur.StarTime.ToString("HH:mm") + " a " + cur.EndTime.ToString("HH:mm"));
-                }
-            }
-        }
         // Botones
         private void btnSalir_Click(object sender, EventArgs e)
         {
             CloseSessión();
-        }
-        private void btnMostrar_Click_1(object sender, EventArgs e)
-        {
-
-            ShowStudent();
-
         }
         private void btnNotificacion_Click(object sender, EventArgs e)
         {
@@ -99,9 +77,9 @@ namespace SchoolMusic.Proyecto
                 else
                 {
                     selectValue = int.Parse(comboCursada.SelectedValue.ToString());
-                    viewTablon();
-                    formTablon.SesionTablon(userSession, selectValue, "Teacher");
-                    formTablon.Show();
+                    viewCursada();
+                    FormCursada.ShowCursada(selectValue);
+                    FormCursada.Show();
                 }
             }
             catch (System.ObjectDisposedException)
@@ -165,9 +143,9 @@ namespace SchoolMusic.Proyecto
         {
             try
             {
-                viewTablon();
-                formTablon.SesionTablon(userSession, selectValue, "Teacher");
-                formTablon.Show();
+                //viewTablon();
+                //formTablon.SesionTablon(userSession, selectValue, "Teacher");
+                //formTablon.Show();
             }
             catch (System.ObjectDisposedException)
             {
@@ -233,20 +211,20 @@ namespace SchoolMusic.Proyecto
             // Muestra el formulario actual
             this.Visible = true;
         }
-        private void viewTablon()
+        private void viewCursada()
         {
             // Verifica si ya existe una instancia del formulario
-            if (formTablon == null || formTablon.IsDisposed)
+            if (FormCursada == null || FormCursada.IsDisposed)
             {
                 // Si no existe, crea una nueva instancia
-                formTablon = new FormTablon();
+                FormCursada = new FormCursada();
             }
 
             // Verifica si el formulario está visible
-            if (formTablon.Visible)
+            if (FormCursada.Visible)
             {
                 // Si está visible, cierra la instancia existente
-                formTablon.Close();
+                FormCursada.Close();
             }
 
             // Muestra el formulario actual
@@ -320,7 +298,6 @@ namespace SchoolMusic.Proyecto
                             }
                         }
                     }
-                    ShowStudent();
                 }
                 else
                 {
@@ -361,7 +338,7 @@ namespace SchoolMusic.Proyecto
                 comboCursada.DisplayMember = "IdCursada";
                 comboCursada.ValueMember = "IdCursada";
                 comboCursada.SelectedIndex = -1;
-                btnTablon.Enabled = true;
+                btnCursada.Enabled = true;
             }
         }
     }

@@ -16,9 +16,8 @@ namespace SchoolMusic.Serv
         Users userFound = null;
         Student student = null;
         Teacher teacher = null;
-        public bool LoginValido(string username, string password)
+        public Users LoginValido(string username, string password)
         {
-            int result = 0;
             // Agrego parametros
             prm.Add("@username", username);
             prm.Add("@userPassword", password);
@@ -31,16 +30,22 @@ namespace SchoolMusic.Serv
                 if (dataLogin != null && dataLogin.Rows.Count > 0)
                 {
                     var table = dataLogin.Rows[0];
-                    result = 1;
+
+                    userFound = new Users
+                    {
+                        IdUser = int.Parse(table["IdUser"].ToString()),
+                        Username = table["Username"].ToString(),
+                        UserPassword = table["UserPassword"].ToString(),
+                        Rol = table["Rol"].ToString()
+                    };
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
-                result = 0;
             }
 
-            return result > 0 ? true : false;
+            return userFound;
         }
         public Users UserSession()
         {

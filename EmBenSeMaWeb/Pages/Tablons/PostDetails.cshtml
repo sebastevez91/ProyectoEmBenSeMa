@@ -5,49 +5,45 @@
    ViewData["Title"] = "Detalles de la publicación";
     Layout = "_LayoutSesion";
 }
-
-<h1>@Model.Topic.Title</h1>
-<p>@Model.Topic.Content</p>
-<p><em>Publicado el @Model.Topic.DateTopic.ToString("g")</em></p>
-
-<h2>Comentarios</h2>
 <div>
-    @foreach (var comment in Model.Topic.Coments)
-    {
-        <div class="mb-2">
-            <strong>@comment.Author</strong> dijo:
-            <p>@comment.Content</p>
-            <small>@comment.DateComent.ToString("g")</small>
+    <h1>@Model.Topic.Title</h1>
+    <div class="contenido-div" style="padding: 1%;">
+        <div>
+            <p>@Model.Topic.Content</p>
+            <p><em>Publicado el @Model.Topic.DateTopic.ToString("g")</em></p>
         </div>
-    }
+
+        <div class="comment-section">
+            <h4>Comentarios</h4>
+            <div>
+                @foreach (var comment in Model.Topic.Coments)
+                {
+                    <fieldset class="comment-fieldset">
+                        <strong>@comment.Author</strong>
+                        <small>@comment.DateComent.ToString("g")</small>
+                        <p>@comment.Content</p>
+                    </fieldset>
+                }
+            </div>
+
+            <div>
+                <form method="post" class="comment-form">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Coment.IdTopic" value="@Model.Topic.IdTopic" />
+                    <input type="hidden" asp-for="Coment.DateComent" value="@DateTime.Now" />
+                    <input type="hidden" asp-for="Coment.Author" value="@User.Identity.Name" />
+                    <textarea asp-for="Coment.Content" class="form-control mb-2" placeholder="Escribe un comentario..."></textarea>
+                    <span asp-validation-for="Coment.Content" class="text-danger"></span>
+                    <div class="form-group text-center">
+                        <input type="submit" value="Comentar" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
 </div>
 
-
-<div>
-    <form method="post">
-        <!-- Mostrar errores del modelo -->
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-        <!-- Campo oculto para IdTopic -->
-        <input type="hidden" asp-for="Coment.IdTopic" value="@Model.Topic.IdTopic" />
-
-        <!-- Campo oculto para la fecha del comentario -->
-        <input type="hidden" asp-for="Coment.DateComent" value="@DateTime.Now" />
-
-        <!-- Campo oculto para el autor -->
-        <input type="hidden" asp-for="Coment.Author" value="@User.Identity.Name" />
-
-        <!-- Campo de texto para el contenido -->
-        <textarea asp-for="Coment.Content" class="form-control mb-2" placeholder="Escribe un comentario..."></textarea>
-        <span asp-validation-for="Coment.Content" class="text-danger"></span>
-
-        <!-- Botón de envío -->
-        <div class="form-group text-center">
-            <input type="submit" value="Comentar" class="btn btn-primary" />
-        </div>
-    </form>
-
-</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

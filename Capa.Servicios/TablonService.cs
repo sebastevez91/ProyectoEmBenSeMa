@@ -57,13 +57,13 @@ namespace SchoolMusic.Serv
             {
                 foreach (DataRow top in dataTopic.Rows)
                 {
-                    listTopic.Add(new Topic()
-                    {
-                        idTopic = int.Parse(top["IdTopic"].ToString()),
-                        title = top["Titulo"].ToString(),
-                        asunto = top["Asunto"].ToString(),
-                        Datetopic = Convert.ToDateTime(top["DateTopic"].ToString())
-                    });
+                    //listTopic.Add(new Topic()
+                    //{
+                    //    idTopic = int.Parse(top["IdTopic"].ToString()),
+                    //    title = top["Titulo"].ToString(),
+                    //    asunto = top["Asunto"].ToString(),
+                    //    Datetopic = Convert.ToDateTime(top["DateTopic"].ToString())
+                    //});
                 }
             }
             return listTopic;
@@ -72,9 +72,9 @@ namespace SchoolMusic.Serv
         {
             // Agrego parámetros
             prm.Clear();
-            prm.Add("@titulo", topic.title);
-            prm.Add("@asunto", topic.asunto);
-            prm.Add("@idTablon", topic.idTablon.ToString());
+            //prm.Add("@titulo", topic.title);
+            //prm.Add("@asunto", topic.asunto);
+            //prm.Add("@idTablon", topic.idTablon.ToString());
 
             // Query
             string sqlInsertTopic = "INSERT INTO Topic (Titulo,DateTopic,IdTablon,Asunto)" +
@@ -97,13 +97,13 @@ namespace SchoolMusic.Serv
             {
                 foreach (DataRow row in dataComent.Rows)
                 {
-                    listComent.Add(new Coment()
-                    {
-                        idComent = int.Parse(row["IdComentario"].ToString()),
-                        comentDesc = row["MensajeComen"].ToString(),
-                        dateComent = Convert.ToDateTime(row["DateComentario"].ToString()),
-                        nameUser = row["NameUser"].ToString()
-                    });
+                    //listComent.Add(new Coment()
+                    //{
+                    //    idComent = int.Parse(row["IdComentario"].ToString()),
+                    //    comentDesc = row["MensajeComen"].ToString(),
+                    //    dateComent = Convert.ToDateTime(row["DateComentario"].ToString()),
+                    //    nameUser = row["NameUser"].ToString()
+                    //});
                 }
             }
             return listComent;
@@ -112,10 +112,10 @@ namespace SchoolMusic.Serv
         {
             int result = 0;
             // Agrego parámetros
-            prm.Clear();
-            prm.Add("@mensajeComen", coment.comentDesc);
-            prm.Add("@nameUser", coment.nameUser);
-            prm.Add("@idTopic", coment.idTopic.ToString());
+            //prm.Clear();
+            //prm.Add("@mensajeComen", coment.comentDesc);
+            //prm.Add("@nameUser", coment.nameUser);
+            //prm.Add("@idTopic", coment.idTopic.ToString());
 
             // Query
             string sqlInsertComent = "INSERT INTO Comentario (MensajeComen,DateComentario,NameUser,IdTopic)" +

@@ -8,8 +8,7 @@
 
 <h1> Detalles de tus inscripciones </h1>
 
-<table class="table" style="color:white;background-color: black;
-    border: 1px solid #dddddd;">
+<table class="table contenido-div">
     <thead>
         <tr>
             <th>
@@ -60,6 +59,7 @@
                                 <img src="~/img/mensaje.png" alt="mensaje" class="icon-image" title="Enviar un mensaje" />
                             </a>
                         </button>
+                        <a asp-page="/Tablons/index" asp-route-id="@item.Cursada.IdCursada" class="btn">Tablón</a>
                     </div>
             </td>
         </tr>
