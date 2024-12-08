@@ -3,76 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\proyecto.embensema\\formstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\proyecto.embensema\\formtablon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formtablon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\proyecto.embensema\\formcursada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formcursada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\capa.servicios\\tablonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|solutionrelative:capa.servicios\\tablonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\proyecto.embensema\\formcursada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formcursada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\proyecto.embensema\\formnotification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formnotification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\proyecto.embensema\\formnotification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formnotification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\proyecto.embensema\\formteacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formteacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\capa.servicios\\cursadaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|solutionrelative:capa.servicios\\cursadaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\capa.servicios\\teacherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|solutionrelative:capa.servicios\\teacherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\proyecto.embensema\\formteacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formteacher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\proyecto.embensema\\formstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formstudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\proyecto.embensema\\formcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\proyecto.embensema\\formcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formcourse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\capa.servicios\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|solutionrelative:capa.servicios\\courseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\capa.servicios\\studentsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|solutionrelative:capa.servicios\\studentsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\capa.servicios\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A063E5E6-C64A-4F9B-9276-8504BB23156C}|Capa.Servicios\\SchoolMusic.Serv.csproj|solutionrelative:capa.servicios\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\proyecto.embensema\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\proyecto.embensema\\formupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\proyecto.embensema\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|c:\\users\\sebastian\\desktop\\proyectos c#\\proyecto.embensema[1]\\proyectoembensema\\proyecto.embensema\\formtablon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{22ABB36A-2245-4007-BFCB-F1089F129D60}|Proyecto.EmBenSeMa\\SchoolMusic.Proyecto.csproj|solutionrelative:proyecto.embensema\\formtablon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 20,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -98,220 +38,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "FormCourse.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormCourse.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormCourse.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormCourse.cs",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormCourse.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAYwGgAAAA/AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T21:09:43.023Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "StudentsService.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\StudentsService.cs",
-              "RelativeDocumentMoniker": "Capa.Servicios\\StudentsService.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\StudentsService.cs",
-              "RelativeToolTip": "Capa.Servicios\\StudentsService.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAowHkAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T20:50:22.399Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TeacherService.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\TeacherService.cs",
-              "RelativeDocumentMoniker": "Capa.Servicios\\TeacherService.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\TeacherService.cs",
-              "RelativeToolTip": "Capa.Servicios\\TeacherService.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAA1wLgAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T20:50:13.18Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CourseService.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\CourseService.cs",
-              "RelativeDocumentMoniker": "Capa.Servicios\\CourseService.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\CourseService.cs",
-              "RelativeToolTip": "Capa.Servicios\\CourseService.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwGUAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T20:46:27.342Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CursadaService.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\CursadaService.cs",
-              "RelativeDocumentMoniker": "Capa.Servicios\\CursadaService.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\CursadaService.cs",
-              "RelativeToolTip": "Capa.Servicios\\CursadaService.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAwwHAAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T20:46:10.725Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormCursada.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormCursada.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormCursada.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormCursada.cs",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormCursada.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAADwv1QAAAArAAAA",
+              "Title": "TablonService.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\TablonService.cs",
+              "RelativeDocumentMoniker": "Capa.Servicios\\TablonService.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\TablonService.cs",
+              "RelativeToolTip": "Capa.Servicios\\TablonService.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwJ0AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T20:44:33.05Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormCursada.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormCursada.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormCursada.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormCursada.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormCursada.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T20:35:46.223Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FormTeacher.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormTeacher.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormTeacher.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormTeacher.cs",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormTeacher.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAYwCsBAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T20:30:05.024Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FormTeacher.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormTeacher.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormTeacher.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormTeacher.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormTeacher.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T20:25:53.324Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FormNotification.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormNotification.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormNotification.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormNotification.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormNotification.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T17:56:19.049Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "FormLogin.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormLogin.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormLogin.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormLogin.cs",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormLogin.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAywCkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T15:25:10.703Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "FormUpdate.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormUpdate.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormUpdate.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormUpdate.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormUpdate.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T15:14:32.281Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "FormMain.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormMain.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormMain.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormMain.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormMain.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T15:11:48.978Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "FormCourse.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormCourse.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormCourse.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormCourse.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormCourse.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T15:02:16.012Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormNotification.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormNotification.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormNotification.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormNotification.cs",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormNotification.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAuwEsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T14:57:33.709Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "NotificationService.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\NotificationService.cs",
-              "RelativeDocumentMoniker": "Capa.Servicios\\NotificationService.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Capa.Servicios\\NotificationService.cs",
-              "RelativeToolTip": "Capa.Servicios\\NotificationService.cs",
-              "ViewState": "AQIAAFIAAAAAAAAAAAD4vx8AAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T14:57:33.73Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "FormStudent.cs",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormStudent.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormStudent.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormStudent.cs",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormStudent.cs",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAIwH8BAABDAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T14:55:26.43Z",
+              "WhenOpened": "2024-12-08T22:38:52.495Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FormStudent.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormStudent.cs",
-              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormStudent.cs",
-              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormStudent.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormStudent.cs [Dise\u00F1o]",
+              "Title": "FormTablon.cs",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormTablon.cs",
+              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormTablon.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormTablon.cs",
+              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormTablon.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAqwBoAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T14:54:14.404Z",
+              "WhenOpened": "2024-12-08T22:23:15.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormTablon.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormTablon.cs",
+              "RelativeDocumentMoniker": "Proyecto.EmBenSeMa\\FormTablon.cs",
+              "ToolTip": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\Proyecto.EmBenSeMa\\FormTablon.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Proyecto.EmBenSeMa\\FormTablon.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T22:22:50.107Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]
