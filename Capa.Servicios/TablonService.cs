@@ -11,83 +11,54 @@ namespace SchoolMusic.Serv
         private CnxSelect select = new CnxSelect();
         private CnxAccion accion = new CnxAccion();
         List<Topic> listTopic = new List<Topic>();
-        public Tablon GetTablon(string idCursada)
-        {
-            Tablon tablon = null;
-
-            // Agrego parámetros 
-            prm.Clear();
-            prm.Add("@idCursada", idCursada);
-
-            // Query
-            string sqlSelectTablon = "SELECT * FROM Tablon WHERE IdCursada = @idCursada";
-            try
-            {
-                var dataTablon = select.SelectData(sqlSelectTablon, prm);
-                if (dataTablon.Rows.Count > 0)
-                {
-                    var table = dataTablon.Rows[0];
-                    tablon = new Tablon()
-                    {
-                        idTablon = int.Parse(table["IdTablon"].ToString()),
-                        idCursada = int.Parse(table["IdCursada"].ToString())
-                    };
-                }
-
-            }
-            catch (Exception e)
-            {
-
-               Console.WriteLine("Error: " + e.Message);
-            }
-            return tablon;
-        }
-        public List<Topic> GetListTopic(int idTablon)
+        public List<Topic> GetListTopic(int id)
         {
             // Agrego los parámetros
             listTopic.Clear();
             prm.Clear();
-            prm.Add("@idTablon", idTablon.ToString());
+            prm.Add("@idCursada", id.ToString());
 
             // Query
-            string sqlSelectTopic = "SELECT * FROM Topic WHERE IdTablon = @idTablon";
+            string sqlSelectTopic = "SELECT * FROM Topic WHERE IdCursada = @idCursada";
             var dataTopic = select.SelectData(sqlSelectTopic, prm);
 
             if (dataTopic != null && dataTopic.Rows.Count > 0)
             {
                 foreach (DataRow top in dataTopic.Rows)
                 {
-                    //listTopic.Add(new Topic()
-                    //{
-                    //    idTopic = int.Parse(top["IdTopic"].ToString()),
-                    //    title = top["Titulo"].ToString(),
-                    //    asunto = top["Asunto"].ToString(),
-                    //    Datetopic = Convert.ToDateTime(top["DateTopic"].ToString())
-                    //});
+                    listTopic.Add(new Topic()
+                    {
+                        IdTopic = int.Parse(top["IdTopic"].ToString()),
+                        Title = top["Title"].ToString(),
+                        Content = top["Content"].ToString(),
+                        DateTopic = Convert.ToDateTime(top["DateTopic"].ToString())
+                    });
                 }
             }
             return listTopic;
         }
-        public void SetTopic(Topic topic)
+        public bool SetTopic(Topic topic)
         {
             // Agrego parámetros
             prm.Clear();
-            //prm.Add("@titulo", topic.title);
-            //prm.Add("@asunto", topic.asunto);
-            //prm.Add("@idTablon", topic.idTablon.ToString());
+            prm.Add("@title", topic.Title);
+            prm.Add("@content", topic.Content);
+            prm.Add("@idCursada", topic.IdCursada.ToString());
 
             // Query
-            string sqlInsertTopic = "INSERT INTO Topic (Titulo,DateTopic,IdTablon,Asunto)" +
-                "VALUES (@titulo,GETDATE(),@idTablon,@asunto)";
+            string sqlInsertTopic = "INSERT INTO Topic (Title,DateTopic,IdCursada,Content)" +
+                "VALUES (@title,GETDATE(),@idCursada,@content)";
             var result = accion.AccionEjecutar(sqlInsertTopic, prm);
+            
+            return result < 0 ? true: false;
         }
-        public List<Coment> GetListComent(string idTopic)
+        public List<Coment> GetListComent(string id)
         {
             List<Coment> listComent = new List<Coment>();
 
             // Agrego parámetros 
             prm.Clear();
-            prm.Add("@idTopic", idTopic);
+            prm.Add("@idTopic", id);
 
             // Query
             string sqlSelectComent = "SELECT * FROM Comentario WHERE IdTopic = @idTopic";
@@ -97,45 +68,46 @@ namespace SchoolMusic.Serv
             {
                 foreach (DataRow row in dataComent.Rows)
                 {
-                    //listComent.Add(new Coment()
-                    //{
-                    //    idComent = int.Parse(row["IdComentario"].ToString()),
-                    //    comentDesc = row["MensajeComen"].ToString(),
-                    //    dateComent = Convert.ToDateTime(row["DateComentario"].ToString()),
-                    //    nameUser = row["NameUser"].ToString()
-                    //});
+                    listComent.Add(new Coment()
+                    {
+                        IdComent = int.Parse(row["IdComent"].ToString()),
+                        IdTopic = int.Parse(row["IdTopic"].ToString()),
+                        Content = row["Content"].ToString(),
+                        DateComent = Convert.ToDateTime(row["DateComent"].ToString()),
+                        Author = row["Author"].ToString()
+                    });
                 }
             }
             return listComent;
         }
-        public void SetComent(Coment coment)
+        public bool SetComent(Coment coment)
         {
             int result = 0;
             // Agrego parámetros
-            //prm.Clear();
-            //prm.Add("@mensajeComen", coment.comentDesc);
-            //prm.Add("@nameUser", coment.nameUser);
-            //prm.Add("@idTopic", coment.idTopic.ToString());
+            prm.Clear();
+            prm.Add("@content", coment.Content);
+            prm.Add("@author", coment.Author);
+            prm.Add("@idTopic", coment.IdTopic.ToString());
 
             // Query
-            string sqlInsertComent = "INSERT INTO Comentario (MensajeComen,DateComentario,NameUser,IdTopic)" +
-                "VALUES (@mensajeComen,GETDATE(),@nameUser,@idTopic)";
+            string sqlInsertComent = "INSERT INTO Comentario (Content,DateComent,Author,IdTopic)" +
+                "VALUES (@content,GETDATE(),@author,@idTopic)";
+
             result = accion.AccionEjecutar(sqlInsertComent, prm);
-            if (result < 0 && result == null)
-            {
-                //MessageBox.Show("Hubo problemas al agregar el comentario");
-            }
+
+
+            return result < 0 ? true: false;
         }
-        public string GetNameUser(int idUser, string tipo)
+        public string GetNameUser(Users users)
         {
             string nameUser = "";
 
             // Agrego parámetros
             prm.Clear();
-            prm.Add("@idUser", idUser.ToString());
+            prm.Add("@idUser", users.IdUser.ToString());
 
             // Query
-            string sqlSelect = tipo == "Student"
+            string sqlSelect = users.Rol == "Alumno"
                 ? "SELECT CONCAT(NameStudent, ' ', Surname) AS completoName FROM Student WHERE IdUser = @idUser"
                 : "SELECT CONCAT('Prof.',NameTeacher, ' ', Surname) AS completoName FROM Teacher WHERE IdUser = @idUser";
 
@@ -157,13 +129,13 @@ namespace SchoolMusic.Serv
 
             return nameUser;
         }
-        public string GetNameTeacher(int idTeacher)
+        public string GetNameTeacher(int id)
         {
             string nameTeacher = "";
 
             // Agrego parámetros
             prm.Clear();
-            prm.Add("@idTeacher", idTeacher.ToString());
+            prm.Add("@idTeacher", id.ToString());
 
             try
             {
@@ -183,30 +155,6 @@ namespace SchoolMusic.Serv
                 nameTeacher = "Unknown User";
             }
             return nameTeacher;
-        }
-        public void DeleteTopic(int idTopic)
-        {
-            int result = 0;
-            // Agrego parámetros
-            prm.Clear();
-            prm.Add("@idTopic", idTopic.ToString());
-
-            //DialogResult dialogResult = MessageBox.Show("¿Deseá eliminar el anuncio?", "Confirmación de eliminación", MessageBoxButtons.YesNo);
-            //if (dialogResult == DialogResult.Yes)
-            //{
-            //    // Query
-            //    string sqlDeleteTopic = "DELETE FROM Topic WHERE IdTopic = @idTopic";
-            //    result = accion.AccionEjecutar(sqlDeleteTopic, prm);
-
-            //    if (result > 0)
-            //    {
-            //        MessageBox.Show("Anuncio eliminado");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("No se pudo eliminar el anuncio");
-            //    }
-            //}
         }
         public string GetNameCourse(int idCourse)
         {

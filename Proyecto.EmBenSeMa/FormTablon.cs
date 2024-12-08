@@ -10,15 +10,13 @@ namespace SchoolMusic.Proyecto
             InitializeComponent();
         }
         private TablonService tablonService = new TablonService();
-        private Tablon tablon = new Tablon();
         private Cursada cursada = new Cursada();
         private Users userSession = new Users();
         private List<Topic> topics = new List<Topic>();
         private List<Coment> coments = new List<Coment>();
         private string itemElegido = "";
-        private string tipo = "";
 
-        public void SesionTablon(Users user, int idCursada, string tipoUser)
+        public void SesionTablon(Users user, int idCursada)
         {
             // Usuario en sesión
             userSession = user;
@@ -28,47 +26,42 @@ namespace SchoolMusic.Proyecto
             tittle.Text = $"Cursada de {tablonService.GetNameCourse(cursada.IdCourse)}, de {cursada.StarTime.ToString("HH:mm")} a {cursada.EndTime.ToString("HH:mm")}";
             profesor.Text = $"Profesor {tablonService.GetNameTeacher(cursada.IdTeacher)}";
             // Indico el tipo de usuario
-            tipo = tipoUser;
-            if (tipo == "Student")
+            if (user.Rol == "Alumno")
             {
-                btnEliminar.Visible = true;
                 grBoxAnuncio.Enabled = false;
             }
-            else
-            {
-                btnEliminar.Visible = false;
-                grBoxAnuncio.Enabled = true;
-            }
-            // Tablón en sesión, según cursada
-            tablon = tablonService.GetTablon(idCursada.ToString());
+
             // Limpio la lista de topics
             topics.Clear();
-            // Cargo la lista de topics
-            if (tablon != null)
-            {
-                topics = tablonService.GetListTopic(tablon.idTablon);
-                // Actualizo el listBox que contiene los topics
-                UpdateListBox();
-            }
+
+            // Lista de topics
+            UpdateListBox(idCursada);
         }
         // Botones
         private void button1_Click(object sender, EventArgs e)
         {
             // Instanciamos un nuevo topic
             Topic topic = new Topic();
+
             // Botón Publicar anuncio
             if (txtTitulo.Text != string.Empty && txtAnuncio.Text != string.Empty)
             {
                 // Asignamos los valores a un nuevo topic
-                //topic.title = txtTitulo.Text;
-                //topic.asunto = txtAnuncio.Text;
-                //topic.idTablon = tablon.idTablon;
+                topic.Title = txtTitulo.Text;
+                topic.Content = txtAnuncio.Text;
+                topic.IdCursada = cursada.IdCursada;
+
                 // Cargo el nuevo topic a la base de datos
-                tablonService.SetTopic(topic);
+                if (!tablonService.SetTopic(topic))
+                {
+                    MessageBox.Show("No se pudo publicar el nuevo anuncio");
+                }
+
                 // Limpio el listbox de topics
                 listTopic.DataSource = null;
+
                 // Actualizo el listBox de topics
-                UpdateListBox();
+                UpdateListBox(topic.IdCursada);
             }
             else
             {
@@ -86,13 +79,19 @@ namespace SchoolMusic.Proyecto
             if (txtComentario.Text != string.Empty)
             {
                 // Asignamos los nuevos valores al nuevo comentario
-                //coment.comentDesc = txtComentario.Text;
-                //coment.idTopic = int.Parse(itemElegido);
-                //coment.nameUser = tablonService.GetNameUser(userSession.IdUser,tipo);
+                coment.Content = txtComentario.Text;
+                coment.IdTopic = int.Parse(listTopic.SelectedValue.ToString());
+                coment.Author = tablonService.GetNameUser(userSession);
+
                 // Cargo el nuevo comentario a la base de datos
-                tablonService.SetComent(coment);
+                if (!tablonService.SetComent(coment))
+                {
+                    MessageBox.Show("No se pudo comentar la publicación");
+                }
+
                 // Actualizo el TreeView con el nuevo comentario
-                UpdateTreeView(itemElegido);
+                UpdateTreeView(listTopic.SelectedValue.ToString());
+
                 // Limpio el campo de comentario
                 txtComentario.Text = string.Empty;
             }
@@ -102,13 +101,15 @@ namespace SchoolMusic.Proyecto
             }
 
         }
-        private void UpdateTreeView(string idTopic)
+        private void UpdateTreeView(string id)
         {
             try
             {
-                itemElegido = idTopic;
+                // Almaceno id del topic elegido
+                itemElegido = id;
+
                 // Obtener la lista de temas
-                coments = tablonService.GetListComent(idTopic);
+                coments = tablonService.GetListComent(id);
 
                 // Limpiar el TreeView
                 trViewComent.Nodes.Clear();
@@ -117,9 +118,9 @@ namespace SchoolMusic.Proyecto
                 foreach (Coment com in coments)
                 {
                     // Agregar al nodo de comentario
-                    //TreeNode comentNodo = new TreeNode($"***{com.nameUser}***  Fecha : {com.dateComent}");
-                    //trViewComent.Nodes.Add(comentNodo);
-                    //comentNodo.Nodes.Add(com.comentDesc);
+                    TreeNode comentNodo = new TreeNode($"***{com.Author}***  Fecha : {com.DateComent}");
+                    trViewComent.Nodes.Add(comentNodo);
+                    comentNodo.Nodes.Add(com.Content);
                 }
             }
             catch (Exception ex)
@@ -128,10 +129,10 @@ namespace SchoolMusic.Proyecto
                 Console.WriteLine($"Error al actualizar los comentarios: {ex.Message}");
             }
         }
-        private void UpdateListBox()
+        private void UpdateListBox(int id)
         {
-            listTopic.DataSource = tablonService.GetListTopic(tablon.idTablon);
-            listTopic.DisplayMember = "title";
+            listTopic.DataSource = tablonService.GetListTopic(id);
+            listTopic.DisplayMember = "Title";
             listTopic.ValueMember = "IdTopic";
             listTopic.SelectedIndex = -1;
 
@@ -140,30 +141,16 @@ namespace SchoolMusic.Proyecto
         {
             if (listTopic.SelectedIndex >= 0)
             {
-
+                // Cargo comentarios
                 foreach (Topic top in topics)
                 {
-                    //if (top.idTopic.ToString() == listTopic.SelectedValue.ToString())
-                    //{
-                    //    etqTitulo.Text = top.title;
-                    //    contenidoAnuncio.Text = top.asunto.ToString();
-                    //    UpdateTreeView(top.idTopic.ToString());
-                    //}
+                    if (top.IdTopic.ToString() == listTopic.SelectedValue.ToString())
+                    {
+                        etqTitulo.Text = top.Title;
+                        contenidoAnuncio.Text = top.Content.ToString();
+                        UpdateTreeView(top.IdTopic.ToString());
+                    }
                 }
-            }
-        }
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (listTopic.SelectedItems.Count >= 0)
-            {
-                foreach (Topic top in topics)
-                {
-                    //if (top.idTopic == int.Parse(listTopic.SelectedValue.ToString()))
-                    //{
-                    //    tablonService.DeleteTopic(top.idTopic);
-                    //}
-                }
-                UpdateListBox();
             }
         }
     }

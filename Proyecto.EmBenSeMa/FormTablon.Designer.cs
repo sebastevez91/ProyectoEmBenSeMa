@@ -34,7 +34,6 @@
             button1 = new Button();
             txtAnuncio = new TextBox();
             groupBox2 = new GroupBox();
-            btnEliminar = new Button();
             etqTitulo = new Label();
             contenidoAnuncio = new RichTextBox();
             grBoxComen = new GroupBox();
@@ -92,7 +91,6 @@
             // groupBox2
             // 
             groupBox2.BackColor = Color.Transparent;
-            groupBox2.Controls.Add(btnEliminar);
             groupBox2.Controls.Add(etqTitulo);
             groupBox2.Controls.Add(contenidoAnuncio);
             groupBox2.Controls.Add(grBoxComen);
@@ -103,16 +101,6 @@
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Anuncios de cursada";
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Location = new Point(16, 327);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(154, 23);
-            btnEliminar.TabIndex = 9;
-            btnEliminar.Text = "Eliminar anuncio";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
             // 
             // etqTitulo
             // 
@@ -242,7 +230,6 @@
         private TreeView trViewComent;
         private TextBox txtTitulo;
         private Label etqTitulo;
-        private Button btnEliminar;
         private Label tittle;
         private Label profesor;
     }
