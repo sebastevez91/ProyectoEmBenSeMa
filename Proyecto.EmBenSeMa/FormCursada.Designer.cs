@@ -40,13 +40,13 @@
             btnEnviar = new Button();
             button3 = new Button();
             groupBoxMensaje = new GroupBox();
+            comboBoxStudent = new ComboBox();
             btnSend = new Button();
             rtxtBody = new RichTextBox();
             txtSubjet = new TextBox();
             etqBody = new Label();
             etqSubjet = new Label();
             etqFrom = new Label();
-            comboBoxStudent = new ComboBox();
             groupBox1.SuspendLayout();
             groupBoxMensaje.SuspendLayout();
             SuspendLayout();
@@ -143,6 +143,7 @@
             button3.TabIndex = 31;
             button3.Text = "Tablon";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // groupBoxMensaje
             // 
@@ -160,6 +161,14 @@
             groupBoxMensaje.TabStop = false;
             groupBoxMensaje.Text = "Mensaje";
             groupBoxMensaje.Visible = false;
+            // 
+            // comboBoxStudent
+            // 
+            comboBoxStudent.FormattingEnabled = true;
+            comboBoxStudent.Location = new Point(76, 27);
+            comboBoxStudent.Name = "comboBoxStudent";
+            comboBoxStudent.Size = new Size(262, 23);
+            comboBoxStudent.TabIndex = 6;
             // 
             // btnSend
             // 
@@ -211,14 +220,6 @@
             etqFrom.Size = new Size(33, 15);
             etqFrom.TabIndex = 0;
             etqFrom.Text = "Para:";
-            // 
-            // comboBoxStudent
-            // 
-            comboBoxStudent.FormattingEnabled = true;
-            comboBoxStudent.Location = new Point(76, 27);
-            comboBoxStudent.Name = "comboBoxStudent";
-            comboBoxStudent.Size = new Size(262, 23);
-            comboBoxStudent.TabIndex = 6;
             // 
             // FormCursada
             // 

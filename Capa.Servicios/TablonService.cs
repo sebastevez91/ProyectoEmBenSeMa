@@ -61,7 +61,7 @@ namespace SchoolMusic.Serv
             prm.Add("@idTopic", id);
 
             // Query
-            string sqlSelectComent = "SELECT * FROM Comentario WHERE IdTopic = @idTopic";
+            string sqlSelectComent = "SELECT * FROM Coment WHERE IdTopic = @idTopic";
             var dataComent = select.SelectData(sqlSelectComent, prm);
 
             if (dataComent != null && dataComent.Rows.Count > 0)

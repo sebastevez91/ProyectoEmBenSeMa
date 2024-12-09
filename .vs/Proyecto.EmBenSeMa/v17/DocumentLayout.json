@@ -1,6 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Sebastian\\Desktop\\Proyectos C#\\Proyecto.EmBenSeMa[1]\\ProyectoEmBenSeMa\\",
+<<<<<<< HEAD
   "Documents": [
     {
 <<<<<<< HEAD
@@ -32,6 +33,9 @@
 >>>>>>> secondMain
     }
   ],
+=======
+  "Documents": [],
+>>>>>>> secondMain
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -40,9 +44,13 @@
         {
           "DockedWidth": 200,
 <<<<<<< HEAD
+<<<<<<< HEAD
           "SelectedChildIndex": 3,
 =======
           "SelectedChildIndex": 4,
+>>>>>>> secondMain
+=======
+          "SelectedChildIndex": -1,
 >>>>>>> secondMain
           "Children": [
             {
@@ -56,6 +64,7 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+<<<<<<< HEAD
             },
             {
               "$type": "Document",
@@ -141,6 +150,8 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-08T22:22:50.107Z",
               "EditorCaption": " [Dise\u00F1o]"
+>>>>>>> secondMain
+=======
 >>>>>>> secondMain
             }
           ]

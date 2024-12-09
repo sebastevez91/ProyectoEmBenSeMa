@@ -15,9 +15,13 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 <<<<<<< HEAD
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c207f36c46a1efc4c8733c5e1275eeaf5cafd320")]
 =======
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7722cbe78c408edfc73d80dda07e2eb9f9ab6d8")]
+>>>>>>> secondMain
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4196fed016af7cb8b1a18707a34c6a82e4bcafa")]
 >>>>>>> secondMain
 [assembly: System.Reflection.AssemblyProductAttribute("SchoolMusic.Serv")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SchoolMusic.Serv")]

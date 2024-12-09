@@ -19,50 +19,14 @@ namespace SchoolMusic.Proyecto
         private FormUpdate updateStudent = new FormUpdate();
         private FormNotification notification;
         private FormContact formContact;
-        private FormPayment payment;
         private FormCourse formCursos;
         private FormTablon formTablon;
         List<Cursada> listCursada = new List<Cursada>();
-        List<Course> listCourse = new List<Course>();
         ListViewItem item = new ListViewItem();
-        // Muestra de Datos y Curso
-        private void CourseDate()
+
+        public void ShowData(Users users)
         {
-            listCourse.Clear();
-            foreach (Cursada cursoStudent in listCursada)
-            {
-                listCourse.Add(studentsService.GetCourse(cursoStudent.IdCourse));
-            }
-        }
-        private void ShowInfo()
-        {
-            string completoName = "";
-            Course course = null;
-            lvCursos.Items.Clear();
-            if(listCursada.Count <= 0)
-            {
-                btnCanceCurs.Enabled = false;
-                btnTablon.Enabled = false;
-                btnPay.Enabled = false;
-                pagosToolStripMenuItem.Enabled = false;
-                foroToolStripMenuItem.Enabled = false;
-            }
-            foreach (Cursada c in listCursada)
-            {
-                course = studentsService.GetCourse(c.IdCourse);
-                teacher = studentsService.GetTeacher(c.IdTeacher);
-                completoName = teacher.NameTeacher + " " + teacher.Surname;
-                item = lvCursos.Items.Add(c.IdCursada.ToString());
-                item.SubItems.Add(completoName);
-                item.SubItems.Add(course.Instrument);
-                item.SubItems.Add(c.StarTime.ToString());
-                item.SubItems.Add(c.EndTime.ToString());
-            }
-            CourseDate();
-        }
-        public void ShowData(Users userSesion)
-        {
-            this.userSesion = userSesion;
+            this.userSesion = users;
             student = studentsService.GetStudent(userSesion.IdUser);
 
             if (student != null)
@@ -71,10 +35,6 @@ namespace SchoolMusic.Proyecto
                 etqData.Text = $"NOMBRE COMPLETO: {student.NameStudent} {student.Surname}\n" +
                     $"DNI: {student.Dni}  EDAD: {student.Age}\n" +
                     $"CORREO: {student.Mail}\n";
-
-                // Traemos las cursadas a las que está inscripto
-                listCursada = studentsService.GetListCursada(student.IdStudent);
-                CourseDate();
             }
             else
             {
@@ -82,6 +42,32 @@ namespace SchoolMusic.Proyecto
                 MessageBox.Show("El usuario no es un alumno");
             }
 
+        }
+        private void ShowInfo()
+        {
+            Course course = null;
+            lvCursos.Items.Clear();
+            if(listCursada.Count <= 0)
+            {
+                btnTablon.Enabled = false;
+                foroToolStripMenuItem.Enabled = false;
+            }
+
+            foreach (Cursada c in listCursada)
+            {
+                // Nombre del curso
+                course = studentsService.GetCourse(c.IdCourse);
+
+                // Profesor del cursada
+                teacher = studentsService.GetTeacher(c.IdTeacher);
+
+                // Muestro los datos en la listBox
+                item = lvCursos.Items.Add(c.IdCursada.ToString());
+                item.SubItems.Add(teacher.NameTeacher + " " + teacher.Surname);
+                item.SubItems.Add(course.Instrument);
+                item.SubItems.Add(c.StarTime.ToString("t"));
+                item.SubItems.Add(c.EndTime.ToString("t"));
+            }
         }
         // Botones
         private void btnSalir_Click(object sender, EventArgs e)
@@ -116,23 +102,9 @@ namespace SchoolMusic.Proyecto
                 MessageBox.Show("No se puede abrir más de una ventana", "Error de instanciación", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                viewPayment();
-                payment.ShowPaymentStudent(student, "Student");
-                payment.Show();
-            }
-            catch (System.ObjectDisposedException)
-            {
-
-                MessageBox.Show("No se puede abrir más de una ventana", "Error de instanciación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            student = studentsService.GetStudent(userSesion.IdUser);
+            // Traemos las cursadas a las que está inscripto
             listCursada = studentsService.GetListCursada(student.IdStudent);
             if (listCursada.Count <= 0)
             {
@@ -145,7 +117,7 @@ namespace SchoolMusic.Proyecto
             try
             {
                 viewTablon();
-                formTablon.SesionTablon(userSesion, idCursada, "Student");
+                formTablon.SesionTablon(userSesion, idCursada);
                 formTablon.Show();
             }
             catch (System.ObjectDisposedException)
@@ -205,26 +177,12 @@ namespace SchoolMusic.Proyecto
         {
             MessageBox.Show("School Music EmBenSeMa version 2.1");
         }
-        private void pagosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                viewPayment();
-                payment.ShowPaymentStudent(student, "Student");
-                payment.Show();
-            }
-            catch (System.ObjectDisposedException)
-            {
-
-                MessageBox.Show("No se puede abrir más de una ventana", "Error de instanciación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         private void foroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
                 viewTablon();
-                formTablon.SesionTablon(userSesion, idCursada, "Student");
+                formTablon.SesionTablon(userSesion, idCursada);
                 formTablon.Show();
             }
             catch (System.ObjectDisposedException)
@@ -267,25 +225,6 @@ namespace SchoolMusic.Proyecto
             {
                 // Si está visible, cierra la instancia existente
                 formContact.Close();
-            }
-
-            // Muestra el formulario actual
-            this.Visible = true;
-        }
-        private void viewPayment()
-        {
-            // Verifica si ya existe una instancia del formulario
-            if (payment == null || payment.IsDisposed)
-            {
-                // Si no existe, crea una nueva instancia
-                payment = new FormPayment();
-            }
-
-            // Verifica si el formulario está visible
-            if (payment.Visible)
-            {
-                // Si está visible, cierra la instancia existente
-                payment.Close();
             }
 
             // Muestra el formulario actual
@@ -371,35 +310,12 @@ namespace SchoolMusic.Proyecto
                         {
                             idCursada = cur.IdCursada;
                             btnTablon.Enabled = true;
-                            btnCanceCurs.Enabled = true;
-                            btnPay.Enabled = true;
-                            pagosToolStripMenuItem.Enabled = true;
                             foroToolStripMenuItem.Enabled = true;
                             break; // Salir del bucle una vez encontrado el elemento
                         }
                     }
                 }
             }
-        }
-        private void btnCanceCurs_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("¿Queres cancelar la cursada?", "Cancelación de cursada", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
-            {
-                if(studentsService.DeleteInscription(idCursada, student.IdStudent))
-                {
-                    MessageBox.Show("Inscripción a cursada cancelada");
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo cancelar la cursada");
-                }
-            }
-                
-
-            listCursada = studentsService.GetListCursada(student.IdStudent);
-            idCursada = 0;
-            ShowInfo();
         }
     }
 }

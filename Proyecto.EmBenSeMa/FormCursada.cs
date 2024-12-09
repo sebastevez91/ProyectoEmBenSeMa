@@ -14,10 +14,12 @@ namespace SchoolMusic.Proyecto
 {
     public partial class FormCursada : Form
     {
+        private Users userSesion = new Users();
         private Cursada cursada;
         private Course course;
         private CursadaService _cursadaService;
         private List<Student> listStudents;
+        private FormTablon formTablon;
         public FormCursada()
         {
             InitializeComponent();
@@ -27,9 +29,12 @@ namespace SchoolMusic.Proyecto
             listStudents = new List<Student>();
         }
 
-        public void ShowCursada(int id)
+        public void ShowCursada(Users user, int id)
         {
             int inscriptos = 0;
+
+            // Almaceno el usuario en sesión
+            userSesion = user;
 
             cursada = _cursadaService.GetCursada(id);
 
@@ -89,6 +94,40 @@ namespace SchoolMusic.Proyecto
             comboBoxStudent.ValueMember = "NameStudent";
             comboBoxStudent.SelectedValue = "IdUser";
             comboBoxStudent.SelectedIndex = -1;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                viewTablon();
+                formTablon.Show();
+                formTablon.SesionTablon(userSesion, cursada.IdCursada);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se puede abrir más de una ventana");
+            }
+        }
+
+        private void viewTablon()
+        {
+            // Verifica si ya existe una instancia del formulario
+            if (formTablon == null || formTablon.IsDisposed)
+            {
+                // Si no existe, crea una nueva instancia
+                formTablon = new FormTablon();
+            }
+
+            // Verifica si el formulario está visible
+            if (formTablon.Visible)
+            {
+                // Si está visible, cierra la instancia existente
+                formTablon.Close();
+            }
+
+            // Muestra el formulario actual
+            this.Visible = true;
         }
     }
 }
