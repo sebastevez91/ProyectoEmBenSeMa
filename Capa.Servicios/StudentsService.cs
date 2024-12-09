@@ -13,11 +13,11 @@ namespace SchoolMusic.Serv
         private CnxSelect select = new CnxSelect();
         private Student student;
 
-        public Student GetStudent(int idUser)
+        public Student GetStudent(int id)
         {
             // Agrego parámetros
             prm.Clear();
-            prm.Add("@idUser", idUser.ToString());
+            prm.Add("@idUser", id.ToString());
 
             try
             {
@@ -58,14 +58,13 @@ namespace SchoolMusic.Serv
 
             return student;
         }
-
-        public List<Cursada> GetListCursada(int idStudent)
+        public List<Cursada> GetListCursada(int id)
         {
             List<Inscription> listInscription = new List<Inscription>();
             List<Cursada> listCursada = new List<Cursada>();
             // Agrego parametros
             prm.Clear();
-            prm.Add("@idStudent", idStudent.ToString());
+            prm.Add("@idStudent", id.ToString());
 
             // Query
             string sqlQueryInscription = "SELECT IdCursada FROM Inscription WHERE IdStudent = @idStudent";
@@ -88,18 +87,18 @@ namespace SchoolMusic.Serv
             }
             return listCursada;
         }
-        public Course GetCourse(int idCourse)
+        public Course GetCourse(int id)
         {
             Course course = null;
 
             // Agrego parametros
             prm.Clear();
-            prm.Add("@idCourse", idCourse.ToString());
+            prm.Add("@idCourse", id.ToString());
 
             try
             {
                 // Query
-                string sqlQueryCourse = "SELECT IdCourse, CONCAT('Curso de ', Instrument) AS NameCourse FROM Course WHERE IdCourse = @idCourse";
+                string sqlQueryCourse = "SELECT IdCourse, CONCAT('Cursada de ', Instrument) AS NameCourse FROM Course WHERE IdCourse = @idCourse";
                 var dataCourse = select.SelectData(sqlQueryCourse, prm);
                 // Verifica si hay filas antes de acceder
                 if (dataCourse.Rows.Count > 0)
@@ -119,12 +118,12 @@ namespace SchoolMusic.Serv
             }
             return course;
         }
-        private Cursada GetCursada(int idCursada)
+        private Cursada GetCursada(int id)
         {
             Cursada cursada = new Cursada();
             // Agrego parametros
             prm.Clear();
-            prm.Add("@idCursada", idCursada.ToString());
+            prm.Add("@idCursada", id.ToString());
 
             try
             {
@@ -141,7 +140,7 @@ namespace SchoolMusic.Serv
                         Initiation = Convert.ToDateTime(table["Initiation"].ToString()),
                         Finish = Convert.ToDateTime(table["Finish"].ToString()),
                         IdTeacher = int.Parse(table["IdTeacher"].ToString()),
-                        StarTime = Convert.ToDateTime(table["StartTime"].ToString()),
+                        StarTime = Convert.ToDateTime(table["StarTime"].ToString()),
                         EndTime = Convert.ToDateTime(table["EndTime"].ToString()),
                         Vacantes = int.Parse(table["Vacantes"].ToString()),
                         Days = table["Days"].ToString()
@@ -192,21 +191,6 @@ namespace SchoolMusic.Serv
                 teacher = null;
             }
             return teacher;
-        }
-        public bool DeleteInscription(int idCursada, int idStudent)
-        {
-            int result = 0;
-
-            // Agrego parámetros
-            prm.Clear();
-            prm.Add("@idCursada", idCursada.ToString());
-            prm.Add("@idStudent", idStudent.ToString());
-
-            // Query
-            string sqlDeleteinscription = "DELETE FROM Inscription WHERE IdCursada = @idCursada AND IdStudent = @idStudent";
-            result = accion.AccionEjecutar(sqlDeleteinscription, prm);
-
-            return result > 0 ? true : false;
         }
     }
 }

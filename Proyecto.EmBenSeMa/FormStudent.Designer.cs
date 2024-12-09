@@ -45,16 +45,13 @@
             cerrarSecciónToolStripMenuItem = new ToolStripMenuItem();
             cerrarSessiónToolStripMenuItem = new ToolStripMenuItem();
             verCursoToolStripMenuItem = new ToolStripMenuItem();
-            pagosToolStripMenuItem = new ToolStripMenuItem();
             foroToolStripMenuItem = new ToolStripMenuItem();
             contactoToolStripMenuItem = new ToolStripMenuItem();
             asistenciaToolStripMenuItem = new ToolStripMenuItem();
             ayudaToolStripMenuItem = new ToolStripMenuItem();
             acercaDeLaSchoolMusicToolStripMenuItem = new ToolStripMenuItem();
             btnNotificacion = new Button();
-            btnPay = new Button();
             btnMostrar = new Button();
-            btnCanceCurs = new Button();
             btnTablon = new Button();
             groupBox1.SuspendLayout();
             menuStrip1.SuspendLayout();
@@ -163,44 +160,36 @@
             // modificarPerfilToolStripMenuItem
             // 
             modificarPerfilToolStripMenuItem.Name = "modificarPerfilToolStripMenuItem";
-            modificarPerfilToolStripMenuItem.Size = new Size(155, 22);
+            modificarPerfilToolStripMenuItem.Size = new Size(180, 22);
             modificarPerfilToolStripMenuItem.Text = "Modificar Perfil";
             modificarPerfilToolStripMenuItem.Click += modificarPerfilToolStripMenuItem_Click;
             // 
             // cerrarSecciónToolStripMenuItem
             // 
             cerrarSecciónToolStripMenuItem.Name = "cerrarSecciónToolStripMenuItem";
-            cerrarSecciónToolStripMenuItem.Size = new Size(155, 22);
+            cerrarSecciónToolStripMenuItem.Size = new Size(180, 22);
             cerrarSecciónToolStripMenuItem.Text = "Notificaciones";
             cerrarSecciónToolStripMenuItem.Click += cerrarSecciónToolStripMenuItem_Click;
             // 
             // cerrarSessiónToolStripMenuItem
             // 
             cerrarSessiónToolStripMenuItem.Name = "cerrarSessiónToolStripMenuItem";
-            cerrarSessiónToolStripMenuItem.Size = new Size(155, 22);
+            cerrarSessiónToolStripMenuItem.Size = new Size(180, 22);
             cerrarSessiónToolStripMenuItem.Text = "Cerrar Sessión";
             cerrarSessiónToolStripMenuItem.Click += cerrarSessiónToolStripMenuItem_Click;
             // 
             // verCursoToolStripMenuItem
             // 
-            verCursoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pagosToolStripMenuItem, foroToolStripMenuItem });
+            verCursoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { foroToolStripMenuItem });
             verCursoToolStripMenuItem.Name = "verCursoToolStripMenuItem";
             verCursoToolStripMenuItem.Size = new Size(50, 20);
             verCursoToolStripMenuItem.Text = "Curso";
-            // 
-            // pagosToolStripMenuItem
-            // 
-            pagosToolStripMenuItem.Enabled = false;
-            pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
-            pagosToolStripMenuItem.Size = new Size(106, 22);
-            pagosToolStripMenuItem.Text = "Pagos";
-            pagosToolStripMenuItem.Click += pagosToolStripMenuItem_Click;
             // 
             // foroToolStripMenuItem
             // 
             foroToolStripMenuItem.Enabled = false;
             foroToolStripMenuItem.Name = "foroToolStripMenuItem";
-            foroToolStripMenuItem.Size = new Size(106, 22);
+            foroToolStripMenuItem.Size = new Size(180, 22);
             foroToolStripMenuItem.Text = "Foro";
             foroToolStripMenuItem.Click += foroToolStripMenuItem_Click;
             // 
@@ -214,7 +203,7 @@
             // asistenciaToolStripMenuItem
             // 
             asistenciaToolStripMenuItem.Name = "asistenciaToolStripMenuItem";
-            asistenciaToolStripMenuItem.Size = new Size(157, 22);
+            asistenciaToolStripMenuItem.Size = new Size(180, 22);
             asistenciaToolStripMenuItem.Text = "Soporte técnico";
             asistenciaToolStripMenuItem.Click += asistenciaToolStripMenuItem_Click;
             // 
@@ -249,23 +238,6 @@
             btnNotificacion.UseVisualStyleBackColor = true;
             btnNotificacion.Click += btnNotificacion_Click;
             // 
-            // btnPay
-            // 
-            btnPay.BackgroundImage = (Image)resources.GetObject("btnPay.BackgroundImage");
-            btnPay.BackgroundImageLayout = ImageLayout.Stretch;
-            btnPay.Enabled = false;
-            btnPay.FlatStyle = FlatStyle.Flat;
-            btnPay.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnPay.ForeColor = Color.Transparent;
-            btnPay.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPay.Location = new Point(516, 310);
-            btnPay.Name = "btnPay";
-            btnPay.Size = new Size(152, 40);
-            btnPay.TabIndex = 23;
-            btnPay.Text = "Pagos";
-            btnPay.UseVisualStyleBackColor = true;
-            btnPay.Click += button2_Click;
-            // 
             // btnMostrar
             // 
             btnMostrar.BackgroundImage = (Image)resources.GetObject("btnMostrar.BackgroundImage");
@@ -277,25 +249,9 @@
             btnMostrar.Name = "btnMostrar";
             btnMostrar.Size = new Size(159, 40);
             btnMostrar.TabIndex = 24;
-            btnMostrar.Text = "Mostrar Datos";
+            btnMostrar.Text = "Mis incripciones";
             btnMostrar.UseVisualStyleBackColor = true;
             btnMostrar.Click += btnMostrar_Click;
-            // 
-            // btnCanceCurs
-            // 
-            btnCanceCurs.BackgroundImage = (Image)resources.GetObject("btnCanceCurs.BackgroundImage");
-            btnCanceCurs.BackgroundImageLayout = ImageLayout.Stretch;
-            btnCanceCurs.Enabled = false;
-            btnCanceCurs.FlatStyle = FlatStyle.Flat;
-            btnCanceCurs.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCanceCurs.ForeColor = Color.White;
-            btnCanceCurs.Location = new Point(354, 310);
-            btnCanceCurs.Name = "btnCanceCurs";
-            btnCanceCurs.Size = new Size(156, 40);
-            btnCanceCurs.TabIndex = 25;
-            btnCanceCurs.Text = "Cancelar cursada";
-            btnCanceCurs.UseVisualStyleBackColor = true;
-            btnCanceCurs.Click += btnCanceCurs_Click;
             // 
             // btnTablon
             // 
@@ -321,9 +277,7 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(760, 450);
             Controls.Add(btnTablon);
-            Controls.Add(btnCanceCurs);
             Controls.Add(btnMostrar);
-            Controls.Add(btnPay);
             Controls.Add(btnNotificacion);
             Controls.Add(button1);
             Controls.Add(btnSalir);
@@ -365,12 +319,9 @@
         private ToolStripMenuItem cerrarSessiónToolStripMenuItem;
         private Label etqData;
         private Button btnNotificacion;
-        private ToolStripMenuItem pagosToolStripMenuItem;
-        private Button btnPay;
         private Button btnMostrar;
         private ColumnHeader StartTime;
         private ColumnHeader EndTime;
-        private Button btnCanceCurs;
         private Button btnTablon;
         private ToolStripMenuItem foroToolStripMenuItem;
     }
