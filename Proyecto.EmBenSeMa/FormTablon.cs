@@ -16,12 +16,14 @@ namespace SchoolMusic.Proyecto
         private List<Coment> coments = new List<Coment>();
         private string itemElegido = "";
 
-        public void SesionTablon(Users user, int idCursada)
+        public void SesionTablon(Users user, int id)
         {
             // Usuario en sesión
             userSession = user;
+
             // Cursada en sesión
-            cursada = tablonService.GetCursada(idCursada);
+            cursada = tablonService.GetCursada(id);
+
             // Titulo
             tittle.Text = $"Cursada de {tablonService.GetNameCourse(cursada.IdCourse)}, de {cursada.StarTime.ToString("HH:mm")} a {cursada.EndTime.ToString("HH:mm")}";
             profesor.Text = $"Profesor {tablonService.GetNameTeacher(cursada.IdTeacher)}";
@@ -35,7 +37,7 @@ namespace SchoolMusic.Proyecto
             topics.Clear();
 
             // Lista de topics
-            UpdateListBox(idCursada);
+            UpdateListBox(id);
         }
         // Botones
         private void button1_Click(object sender, EventArgs e)
@@ -131,7 +133,8 @@ namespace SchoolMusic.Proyecto
         }
         private void UpdateListBox(int id)
         {
-            listTopic.DataSource = tablonService.GetListTopic(id);
+            topics = tablonService.GetListTopic(id);
+            listTopic.DataSource = topics;
             listTopic.DisplayMember = "Title";
             listTopic.ValueMember = "IdTopic";
             listTopic.SelectedIndex = -1;

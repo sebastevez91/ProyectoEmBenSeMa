@@ -145,7 +145,7 @@ namespace SchoolMusic.Proyecto
             try
             {
                 viewTablon();
-                formTablon.SesionTablon(userSesion, idCursada, "Student");
+                formTablon.SesionTablon(userSesion, idCursada);
                 formTablon.Show();
             }
             catch (System.ObjectDisposedException)
@@ -224,7 +224,7 @@ namespace SchoolMusic.Proyecto
             try
             {
                 viewTablon();
-                formTablon.SesionTablon(userSesion, idCursada, "Student");
+                formTablon.SesionTablon(userSesion, idCursada);
                 formTablon.Show();
             }
             catch (System.ObjectDisposedException)

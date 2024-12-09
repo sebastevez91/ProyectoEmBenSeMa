@@ -78,7 +78,7 @@ namespace SchoolMusic.Proyecto
                 {
                     selectValue = int.Parse(comboCursada.SelectedValue.ToString());
                     viewCursada();
-                    FormCursada.ShowCursada(selectValue);
+                    FormCursada.ShowCursada(userSession, selectValue);
                     FormCursada.Show();
                 }
             }
