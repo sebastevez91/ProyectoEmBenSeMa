@@ -39,7 +39,8 @@ namespace SchoolMusic.Proyecto
             }
             else
             {
-                MessageBox.Show("No hay mensajes disponibles", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                grBoxDetalles.Visible = false;
+                MessageBox.Show("No hay mensajes para mostrar", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         public void ShowNotification(int idUser)

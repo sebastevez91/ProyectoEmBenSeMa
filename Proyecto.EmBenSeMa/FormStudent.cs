@@ -47,7 +47,7 @@ namespace SchoolMusic.Proyecto
         {
             Course course = null;
             lvCursos.Items.Clear();
-            if(listCursada.Count <= 0)
+            if (listCursada.Count <= 0)
             {
                 btnTablon.Enabled = false;
                 foroToolStripMenuItem.Enabled = false;
@@ -310,12 +310,89 @@ namespace SchoolMusic.Proyecto
                         {
                             idCursada = cur.IdCursada;
                             btnTablon.Enabled = true;
+                            btnEnviarMensaje.Enabled = true;
                             foroToolStripMenuItem.Enabled = true;
-                            break; // Salir del bucle una vez encontrado el elemento
+                            break;
                         }
                     }
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (groupBoxMensaje.Visible == false)
+            {
+                var selectedItem = int.Parse(lvCursos.SelectedItems[0].Text);
+
+                if (selectedItem != null)
+                {
+                    foreach (Cursada cur in listCursada)
+                    {
+                        if (selectedItem == cur.IdCursada)
+                        {
+                            var teacher = studentsService.GetTeacher(cur.IdTeacher);
+                            if (teacher != null)
+                            {
+                                this.teacher = teacher;
+                            }
+                            break; // Salir del bucle una vez encontrado el elemento
+                        }
+                    }
+
+                    groupBoxMensaje.Visible = true;
+
+                    txtTo.Text = teacher.NameTeacher + " " + teacher.Surname;
+                }
+            }
+            else
+            {
+                groupBoxMensaje.Visible = false;
+            }
+
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            Notification notification = new Notification();
+
+            // Validar que se hayan completado todos los campos
+            if (string.IsNullOrWhiteSpace(txtSubjet.Text))
+            {
+                MessageBox.Show("El campo 'Asunto' no puede estar vacío.");
+            }
+            else if (string.IsNullOrWhiteSpace(rtxtBody.Text))
+            {
+                MessageBox.Show("El cuerpo del mensaje no puede estar vacío.");
+            }
+            else
+            {
+                // Nuevo mensaje
+                notification.NotificationFrom = userSesion.IdUser;
+                notification.NotificationTo = teacher.IdUser;
+                notification.Subject = txtSubjet.Text;
+                notification.Body = rtxtBody.Text;
+
+                // Envio de mensaje
+                if (studentsService.SendNotification(notification))
+                {
+                    MessageBox.Show("Mensaje enviado correctamente");
+
+                    // Limpio los campos
+                    ClearFields();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo enviar el mensaje");
+                }
+            }
+        }
+
+        private void ClearFields()
+        {
+            txtTo.Text = string.Empty;
+            txtSubjet.Text = string.Empty;
+            rtxtBody.Text = string.Empty;
         }
     }
 }

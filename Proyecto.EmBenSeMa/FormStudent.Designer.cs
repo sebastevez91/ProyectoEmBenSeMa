@@ -53,8 +53,18 @@
             btnNotificacion = new Button();
             btnMostrar = new Button();
             btnTablon = new Button();
+            groupBoxMensaje = new GroupBox();
+            txtTo = new TextBox();
+            btnSend = new Button();
+            rtxtBody = new RichTextBox();
+            txtSubjet = new TextBox();
+            etqBody = new Label();
+            etqSubjet = new Label();
+            etqFrom = new Label();
+            btnEnviarMensaje = new Button();
             groupBox1.SuspendLayout();
             menuStrip1.SuspendLayout();
+            groupBoxMensaje.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -118,7 +128,7 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(673, 370);
+            btnSalir.Location = new Point(664, 509);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(75, 23);
             btnSalir.TabIndex = 2;
@@ -146,7 +156,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { aulaToolStripMenuItem, verCursoToolStripMenuItem, contactoToolStripMenuItem, ayudaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(760, 24);
+            menuStrip1.Size = new Size(775, 24);
             menuStrip1.TabIndex = 4;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -160,21 +170,21 @@
             // modificarPerfilToolStripMenuItem
             // 
             modificarPerfilToolStripMenuItem.Name = "modificarPerfilToolStripMenuItem";
-            modificarPerfilToolStripMenuItem.Size = new Size(180, 22);
+            modificarPerfilToolStripMenuItem.Size = new Size(155, 22);
             modificarPerfilToolStripMenuItem.Text = "Modificar Perfil";
             modificarPerfilToolStripMenuItem.Click += modificarPerfilToolStripMenuItem_Click;
             // 
             // cerrarSecciónToolStripMenuItem
             // 
             cerrarSecciónToolStripMenuItem.Name = "cerrarSecciónToolStripMenuItem";
-            cerrarSecciónToolStripMenuItem.Size = new Size(180, 22);
+            cerrarSecciónToolStripMenuItem.Size = new Size(155, 22);
             cerrarSecciónToolStripMenuItem.Text = "Notificaciones";
             cerrarSecciónToolStripMenuItem.Click += cerrarSecciónToolStripMenuItem_Click;
             // 
             // cerrarSessiónToolStripMenuItem
             // 
             cerrarSessiónToolStripMenuItem.Name = "cerrarSessiónToolStripMenuItem";
-            cerrarSessiónToolStripMenuItem.Size = new Size(180, 22);
+            cerrarSessiónToolStripMenuItem.Size = new Size(155, 22);
             cerrarSessiónToolStripMenuItem.Text = "Cerrar Sessión";
             cerrarSessiónToolStripMenuItem.Click += cerrarSessiónToolStripMenuItem_Click;
             // 
@@ -189,7 +199,7 @@
             // 
             foroToolStripMenuItem.Enabled = false;
             foroToolStripMenuItem.Name = "foroToolStripMenuItem";
-            foroToolStripMenuItem.Size = new Size(180, 22);
+            foroToolStripMenuItem.Size = new Size(98, 22);
             foroToolStripMenuItem.Text = "Foro";
             foroToolStripMenuItem.Click += foroToolStripMenuItem_Click;
             // 
@@ -203,7 +213,7 @@
             // asistenciaToolStripMenuItem
             // 
             asistenciaToolStripMenuItem.Name = "asistenciaToolStripMenuItem";
-            asistenciaToolStripMenuItem.Size = new Size(180, 22);
+            asistenciaToolStripMenuItem.Size = new Size(157, 22);
             asistenciaToolStripMenuItem.Text = "Soporte técnico";
             asistenciaToolStripMenuItem.Click += asistenciaToolStripMenuItem_Click;
             // 
@@ -269,13 +279,109 @@
             btnTablon.UseVisualStyleBackColor = true;
             btnTablon.Click += btnForo_Click;
             // 
+            // groupBoxMensaje
+            // 
+            groupBoxMensaje.BackColor = Color.DimGray;
+            groupBoxMensaje.Controls.Add(txtTo);
+            groupBoxMensaje.Controls.Add(btnSend);
+            groupBoxMensaje.Controls.Add(rtxtBody);
+            groupBoxMensaje.Controls.Add(txtSubjet);
+            groupBoxMensaje.Controls.Add(etqBody);
+            groupBoxMensaje.Controls.Add(etqSubjet);
+            groupBoxMensaje.Controls.Add(etqFrom);
+            groupBoxMensaje.Location = new Point(22, 356);
+            groupBoxMensaje.Name = "groupBoxMensaje";
+            groupBoxMensaje.Size = new Size(627, 178);
+            groupBoxMensaje.TabIndex = 33;
+            groupBoxMensaje.TabStop = false;
+            groupBoxMensaje.Text = "Mensaje";
+            groupBoxMensaje.Visible = false;
+            // 
+            // txtTo
+            // 
+            txtTo.Enabled = false;
+            txtTo.Location = new Point(76, 22);
+            txtTo.Name = "txtTo";
+            txtTo.Size = new Size(410, 23);
+            txtTo.TabIndex = 6;
+            // 
+            // btnSend
+            // 
+            btnSend.Location = new Point(533, 90);
+            btnSend.Name = "btnSend";
+            btnSend.Size = new Size(75, 23);
+            btnSend.TabIndex = 5;
+            btnSend.Text = "Enviar";
+            btnSend.UseVisualStyleBackColor = true;
+            btnSend.Click += btnSend_Click;
+            // 
+            // rtxtBody
+            // 
+            rtxtBody.Location = new Point(76, 90);
+            rtxtBody.Name = "rtxtBody";
+            rtxtBody.Size = new Size(410, 70);
+            rtxtBody.TabIndex = 4;
+            rtxtBody.Text = "";
+            // 
+            // txtSubjet
+            // 
+            txtSubjet.Location = new Point(76, 58);
+            txtSubjet.Name = "txtSubjet";
+            txtSubjet.Size = new Size(410, 23);
+            txtSubjet.TabIndex = 3;
+            // 
+            // etqBody
+            // 
+            etqBody.AutoSize = true;
+            etqBody.Location = new Point(16, 90);
+            etqBody.Name = "etqBody";
+            etqBody.Size = new Size(54, 15);
+            etqBody.TabIndex = 2;
+            etqBody.Text = "Mensaje:";
+            // 
+            // etqSubjet
+            // 
+            etqSubjet.AutoSize = true;
+            etqSubjet.Location = new Point(16, 59);
+            etqSubjet.Name = "etqSubjet";
+            etqSubjet.Size = new Size(48, 15);
+            etqSubjet.TabIndex = 1;
+            etqSubjet.Text = "Asunto:";
+            // 
+            // etqFrom
+            // 
+            etqFrom.AutoSize = true;
+            etqFrom.Location = new Point(16, 30);
+            etqFrom.Name = "etqFrom";
+            etqFrom.Size = new Size(33, 15);
+            etqFrom.TabIndex = 0;
+            etqFrom.Text = "Para:";
+            // 
+            // btnEnviarMensaje
+            // 
+            btnEnviarMensaje.BackgroundImage = (Image)resources.GetObject("btnEnviarMensaje.BackgroundImage");
+            btnEnviarMensaje.BackgroundImageLayout = ImageLayout.Stretch;
+            btnEnviarMensaje.Enabled = false;
+            btnEnviarMensaje.FlatStyle = FlatStyle.Flat;
+            btnEnviarMensaje.Font = new Font("Segoe Fluent Icons", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEnviarMensaje.ForeColor = Color.White;
+            btnEnviarMensaje.Location = new Point(476, 310);
+            btnEnviarMensaje.Name = "btnEnviarMensaje";
+            btnEnviarMensaje.Size = new Size(213, 40);
+            btnEnviarMensaje.TabIndex = 34;
+            btnEnviarMensaje.Text = "Enviar mensaje a profesor";
+            btnEnviarMensaje.UseVisualStyleBackColor = true;
+            btnEnviarMensaje.Click += button2_Click;
+            // 
             // FormStudent
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(760, 450);
+            ClientSize = new Size(775, 584);
+            Controls.Add(btnEnviarMensaje);
+            Controls.Add(groupBoxMensaje);
             Controls.Add(btnTablon);
             Controls.Add(btnMostrar);
             Controls.Add(btnNotificacion);
@@ -294,6 +400,8 @@
             groupBox1.PerformLayout();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            groupBoxMensaje.ResumeLayout(false);
+            groupBoxMensaje.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -324,5 +432,14 @@
         private ColumnHeader EndTime;
         private Button btnTablon;
         private ToolStripMenuItem foroToolStripMenuItem;
+        private GroupBox groupBoxMensaje;
+        private TextBox txtTo;
+        private Button btnSend;
+        private RichTextBox rtxtBody;
+        private TextBox txtSubjet;
+        private Label etqBody;
+        private Label etqSubjet;
+        private Label etqFrom;
+        private Button btnEnviarMensaje;
     }
 }

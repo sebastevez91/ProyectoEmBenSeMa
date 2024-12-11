@@ -192,5 +192,27 @@ namespace SchoolMusic.Serv
             }
             return teacher;
         }
+        public bool SendNotification(Notification notification)
+        {
+            prm.Clear();
+            prm.Add("@notificationTo", notification.NotificationTo.ToString());
+            prm.Add("@notificationFrom", notification.NotificationFrom.ToString());
+            prm.Add("@subject", notification.Subject);
+            prm.Add("@body", notification.Body);
+
+            string sqlInsertNotification = @"INSERT INTO Notification (NotificationTo, NotificationFrom, Subject, Body, DateNotification, Status)
+                        VALUES (@notificationTo, @notificationFrom, @subject, @body, GETDATE(), 0)";
+
+            try
+            {
+                var result = accion.AccionEjecutar(sqlInsertNotification, prm);
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al insertar la notificación: {ex.Message}");
+                return false; // Retorna false si ocurre un error
+            }
+        }
     }
 }

@@ -52,86 +52,59 @@ namespace SchoolMusic.Serv
             Users userSession = userFound;
             return userSession;
         }
-        public bool RecoverPasswordStudent(string dni, string mail)
+        public bool RecoverPassword(string mail, string tipo)
         {
             string newPassword = new Random().Next().ToString();
             int result = 0;
-            int idUser = 0;
-            // Agrego parametros
-            prm.Clear();
-            prm.Add("@dni", dni);
-            prm.Add("@mail", mail);
+
+            // Verificar tipo válido
+            if (tipo != "Alumno" && tipo != "Profesor")
+            {
+                Console.WriteLine("Error: Tipo no válido. Debe ser 'Alumno' o 'Profesor'.");
+                return false;
+            }
 
             try
             {
-                // Query
-                string sqlQueryChange = "SELECT IdUser FROM Student WHERE Dni = @dni AND Mail = @mail";
+                // Definir consulta según tipo
+                string sqlQueryChange = tipo == "Alumno"
+                    ? "SELECT IdUser FROM Student WHERE Mail = @mail"
+                    : "SELECT IdUser FROM Teacher WHERE Mail = @mail";
 
-                var dataStudent = select.SelectData(sqlQueryChange, prm);
-                if (dataStudent != null && dataStudent.Rows.Count > 0)
+                // Agregar parámetros y ejecutar consulta
+                prm.Clear();
+                prm.Add("@mail", mail);
+                var dataUser = select.SelectData(sqlQueryChange, prm);
+
+                if (dataUser != null && dataUser.Rows.Count > 0)
                 {
-                    var table = dataStudent.Rows[0];
+                    var table = dataUser.Rows[0];
+                    int idUser = int.Parse(table["IdUser"].ToString());
 
-                    idUser = int.Parse(table["IdUser"].ToString());
-                    // Agrego parametros
+                    // Actualizar contraseña
                     prm.Clear();
                     prm.Add("@userPassword", newPassword);
-                    prm.Add("@idUser", student.IdUser.ToString());
+                    prm.Add("@idUser", idUser.ToString());
                     string sqlUpdatePass = "UPDATE Users SET UserPassword = @userPassword, ChangePassword = 1 WHERE IdUser = @idUser";
+
                     result = accion.AccionEjecutar(sqlUpdatePass, prm);
+
                     if (result > 0)
                     {
                         EnviarMail(mail, newPassword);
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine("Error: " + ex.Message);
-            }
-            return result > 0 ? true : false;
-        }
-        public bool RecoverPasswordTeacher(string dni, string mail)
-        {
-            string newPassword = new Random().Next().ToString();
-            int result = 0;
-            int idUser = 0;
-            // Agrego parametros
-            prm.Clear();
-            prm.Add("@dni", dni);
-            prm.Add("@mail", mail);
-
-            try
-            {
-                // Query
-                string sqlQueryChange = $"SELECT IdUser FROM Teacher WHERE Dni = @dni AND Mail = @mail";
-
-                var dataTeacher = select.SelectData(sqlQueryChange, prm);
-                if (dataTeacher != null && dataTeacher.Rows.Count > 0)
+                else
                 {
-                    var table = dataTeacher.Rows[0];
-
-                    idUser = int.Parse(table["IdUser"].ToString());
-
-                    // Agrego parametros
-                    prm.Clear();
-                    prm.Add("@userPassword", newPassword);
-                    prm.Add("@idUser", student.IdUser.ToString());
-                    string sqlUpdatePass = "UPDATE Users SET UserPassword = @userPassword, ChangePassword = 1 WHERE IdUser = @idUser";
-                    result = accion.AccionEjecutar(sqlUpdatePass, prm);
-                    if (result > 0)
-                    {
-                        EnviarMail(mail, newPassword);
-                    }
+                    Console.WriteLine($"No se encontró ningún usuario con el correo {mail} en la tabla {tipo}.");
                 }
             }
             catch (Exception ex)
             {
-
                 Console.WriteLine("Error: " + ex.Message);
             }
-            return result > 0 ? true : false;
+
+            return result > 0;
         }
         public void EnviarMail(string mail, string newPassword)
         {
@@ -139,17 +112,6 @@ namespace SchoolMusic.Serv
             mailData.subject = "Recuperación de contraseña";
             mailData.body = $"Ingresa con tu nombre de usuario y la siguiente clave: {newPassword}";
             mailService.sendMail(mailData);
-        }
-        public string TipoUser(string tipo)
-        {
-            if (tipo == "Alumnos")
-            {
-                return "Student";
-            }
-            else
-            {
-                return "Teacher";
-            }
         }
     }
 }

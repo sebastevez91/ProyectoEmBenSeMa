@@ -13,46 +13,49 @@ namespace SchoolMusic.Proyecto
 {
     public partial class RecoverPassword : Form
     {
+        private LoginService loginService;
         public RecoverPassword()
         {
             InitializeComponent();
+            loginService = new LoginService();
         }
-
         private void btnCambiar_Click(object sender, EventArgs e)
         {
-            //if (txtUsuario.Text == "" || txtContrasena.Text == "")
-            //{
-            //    MessageBox.Show("Completa los campos requeridos");
-            //}
-            //else
-            //{
-            //    if (tipo == "Student")
-            //    {
-            //        if (loginService.RecoverPasswordStudent(txtContrasena.Text, txtUsuario.Text))
-            //        {
-            //            MessageBox.Show("Te enviamos un correo a tu email");
-            //            this.Close();
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Hay errores en la validación de tu usuario");
-            //            this.Close();
-            //        }
-            //    }
-            //    else
-            //    {
-            //        if (loginService.RecoverPasswordTeacher(txtContrasena.Text, txtUsuario.Text))
-            //        {
-            //            MessageBox.Show("Te enviamos un correo a tu email");
-            //            this.Close();
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("Hay errores en la validación de tu usuario");
-            //            this.Close();
-            //        }
-            //    }
-            //}
+            etqResultado.Visible = false;
+
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                MessageBox.Show("Para recuperar la contraseña debes ingresar tu mail");
+                return;
+            }
+            else
+            {
+                var tipoUser = radioButtonStudent.Checked ? "Alumno" : radioButtonTeacher.Checked ? "Profesor" : null;
+
+                if(tipoUser != null)
+                {
+                    if (loginService.RecoverPassword(txtEmail.Text, tipoUser))
+                    {
+                        txtEmail.Text = "";
+                        radioButtonStudent.Checked = false;
+                        radioButtonTeacher.Checked = false;
+                        etqResultado.Visible = true;
+                        etqResultado.Text = "Te enviamos un correo a tu email";
+                    }
+                    else
+                    {
+                        etqResultado.Visible = true;
+                        etqResultado.Text = "No pudimos enviar el correo de recuperación de contraseña.\n" +
+                            "Verifica los datos ingresados.";
+                    }
+                }
+                else
+                {
+                    etqResultado.Visible = true;
+                    etqResultado.Text = "No pudimos enviar el correo de recuperación de contraseña.\n" +
+                        "Verifica los datos ingresados.";
+                }
+            }
         }
     }
 }
