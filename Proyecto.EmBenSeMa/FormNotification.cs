@@ -28,7 +28,6 @@ namespace SchoolMusic.Proyecto
 
             // Limpio completamente el ListBox
             listMensaje.DataSource = null;
-            listMensaje.Items.Clear();
 
             // Asigno nuevos datos si la lista tiene elementos
             if (lista.Any())

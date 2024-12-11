@@ -8,7 +8,6 @@ namespace SchoolMusic.Serv
     public class NotificationService
     {
         Dictionary<string, string> prm = new Dictionary<string, string>();
-        List<Notification> listNotif = new List<Notification>();
         CnxSelect select = new CnxSelect();
         CnxAccion accion = new CnxAccion();
         Teacher teacher = new Teacher();
@@ -16,6 +15,9 @@ namespace SchoolMusic.Serv
 
         public List<Notification> GetNotificationRecibidas(int idUser)
         {
+            // Lista de recibidos
+            var listRecibidos = new List<Notification>();
+
             // Agrego parametros
             prm.Clear();
             prm.Add("@idUser", idUser.ToString());
@@ -30,7 +32,7 @@ namespace SchoolMusic.Serv
                 {
                     foreach (DataRow n in dateNotification.Rows)
                     {
-                        listNotif.Add(new Notification
+                        listRecibidos.Add(new Notification
                         {
                             IdNotification = int.Parse(n["IdNotification"].ToString()),
                             NotificationTo = int.Parse(n["NotificationTo"].ToString()),
@@ -47,10 +49,12 @@ namespace SchoolMusic.Serv
 
                 Console.WriteLine("Error: " + ex.Message);
             }
-            return listNotif;
+            return listRecibidos;
         }
         public List<Notification> GetNotificationEnviadas(int idUser)
         {
+            // Lista de recibidos
+            var listEnviados = new List<Notification>();
             // Agrego parametros
             prm.Clear();
             prm.Add("@idUser", idUser.ToString());
@@ -65,10 +69,10 @@ namespace SchoolMusic.Serv
                 {
                     foreach (DataRow n in dateNotification.Rows)
                     {
-                        listNotif.Add(new Notification
+                        listEnviados.Add(new Notification
                         {
-                            IdNotification = int.Parse(n["IdNotifiStudent"].ToString()),
-                            NotificationTo = int.Parse(n["NotificatinTo"].ToString()),
+                            IdNotification = int.Parse(n["IdNotification"].ToString()),
+                            NotificationTo = int.Parse(n["NotificationTo"].ToString()),
                             NotificationFrom = int.Parse(n["NotificationFrom"].ToString()),
                             Subject = n["Subject"].ToString(),
                             Body = n["Body"].ToString(),
@@ -82,7 +86,7 @@ namespace SchoolMusic.Serv
 
                 Console.WriteLine("Error: " + ex.Message);
             }
-            return listNotif;
+            return listEnviados;
         }
         public Teacher GetTeacher(int idTeacher)
         {
@@ -113,55 +117,6 @@ namespace SchoolMusic.Serv
                 teacher = null;
             }
             return teacher;
-        }
-        public Student GetStudent(int idStudent)
-        {
-            // Agrego parametros
-            prm.Clear();
-            prm.Add("@idStudent", idStudent.ToString());
-
-            try
-            {
-                // Query
-                string sqlQueryStudent = "SELECT IdStudent, CONCAT(NameStudent,' ', Surname) AS nombreCompleto FROM Student WHERE IdStudent = @idStudent";
-                var dateStudent = select.SelectData(sqlQueryStudent, prm);
-
-                if (dateStudent.Rows.Count > 0)
-                {
-                    var table = dateStudent.Rows[0];
-                    student = new()
-                    {
-                        IdStudent = int.Parse(table["IdStudent"].ToString()),
-                        NameStudent = table["nombreCompleto"].ToString(),
-                    }; 
-                }
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine("Error: " + ex.Message);
-                student = null;
-            }
-
-            return student;
-        }
-        public int SendNotification(Notification notification)
-        {
-            int result = 0;
-            //Agrego parametros
-            prm.Clear();
-            prm.Add("@notificationTo", notification.NotificationTo.ToString());
-            prm.Add("@notificationFrom", notification.NotificationFrom.ToString());
-            prm.Add("@subject", notification.Subject);
-            prm.Add("@body", notification.Body);
-
-
-            // Query
-            string sqlQueryNotif = "INSERT INTO Notification (NotificationTo, NotificationFrom, Subject, Body)" +
-                "VALUES (@notificationTo, @notificationFrom, @subject, @body)";
-            result = accion.AccionEjecutar(sqlQueryNotif, prm);
-            
-            return result;
         }
     }
 }

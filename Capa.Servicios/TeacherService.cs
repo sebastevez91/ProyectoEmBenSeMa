@@ -245,9 +245,7 @@ namespace SchoolMusic.Serv
         }
         public bool ValidaCursada(Cursada cursada)
         {
-            if (cursada.IdCourse != null && cursada.IdTeacher != null && cursada.Initiation != null &&
-                cursada.Finish != null && cursada.StarTime != null && cursada.EndTime != null &&
-                cursada.Days != null && cursada.Vacantes != null && cursada.Description != null)
+            if (cursada.IdCourse != null && cursada.IdTeacher != null && cursada.Vacantes != null)
             {
                 return true;
             }else if(cursada.StarTime == cursada.EndTime || cursada.EndTime < cursada.StarTime)

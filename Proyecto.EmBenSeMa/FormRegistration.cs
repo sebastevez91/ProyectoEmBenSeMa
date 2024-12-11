@@ -12,6 +12,8 @@ namespace Proyecto.EmBenSeMa
         private Users NewUser = null;
         private Student student = new Student();
         private Teacher teacher = new Teacher();
+        private string rolUser;
+        private string rolGenero;
         public FormRegistration()
         {
             InitializeComponent();
@@ -26,14 +28,39 @@ namespace Proyecto.EmBenSeMa
         {
             try
             {
+                // Almaceno roles
+                rolUser = raBtnAlumno.Checked ? "Alumno" : raBtnProfesor.Checked ? "Profesor" : null;
+                rolGenero = raBtnFem.Checked ? "Femenino" : raBtnMas.Checked ? "Masculino" : null;
+
                 // Validar campos generales
                 if (!ValidarCampos())
                 {
                     MessageBox.Show("Revisa los campos, se encontraron errores");
 
+                    etqValidaciones.Text = "Verifica que Los campos cumplan los siguientes puntos:" +
+                        "\n1 - Datos Personales correctamente." +
+                        "\n2 - Email correctamente, con signo '@' y '.'" +
+                        "\n3 - Nombre de usuario sin numero, puede contener Mayusculas y minusculas." +
+                        "\n4 - Verifica que el rol de usuario este seleccionado" +
+                        "\n5 - Contraseña de 8 digitos, letras, numeros y signos" +
+                        "\n6 - Las 2 contraseñas ingresadas deben ser iguales.";
+
+                    etqValidaciones.Visible = true;
                     // Validar contraseña
                     etqNotifica.Visible = txtContra.Text.Length < 8 ?  true : false;
 
+                    return;
+                }
+
+                if (rolUser == null)
+                {
+                    MessageBox.Show("Debe seleccionar un rol de usuario (Alumno o Profesor).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (rolGenero == null)
+                {
+                    MessageBox.Show("Debe seleccionar un género (Femenino o Masculino).", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -42,11 +69,12 @@ namespace Proyecto.EmBenSeMa
                 {
                     Username = txtUsuario.Text,
                     UserPassword = txtContra.Text,
-                    Rol = raBtnAlumno.Checked ? "Alumno" : "Profesor"
+                    Rol = rolUser
                 };
 
+
                 // Registrar el usuario en la base de datos
-                if(newUser.Username != null && newUser.UserPassword != null && newUser != null)
+                if (newUser.Username != null && newUser.UserPassword != null && newUser != null)
                 {
                     newUser.IdUser = registroService.AddUser(newUser);
                     if (newUser.IdUser == null || newUser.IdUser <= 0)
@@ -104,7 +132,7 @@ namespace Proyecto.EmBenSeMa
                 Dni = int.Parse(txtDni.Text),
                 Age = int.Parse(txtEdad.Text),
                 IdUser = userId,
-                Genero = raBtnFem.Checked ? "Femenino" : "Masculino"
+                Genero = rolGenero
             };
         }
 
@@ -118,7 +146,7 @@ namespace Proyecto.EmBenSeMa
                 Dni = int.Parse(txtDni.Text),
                 Age = int.Parse(txtEdad.Text),
                 IdUser = userId,
-                Genero = raBtnFem.Checked ? "Femenino" : "Masculino"
+                Genero = rolGenero
             };
         }
 

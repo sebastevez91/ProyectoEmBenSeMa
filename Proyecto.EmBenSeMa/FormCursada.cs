@@ -59,7 +59,7 @@ namespace SchoolMusic.Proyecto
         {
             // Obtener la lista de estudiantes
             var students = _cursadaService.GetStudentList(cursada.IdCursada);
-            if (students != null)
+            if (students != null && students.Count > 0)
             {
                 listStudents = students;
                 btnEnviar.Enabled = true;
@@ -81,19 +81,31 @@ namespace SchoolMusic.Proyecto
                     listViewStudent.Items.Add(item);
                 }
             }
-
+            else
+            {
+                MessageBox.Show("La cursada no tiene alumnos inscriptos");
+            }
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            // Muestro la parte de enviar mensajes
-            groupBoxMensaje.Visible = true;
+            if(groupBoxMensaje.Visible == false)
+            {
+                // Muestro la parte de enviar mensajes
+                groupBoxMensaje.Visible = true;
 
-            comboBoxStudent.DataSource = null;
-            comboBoxStudent.DataSource = listStudents;
-            comboBoxStudent.ValueMember = "NameStudent";
-            comboBoxStudent.SelectedValue = "IdUser";
-            comboBoxStudent.SelectedIndex = -1;
+                comboBoxStudent.DataSource = null; 
+                comboBoxStudent.DataSource = listStudents; 
+                comboBoxStudent.DisplayMember = "NameStudent";
+                comboBoxStudent.ValueMember = "IdUser"; 
+                comboBoxStudent.SelectedIndex = -1;
+            }
+            else
+            {
+                groupBoxMensaje.Visible = false;
+            }
+            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -128,6 +140,60 @@ namespace SchoolMusic.Proyecto
 
             // Muestra el formulario actual
             this.Visible = true;
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            Notification notification = new Notification();
+
+            // Validar que se hayan completado todos los campos
+            if (comboBoxStudent.SelectedValue == null)
+            {
+                MessageBox.Show("Selecciona un estudiante.");
+            }
+            else if (string.IsNullOrWhiteSpace(txtSubjet.Text))
+            {
+                MessageBox.Show("El campo 'Asunto' no puede estar vacío.");
+            }
+            else if (string.IsNullOrWhiteSpace(rtxtBody.Text))
+            {
+                MessageBox.Show("El cuerpo del mensaje no puede estar vacío.");
+            }
+            else
+            {
+                // Nuevo mensaje
+                notification.NotificationFrom = userSesion.IdUser;
+                notification.NotificationTo = int.Parse(comboBoxStudent.SelectedValue.ToString());
+                notification.Subject = txtSubjet.Text;
+                notification.Body = rtxtBody.Text;
+
+                // Envio de mensaje
+                if (_cursadaService.SendNotification(notification))
+                {
+                    MessageBox.Show("Mensaje enviado correctamente");
+
+                    // Limpio los campos
+                    ClearFields();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo enviar el mensaje");
+                }
+            }
+        }
+
+        // Método para limpiar campos
+        private void ClearFields()
+        {
+            if (comboBoxStudent.DataSource != null)
+            {
+                comboBoxStudent.SelectedIndex = -1;
+            }
+            txtSubjet.Text = string.Empty;
+            rtxtBody.Text = string.Empty;
+
+            // Establecer foco en el ComboBox
+            comboBoxStudent.Focus();
         }
     }
 }

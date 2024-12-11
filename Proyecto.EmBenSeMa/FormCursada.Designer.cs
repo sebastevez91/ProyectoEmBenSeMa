@@ -35,7 +35,6 @@
             listViewStudent = new ListView();
             IdUser = new ColumnHeader();
             NameStudent = new ColumnHeader();
-            Surname = new ColumnHeader();
             Mail = new ColumnHeader();
             btnEnviar = new Button();
             button3 = new Button();
@@ -86,7 +85,7 @@
             // 
             // listViewStudent
             // 
-            listViewStudent.Columns.AddRange(new ColumnHeader[] { IdUser, NameStudent, Surname, Mail });
+            listViewStudent.Columns.AddRange(new ColumnHeader[] { IdUser, NameStudent, Mail });
             listViewStudent.Location = new Point(372, 96);
             listViewStudent.Name = "listViewStudent";
             listViewStudent.Size = new Size(428, 137);
@@ -101,13 +100,8 @@
             // 
             // NameStudent
             // 
-            NameStudent.Text = "Nombre";
-            NameStudent.Width = 80;
-            // 
-            // Surname
-            // 
-            Surname.Text = "Apellido";
-            Surname.Width = 80;
+            NameStudent.Text = "Nombre Completo";
+            NameStudent.Width = 160;
             // 
             // Mail
             // 
@@ -154,7 +148,7 @@
             groupBoxMensaje.Controls.Add(etqBody);
             groupBoxMensaje.Controls.Add(etqSubjet);
             groupBoxMensaje.Controls.Add(etqFrom);
-            groupBoxMensaje.Location = new Point(173, 290);
+            groupBoxMensaje.Location = new Point(100, 290);
             groupBoxMensaje.Name = "groupBoxMensaje";
             groupBoxMensaje.Size = new Size(627, 188);
             groupBoxMensaje.TabIndex = 32;
@@ -169,6 +163,7 @@
             comboBoxStudent.Name = "comboBoxStudent";
             comboBoxStudent.Size = new Size(262, 23);
             comboBoxStudent.TabIndex = 6;
+            comboBoxStudent.Text = "Selecciona un estudiante";
             // 
             // btnSend
             // 
@@ -178,6 +173,7 @@
             btnSend.TabIndex = 5;
             btnSend.Text = "Enviar";
             btnSend.UseVisualStyleBackColor = true;
+            btnSend.Click += btnSend_Click;
             // 
             // rtxtBody
             // 
@@ -248,7 +244,6 @@
         private Button btnStudent;
         private ListView listViewStudent;
         private ColumnHeader NameStudent;
-        private ColumnHeader Surname;
         private ColumnHeader Mail;
         private Button btnEnviar;
         private Button button3;
