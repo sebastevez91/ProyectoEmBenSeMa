@@ -45,8 +45,6 @@
             modificarPerfilToolStripMenuItem = new ToolStripMenuItem();
             notificationToolStripMenuItem = new ToolStripMenuItem();
             cerrarSessiónToolStripMenuItem = new ToolStripMenuItem();
-            verCursoToolStripMenuItem = new ToolStripMenuItem();
-            foroToolStripMenuItem = new ToolStripMenuItem();
             contactoToolStripMenuItem = new ToolStripMenuItem();
             asistenciaToolStripMenuItem = new ToolStripMenuItem();
             ayudaToolStripMenuItem = new ToolStripMenuItem();
@@ -204,7 +202,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { aulaToolStripMenuItem, verCursoToolStripMenuItem, contactoToolStripMenuItem, ayudaToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { aulaToolStripMenuItem, contactoToolStripMenuItem, ayudaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(888, 24);
@@ -221,37 +219,23 @@
             // modificarPerfilToolStripMenuItem
             // 
             modificarPerfilToolStripMenuItem.Name = "modificarPerfilToolStripMenuItem";
-            modificarPerfilToolStripMenuItem.Size = new Size(155, 22);
+            modificarPerfilToolStripMenuItem.Size = new Size(180, 22);
             modificarPerfilToolStripMenuItem.Text = "Modificar Perfil";
             modificarPerfilToolStripMenuItem.Click += modificarPerfilToolStripMenuItem_Click;
             // 
             // notificationToolStripMenuItem
             // 
             notificationToolStripMenuItem.Name = "notificationToolStripMenuItem";
-            notificationToolStripMenuItem.Size = new Size(155, 22);
+            notificationToolStripMenuItem.Size = new Size(180, 22);
             notificationToolStripMenuItem.Text = "Notificaciones";
             notificationToolStripMenuItem.Click += notificationToolStripMenuItem_Click;
             // 
             // cerrarSessiónToolStripMenuItem
             // 
             cerrarSessiónToolStripMenuItem.Name = "cerrarSessiónToolStripMenuItem";
-            cerrarSessiónToolStripMenuItem.Size = new Size(155, 22);
+            cerrarSessiónToolStripMenuItem.Size = new Size(180, 22);
             cerrarSessiónToolStripMenuItem.Text = "Cerrar Sessión";
             cerrarSessiónToolStripMenuItem.Click += cerrarSessiónToolStripMenuItem_Click;
-            // 
-            // verCursoToolStripMenuItem
-            // 
-            verCursoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { foroToolStripMenuItem });
-            verCursoToolStripMenuItem.Name = "verCursoToolStripMenuItem";
-            verCursoToolStripMenuItem.Size = new Size(50, 20);
-            verCursoToolStripMenuItem.Text = "Curso";
-            // 
-            // foroToolStripMenuItem
-            // 
-            foroToolStripMenuItem.Name = "foroToolStripMenuItem";
-            foroToolStripMenuItem.Size = new Size(98, 22);
-            foroToolStripMenuItem.Text = "Foro";
-            foroToolStripMenuItem.Click += foroToolStripMenuItem_Click;
             // 
             // contactoToolStripMenuItem
             // 
@@ -263,7 +247,7 @@
             // asistenciaToolStripMenuItem
             // 
             asistenciaToolStripMenuItem.Name = "asistenciaToolStripMenuItem";
-            asistenciaToolStripMenuItem.Size = new Size(157, 22);
+            asistenciaToolStripMenuItem.Size = new Size(180, 22);
             asistenciaToolStripMenuItem.Text = "Soporte técnico";
             asistenciaToolStripMenuItem.Click += asistenciaToolStripMenuItem_Click;
             // 
@@ -599,7 +583,6 @@
         private ToolStripMenuItem modificarPerfilToolStripMenuItem;
         private ToolStripMenuItem notificationToolStripMenuItem;
         private ToolStripMenuItem cerrarSessiónToolStripMenuItem;
-        private ToolStripMenuItem verCursoToolStripMenuItem;
         private ToolStripMenuItem contactoToolStripMenuItem;
         private ToolStripMenuItem asistenciaToolStripMenuItem;
         private ToolStripMenuItem ayudaToolStripMenuItem;
@@ -630,7 +613,6 @@
         private ColumnHeader Surname;
         private ColumnHeader Curse;
         private ColumnHeader DateTime;
-        private ToolStripMenuItem foroToolStripMenuItem;
         private ComboBox comboCursada;
         private Label label12;
     }

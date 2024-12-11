@@ -120,7 +120,7 @@ namespace SchoolMusic.Serv
             try
             {
                 // Query
-                string sqlQueryStudent = "SELECT IdStudent, NameStudent, Surname, Mail FROM Student WHERE IdStudent = @idStudent";
+                string sqlQueryStudent = "SELECT IdStudent, IdUser, Mail, CONCAT(NameStudent, ' ', Surname) AS Completo FROM Student WHERE IdStudent = @idStudent";
                 var dataStudent = select.SelectData(sqlQueryStudent, prm);
 
                 if (dataStudent.Rows.Count > 0)
@@ -129,9 +129,9 @@ namespace SchoolMusic.Serv
                     student = new()
                     {
                         IdStudent = int.Parse(table["IdStudent"].ToString()),
-                        NameStudent = table["NameStudent"].ToString(),
-                        Surname = table["Surname"].ToString(),
-                        Mail = table["Mail"].ToString()
+                        IdUser = int.Parse(table["IdUser"].ToString()),
+                        Mail = table["Mail"].ToString(),
+                        NameStudent = table["Completo"].ToString(),
                     };
                 }
             }
@@ -162,6 +162,28 @@ namespace SchoolMusic.Serv
                 result = 0;
             }
             return result;
+        }
+        public bool SendNotification(Notification notification)
+        {
+            prm.Clear();
+            prm.Add("@notificationTo", notification.NotificationTo.ToString());
+            prm.Add("@notificationFrom", notification.NotificationFrom.ToString());
+            prm.Add("@subject", notification.Subject);
+            prm.Add("@body", notification.Body);
+
+            string sqlInsertNotification = @"INSERT INTO Notification (NotificationTo, NotificationFrom, Subject, Body, DateNotification, Status)
+                        VALUES (@notificationTo, @notificationFrom, @subject, @body, GETDATE(), 0)";
+
+            try
+            {
+                var result = accion.AccionEjecutar(sqlInsertNotification, prm);
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al insertar la notificación: {ex.Message}");
+                return false; // Retorna false si ocurre un error
+            }
         }
     }
 }

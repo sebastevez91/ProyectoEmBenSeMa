@@ -58,10 +58,11 @@
             groupBox1 = new GroupBox();
             grBoxDUser = new GroupBox();
             groupRol = new GroupBox();
-            radioButton2 = new RadioButton();
+            raBtnProfesor = new RadioButton();
             raBtnAlumno = new RadioButton();
             radioButton4 = new RadioButton();
             label10 = new Label();
+            etqValidaciones = new Label();
             grBoxGenero.SuspendLayout();
             groupBox1.SuspendLayout();
             grBoxDUser.SuspendLayout();
@@ -242,7 +243,7 @@
             btnRegistrar.ForeColor = Color.Transparent;
             btnRegistrar.Image = (Image)resources.GetObject("btnRegistrar.Image");
             btnRegistrar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRegistrar.Location = new Point(238, 353);
+            btnRegistrar.Location = new Point(240, 423);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(137, 41);
             btnRegistrar.TabIndex = 19;
@@ -258,7 +259,7 @@
             btnCancelar.ForeColor = Color.Transparent;
             btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
             btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancelar.Location = new Point(64, 353);
+            btnCancelar.Location = new Point(66, 423);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(137, 41);
             btnCancelar.TabIndex = 20;
@@ -404,7 +405,7 @@
             // groupRol
             // 
             groupRol.BackColor = Color.Transparent;
-            groupRol.Controls.Add(radioButton2);
+            groupRol.Controls.Add(raBtnProfesor);
             groupRol.Controls.Add(raBtnAlumno);
             groupRol.Controls.Add(radioButton4);
             groupRol.ForeColor = Color.White;
@@ -414,16 +415,16 @@
             groupRol.TabIndex = 28;
             groupRol.TabStop = false;
             // 
-            // radioButton2
+            // raBtnProfesor
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(90, 14);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(69, 19);
-            radioButton2.TabIndex = 2;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Profesor";
-            radioButton2.UseVisualStyleBackColor = true;
+            raBtnProfesor.AutoSize = true;
+            raBtnProfesor.Location = new Point(90, 14);
+            raBtnProfesor.Name = "raBtnProfesor";
+            raBtnProfesor.Size = new Size(69, 19);
+            raBtnProfesor.TabIndex = 2;
+            raBtnProfesor.TabStop = true;
+            raBtnProfesor.Text = "Profesor";
+            raBtnProfesor.UseVisualStyleBackColor = true;
             // 
             // raBtnAlumno
             // 
@@ -459,6 +460,19 @@
             label10.TabIndex = 27;
             label10.Text = "Tipo de usuario:";
             // 
+            // etqValidaciones
+            // 
+            etqValidaciones.AutoSize = true;
+            etqValidaciones.BackColor = Color.Gray;
+            etqValidaciones.Font = new Font("Trebuchet MS", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            etqValidaciones.ForeColor = Color.Maroon;
+            etqValidaciones.Location = new Point(56, 296);
+            etqValidaciones.Name = "etqValidaciones";
+            etqValidaciones.Size = new Size(331, 18);
+            etqValidaciones.TabIndex = 31;
+            etqValidaciones.Text = "Verifica que Los campos cumplan los siguientes puntos:";
+            etqValidaciones.Visible = false;
+            // 
             // FormRegistration
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -467,6 +481,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(958, 505);
+            Controls.Add(etqValidaciones);
             Controls.Add(grBoxDUser);
             Controls.Add(groupBox1);
             Controls.Add(btnCancelar);
@@ -520,8 +535,9 @@
         private GroupBox grBoxDUser;
         private Label label10;
         private GroupBox groupRol;
-        private RadioButton radioButton2;
+        private RadioButton raBtnProfesor;
         private RadioButton raBtnAlumno;
         private RadioButton radioButton4;
+        private Label etqValidaciones;
     }
 }

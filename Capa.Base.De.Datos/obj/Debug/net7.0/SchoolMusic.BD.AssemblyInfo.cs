@@ -18,6 +18,7 @@ using System.Reflection;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd39302469217e41ecc146b470faf6843ee8d2d4")]
 =======
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09818652768e4f14cd0b974c32ffe9068e81e4c9")]
@@ -30,6 +31,9 @@ using System.Reflection;
 >>>>>>> secondMain
 =======
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81046715577ed0fbcb82811eca7de5b050f6117b")]
+>>>>>>> secondMain
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a81b1e6788ff8361f7c36a0658857a9807c1683")]
 >>>>>>> secondMain
 [assembly: System.Reflection.AssemblyProductAttribute("SchoolMusic.BD")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SchoolMusic.BD")]

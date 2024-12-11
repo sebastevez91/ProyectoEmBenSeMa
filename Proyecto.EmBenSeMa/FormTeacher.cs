@@ -139,20 +139,6 @@ namespace SchoolMusic.Proyecto
         {
             MessageBox.Show("School Music EmBenSeMa version 2.1");
         }
-        private void foroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //viewTablon();
-                //formTablon.SesionTablon(userSession, selectValue, "Teacher");
-                //formTablon.Show();
-            }
-            catch (System.ObjectDisposedException)
-            {
-
-                MessageBox.Show("No se puede abrir más de una ventana", "Error de instanciación", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         // Método de intancia de FormNotification
         private void viewNotification()
         {
@@ -261,53 +247,76 @@ namespace SchoolMusic.Proyecto
             // Declaramos una instancia de cursada null
             Cursada cursada = new Cursada();
 
-            // Nueva Cursada del profesor
-            cursada.IdCourse = int.Parse(comboCourse.SelectedValue.ToString());
-            cursada.Initiation = dateInitiation.Value;
-            cursada.Finish = dateFinish.Value;
-            cursada.IdTeacher = teacher.IdTeacher;
-            cursada.StarTime = dateStart.Value;
-            cursada.EndTime = dateEnd.Value;
-            cursada.Days = txtDia.Text;
-            cursada.Description = txtDescription.Text;
-            if (int.TryParse(txtVacantes.Text.ToString(), out int numVacan))
+            if (comboCourse.SelectedValue == null)
             {
-                cursada.Vacantes = numVacan;
+                MessageBox.Show("Debe seleccionar un instrumento");
+                return;
             }
-            if (float.TryParse(txtCuota.Text.ToString(), out float numFee))
+            else if (dateInitiation.Value == dateFinish.Value)
             {
-                cursada.PayFee = numFee;
+                MessageBox.Show("Debe seleccionar una fecha válida");
+                return;
             }
-
-            // Valida los datos de la cursada
-            if (teacherService.ValidaCursada(cursada))
+            else if (dateStart.Value == dateEnd.Value)
             {
-                // Agrega la cursada a la BD
-                if (teacherService.AddCursada(cursada))
-                {
-                    MessageBox.Show("Se agrego la cursada exitosamente!!!");
-                    UpdateCursada();
-                    foreach (Cursada cr in listCursada)
-                    {
-                        if (cr.Description == cursada.Description && cr.Initiation == cursada.Initiation 
-                            && cr.Finish == cursada.Finish && cr.StarTime == cursada.StarTime)
-                        {
-                            if (!teacherService.AddTablon(cr.IdCursada.ToString()))
-                            {
-                                MessageBox.Show("No se pudo crear el tablón de la cursada", "Falla del registro BD" + MessageBoxIcon.Error);
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo registar la cursada");
-                }
-
-                grBoxCursada.Visible = false;
+                MessageBox.Show("Debe seleccionar un horario válido");
+                return;
+            }
+            else if (string.IsNullOrWhiteSpace(txtDia.Text))
+            {
+                MessageBox.Show("Debes colocar los dias de la semana que se cursa");
+                return;
+            }
+            else if (!string.IsNullOrWhiteSpace(txtDescription.Text))
+            {
+                MessageBox.Show("Coloca una descripción de la cursada");
+                return;
             }
             else
             {
+                // Nueva Cursada del profesor
+                cursada.IdCourse = int.Parse(comboCourse.SelectedValue.ToString());
+                cursada.Initiation = dateInitiation.Value;
+                cursada.Finish = dateFinish.Value;
+                cursada.IdTeacher = teacher.IdTeacher;
+                cursada.StarTime = dateStart.Value;
+                cursada.EndTime = dateEnd.Value;
+                cursada.Days = txtDia.Text;
+                cursada.Description = txtDescription.Text;
+                if (int.TryParse(txtVacantes.Text.ToString(), out int numVacan))
+                {
+                    cursada.Vacantes = numVacan;
+                }
+                if (float.TryParse(txtCuota.Text.ToString(), out float numFee))
+                {
+                    cursada.PayFee = numFee;
+                }
+                // Valida los datos de la cursada
+                if (teacherService.ValidaCursada(cursada))
+                {
+                    // Agrega la cursada a la BD
+                    if (teacherService.AddCursada(cursada))
+                    {
+                        MessageBox.Show("Se agrego la cursada exitosamente!!!");
+                        UpdateCursada();
+                        foreach (Cursada cr in listCursada)
+                        {
+                            if (cr.Description == cursada.Description && cr.Initiation == cursada.Initiation
+                                && cr.Finish == cursada.Finish && cr.StarTime == cursada.StarTime)
+                            {
+                                if (!teacherService.AddTablon(cr.IdCursada.ToString()))
+                                {
+                                    MessageBox.Show("No se pudo crear el tablón de la cursada", "Falla del registro BD" + MessageBoxIcon.Error);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo registar la cursada");
+                    }
+                    grBoxCursada.Visible = false;
+                }
                 MessageBox.Show("Se encontrarón errores. Revisa los datos de la cursada.");
                 cursada = null;
             }
